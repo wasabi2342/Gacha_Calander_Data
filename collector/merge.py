@@ -48,6 +48,27 @@ def _characters(raw) -> list[dict]:
     return out
 
 
+def _merge_characters(old: list[dict], new: list[dict]) -> list[dict]:
+    """같은 캐릭터 목록이면 기존 정보(등급 등)를 지키고, 새 기사에만 있는 정보는 보탠다.
+    목록 구성이 달라졌으면(캐릭터 추가·변경) 새 목록을 쓰되, 아는 등급은 이어받는다."""
+    if not new:
+        return old
+    known = {c["name"]: c for c in old}
+    result = []
+    for c in new:
+        prev = known.get(c["name"], {})
+        result.append({
+            "name": c["name"],
+            "rarity": c.get("rarity") if c.get("rarity") is not None else prev.get("rarity"),
+            "isNew": c["isNew"] if c["name"] not in known else prev.get("isNew", c["isNew"]),
+        })
+    if {c["name"] for c in result} == set(known) and len(result) == len(old):
+        # 이름 구성이 같으면 기존 순서를 유지해서 불필요한 변경을 막는다
+        by_name = {c["name"]: c for c in result}
+        result = [by_name[c["name"]] for c in old]
+    return result
+
+
 def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str) -> str | None:
     """events(키 → 일정)를 제자리에서 갱신. 바뀌었으면 'added'/'updated', 아니면 None."""
     type_ = x.get("type")
@@ -86,8 +107,9 @@ def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str) -> st
         return None
 
     changed = False
-    if chars and chars != e.get("characters"):
-        e["characters"] = chars
+    merged_chars = _merge_characters(e.get("characters") or [], chars)
+    if merged_chars != (e.get("characters") or []):
+        e["characters"] = merged_chars
         changed = True
     if (time_known or not e.get("timeKnown")) and start != e.get("startAt"):
         e["startAt"], e["timeKnown"] = start, time_known
@@ -99,7 +121,8 @@ def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str) -> st
         e["status"] = status
         changed = True
     if changed:
-        if title:
+        # 제목은 기사마다 표현만 다르다("상반기"/"전반")라서 비어 있을 때만 채운다
+        if title and not e.get("title"):
             e["title"] = title
         e["sourceUrl"], e["evidence"], e["updatedAt"] = source_url, x.get("evidence"), now
         return "updated"
