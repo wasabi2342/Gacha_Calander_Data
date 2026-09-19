@@ -12,7 +12,6 @@ on:
 
 permissions:
   contents: write            # data/ 커밋용
-  models: read               # GitHub Models 호출용
 
 concurrency:
   group: collect
@@ -37,8 +36,9 @@ jobs:
         env:
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # Actions가 자동으로 만들어 주는 토큰 (등록 불필요)
-          MODEL: ${{ vars.MODEL }}                    # 비워두면 openai/gpt-4.1-mini
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}     # Gemini(또는 Anthropic) API 키
+          LLM_PROVIDER: ${{ vars.LLM_PROVIDER }}      # 비워두면 gemini
+          MODEL: ${{ vars.MODEL }}                    # 비워두면 제공자별 기본 모델
           GAME: ${{ inputs.game }}
         run: |
           if [ -n "$GAME" ]; then

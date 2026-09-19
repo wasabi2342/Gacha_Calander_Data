@@ -1,4 +1,4 @@
-"""추출 단계: 기사 본문 → 일정 JSON (GitHub Models)"""
+"""추출 단계: 기사 본문 → 일정 JSON (Gemini 또는 Anthropic)"""
 import json
 import logging
 from datetime import datetime, timedelta, timezone
@@ -34,11 +34,14 @@ class ExtractError(Exception):
 
 
 class RateLimited(ExtractError):
-    """GitHub Models 호출 한도 초과. 이번 실행은 여기서 멈추고 다음 실행에 이어서 한다."""
+    """호출 한도 초과. 이번 실행은 여기서 멈추고 다음 실행에 이어서 한다."""
 
 
-# GitHub Models (OpenAI 호환 chat completions). Actions의 GITHUB_TOKEN 으로 인증
-MODELS_URL = "https://models.github.ai/inference/chat/completions"
+# 기본 모델. 서비스 쪽 모델 이름이 바뀌면 저장소 Variables의 MODEL 로 덮어쓰면 된다
+DEFAULT_MODELS = {
+    "gemini": "gemini-flash-lite-latest",
+    "anthropic": "claude-haiku-4-5-20251001",
+}
 
 
 def _fmt_pub(dt: datetime) -> str:
@@ -46,42 +49,59 @@ def _fmt_pub(dt: datetime) -> str:
     return f"{k:%Y-%m-%d} ({WEEKDAYS[k.weekday()]}) {k:%H:%M}"
 
 
-def extract(token: str, model: str, game_full_name: str, title: str, body: str,
+def _check(res: requests.Response) -> None:
+    if res.status_code == 429:
+        raise RateLimited(f"429 호출 한도 초과: {res.text[:200]}")
+    if res.status_code >= 400:
+        raise ExtractError(f"{res.status_code}: {res.text[:300]}")
+
+
+def _call_gemini(api_key: str, model: str, user: str) -> str:
+    """Google Gemini API (AI Studio 키)"""
+    res = requests.post(
+        f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+        headers={"x-goog-api-key": api_key, "Content-Type": "application/json"},
+        json={
+            "systemInstruction": {"parts": [{"text": SYSTEM_PROMPT}]},
+            "contents": [{"role": "user", "parts": [{"text": user}]}],
+            "generationConfig": {"temperature": 0, "maxOutputTokens": 2000,
+                                 "responseMimeType": "application/json"},
+        },
+        timeout=60,
+    )
+    _check(res)
+    candidates = res.json().get("candidates") or []
+    parts = ((candidates[0].get("content") or {}).get("parts") or []) if candidates else []
+    return "".join(p.get("text", "") for p in parts)
+
+
+def _call_anthropic(api_key: str, model: str, user: str) -> str:
+    """Anthropic Claude API"""
+    res = requests.post(
+        "https://api.anthropic.com/v1/messages",
+        headers={"x-api-key": api_key, "anthropic-version": "2023-06-01",
+                 "content-type": "application/json"},
+        json={"model": model, "max_tokens": 2000, "temperature": 0, "system": SYSTEM_PROMPT,
+              "messages": [{"role": "user", "content": user}]},
+        timeout=60,
+    )
+    _check(res)
+    return "".join(b.get("text", "") for b in res.json().get("content", []) if b.get("type") == "text")
+
+
+PROVIDERS = {"gemini": _call_gemini, "anthropic": _call_anthropic}
+
+
+def extract(provider: str, api_key: str, model: str, game_full_name: str, title: str, body: str,
             published_at: datetime) -> list[dict]:
     user = (f"게임: {game_full_name}\n"
             f"기사 발행 시각(KST): {_fmt_pub(published_at)}\n"
             f"기사 제목: {title}\n\n"
             f"기사 본문:\n{body}")
     try:
-        res = requests.post(
-            MODELS_URL,
-            headers={
-                "Authorization": f"Bearer {token}",
-                "Accept": "application/vnd.github+json",
-                "X-GitHub-Api-Version": "2022-11-28",
-                "Content-Type": "application/json",
-            },
-            json={
-                "model": model,
-                "temperature": 0,
-                "max_tokens": 2000,
-                "messages": [
-                    {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user", "content": user},
-                ],
-            },
-            timeout=60,
-        )
+        text = PROVIDERS[provider](api_key, model, user)
     except requests.RequestException as e:
         raise ExtractError(str(e)) from e
-
-    if res.status_code == 429:
-        raise RateLimited(f"429 호출 한도 초과: {res.text[:200]}")
-    if res.status_code >= 400:
-        raise ExtractError(f"{res.status_code}: {res.text[:300]}")
-
-    choices = res.json().get("choices") or []
-    text = (choices[0].get("message") or {}).get("content", "") if choices else ""
     return parse(text or "")
 
 

@@ -4,7 +4,8 @@
     python collector/collect.py --game genshin  # 한 게임만
     python collector/collect.py --game genshin --dry-run   # 파일 저장 없이 추출 결과만 출력
 
-환경 변수: NAVER_CLIENT_ID, NAVER_CLIENT_SECRET, GITHUB_TOKEN(Actions가 자동 제공), (선택) MODEL
+환경 변수: NAVER_CLIENT_ID, NAVER_CLIENT_SECRET, LLM_API_KEY
+         (선택) LLM_PROVIDER = gemini(기본) | anthropic, (선택) MODEL
 """
 import argparse
 import json
@@ -15,7 +16,7 @@ import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from extractor import ExtractError, RateLimited, extract
+from extractor import DEFAULT_MODELS, PROVIDERS, ExtractError, RateLimited, extract
 from games import GAMES, GAMES_BY_ID, is_relevant
 from merge import key_of, merge, prune_old
 from sources import fetch_article_text, search_news
@@ -28,15 +29,16 @@ SEEN_PATH = ROOT / "data" / "seen_articles.json"
 QUERY_SUFFIXES = ["업데이트", "픽업"]
 ARTICLES_PER_QUERY = 10
 MAX_NEW_ARTICLES_PER_GAME = 6   # 1회 실행당 게임별 모델 호출 상한 (무료 한도 보호)
-CALL_INTERVAL_SEC = 4           # 분당 호출 한도에 걸리지 않게 호출 사이 대기
+CALL_INTERVAL_SEC = 6           # 분당 호출 한도에 걸리지 않게 호출 사이 대기
+MAX_CONSECUTIVE_FAILS = 3       # 추출이 연달아 이만큼 실패하면 설정 문제로 보고 이번 실행을 멈춤
 SEEN_KEEP_DAYS = 120
-DEFAULT_MODEL = "openai/gpt-4.1-mini"
 
 log = logging.getLogger("collect")
 
 # 실행 진단용 집계. 실패해도 경고만 남기면 Actions가 "성공"으로 보여서 원인을 놓치기 쉽다
 STATS = {"search_ok": 0, "search_fail": 0, "extract_ok": 0, "extract_fail": 0, "relevant": 0}
 FIRST_ERROR: dict[str, str] = {}
+CONSECUTIVE_FAILS = [0]
 
 
 def _record_error(kind: str, msg: str) -> None:
@@ -78,17 +80,21 @@ def run_game(game, events, seen, env, dry_run, report) -> None:
                 STATS["relevant"] += 1
 
                 body = fetch_article_text(item.url) or item.description
-                if analyzed > 0:
+                if STATS["extract_ok"] + STATS["extract_fail"] > 0:
                     time.sleep(CALL_INTERVAL_SEC)
                 try:
-                    extracted = extract(env["token"], env["model"], game["full_name"],
+                    extracted = extract(env["provider"], env["api_key"], env["model"], game["full_name"],
                                         item.title, body, item.published_at)
                 except RateLimited:
                     raise  # main 에서 이번 실행을 멈춘다
                 except ExtractError as e:
                     log.warning("[%s] 추출 실패, 다음에 재시도: %s (%s)", game["id"], item.url, e)
                     _record_error("extract_fail", str(e))
+                    CONSECUTIVE_FAILS[0] += 1
+                    if CONSECUTIVE_FAILS[0] >= MAX_CONSECUTIVE_FAILS:
+                        raise RateLimited(f"추출이 {MAX_CONSECUTIVE_FAILS}번 연속 실패했어요") from e
                     continue
+                CONSECUTIVE_FAILS[0] = 0
                 analyzed += 1
                 STATS["extract_ok"] += 1
 
@@ -149,13 +155,18 @@ def main() -> int:
     env = {
         "naver_id": os.environ.get("NAVER_CLIENT_ID", ""),
         "naver_secret": os.environ.get("NAVER_CLIENT_SECRET", ""),
-        "token": os.environ.get("GITHUB_TOKEN", ""),
-        "model": os.environ.get("MODEL") or DEFAULT_MODEL,
+        "provider": (os.environ.get("LLM_PROVIDER") or "gemini").strip().lower(),
+        "api_key": os.environ.get("LLM_API_KEY", ""),
     }
-    missing = [k for k in ("naver_id", "naver_secret", "token") if not env[k]]
-    if missing:
-        log.error("환경 변수가 비어 있어요: NAVER_CLIENT_ID / NAVER_CLIENT_SECRET / GITHUB_TOKEN 을 확인하세요.")
+    if env["provider"] not in PROVIDERS:
+        log.error("LLM_PROVIDER 는 %s 중 하나여야 해요 (지금: %s)", " / ".join(PROVIDERS), env["provider"])
         return 1
+    env["model"] = os.environ.get("MODEL") or DEFAULT_MODELS[env["provider"]]
+    missing = [k for k in ("naver_id", "naver_secret", "api_key") if not env[k]]
+    if missing:
+        log.error("환경 변수가 비어 있어요: NAVER_CLIENT_ID / NAVER_CLIENT_SECRET / LLM_API_KEY 를 확인하세요.")
+        return 1
+    log.info("추출 모델: %s / %s", env["provider"], env["model"])
 
     if args.game and args.game not in GAMES_BY_ID:
         log.error("알 수 없는 게임 id: %s (가능: %s)", args.game, ", ".join(GAMES_BY_ID))
@@ -172,7 +183,7 @@ def main() -> int:
         try:
             run_game(game, events, seen, env, args.dry_run, report)
         except RateLimited as e:
-            stopped = f"GitHub Models 호출 한도에 걸려 {game['name']}에서 멈췄어요."
+            stopped = f"{game['name']}에서 멈췄어요 ({e})."
             log.warning("%s (%s)", stopped, e)
             break
 
@@ -200,7 +211,7 @@ def main() -> int:
         log.error("뉴스 검색이 전부 실패했어요. NAVER API HUB 키와 'NAVER 검색' API 선택 여부를 확인하세요.")
         return 1
     if STATS["extract_ok"] == 0 and STATS["extract_fail"] > 0:
-        log.error("모델 추출이 전부 실패했어요. 워크플로의 models: read 권한과 MODEL 값을 확인하세요.")
+        log.error("모델 추출이 전부 실패했어요. LLM_API_KEY, LLM_PROVIDER, MODEL 값을 확인하세요.")
         return 1
     return 0
 
