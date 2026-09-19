@@ -6,9 +6,14 @@ on:
   workflow_dispatch:         # Actions 탭에서 수동 실행
     inputs:
       game:
-        description: "게임 id (비우면 전체). 예: genshin, hsr, wuwa, nte"
+        description: "게임 id (비우면 전체). 예: genshin, hsr, wuwa, nte, nikke"
         required: false
         default: ""
+      reprocess:
+        description: "이미 분석한 기사도 다시 분석 (추출 규칙을 고친 뒤에 사용)"
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write            # data/ 커밋용
@@ -40,12 +45,12 @@ jobs:
           LLM_PROVIDER: ${{ vars.LLM_PROVIDER }}      # 비워두면 gemini
           MODEL: ${{ vars.MODEL }}                    # 비워두면 제공자별 기본 모델
           GAME: ${{ inputs.game }}
+          REPROCESS: ${{ inputs.reprocess }}
         run: |
-          if [ -n "$GAME" ]; then
-            python collector/collect.py --game "$GAME"
-          else
-            python collector/collect.py
-          fi
+          ARGS=""
+          if [ -n "$GAME" ]; then ARGS="$ARGS --game $GAME"; fi
+          if [ "$REPROCESS" = "true" ]; then ARGS="$ARGS --reprocess"; fi
+          python collector/collect.py $ARGS
 
       - name: 변경 사항 커밋
         run: |

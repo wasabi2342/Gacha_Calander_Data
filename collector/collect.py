@@ -3,6 +3,7 @@
     python collector/collect.py                 # 전체 게임
     python collector/collect.py --game genshin  # 한 게임만
     python collector/collect.py --game genshin --dry-run   # 파일 저장 없이 추출 결과만 출력
+    python collector/collect.py --game nikke --reprocess   # 이미 본 기사도 다시 분석 (추출 규칙을 고친 뒤)
 
 환경 변수: NAVER_CLIENT_ID, NAVER_CLIENT_SECRET, LLM_API_KEY
          (선택) LLM_PROVIDER = gemini(기본) | anthropic, (선택) MODEL
@@ -36,7 +37,8 @@ SEEN_KEEP_DAYS = 120
 log = logging.getLogger("collect")
 
 # 실행 진단용 집계. 실패해도 경고만 남기면 Actions가 "성공"으로 보여서 원인을 놓치기 쉽다
-STATS = {"search_ok": 0, "search_fail": 0, "extract_ok": 0, "extract_fail": 0, "relevant": 0}
+STATS = {"search_ok": 0, "search_fail": 0, "extract_ok": 0, "extract_fail": 0, "relevant": 0,
+         "items": 0, "items_skipped": 0, "items_same": 0, "items_ignored": 0}
 FIRST_ERROR: dict[str, str] = {}
 CONSECUTIVE_FAILS = [0]
 
@@ -57,7 +59,7 @@ def save_json(path: Path, data) -> None:
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def run_game(game, events, seen, env, dry_run, report) -> None:
+def run_game(game, events, seen, env, dry_run, report, reprocess=False) -> None:
     analyzed = 0
     visited: set[str] = set()
     for term in game["search_terms"]:
@@ -74,7 +76,7 @@ def run_game(game, events, seen, env, dry_run, report) -> None:
             for item in items:
                 if analyzed >= MAX_NEW_ARTICLES_PER_GAME:
                     return
-                if item.url in visited or item.url in seen or not is_relevant(game, item.title):
+                if item.url in visited or (item.url in seen and not reprocess) or not is_relevant(game, item.title):
                     continue
                 visited.add(item.url)
                 STATS["relevant"] += 1
@@ -105,8 +107,17 @@ def run_game(game, events, seen, env, dry_run, report) -> None:
 
                 changes = 0
                 for x in extracted:
+                    STATS["items"] += 1
                     result = merge(events, game["id"], x, item.url)
-                    if result:
+                    if result is None:
+                        STATS["items_same"] += 1
+                    elif result.startswith("ignore:"):
+                        STATS["items_ignored"] += 1
+                    elif result.startswith("skip:"):
+                        STATS["items_skipped"] += 1
+                        FIRST_ERROR.setdefault("items_skipped", f"{result[5:]} ← {json.dumps(x, ensure_ascii=False)[:200]}")
+                        log.info("[%s] 버린 일정: %s", game["id"], result[5:])
+                    else:
                         changes += 1
                         report.append((game["name"], result, x.get("title") or x.get("version"), item.title))
                 seen[item.url] = {
@@ -134,8 +145,13 @@ def write_summary(report, removed: int, stopped: str | None) -> None:
         f"- 뉴스 검색: 성공 {STATS['search_ok']} / 실패 {STATS['search_fail']}",
         f"- 새로 찾은 관련 기사: {STATS['relevant']}",
         f"- 모델 추출: 성공 {STATS['extract_ok']} / 실패 {STATS['extract_fail']}",
+        f"- 뽑아낸 일정: {STATS['items']}건 (반영 "
+        f"{STATS['items'] - STATS['items_same'] - STATS['items_skipped'] - STATS['items_ignored']}"
+        f" / 이미 같은 정보 {STATS['items_same']} / 형식 문제로 버림 {STATS['items_skipped']}"
+        f" / 버전 없는 업데이트 제외 {STATS['items_ignored']})",
     ]
-    for kind, label in (("search_fail", "검색 첫 오류"), ("extract_fail", "추출 첫 오류")):
+    for kind, label in (("search_fail", "검색 첫 오류"), ("extract_fail", "추출 첫 오류"),
+                        ("items_skipped", "버린 일정 예시")):
         if kind in FIRST_ERROR:
             lines.append(f"- {label}: `{FIRST_ERROR[kind]}`")
     text = "\n".join(lines) + "\n"
@@ -149,6 +165,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--game", help="게임 id (생략하면 전체)")
     parser.add_argument("--dry-run", action="store_true", help="파일 저장 없이 추출 결과만 출력")
+    parser.add_argument("--reprocess", action="store_true", help="이미 본 기사도 다시 분석")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
@@ -181,7 +198,7 @@ def main() -> int:
     stopped = None
     for game in targets:
         try:
-            run_game(game, events, seen, env, args.dry_run, report)
+            run_game(game, events, seen, env, args.dry_run, report, args.reprocess)
         except RateLimited as e:
             stopped = f"{game['name']}에서 멈췄어요 ({e})."
             log.warning("%s (%s)", stopped, e)

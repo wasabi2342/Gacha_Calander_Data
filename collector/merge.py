@@ -4,11 +4,13 @@
 - 신뢰도가 낮은 정보(LEAK)는 높은 정보(OFFICIAL)를 덮어쓰지 못한다.
 - 시각까지 확인된 값은 날짜만 있는 값으로 덮어쓰지 않는다.
 """
+import re
 from datetime import datetime, timedelta, timezone
 
 KST = timezone(timedelta(hours=9))
 RANK = {"LEAK": 1, "ESTIMATED": 2, "OFFICIAL": 3}
 TYPES = {"VERSION_UPDATE", "BANNER"}
+DATE_VERSION = re.compile(r"\d{4}-\d{2}-\d{2}")
 
 
 def event_key(game_id: str, type_: str, version: str, phase) -> str:
@@ -48,12 +50,17 @@ def _characters(raw) -> list[dict]:
     return out
 
 
-def _merge_characters(old: list[dict], new: list[dict]) -> list[dict]:
+def _merge_characters(old: list[dict], new: list[dict], union: bool = False) -> list[dict]:
     """같은 캐릭터 목록이면 기존 정보(등급 등)를 지키고, 새 기사에만 있는 정보는 보탠다.
-    목록 구성이 달라졌으면(캐릭터 추가·변경) 새 목록을 쓰되, 아는 등급은 이어받는다."""
+    목록 구성이 달라졌으면(캐릭터 추가·변경) 새 목록을 쓰되, 아는 등급은 이어받는다.
+    union=True(날짜로 묶인 픽업)면 기사마다 일부 캐릭터만 언급하므로 합친다."""
     if not new:
         return old
     known = {c["name"]: c for c in old}
+    if union:
+        # 기존 캐릭터를 앞에 두고, 새 기사에서 처음 나온 캐릭터를 뒤에 붙인다
+        new_by_name = {n["name"]: n for n in new}
+        new = [new_by_name.get(c["name"], c) for c in old] + [n for n in new if n["name"] not in known]
     result = []
     for c in new:
         prev = known.get(c["name"], {})
@@ -69,17 +76,30 @@ def _merge_characters(old: list[dict], new: list[dict]) -> list[dict]:
     return result
 
 
+def is_date_version(version: str) -> bool:
+    """버전 번호가 없는 게임(니케, 블루 아카이브 등)은 시작 날짜를 버전 자리에 쓴다"""
+    return bool(DATE_VERSION.fullmatch(version or ""))
+
+
 def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str) -> str | None:
-    """events(키 → 일정)를 제자리에서 갱신. 바뀌었으면 'added'/'updated', 아니면 None."""
+    """events(키 → 일정)를 제자리에서 갱신.
+    반환: 'added' / 'updated' / None(이미 같은 정보) / 'skip:사유'(형식 문제로 버림) / 'ignore:사유'(일부러 제외)"""
     type_ = x.get("type")
-    version = str(x.get("version") or "").strip()
-    if type_ not in TYPES or not version:
-        return None
+    if type_ not in TYPES:
+        return f"skip:알 수 없는 type({type_})"
     start = to_iso(x.get("startDate"), x.get("startTime"), "00:00")
     if not start:
-        return None
+        return f"skip:시작 날짜 없음/형식 오류({x.get('startDate')})"
+    version = str(x.get("version") or "").strip()
+    if not version:
+        # 모델이 버전을 비워 보내도 버리지 않고 시작 날짜로 대신한다
+        version = start[:10]
+    date_keyed = is_date_version(version)
+    if date_keyed and type_ == "VERSION_UPDATE":
+        # 버전 번호가 없는 게임은 픽업 일정만 표시한다
+        return "ignore:버전 번호 없는 업데이트"
 
-    phase = None if type_ == "VERSION_UPDATE" else (x.get("phase") if x.get("phase") in (1, 2) else None)
+    phase = None if (type_ == "VERSION_UPDATE" or date_keyed) else (x.get("phase") if x.get("phase") in (1, 2) else None)
     status = x.get("status") if x.get("status") in RANK else "ESTIMATED"
     time_known = bool(x.get("startTime")) and to_iso(x.get("startDate"), x.get("startTime"), "00:00") is not None
     end = to_iso(x.get("endDate"), x.get("endTime"), "23:59")
@@ -107,7 +127,7 @@ def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str) -> st
         return None
 
     changed = False
-    merged_chars = _merge_characters(e.get("characters") or [], chars)
+    merged_chars = _merge_characters(e.get("characters") or [], chars, union=date_keyed)
     if merged_chars != (e.get("characters") or []):
         e["characters"] = merged_chars
         changed = True

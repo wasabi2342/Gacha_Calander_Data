@@ -16,17 +16,22 @@ SYSTEM_PROMPT = """너는 서브컬처 게임 뉴스에서 '버전 업데이트'
 1. 기사에 적힌 일정만 추출한다. 날짜를 추측해서 만들지 않는다.
 2. "오는 23일", "다음 주 수요일" 같은 상대 날짜는 기사 발행 시각을 기준으로 절대 날짜로 바꾼다.
 3. 요청한 게임의 일정만 추출한다. 같은 기사에 나온 다른 게임 일정은 무시한다.
-4. type: 새 버전 업데이트 자체는 "VERSION_UPDATE", 캐릭터 픽업 기간은 "BANNER".
-5. phase: 전반부 1, 후반부 2, 알 수 없으면 null. VERSION_UPDATE는 항상 null.
-6. characters: 픽업 캐릭터만. 신규면 isNew true, 복각이면 false. 등급을 모르면 rarity null. 무기·광추 픽업은 넣지 않는다.
-7. status: 공식 발표나 공식 공지를 인용한 내용은 "OFFICIAL", '예정', '전망', '~경' 같은 추정은 "ESTIMATED", 유출·리크·데이터마이닝은 "LEAK".
-8. 날짜는 "YYYY-MM-DD", 시각은 한국 시간 "HH:mm". 모르면 null.
-9. title: "7.1 전반 픽업", "3.7 「부제」"처럼 짧게.
-10. evidence: 근거가 된 기사 내용을 30자 이내로 요약한다.
-11. 일정이 없으면 []. JSON 배열만 출력하고 다른 텍스트는 쓰지 않는다.
+4. type: 새 버전 업데이트 자체는 "VERSION_UPDATE", 캐릭터 픽업(모집, 가챠, 헤드헌팅, 워프, 기원 등) 기간은 "BANNER".
+5. version: 기사에 나온 버전 번호(예: "7.1"). 니케, 블루 아카이브, 명일방주처럼 버전 번호를 쓰지 않는 게임이거나 기사에 버전 번호가 없으면, 픽업이 시작하는 날짜를 "YYYY-MM-DD"로 넣는다. 이런 경우에는 VERSION_UPDATE는 만들지 말고 픽업(BANNER)만 추출한다.
+6. phase: 버전 번호가 있을 때만 전반부 1, 후반부 2. 알 수 없거나 version이 날짜면 null. VERSION_UPDATE는 항상 null.
+7. 같은 날 시작하는 픽업 캐릭터는 하나의 BANNER에 모두 넣는다.
+8. characters: 픽업 캐릭터만. 신규면 isNew true, 복각이면 false. 등급을 모르면 rarity null. 무기·광추·코스튬(스킨)만 있는 픽업은 넣지 않는다.
+9. status: 공식 발표나 공식 공지를 인용한 내용은 "OFFICIAL", '예정', '전망', '~경' 같은 추정은 "ESTIMATED", 유출·리크·데이터마이닝은 "LEAK".
+10. 날짜는 "YYYY-MM-DD", 시각은 한국 시간 "HH:mm". 모르면 null.
+11. title: "7.1 전반 픽업", "3.7 「부제」"처럼 짧게.
+12. evidence: 근거가 된 기사 내용을 30자 이내로 요약한다.
+13. 일정이 없으면 []. JSON 배열만 출력하고 다른 텍스트는 쓰지 않는다.
 
 출력 예시
-[{"type":"BANNER","version":"7.1","phase":1,"title":"7.1 전반 픽업","characters":[{"name":"베스나","rarity":5,"isNew":true}],"startDate":"2026-09-23","startTime":null,"endDate":"2026-10-13","endTime":"18:59","status":"OFFICIAL","evidence":"7.1 전반부 베스나 픽업"}]"""
+[{"type":"BANNER","version":"7.1","phase":1,"title":"7.1 전반 픽업","characters":[{"name":"베스나","rarity":5,"isNew":true}],"startDate":"2026-09-23","startTime":null,"endDate":"2026-10-13","endTime":"18:59","status":"OFFICIAL","evidence":"7.1 전반부 베스나 픽업"}]
+
+버전 번호가 없는 게임의 예시
+[{"type":"BANNER","version":"2026-09-17","phase":null,"title":"바니걸 신규 니케 모집","characters":[{"name":"캐릭터A","rarity":null,"isNew":true},{"name":"캐릭터B","rarity":null,"isNew":true}],"startDate":"2026-09-17","startTime":null,"endDate":"2026-10-01","endTime":null,"status":"OFFICIAL","evidence":"17일 신규 니케 2종 모집 시작"}]"""
 
 
 class ExtractError(Exception):
