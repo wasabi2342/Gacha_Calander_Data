@@ -34,6 +34,15 @@ DEFAULT_MODEL = "openai/gpt-4.1-mini"
 
 log = logging.getLogger("collect")
 
+# 실행 진단용 집계. 실패해도 경고만 남기면 Actions가 "성공"으로 보여서 원인을 놓치기 쉽다
+STATS = {"search_ok": 0, "search_fail": 0, "extract_ok": 0, "extract_fail": 0, "relevant": 0}
+FIRST_ERROR: dict[str, str] = {}
+
+
+def _record_error(kind: str, msg: str) -> None:
+    STATS[kind] += 1
+    FIRST_ERROR.setdefault(kind, msg[:300])
+
 
 def load_json(path: Path, default):
     if not path.exists():
@@ -54,8 +63,11 @@ def run_game(game, events, seen, env, dry_run, report) -> None:
             try:
                 items = search_news(env["naver_id"], env["naver_secret"], f"{term} {suffix}", ARTICLES_PER_QUERY)
             except Exception as e:  # noqa: BLE001 - 한 검색어 실패로 전체를 멈추지 않음
-                log.warning("[%s] 뉴스 검색 실패: %s", game["id"], e)
+                detail = getattr(getattr(e, "response", None), "text", "") or ""
+                log.warning("[%s] 뉴스 검색 실패: %s %s", game["id"], e, detail[:200])
+                _record_error("search_fail", f"{e} {detail[:200]}")
                 continue
+            STATS["search_ok"] += 1
 
             for item in items:
                 if analyzed >= MAX_NEW_ARTICLES_PER_GAME:
@@ -63,6 +75,7 @@ def run_game(game, events, seen, env, dry_run, report) -> None:
                 if item.url in visited or item.url in seen or not is_relevant(game, item.title):
                     continue
                 visited.add(item.url)
+                STATS["relevant"] += 1
 
                 body = fetch_article_text(item.url) or item.description
                 if analyzed > 0:
@@ -74,8 +87,10 @@ def run_game(game, events, seen, env, dry_run, report) -> None:
                     raise  # main 에서 이번 실행을 멈춘다
                 except ExtractError as e:
                     log.warning("[%s] 추출 실패, 다음에 재시도: %s (%s)", game["id"], item.url, e)
+                    _record_error("extract_fail", str(e))
                     continue
                 analyzed += 1
+                STATS["extract_ok"] += 1
 
                 if dry_run:
                     print(f"\n# {item.title}\n{item.url}")
@@ -108,6 +123,15 @@ def write_summary(report, removed: int, stopped: str | None) -> None:
         lines += ["", f"오래된 일정 {removed}건 정리"]
     if stopped:
         lines += ["", f"⚠️ {stopped} 남은 기사는 다음 실행에서 이어서 분석해요."]
+    lines += [
+        "", "### 진단", "",
+        f"- 뉴스 검색: 성공 {STATS['search_ok']} / 실패 {STATS['search_fail']}",
+        f"- 새로 찾은 관련 기사: {STATS['relevant']}",
+        f"- 모델 추출: 성공 {STATS['extract_ok']} / 실패 {STATS['extract_fail']}",
+    ]
+    for kind, label in (("search_fail", "검색 첫 오류"), ("extract_fail", "추출 첫 오류")):
+        if kind in FIRST_ERROR:
+            lines.append(f"- {label}: `{FIRST_ERROR[kind]}`")
     text = "\n".join(lines) + "\n"
     if path:
         with open(path, "a", encoding="utf-8") as f:
@@ -170,6 +194,14 @@ def main() -> int:
         save_json(EVENTS_PATH, new_doc)
     save_json(SEEN_PATH, seen)
     write_summary(report, removed, stopped)
+
+    # 전부 실패했으면 실행을 실패(빨간 X)로 표시해서 바로 알아챌 수 있게 한다
+    if STATS["search_ok"] == 0 and STATS["search_fail"] > 0:
+        log.error("뉴스 검색이 전부 실패했어요. NAVER API HUB 키와 'NAVER 검색' API 선택 여부를 확인하세요.")
+        return 1
+    if STATS["extract_ok"] == 0 and STATS["extract_fail"] > 0:
+        log.error("모델 추출이 전부 실패했어요. 워크플로의 models: read 권한과 MODEL 값을 확인하세요.")
+        return 1
     return 0
 
 
