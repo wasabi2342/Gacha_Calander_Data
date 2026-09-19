@@ -33,11 +33,15 @@ def _strip_html(s: str) -> str:
     return BeautifulSoup(s or "", "html.parser").get_text()
 
 
+# NAVER API HUB (네이버 클라우드 플랫폼). 기존 openapi.naver.com 검색 API가 이관된 곳
+NAVER_API_HUB = "https://naverapihub.apigw.ntruss.com"
+
+
 def search_news(client_id: str, client_secret: str, query: str, display: int = 10) -> list[NewsItem]:
     res = requests.get(
-        "https://openapi.naver.com/v1/search/news.json",
-        params={"query": query, "display": display, "sort": "date"},
-        headers={"X-Naver-Client-Id": client_id, "X-Naver-Client-Secret": client_secret},
+        f"{NAVER_API_HUB}/search/v1/news",
+        params={"query": query, "display": display, "sort": "date", "format": "json"},
+        headers={"X-NCP-APIGW-API-KEY-ID": client_id, "X-NCP-APIGW-API-KEY": client_secret},
         timeout=10,
     )
     res.raise_for_status()

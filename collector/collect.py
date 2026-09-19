@@ -4,17 +4,18 @@
     python collector/collect.py --game genshin  # 한 게임만
     python collector/collect.py --game genshin --dry-run   # 파일 저장 없이 추출 결과만 출력
 
-환경 변수: NAVER_CLIENT_ID, NAVER_CLIENT_SECRET, ANTHROPIC_API_KEY, (선택) ANTHROPIC_MODEL
+환경 변수: NAVER_CLIENT_ID, NAVER_CLIENT_SECRET, GITHUB_TOKEN(Actions가 자동 제공), (선택) MODEL
 """
 import argparse
 import json
 import logging
 import os
 import sys
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from extractor import ExtractError, extract
+from extractor import ExtractError, RateLimited, extract
 from games import GAMES, GAMES_BY_ID, is_relevant
 from merge import key_of, merge, prune_old
 from sources import fetch_article_text, search_news
@@ -26,9 +27,10 @@ SEEN_PATH = ROOT / "data" / "seen_articles.json"
 
 QUERY_SUFFIXES = ["업데이트", "픽업"]
 ARTICLES_PER_QUERY = 10
-MAX_NEW_ARTICLES_PER_GAME = 6   # 1회 실행당 게임별 Claude 호출 상한 (비용 제한)
+MAX_NEW_ARTICLES_PER_GAME = 6   # 1회 실행당 게임별 모델 호출 상한 (무료 한도 보호)
+CALL_INTERVAL_SEC = 4           # 분당 호출 한도에 걸리지 않게 호출 사이 대기
 SEEN_KEEP_DAYS = 120
-DEFAULT_MODEL = "claude-haiku-4-5-20251001"
+DEFAULT_MODEL = "openai/gpt-4.1-mini"
 
 log = logging.getLogger("collect")
 
@@ -63,9 +65,13 @@ def run_game(game, events, seen, env, dry_run, report) -> None:
                 visited.add(item.url)
 
                 body = fetch_article_text(item.url) or item.description
+                if analyzed > 0:
+                    time.sleep(CALL_INTERVAL_SEC)
                 try:
-                    extracted = extract(env["api_key"], env["model"], game["full_name"],
+                    extracted = extract(env["token"], env["model"], game["full_name"],
                                         item.title, body, item.published_at)
+                except RateLimited:
+                    raise  # main 에서 이번 실행을 멈춘다
                 except ExtractError as e:
                     log.warning("[%s] 추출 실패, 다음에 재시도: %s (%s)", game["id"], item.url, e)
                     continue
@@ -89,7 +95,7 @@ def run_game(game, events, seen, env, dry_run, report) -> None:
                 log.info("[%s] %s → %d건 반영", game["id"], item.title, changes)
 
 
-def write_summary(report, removed: int) -> None:
+def write_summary(report, removed: int, stopped: str | None) -> None:
     """Actions 실행 결과 페이지에 변경 내역 표시"""
     path = os.environ.get("GITHUB_STEP_SUMMARY")
     lines = ["## 일정 수집 결과", ""]
@@ -100,6 +106,8 @@ def write_summary(report, removed: int) -> None:
         lines.append("바뀐 일정이 없어요.")
     if removed:
         lines += ["", f"오래된 일정 {removed}건 정리"]
+    if stopped:
+        lines += ["", f"⚠️ {stopped} 남은 기사는 다음 실행에서 이어서 분석해요."]
     text = "\n".join(lines) + "\n"
     if path:
         with open(path, "a", encoding="utf-8") as f:
@@ -117,12 +125,12 @@ def main() -> int:
     env = {
         "naver_id": os.environ.get("NAVER_CLIENT_ID", ""),
         "naver_secret": os.environ.get("NAVER_CLIENT_SECRET", ""),
-        "api_key": os.environ.get("ANTHROPIC_API_KEY", ""),
-        "model": os.environ.get("ANTHROPIC_MODEL") or DEFAULT_MODEL,
+        "token": os.environ.get("GITHUB_TOKEN", ""),
+        "model": os.environ.get("MODEL") or DEFAULT_MODEL,
     }
-    missing = [k for k in ("naver_id", "naver_secret", "api_key") if not env[k]]
+    missing = [k for k in ("naver_id", "naver_secret", "token") if not env[k]]
     if missing:
-        log.error("환경 변수가 비어 있어요: NAVER_CLIENT_ID / NAVER_CLIENT_SECRET / ANTHROPIC_API_KEY 를 확인하세요.")
+        log.error("환경 변수가 비어 있어요: NAVER_CLIENT_ID / NAVER_CLIENT_SECRET / GITHUB_TOKEN 을 확인하세요.")
         return 1
 
     if args.game and args.game not in GAMES_BY_ID:
@@ -135,8 +143,14 @@ def main() -> int:
     seen = load_json(SEEN_PATH, {})
 
     report: list = []
+    stopped = None
     for game in targets:
-        run_game(game, events, seen, env, args.dry_run, report)
+        try:
+            run_game(game, events, seen, env, args.dry_run, report)
+        except RateLimited as e:
+            stopped = f"GitHub Models 호출 한도에 걸려 {game['name']}에서 멈췄어요."
+            log.warning("%s (%s)", stopped, e)
+            break
 
     if args.dry_run:
         return 0
@@ -155,7 +169,7 @@ def main() -> int:
     if report or removed or doc.get("games") != new_doc["games"] or "updatedAt" not in doc:
         save_json(EVENTS_PATH, new_doc)
     save_json(SEEN_PATH, seen)
-    write_summary(report, removed)
+    write_summary(report, removed, stopped)
     return 0
 
 

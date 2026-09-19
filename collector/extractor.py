@@ -1,4 +1,4 @@
-"""추출 단계: 기사 본문 → 일정 JSON (Claude API)"""
+"""추출 단계: 기사 본문 → 일정 JSON (GitHub Models)"""
 import json
 import logging
 from datetime import datetime, timedelta, timezone
@@ -33,12 +33,20 @@ class ExtractError(Exception):
     """API 호출 실패. 호출 쪽에서 기사를 '미처리'로 남겨 다음 실행에 재시도한다."""
 
 
+class RateLimited(ExtractError):
+    """GitHub Models 호출 한도 초과. 이번 실행은 여기서 멈추고 다음 실행에 이어서 한다."""
+
+
+# GitHub Models (OpenAI 호환 chat completions). Actions의 GITHUB_TOKEN 으로 인증
+MODELS_URL = "https://models.github.ai/inference/chat/completions"
+
+
 def _fmt_pub(dt: datetime) -> str:
     k = dt.astimezone(KST)
     return f"{k:%Y-%m-%d} ({WEEKDAYS[k.weekday()]}) {k:%H:%M}"
 
 
-def extract(api_key: str, model: str, game_full_name: str, title: str, body: str,
+def extract(token: str, model: str, game_full_name: str, title: str, body: str,
             published_at: datetime) -> list[dict]:
     user = (f"게임: {game_full_name}\n"
             f"기사 발행 시각(KST): {_fmt_pub(published_at)}\n"
@@ -46,27 +54,35 @@ def extract(api_key: str, model: str, game_full_name: str, title: str, body: str
             f"기사 본문:\n{body}")
     try:
         res = requests.post(
-            "https://api.anthropic.com/v1/messages",
+            MODELS_URL,
             headers={
-                "x-api-key": api_key,
-                "anthropic-version": "2023-06-01",
-                "content-type": "application/json",
+                "Authorization": f"Bearer {token}",
+                "Accept": "application/vnd.github+json",
+                "X-GitHub-Api-Version": "2022-11-28",
+                "Content-Type": "application/json",
             },
             json={
                 "model": model,
+                "temperature": 0,
                 "max_tokens": 2000,
-                "system": SYSTEM_PROMPT,
-                "messages": [{"role": "user", "content": user}],
+                "messages": [
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": user},
+                ],
             },
             timeout=60,
         )
-        res.raise_for_status()
     except requests.RequestException as e:
-        detail = getattr(e.response, "text", "")[:300] if getattr(e, "response", None) is not None else ""
-        raise ExtractError(f"{e} {detail}") from e
+        raise ExtractError(str(e)) from e
 
-    text = "".join(b.get("text", "") for b in res.json().get("content", []) if b.get("type") == "text")
-    return parse(text)
+    if res.status_code == 429:
+        raise RateLimited(f"429 호출 한도 초과: {res.text[:200]}")
+    if res.status_code >= 400:
+        raise ExtractError(f"{res.status_code}: {res.text[:300]}")
+
+    choices = res.json().get("choices") or []
+    text = (choices[0].get("message") or {}).get("content", "") if choices else ""
+    return parse(text or "")
 
 
 def parse(raw: str) -> list[dict]:

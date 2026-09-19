@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write            # data/ 커밋용
+  models: read               # GitHub Models 호출용
 
 concurrency:
   group: collect
@@ -36,8 +37,8 @@ jobs:
         env:
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # Actions가 자동으로 만들어 주는 토큰 (등록 불필요)
+          MODEL: ${{ vars.MODEL }}                    # 비워두면 openai/gpt-4.1-mini
           GAME: ${{ inputs.game }}
         run: |
           if [ -n "$GAME" ]; then
