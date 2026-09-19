@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-19T18:00:00+09:00",
+  "updatedAt": "2026-09-20T03:35:40+09:00",
   "games": [
     {
       "id": "genshin",
@@ -293,10 +293,10 @@
       "endAt": "2026-10-13T18:59:00+09:00",
       "endConfirmed": true,
       "status": "OFFICIAL",
-      "sourceUrl": "https://www.playforum.net/news/articleView.html?idxno=635349",
+      "sourceUrl": "https://www.sportsworldi.com/newsView/20260914505993",
       "note": null,
-      "evidence": null,
-      "updatedAt": "2026-09-19T18:00:00+09:00"
+      "evidence": "7.1 버전 상반기 베스나와 보댜니차 등장",
+      "updatedAt": "2026-09-20T03:35:40+09:00"
     },
     {
       "id": "nte-1.4-update",
