@@ -1,0 +1,163 @@
+"""6시간마다 GitHub Actions에서 실행되는 수집기.
+
+    python collector/collect.py                 # 전체 게임
+    python collector/collect.py --game genshin  # 한 게임만
+    python collector/collect.py --game genshin --dry-run   # 파일 저장 없이 추출 결과만 출력
+
+환경 변수: NAVER_CLIENT_ID, NAVER_CLIENT_SECRET, ANTHROPIC_API_KEY, (선택) ANTHROPIC_MODEL
+"""
+import argparse
+import json
+import logging
+import os
+import sys
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+
+from extractor import ExtractError, extract
+from games import GAMES, GAMES_BY_ID, is_relevant
+from merge import key_of, merge, prune_old
+from sources import fetch_article_text, search_news
+
+KST = timezone(timedelta(hours=9))
+ROOT = Path(__file__).resolve().parent.parent
+EVENTS_PATH = ROOT / "data" / "events.json"
+SEEN_PATH = ROOT / "data" / "seen_articles.json"
+
+QUERY_SUFFIXES = ["업데이트", "픽업"]
+ARTICLES_PER_QUERY = 10
+MAX_NEW_ARTICLES_PER_GAME = 6   # 1회 실행당 게임별 Claude 호출 상한 (비용 제한)
+SEEN_KEEP_DAYS = 120
+DEFAULT_MODEL = "claude-haiku-4-5-20251001"
+
+log = logging.getLogger("collect")
+
+
+def load_json(path: Path, default):
+    if not path.exists():
+        return default
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def save_json(path: Path, data) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def run_game(game, events, seen, env, dry_run, report) -> None:
+    analyzed = 0
+    visited: set[str] = set()
+    for term in game["search_terms"]:
+        for suffix in QUERY_SUFFIXES:
+            try:
+                items = search_news(env["naver_id"], env["naver_secret"], f"{term} {suffix}", ARTICLES_PER_QUERY)
+            except Exception as e:  # noqa: BLE001 - 한 검색어 실패로 전체를 멈추지 않음
+                log.warning("[%s] 뉴스 검색 실패: %s", game["id"], e)
+                continue
+
+            for item in items:
+                if analyzed >= MAX_NEW_ARTICLES_PER_GAME:
+                    return
+                if item.url in visited or item.url in seen or not is_relevant(game, item.title):
+                    continue
+                visited.add(item.url)
+
+                body = fetch_article_text(item.url) or item.description
+                try:
+                    extracted = extract(env["api_key"], env["model"], game["full_name"],
+                                        item.title, body, item.published_at)
+                except ExtractError as e:
+                    log.warning("[%s] 추출 실패, 다음에 재시도: %s (%s)", game["id"], item.url, e)
+                    continue
+                analyzed += 1
+
+                if dry_run:
+                    print(f"\n# {item.title}\n{item.url}")
+                    print(json.dumps(extracted, ensure_ascii=False, indent=2))
+                    continue
+
+                changes = 0
+                for x in extracted:
+                    result = merge(events, game["id"], x, item.url)
+                    if result:
+                        changes += 1
+                        report.append((game["name"], result, x.get("title") or x.get("version"), item.title))
+                seen[item.url] = {
+                    "game": game["id"], "title": item.title,
+                    "seenAt": datetime.now(KST).isoformat(timespec="seconds"), "changes": changes,
+                }
+                log.info("[%s] %s → %d건 반영", game["id"], item.title, changes)
+
+
+def write_summary(report, removed: int) -> None:
+    """Actions 실행 결과 페이지에 변경 내역 표시"""
+    path = os.environ.get("GITHUB_STEP_SUMMARY")
+    lines = ["## 일정 수집 결과", ""]
+    if report:
+        lines += ["| 게임 | 결과 | 일정 | 출처 기사 |", "|---|---|---|---|"]
+        lines += [f"| {g} | {'추가' if r == 'added' else '갱신'} | {t} | {a} |" for g, r, t, a in report]
+    else:
+        lines.append("바뀐 일정이 없어요.")
+    if removed:
+        lines += ["", f"오래된 일정 {removed}건 정리"]
+    text = "\n".join(lines) + "\n"
+    if path:
+        with open(path, "a", encoding="utf-8") as f:
+            f.write(text)
+    print(text)
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--game", help="게임 id (생략하면 전체)")
+    parser.add_argument("--dry-run", action="store_true", help="파일 저장 없이 추출 결과만 출력")
+    args = parser.parse_args()
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
+
+    env = {
+        "naver_id": os.environ.get("NAVER_CLIENT_ID", ""),
+        "naver_secret": os.environ.get("NAVER_CLIENT_SECRET", ""),
+        "api_key": os.environ.get("ANTHROPIC_API_KEY", ""),
+        "model": os.environ.get("ANTHROPIC_MODEL") or DEFAULT_MODEL,
+    }
+    missing = [k for k in ("naver_id", "naver_secret", "api_key") if not env[k]]
+    if missing:
+        log.error("환경 변수가 비어 있어요: NAVER_CLIENT_ID / NAVER_CLIENT_SECRET / ANTHROPIC_API_KEY 를 확인하세요.")
+        return 1
+
+    if args.game and args.game not in GAMES_BY_ID:
+        log.error("알 수 없는 게임 id: %s (가능: %s)", args.game, ", ".join(GAMES_BY_ID))
+        return 1
+    targets = [GAMES_BY_ID[args.game]] if args.game else GAMES
+
+    doc = load_json(EVENTS_PATH, {"events": []})
+    events = {key_of(e): e for e in doc.get("events", [])}
+    seen = load_json(SEEN_PATH, {})
+
+    report: list = []
+    for game in targets:
+        run_game(game, events, seen, env, args.dry_run, report)
+
+    if args.dry_run:
+        return 0
+
+    removed = prune_old(events)
+    cutoff = datetime.now(KST) - timedelta(days=SEEN_KEEP_DAYS)
+    seen = {u: v for u, v in seen.items() if datetime.fromisoformat(v["seenAt"]) >= cutoff}
+
+    ordered = sorted(events.values(), key=lambda e: (e["startAt"], e["gameId"], e.get("phase") or 0))
+    new_doc = {
+        "updatedAt": datetime.now(KST).isoformat(timespec="seconds"),
+        "games": [{"id": g["id"], "name": g["name"], "color": g["color"]} for g in GAMES],
+        "events": ordered,
+    }
+    # 일정이 안 바뀌었으면 updatedAt 만 바뀌는 커밋을 만들지 않는다
+    if report or removed or doc.get("games") != new_doc["games"] or "updatedAt" not in doc:
+        save_json(EVENTS_PATH, new_doc)
+    save_json(SEEN_PATH, seen)
+    write_summary(report, removed)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
