@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-20T19:25:58+09:00",
+  "updatedAt": "2026-09-21T00:13:36+09:00",
   "games": [
     {
       "id": "genshin",
@@ -962,6 +962,53 @@
       "updatedAt": "2026-09-20T14:58:58+09:00"
     },
     {
+      "id": "hsr-4.6-update",
+      "gameId": "hsr",
+      "type": "VERSION_UPDATE",
+      "version": "4.6",
+      "phase": null,
+      "title": "4.6 버전 업데이트",
+      "characters": [],
+      "startAt": "2026-09-28T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": null,
+      "sourceUrl": "https://blog.naver.com/12512512/224418069506",
+      "evidence": "4.6 버전 프리뷰, 라이브 서버 9월 28일 적용",
+      "updatedAt": "2026-09-21T00:12:28+09:00"
+    },
+    {
+      "id": "hsr-4.6-p1",
+      "gameId": "hsr",
+      "type": "BANNER",
+      "version": "4.6",
+      "phase": 1,
+      "title": "4.6 전반 픽업",
+      "characters": [
+        {
+          "name": "펄",
+          "rarity": null,
+          "isNew": true
+        },
+        {
+          "name": "에바네시아",
+          "rarity": null,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-09-28T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": null,
+      "sourceUrl": "https://blog.naver.com/12512512/224418069506",
+      "evidence": "4.6 버전이 시작되는 9월 28일부터 펄 및 에바네시아 복각",
+      "updatedAt": "2026-09-21T00:12:28+09:00"
+    },
+    {
       "id": "wuwa-3.7-update",
       "gameId": "wuwa",
       "type": "VERSION_UPDATE",
@@ -1052,7 +1099,7 @@
       "characters": [
         {
           "name": "쇄명",
-          "rarity": null,
+          "rarity": 5,
           "isNew": true
         },
         {
@@ -1068,13 +1115,13 @@
       ],
       "startAt": "2026-10-22T00:00:00+09:00",
       "timeKnown": false,
-      "endAt": null,
+      "endAt": "2026-11-11T23:59:00+09:00",
       "endConfirmed": false,
       "status": "ESTIMATED",
       "note": null,
-      "sourceUrl": "https://blog.naver.com/12512512/224417223256",
-      "evidence": "10월 22일 후반부 쇄명, 루실라, 린네",
-      "updatedAt": "2026-09-20T14:48:15+09:00"
+      "sourceUrl": "https://blog.naver.com/orin2611/224418057638",
+      "evidence": "후반부 10월22일 - 11월11일",
+      "updatedAt": "2026-09-21T00:12:47+09:00"
     }
   ]
 }
