@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-20T13:12:14+09:00",
+  "updatedAt": "2026-09-20T13:51:12+09:00",
   "games": [
     {
       "id": "genshin",
@@ -253,8 +253,8 @@
       "status": "OFFICIAL",
       "note": null,
       "sourceUrl": "https://www.gameple.co.kr/news/articleView.html?idxno=216215",
-      "evidence": "8월 20일 업데이트되는 3.6 버전",
-      "updatedAt": "2026-09-20T11:44:34+09:00"
+      "evidence": "오는 8월 20일 업데이트되는 3.6 버전",
+      "updatedAt": "2026-09-20T13:51:03+09:00"
     },
     {
       "id": "wuwa-3.6-p1",
@@ -271,19 +271,19 @@
         },
         {
           "name": "데니아",
-          "rarity": 5,
+          "rarity": null,
           "isNew": false
         }
       ],
       "startAt": "2026-08-20T00:00:00+09:00",
       "timeKnown": false,
-      "endAt": "2026-09-10T00:00:00+09:00",
+      "endAt": null,
       "endConfirmed": false,
       "status": "OFFICIAL",
-      "sourceUrl": "https://www.gamsgo.com/ko/blog/%EB%AA%85%EC%A1%B0-%EC%9B%8C%EB%8D%94%EB%A7%81-%EC%9B%A8%EC%9D%B4%EB%B8%8C-3-6-%ED%94%BD%EC%97%85",
       "note": null,
-      "evidence": null,
-      "updatedAt": "2026-09-19T18:00:00+09:00"
+      "sourceUrl": "https://www.gamemeca.com/mv.php?inflow=naver&gid=1778892",
+      "evidence": "3.6 전반부 청초 및 데니아 픽업",
+      "updatedAt": "2026-09-20T13:51:12+09:00"
     },
     {
       "id": "wuwa-3.6-p2",
@@ -300,24 +300,24 @@
         },
         {
           "name": "히유키",
-          "rarity": 5,
+          "rarity": null,
           "isNew": false
         },
         {
           "name": "모니에",
-          "rarity": 5,
+          "rarity": null,
           "isNew": false
         }
       ],
       "startAt": "2026-08-20T00:00:00+09:00",
       "timeKnown": false,
-      "endAt": "2026-09-30T05:00:00+09:00",
-      "endConfirmed": true,
+      "endAt": null,
+      "endConfirmed": false,
       "status": "OFFICIAL",
-      "sourceUrl": "https://www.gamemeca.com/mv.php?inflow=naver&gid=1778892",
       "note": null,
+      "sourceUrl": "https://www.gamemeca.com/mv.php?inflow=naver&gid=1778892",
       "evidence": "3.6 후반부 경연, 히유키, 모니에 픽업",
-      "updatedAt": "2026-09-20T11:44:44+09:00"
+      "updatedAt": "2026-09-20T13:51:12+09:00"
     },
     {
       "id": "hsr-4.5-p1",
@@ -347,30 +347,6 @@
       "note": null,
       "evidence": null,
       "updatedAt": "2026-09-19T18:00:00+09:00"
-    },
-    {
-      "id": "wuwa-3.7-p2",
-      "gameId": "wuwa",
-      "type": "BANNER",
-      "version": "3.7",
-      "phase": 2,
-      "title": "3.7 후반 픽업",
-      "characters": [
-        {
-          "name": "쇄명",
-          "rarity": 5,
-          "isNew": true
-        }
-      ],
-      "startAt": "2026-08-27T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": "2026-11-11T00:00:00+09:00",
-      "endConfirmed": false,
-      "status": "ESTIMATED",
-      "note": "캐릭터는 공식 공개, 전후반 순서는 유출 기준",
-      "sourceUrl": "https://www.gametoc.co.kr/news/articleView.html?idxno=110984",
-      "evidence": "후반부 픽업 튜닝은 쇄명으로 결정",
-      "updatedAt": "2026-09-20T03:58:47+09:00"
     },
     {
       "id": "genshin-7.0-p2",
@@ -690,6 +666,30 @@
       "updatedAt": "2026-09-20T03:35:40+09:00"
     },
     {
+      "id": "wuwa-3.7-p2",
+      "gameId": "wuwa",
+      "type": "BANNER",
+      "version": "3.7",
+      "phase": 2,
+      "title": "3.7 후반 픽업",
+      "characters": [
+        {
+          "name": "쇄명",
+          "rarity": null,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-09-24T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": null,
+      "sourceUrl": "https://www.gametoc.co.kr/news/articleView.html?idxno=110984",
+      "evidence": "후반부 픽업 튜닝은 쇄명으로 결정됐다",
+      "updatedAt": "2026-09-20T13:50:44+09:00"
+    },
+    {
       "id": "nikke-2026-09-24-p0",
       "gameId": "nikke",
       "type": "BANNER",
@@ -771,17 +771,17 @@
       "type": "VERSION_UPDATE",
       "version": "3.7",
       "phase": null,
-      "title": "3.7 업데이트",
+      "title": "3.7 버전 업데이트",
       "characters": [],
       "startAt": "2026-09-30T00:00:00+09:00",
       "timeKnown": false,
       "endAt": null,
       "endConfirmed": false,
       "status": "OFFICIAL",
-      "sourceUrl": "https://namu.wiki/w/%EB%AA%85%EC%A1%B0:%20%EC%9B%8C%EB%8D%94%EB%A7%81%20%EC%9B%A8%EC%9D%B4%EB%B8%8C/%EC%9D%BC%EC%A0%95",
       "note": null,
-      "evidence": null,
-      "updatedAt": "2026-09-19T18:00:00+09:00"
+      "sourceUrl": "https://www.gametoc.co.kr/news/articleView.html?idxno=111648",
+      "evidence": "3.7 버전 '몽주의 궤적' 9월 30일 정식 오픈",
+      "updatedAt": "2026-09-20T13:50:19+09:00"
     },
     {
       "id": "wuwa-3.7-p1",
@@ -809,13 +809,13 @@
       ],
       "startAt": "2026-09-30T00:00:00+09:00",
       "timeKnown": false,
-      "endAt": "2026-10-21T00:00:00+09:00",
+      "endAt": null,
       "endConfirmed": false,
       "status": "OFFICIAL",
-      "note": "캐릭터는 공식 공개, 전후반 순서는 유출 기준",
+      "note": null,
       "sourceUrl": "https://www.gametoc.co.kr/news/articleView.html?idxno=111648",
-      "evidence": "3.7 버전 전반부 픽업",
-      "updatedAt": "2026-09-20T03:58:23+09:00"
+      "evidence": "3.7 버전 픽업 튜닝 전반부 여우의 별자리, 유노, 치사",
+      "updatedAt": "2026-09-20T13:50:19+09:00"
     },
     {
       "id": "hsr-4.6-update",
