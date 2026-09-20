@@ -3,7 +3,7 @@
 픽업 달력 앱이 읽는 게임 일정 데이터 저장소. GitHub Actions가 6시간마다 뉴스를 검색해서 `data/events.json`을 갱신한다.
 
 ```
-[Actions, 6시간마다] 네이버 뉴스 검색 → 기사 본문 → Gemini로 일정 추출 → 병합 → data/ 커밋
+[Actions, 6시간마다] 네이버 뉴스·블로그 검색 → 본문 → Gemini로 일정 추출 → 병합 → data/ 커밋
 [앱] https://raw.githubusercontent.com/<계정>/gacha-calendar-data/main/data/events.json 읽기
 ```
 
@@ -15,7 +15,7 @@
 | `data/seen_articles.json` | 이미 분석한 기사 URL (같은 기사를 다시 모델에 보내지 않기 위함, 120일 보관) |
 | `collector/collect.py` | 실행 진입점 |
 | `collector/games.py` | 게임 목록, 검색어, 색상 |
-| `collector/sources.py` | 네이버 뉴스 검색, 본문 추출 |
+| `collector/sources.py` | 네이버 뉴스·블로그 검색, 본문 추출 |
 | `collector/extractor.py` | 추출 프롬프트와 모델 호출 (Gemini 기본, Anthropic 선택 가능) |
 | `collector/merge.py` | 병합 규칙 (공식 > 추정 > 유출) |
 
@@ -23,10 +23,11 @@
 
 1. **이 폴더를 공개(Public) 저장소로 올린다.** 앱이 로그인 없이 파일을 읽으려면 공개여야 해요.
 2. 저장소 **Settings → Secrets and variables → Actions → Secrets** 에 추가
-   - `NAVER_CLIENT_ID`, `NAVER_CLIENT_SECRET` (네이버 클라우드 플랫폼 콘솔 → NAVER API HUB → Application → 인증 정보)
+   - `NAVER_CLIENT_ID`, `NAVER_CLIENT_SECRET` (네이버 클라우드 플랫폼 콘솔 → NAVER API HUB → Application → 인증 정보). Application에서 **뉴스**와 **블로그** API를 둘 다 선택해야 해요
    - `LLM_API_KEY` (Google AI Studio → Get API key 에서 발급한 Gemini 키)
 3. (선택) 같은 화면 **Variables** 탭
    - `MODEL`: 모델 이름을 직접 지정 (비워두면 `gemini-flash-lite-latest`)
+   - `USE_BLOG`: `false` 로 두면 블로그 검색을 꺼요 (기본 켜짐)
    - `LLM_PROVIDER`: `anthropic` 으로 바꾸면 Claude API를 사용. 이때 `LLM_API_KEY` 에는 Anthropic 키를 넣어요 (기본 모델 `claude-haiku-4-5-20251001`)
 4. **Actions 탭 → 일정 수집 → Run workflow** 로 한 번 수동 실행. `game`에 `genshin` 을 넣어 한 게임만 먼저 테스트하는 걸 추천해요.
 5. 실행 결과 페이지 아래 Summary에 추가·갱신된 일정 표가 나와요. 바뀐 게 있으면 `data:` 로 시작하는 커밋이 생깁니다.
@@ -43,6 +44,8 @@
 - 초기화 중 검색이나 추출이 전부 실패하면 저장하지 않아서 기존 일정이 그대로 남아요.
 
 ## 병합 규칙 요약
+
+- 블로그는 보조 소스예요. 게임당 최대 3개(초기화 때 6개)만 보고, 블로그에서 나온 정보는 최대 `ESTIMATED` 로만 저장해서 공식 뉴스 정보를 덮어쓰지 못해요.
 
 - 신뢰도는 `OFFICIAL` > `ESTIMATED` > `LEAK`. 낮은 쪽이 높은 쪽을 덮어쓰지 못해요.
 - 날짜만 있는 정보끼리는 먼저 저장된 것을 믿고, 시각이 새로 확인되거나 더 믿을 만한 출처일 때만 바꿔요.

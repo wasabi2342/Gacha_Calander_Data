@@ -101,9 +101,11 @@ PROVIDERS = {"gemini": _call_gemini, "anthropic": _call_anthropic}
 
 
 def extract(provider: str, api_key: str, model: str, game_full_name: str, title: str, body: str,
-            published_at: datetime) -> list[dict]:
+            published_at: datetime, source: str = "news") -> list[dict]:
+    kind = "개인 블로그 글 (팬이 정리한 글이라 틀릴 수 있음)" if source == "blog" else "뉴스 기사"
     user = (f"게임: {game_full_name}\n"
-            f"기사 발행 시각(KST): {_fmt_pub(published_at)}\n"
+            f"글 종류: {kind}\n"
+            f"작성 시각(KST): {_fmt_pub(published_at)}\n"
             f"기사 제목: {title}\n\n"
             f"기사 본문:\n{body}")
     try:

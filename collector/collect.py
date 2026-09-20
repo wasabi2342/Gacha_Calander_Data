@@ -22,7 +22,7 @@ from pathlib import Path
 from extractor import DEFAULT_MODELS, PROVIDERS, ExtractError, RateLimited, extract
 from games import GAMES, GAMES_BY_ID, is_relevant
 from merge import cleanup, key_of, merge, prune_old
-from sources import fetch_article_text, search_news
+from sources import fetch_article_text, search_blog, search_news
 
 KST = timezone(timedelta(hours=9))
 ROOT = Path(__file__).resolve().parent.parent
@@ -30,6 +30,8 @@ EVENTS_PATH = ROOT / "data" / "events.json"
 SEEN_PATH = ROOT / "data" / "seen_articles.json"
 
 QUERY_SUFFIXES = ["업데이트", "픽업"]
+BLOG_QUERY_SUFFIX = "픽업 일정"
+MAX_BLOG_ARTICLES_PER_GAME = 3  # 블로그는 보조 소스라 게임당 조금만 본다
 ARTICLES_PER_QUERY = 10
 MAX_NEW_ARTICLES_PER_GAME = 6   # 1회 실행당 게임별 모델 호출 상한 (무료 한도 보호)
 MAX_ARTICLES_ON_RESET = 12      # --reset 때는 조금 더 많이 본다
@@ -41,7 +43,7 @@ log = logging.getLogger("collect")
 
 # 실행 진단용 집계. 실패해도 경고만 남기면 Actions가 "성공"으로 보여서 원인을 놓치기 쉽다
 STATS = {"search_ok": 0, "search_fail": 0, "extract_ok": 0, "extract_fail": 0, "relevant": 0,
-         "items": 0, "items_skipped": 0, "items_same": 0, "items_ignored": 0}
+         "items": 0, "items_skipped": 0, "items_same": 0, "items_ignored": 0, "blog_ok": 0}
 FIRST_ERROR: dict[str, str] = {}
 CONSECUTIVE_FAILS = [0]
 
@@ -63,71 +65,84 @@ def save_json(path: Path, data) -> None:
 
 
 def run_game(game, events, seen, env, dry_run, report, reprocess=False, limit=MAX_NEW_ARTICLES_PER_GAME) -> None:
-    analyzed = 0
     visited: set[str] = set()
-    for term in game["search_terms"]:
-        for suffix in QUERY_SUFFIXES:
-            try:
-                items = search_news(env["naver_id"], env["naver_secret"], f"{term} {suffix}", ARTICLES_PER_QUERY)
-            except Exception as e:  # noqa: BLE001 - 한 검색어 실패로 전체를 멈추지 않음
-                detail = getattr(getattr(e, "response", None), "text", "") or ""
-                log.warning("[%s] 뉴스 검색 실패: %s %s", game["id"], e, detail[:200])
-                _record_error("search_fail", f"{e} {detail[:200]}")
+
+    # (소스, 검색어, 이 소스에서 분석할 최대 기사 수)
+    jobs = [("news", f"{term} {suffix}", limit) for term in game["search_terms"] for suffix in QUERY_SUFFIXES]
+    if env.get("use_blog"):
+        blog_limit = MAX_BLOG_ARTICLES_PER_GAME * (2 if limit > MAX_NEW_ARTICLES_PER_GAME else 1)
+        jobs += [("blog", f"{term} {BLOG_QUERY_SUFFIX}", blog_limit) for term in game["search_terms"][:1]]
+    analyzed = {"news": 0, "blog": 0}
+
+    for source, query, cap in jobs:
+        search = search_blog if source == "blog" else search_news
+        try:
+            items = search(env["naver_id"], env["naver_secret"], query, ARTICLES_PER_QUERY)
+        except Exception as e:  # noqa: BLE001 - 한 검색어 실패로 전체를 멈추지 않음
+            detail = getattr(getattr(e, "response", None), "text", "") or ""
+            log.warning("[%s] %s 검색 실패: %s %s", game["id"], "블로그" if source == "blog" else "뉴스", e, detail[:200])
+            _record_error("search_fail", f"[{source}] {e} {detail[:200]}")
+            continue
+        STATS["search_ok"] += 1
+
+        for item in items:
+            if analyzed[source] >= cap:
+                break
+            if item.url in visited or (item.url in seen and not reprocess) or not is_relevant(game, item.title):
                 continue
-            STATS["search_ok"] += 1
+            visited.add(item.url)
+            STATS["relevant"] += 1
 
-            for item in items:
-                if analyzed >= limit:
-                    return
-                if item.url in visited or (item.url in seen and not reprocess) or not is_relevant(game, item.title):
-                    continue
-                visited.add(item.url)
-                STATS["relevant"] += 1
+            body = fetch_article_text(item.url) or item.description
+            if STATS["extract_ok"] + STATS["extract_fail"] > 0:
+                time.sleep(CALL_INTERVAL_SEC)
+            try:
+                extracted = extract(env["provider"], env["api_key"], env["model"], game["full_name"],
+                                    item.title, body, item.published_at, source=item.source)
+            except RateLimited:
+                raise  # main 에서 이번 실행을 멈춘다
+            except ExtractError as e:
+                log.warning("[%s] 추출 실패, 다음에 재시도: %s (%s)", game["id"], item.url, e)
+                _record_error("extract_fail", str(e))
+                CONSECUTIVE_FAILS[0] += 1
+                if CONSECUTIVE_FAILS[0] >= MAX_CONSECUTIVE_FAILS:
+                    raise RateLimited(f"추출이 {MAX_CONSECUTIVE_FAILS}번 연속 실패했어요") from e
+                continue
+            CONSECUTIVE_FAILS[0] = 0
+            analyzed[source] += 1
+            STATS["extract_ok"] += 1
+            if source == "blog":
+                STATS["blog_ok"] += 1
 
-                body = fetch_article_text(item.url) or item.description
-                if STATS["extract_ok"] + STATS["extract_fail"] > 0:
-                    time.sleep(CALL_INTERVAL_SEC)
-                try:
-                    extracted = extract(env["provider"], env["api_key"], env["model"], game["full_name"],
-                                        item.title, body, item.published_at)
-                except RateLimited:
-                    raise  # main 에서 이번 실행을 멈춘다
-                except ExtractError as e:
-                    log.warning("[%s] 추출 실패, 다음에 재시도: %s (%s)", game["id"], item.url, e)
-                    _record_error("extract_fail", str(e))
-                    CONSECUTIVE_FAILS[0] += 1
-                    if CONSECUTIVE_FAILS[0] >= MAX_CONSECUTIVE_FAILS:
-                        raise RateLimited(f"추출이 {MAX_CONSECUTIVE_FAILS}번 연속 실패했어요") from e
-                    continue
-                CONSECUTIVE_FAILS[0] = 0
-                analyzed += 1
-                STATS["extract_ok"] += 1
+            if dry_run:
+                print(f"\n# [{source}] {item.title}\n{item.url}")
+                print(json.dumps(extracted, ensure_ascii=False, indent=2))
+                continue
 
-                if dry_run:
-                    print(f"\n# {item.title}\n{item.url}")
-                    print(json.dumps(extracted, ensure_ascii=False, indent=2))
-                    continue
-
-                changes = 0
-                for x in extracted:
-                    STATS["items"] += 1
-                    result = merge(events, game["id"], x, item.url)
-                    if result is None:
-                        STATS["items_same"] += 1
-                    elif result.startswith("ignore:"):
-                        STATS["items_ignored"] += 1
-                    elif result.startswith("skip:"):
-                        STATS["items_skipped"] += 1
-                        FIRST_ERROR.setdefault("items_skipped", f"{result[5:]} ← {json.dumps(x, ensure_ascii=False)[:200]}")
-                        log.info("[%s] 버린 일정: %s", game["id"], result[5:])
-                    else:
-                        changes += 1
-                        report.append((game["name"], result, x.get("title") or x.get("version"), item.title))
-                seen[item.url] = {
-                    "game": game["id"], "title": item.title,
-                    "seenAt": datetime.now(KST).isoformat(timespec="seconds"), "changes": changes,
-                }
-                log.info("[%s] %s → %d건 반영", game["id"], item.title, changes)
+            changes = 0
+            for x in extracted:
+                if source == "blog" and x.get("status") == "OFFICIAL":
+                    # 블로그는 개인이 정리한 글이라 공식 정보로 인정하지 않는다
+                    x["status"] = "ESTIMATED"
+                STATS["items"] += 1
+                result = merge(events, game["id"], x, item.url)
+                if result is None:
+                    STATS["items_same"] += 1
+                elif result.startswith("ignore:"):
+                    STATS["items_ignored"] += 1
+                elif result.startswith("skip:"):
+                    STATS["items_skipped"] += 1
+                    FIRST_ERROR.setdefault("items_skipped", f"{result[5:]} ← {json.dumps(x, ensure_ascii=False)[:200]}")
+                    log.info("[%s] 버린 일정: %s", game["id"], result[5:])
+                else:
+                    changes += 1
+                    label = f"[블로그] {item.title}" if source == "blog" else item.title
+                    report.append((game["name"], result, x.get("title") or x.get("version"), label))
+            seen[item.url] = {
+                "game": game["id"], "title": item.title, "source": source,
+                "seenAt": datetime.now(KST).isoformat(timespec="seconds"), "changes": changes,
+            }
+            log.info("[%s] %s%s → %d건 반영", game["id"], "[블로그] " if source == "blog" else "", item.title, changes)
 
 
 def write_summary(report, removed: int, stopped: str | None, cleaned: int = 0, reset_removed: int = 0) -> None:
@@ -153,7 +168,7 @@ def write_summary(report, removed: int, stopped: str | None, cleaned: int = 0, r
         "", "### 진단", "",
         f"- 뉴스 검색: 성공 {STATS['search_ok']} / 실패 {STATS['search_fail']}",
         f"- 새로 찾은 관련 기사: {STATS['relevant']}",
-        f"- 모델 추출: 성공 {STATS['extract_ok']} / 실패 {STATS['extract_fail']}",
+        f"- 모델 추출: 성공 {STATS['extract_ok']} (블로그 {STATS['blog_ok']}) / 실패 {STATS['extract_fail']}",
         f"- 뽑아낸 일정: {STATS['items']}건 (반영 "
         f"{STATS['items'] - STATS['items_same'] - STATS['items_skipped'] - STATS['items_ignored']}"
         f" / 이미 같은 정보 {STATS['items_same']} / 형식 문제로 버림 {STATS['items_skipped']}"
@@ -185,6 +200,8 @@ def main() -> int:
         "naver_secret": os.environ.get("NAVER_CLIENT_SECRET", ""),
         "provider": (os.environ.get("LLM_PROVIDER") or "gemini").strip().lower(),
         "api_key": os.environ.get("LLM_API_KEY", ""),
+        # 저장소 Variables 에 USE_BLOG=false 를 넣으면 블로그 검색을 끈다
+        "use_blog": (os.environ.get("USE_BLOG") or "true").strip().lower() not in ("false", "0", "no", "off"),
     }
     if env["provider"] not in PROVIDERS:
         log.error("LLM_PROVIDER 는 %s 중 하나여야 해요 (지금: %s)", " / ".join(PROVIDERS), env["provider"])
@@ -194,7 +211,7 @@ def main() -> int:
     if missing:
         log.error("환경 변수가 비어 있어요: NAVER_CLIENT_ID / NAVER_CLIENT_SECRET / LLM_API_KEY 를 확인하세요.")
         return 1
-    log.info("추출 모델: %s / %s", env["provider"], env["model"])
+    log.info("추출 모델: %s / %s, 블로그 검색: %s", env["provider"], env["model"], "켜짐" if env["use_blog"] else "꺼짐")
 
     if args.game and args.game not in GAMES_BY_ID:
         log.error("알 수 없는 게임 id: %s (가능: %s)", args.game, ", ".join(GAMES_BY_ID))

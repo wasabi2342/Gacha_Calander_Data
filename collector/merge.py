@@ -139,6 +139,17 @@ def _find_same_banner(events: dict[str, dict], game_id: str, start: str, chars: 
     return None
 
 
+def _find_phased_banner(events: dict[str, dict], game_id: str, version: str, chars: list[dict]) -> str | None:
+    keys = _new_keys(chars)
+    if not keys:
+        return None
+    for ph in (1, 2):
+        k = event_key(game_id, "BANNER", version, ph)
+        if k in events and keys & _new_keys(events[k].get("characters") or []):
+            return k
+    return None
+
+
 def _rekey(events: dict[str, dict], old_key: str, e: dict) -> None:
     """버전 없는 픽업의 시작일이 바뀌면 키와 id도 새 날짜로 옮긴다"""
     e["version"] = e["startAt"][:10]
@@ -241,6 +252,11 @@ def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str) -> st
         found = _find_same_banner(events, game_id, start, chars)
         if found:
             key, e = found, events[found]
+    if e is None and type_ == "BANNER" and not date_keyed and phase is None:
+        # 전반/후반을 모르는 픽업은, 같은 버전에서 신규 캐릭터가 겹치는 픽업이 있으면 그쪽으로 합친다
+        found = _find_phased_banner(events, game_id, version, chars)
+        if found:
+            key, e = found, events[found]
     if e is None:
         events[key] = {
             "id": event_id(game_id, type_, version, phase),
@@ -312,6 +328,15 @@ def cleanup(events: dict[str, dict]) -> int:
         if chars != (e.get("characters") or []):
             e["characters"] = chars
             changed += 1
+
+    # 전반/후반을 모른 채 저장된 픽업이 같은 버전의 전반·후반 픽업과 겹치면 합친다
+    for k, e in list(events.items()):
+        if e["type"] == "BANNER" and not is_date_version(e["version"]) and e.get("phase") is None:
+            found = _find_phased_banner(events, e["gameId"], e["version"], e.get("characters") or [])
+            if found and found != k:
+                _absorb(events[found], e)
+                del events[k]
+                changed += 1
 
     changed += _repair_version_banners(events)
 
