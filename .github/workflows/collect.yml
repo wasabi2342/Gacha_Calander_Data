@@ -14,6 +14,11 @@ on:
         type: boolean
         required: false
         default: false
+      reset:
+        description: "선택한 게임의 일정을 지우고 처음부터 다시 수집 (game 필수)"
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write            # data/ 커밋용
@@ -46,10 +51,12 @@ jobs:
           MODEL: ${{ vars.MODEL }}                    # 비워두면 제공자별 기본 모델
           GAME: ${{ inputs.game }}
           REPROCESS: ${{ inputs.reprocess }}
+          RESET: ${{ inputs.reset }}
         run: |
           ARGS=""
           if [ -n "$GAME" ]; then ARGS="$ARGS --game $GAME"; fi
           if [ "$REPROCESS" = "true" ]; then ARGS="$ARGS --reprocess"; fi
+          if [ "$RESET" = "true" ]; then ARGS="$ARGS --reset"; fi
           python collector/collect.py $ARGS
 
       - name: 변경 사항 커밋

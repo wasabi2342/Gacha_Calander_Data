@@ -4,6 +4,7 @@
     python collector/collect.py --game genshin  # 한 게임만
     python collector/collect.py --game genshin --dry-run   # 파일 저장 없이 추출 결과만 출력
     python collector/collect.py --game nikke --reprocess   # 이미 본 기사도 다시 분석 (추출 규칙을 고친 뒤)
+    python collector/collect.py --game nikke --reset       # 그 게임 일정을 지우고 최근 기사로 처음부터 다시 수집
 
 환경 변수: NAVER_CLIENT_ID, NAVER_CLIENT_SECRET, LLM_API_KEY
          (선택) LLM_PROVIDER = gemini(기본) | anthropic, (선택) MODEL
@@ -19,7 +20,7 @@ from pathlib import Path
 
 from extractor import DEFAULT_MODELS, PROVIDERS, ExtractError, RateLimited, extract
 from games import GAMES, GAMES_BY_ID, is_relevant
-from merge import key_of, merge, prune_old
+from merge import cleanup, key_of, merge, prune_old
 from sources import fetch_article_text, search_news
 
 KST = timezone(timedelta(hours=9))
@@ -30,6 +31,7 @@ SEEN_PATH = ROOT / "data" / "seen_articles.json"
 QUERY_SUFFIXES = ["업데이트", "픽업"]
 ARTICLES_PER_QUERY = 10
 MAX_NEW_ARTICLES_PER_GAME = 6   # 1회 실행당 게임별 모델 호출 상한 (무료 한도 보호)
+MAX_ARTICLES_ON_RESET = 12      # --reset 때는 조금 더 많이 본다
 CALL_INTERVAL_SEC = 6           # 분당 호출 한도에 걸리지 않게 호출 사이 대기
 MAX_CONSECUTIVE_FAILS = 3       # 추출이 연달아 이만큼 실패하면 설정 문제로 보고 이번 실행을 멈춤
 SEEN_KEEP_DAYS = 120
@@ -59,7 +61,7 @@ def save_json(path: Path, data) -> None:
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def run_game(game, events, seen, env, dry_run, report, reprocess=False) -> None:
+def run_game(game, events, seen, env, dry_run, report, reprocess=False, limit=MAX_NEW_ARTICLES_PER_GAME) -> None:
     analyzed = 0
     visited: set[str] = set()
     for term in game["search_terms"]:
@@ -74,7 +76,7 @@ def run_game(game, events, seen, env, dry_run, report, reprocess=False) -> None:
             STATS["search_ok"] += 1
 
             for item in items:
-                if analyzed >= MAX_NEW_ARTICLES_PER_GAME:
+                if analyzed >= limit:
                     return
                 if item.url in visited or (item.url in seen and not reprocess) or not is_relevant(game, item.title):
                     continue
@@ -127,7 +129,7 @@ def run_game(game, events, seen, env, dry_run, report, reprocess=False) -> None:
                 log.info("[%s] %s → %d건 반영", game["id"], item.title, changes)
 
 
-def write_summary(report, removed: int, stopped: str | None) -> None:
+def write_summary(report, removed: int, stopped: str | None, cleaned: int = 0, reset_removed: int = 0) -> None:
     """Actions 실행 결과 페이지에 변경 내역 표시"""
     path = os.environ.get("GITHUB_STEP_SUMMARY")
     lines = ["## 일정 수집 결과", ""]
@@ -136,6 +138,10 @@ def write_summary(report, removed: int, stopped: str | None) -> None:
         lines += [f"| {g} | {'추가' if r == 'added' else '갱신'} | {t} | {a} |" for g, r, t, a in report]
     else:
         lines.append("바뀐 일정이 없어요.")
+    if reset_removed:
+        lines += ["", f"초기화로 기존 일정 {reset_removed}건 삭제 후 다시 수집"]
+    if cleaned:
+        lines += ["", f"중복·표기 정리 {cleaned}건"]
     if removed:
         lines += ["", f"오래된 일정 {removed}건 정리"]
     if stopped:
@@ -166,6 +172,7 @@ def main() -> int:
     parser.add_argument("--game", help="게임 id (생략하면 전체)")
     parser.add_argument("--dry-run", action="store_true", help="파일 저장 없이 추출 결과만 출력")
     parser.add_argument("--reprocess", action="store_true", help="이미 본 기사도 다시 분석")
+    parser.add_argument("--reset", action="store_true", help="--game 의 일정을 지우고 처음부터 다시 수집")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
@@ -188,17 +195,28 @@ def main() -> int:
     if args.game and args.game not in GAMES_BY_ID:
         log.error("알 수 없는 게임 id: %s (가능: %s)", args.game, ", ".join(GAMES_BY_ID))
         return 1
+    if args.reset and not args.game:
+        log.error("--reset 은 --game 과 함께 써야 해요 (전체 초기화 방지)")
+        return 1
     targets = [GAMES_BY_ID[args.game]] if args.game else GAMES
 
     doc = load_json(EVENTS_PATH, {"events": []})
     events = {key_of(e): e for e in doc.get("events", [])}
     seen = load_json(SEEN_PATH, {})
+    reset_removed = 0
+    if args.reset and not args.dry_run:
+        for k in [k for k, e in events.items() if e["gameId"] == args.game]:
+            del events[k]
+            reset_removed += 1
+        seen = {u: v for u, v in seen.items() if v.get("game") != args.game}
+        log.info("[%s] 초기화: 일정 %d건 삭제", args.game, reset_removed)
 
     report: list = []
     stopped = None
     for game in targets:
         try:
-            run_game(game, events, seen, env, args.dry_run, report, args.reprocess)
+            run_game(game, events, seen, env, args.dry_run, report, args.reprocess or args.reset,
+                     MAX_ARTICLES_ON_RESET if args.reset else MAX_NEW_ARTICLES_PER_GAME)
         except RateLimited as e:
             stopped = f"{game['name']}에서 멈췄어요 ({e})."
             log.warning("%s (%s)", stopped, e)
@@ -207,6 +225,7 @@ def main() -> int:
     if args.dry_run:
         return 0
 
+    cleaned = cleanup(events)
     removed = prune_old(events)
     cutoff = datetime.now(KST) - timedelta(days=SEEN_KEEP_DAYS)
     seen = {u: v for u, v in seen.items() if datetime.fromisoformat(v["seenAt"]) >= cutoff}
@@ -218,10 +237,10 @@ def main() -> int:
         "events": ordered,
     }
     # 일정이 안 바뀌었으면 updatedAt 만 바뀌는 커밋을 만들지 않는다
-    if report or removed or doc.get("games") != new_doc["games"] or "updatedAt" not in doc:
+    if report or removed or cleaned or reset_removed or doc.get("games") != new_doc["games"] or "updatedAt" not in doc:
         save_json(EVENTS_PATH, new_doc)
     save_json(SEEN_PATH, seen)
-    write_summary(report, removed, stopped)
+    write_summary(report, removed, stopped, cleaned, reset_removed)
 
     # 전부 실패했으면 실행을 실패(빨간 X)로 표시해서 바로 알아챌 수 있게 한다
     if STATS["search_ok"] == 0 and STATS["search_fail"] > 0:
