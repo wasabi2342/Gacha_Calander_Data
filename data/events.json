@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-20T15:00:03+09:00",
+  "updatedAt": "2026-09-20T19:25:58+09:00",
   "games": [
     {
       "id": "genshin",
@@ -124,6 +124,24 @@
       "sourceUrl": "https://www.inven.co.kr/webzine/news/?news=318116",
       "evidence": "토오사카 린과 길가메시는 오는 7월 24일 픽업으로 등장",
       "updatedAt": "2026-09-20T14:44:57+09:00"
+    },
+    {
+      "id": "hsr-4.4-update",
+      "gameId": "hsr",
+      "type": "VERSION_UPDATE",
+      "version": "4.4",
+      "phase": null,
+      "title": "4.4 버전 업데이트",
+      "characters": [],
+      "startAt": "2026-07-24T12:00:00+09:00",
+      "timeKnown": true,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": null,
+      "sourceUrl": "https://blog.naver.com/didcjddns/224363293368",
+      "evidence": "4.4 버전 업데이트 후",
+      "updatedAt": "2026-09-20T19:23:49+09:00"
     },
     {
       "id": "nte-1.2-p2",
@@ -258,6 +276,63 @@
       "sourceUrl": "https://blog.naver.com/ssoyun0901/224365826348",
       "evidence": "8월 4일 교카네, 세이아, 교스나, 바토키 모집",
       "updatedAt": "2026-09-20T14:54:29+09:00"
+    },
+    {
+      "id": "genshin-7.0-update",
+      "gameId": "genshin",
+      "type": "VERSION_UPDATE",
+      "version": "7.0",
+      "phase": null,
+      "title": "7.0 업데이트",
+      "characters": [],
+      "startAt": "2026-08-12T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": null,
+      "sourceUrl": "https://blog.naver.com/orin2611/224366654614",
+      "evidence": "7.0 일정은 26년8월12일(수)에 업데이트 예정",
+      "updatedAt": "2026-09-20T19:23:15+09:00"
+    },
+    {
+      "id": "genshin-7.0-p1",
+      "gameId": "genshin",
+      "type": "BANNER",
+      "version": "7.0",
+      "phase": 1,
+      "title": "7.0 전반 픽업",
+      "characters": [
+        {
+          "name": "오데트",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "아를레키노",
+          "rarity": 5,
+          "isNew": false
+        },
+        {
+          "name": "알료사",
+          "rarity": 4,
+          "isNew": true
+        },
+        {
+          "name": "알료샤",
+          "rarity": 4,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-08-12T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": null,
+      "sourceUrl": "https://blog.naver.com/didcjddns/224366173205",
+      "evidence": "원신 7.0 버전 전반 픽업 배너",
+      "updatedAt": "2026-09-20T19:23:23+09:00"
     },
     {
       "id": "nikke-2026-08-13-p0",
@@ -673,6 +748,40 @@
       "sourceUrl": "https://www.xportsnews.com/article/2190233",
       "evidence": "3.2 버전 상반기 클라렛, 남궁우 복각",
       "updatedAt": "2026-09-20T14:51:13+09:00"
+    },
+    {
+      "id": "wuwa-3.6-p2",
+      "gameId": "wuwa",
+      "type": "BANNER",
+      "version": "3.6",
+      "phase": 2,
+      "title": "3.6 후반 픽업",
+      "characters": [
+        {
+          "name": "경연",
+          "rarity": null,
+          "isNew": true
+        },
+        {
+          "name": "히유키",
+          "rarity": null,
+          "isNew": false
+        },
+        {
+          "name": "모니에",
+          "rarity": null,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-09-10T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-10-01T23:59:00+09:00",
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": null,
+      "sourceUrl": "https://blog.naver.com/orin2611/224371639395",
+      "evidence": "경연의 픽업 일정은 청초 픽업이 끝나는 9월10일부터 10월1일까지",
+      "updatedAt": "2026-09-20T19:23:59+09:00"
     },
     {
       "id": "hsr-4.5-p2",
