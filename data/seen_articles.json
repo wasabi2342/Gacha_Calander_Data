@@ -89,42 +89,6 @@
     "seenAt": "2026-09-20T03:57:57+09:00",
     "changes": 3
   },
-  "https://www.inven.co.kr/webzine/news/?news=320387": {
-    "game": "wuwa",
-    "title": "'명조' 여우의 별자리와 쇄명 인게임 플레이 영상 공개",
-    "seenAt": "2026-09-20T03:58:06+09:00",
-    "changes": 0
-  },
-  "https://www.thisisgame.com/articles/429497": {
-    "game": "wuwa",
-    "title": "[포토+영상] 2년간의 여정을 음악으로 재현하다 '명조 콘서트'",
-    "seenAt": "2026-09-20T03:58:13+09:00",
-    "changes": 0
-  },
-  "https://www.gametoc.co.kr/news/articleView.html?idxno=111648": {
-    "game": "wuwa",
-    "title": "명조 3.7 \"명조에 대한 공격은 나에 대한 공격으로 간주한다\"",
-    "seenAt": "2026-09-20T03:58:23+09:00",
-    "changes": 1
-  },
-  "https://www.gametoc.co.kr/news/articleView.html?idxno=111178": {
-    "game": "wuwa",
-    "title": "[명조] 여우의 별자리 & 쇄명 \"이래도 지갑 안 열어?\"",
-    "seenAt": "2026-09-20T03:58:30+09:00",
-    "changes": 0
-  },
-  "https://www.gametoc.co.kr/news/articleView.html?idxno=111060": {
-    "game": "wuwa",
-    "title": "[인터뷰] '서림스토포로'의 명조 조수 임무 해체 분석",
-    "seenAt": "2026-09-20T03:58:38+09:00",
-    "changes": 0
-  },
-  "https://www.gametoc.co.kr/news/articleView.html?idxno=110984": {
-    "game": "wuwa",
-    "title": "[명조] 3.7 픽업 \"드디어 여우의 별자리가 온다\"",
-    "seenAt": "2026-09-20T03:58:47+09:00",
-    "changes": 1
-  },
   "https://www.gametoc.co.kr/news/articleView.html?idxno=111027": {
     "game": "nte",
     "title": "60시간 뉴비가 느낀 '이환'의 상승세 이유",
@@ -281,24 +245,6 @@
     "seenAt": "2026-09-20T11:44:14+09:00",
     "changes": 0
   },
-  "https://www.gametoc.co.kr/news/articleView.html?idxno=110575": {
-    "game": "wuwa",
-    "title": "[명조] 3.6 복각 \"히유키는 몰라도 모니에는 반드시 데려가세요\"",
-    "seenAt": "2026-09-20T11:44:26+09:00",
-    "changes": 0
-  },
-  "https://www.gameple.co.kr/news/articleView.html?idxno=216215": {
-    "game": "wuwa",
-    "title": "\"지갑 비상\" 명조 3.6, 청초·경연과 역대급 복각",
-    "seenAt": "2026-09-20T11:44:34+09:00",
-    "changes": 1
-  },
-  "https://www.gamemeca.com/mv.php?inflow=naver&gid=1778892": {
-    "game": "wuwa",
-    "title": "청초·어검술·최적화, 풍성한 '명조' 3.6 업데이트",
-    "seenAt": "2026-09-20T11:44:44+09:00",
-    "changes": 1
-  },
   "https://www.gameple.co.kr/news/articleView.html?idxno=216295": {
     "game": "nte",
     "title": "[현장] 바캉스 대신 'PC방캉스'... '이환' 감정사들이 모였다",
@@ -442,5 +388,59 @@
     "title": "승리의 여신: 니케, 신규 업데이트 'GREAT VILLAIN UNION' 출시",
     "seenAt": "2026-09-20T13:12:14+09:00",
     "changes": 1
+  },
+  "https://www.inven.co.kr/webzine/news/?news=320387": {
+    "game": "wuwa",
+    "title": "'명조' 여우의 별자리와 쇄명 인게임 플레이 영상 공개",
+    "seenAt": "2026-09-20T13:50:01+09:00",
+    "changes": 0
+  },
+  "https://www.thisisgame.com/articles/429497": {
+    "game": "wuwa",
+    "title": "[포토+영상] 2년간의 여정을 음악으로 재현하다 '명조 콘서트'",
+    "seenAt": "2026-09-20T13:50:08+09:00",
+    "changes": 0
+  },
+  "https://www.gametoc.co.kr/news/articleView.html?idxno=111648": {
+    "game": "wuwa",
+    "title": "명조 3.7 \"명조에 대한 공격은 나에 대한 공격으로 간주한다\"",
+    "seenAt": "2026-09-20T13:50:19+09:00",
+    "changes": 2
+  },
+  "https://www.gametoc.co.kr/news/articleView.html?idxno=111178": {
+    "game": "wuwa",
+    "title": "[명조] 여우의 별자리 & 쇄명 \"이래도 지갑 안 열어?\"",
+    "seenAt": "2026-09-20T13:50:27+09:00",
+    "changes": 0
+  },
+  "https://www.gametoc.co.kr/news/articleView.html?idxno=111060": {
+    "game": "wuwa",
+    "title": "[인터뷰] '서림스토포로'의 명조 조수 임무 해체 분석",
+    "seenAt": "2026-09-20T13:50:35+09:00",
+    "changes": 0
+  },
+  "https://www.gametoc.co.kr/news/articleView.html?idxno=110984": {
+    "game": "wuwa",
+    "title": "[명조] 3.7 픽업 \"드디어 여우의 별자리가 온다\"",
+    "seenAt": "2026-09-20T13:50:44+09:00",
+    "changes": 1
+  },
+  "https://www.gametoc.co.kr/news/articleView.html?idxno=110575": {
+    "game": "wuwa",
+    "title": "[명조] 3.6 복각 \"히유키는 몰라도 모니에는 반드시 데려가세요\"",
+    "seenAt": "2026-09-20T13:50:53+09:00",
+    "changes": 0
+  },
+  "https://www.gameple.co.kr/news/articleView.html?idxno=216215": {
+    "game": "wuwa",
+    "title": "\"지갑 비상\" 명조 3.6, 청초·경연과 역대급 복각",
+    "seenAt": "2026-09-20T13:51:03+09:00",
+    "changes": 2
+  },
+  "https://www.gamemeca.com/mv.php?inflow=naver&gid=1778892": {
+    "game": "wuwa",
+    "title": "청초·어검술·최적화, 풍성한 '명조' 3.6 업데이트",
+    "seenAt": "2026-09-20T13:51:12+09:00",
+    "changes": 2
   }
 }
