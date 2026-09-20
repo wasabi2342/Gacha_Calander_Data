@@ -5,6 +5,7 @@
     python collector/collect.py --game genshin --dry-run   # 파일 저장 없이 추출 결과만 출력
     python collector/collect.py --game nikke --reprocess   # 이미 본 기사도 다시 분석 (추출 규칙을 고친 뒤)
     python collector/collect.py --game nikke --reset       # 그 게임 일정을 지우고 최근 기사로 처음부터 다시 수집
+    python collector/collect.py --reset-all                # 모든 게임 일정을 지우고 처음부터 다시 수집
 
 환경 변수: NAVER_CLIENT_ID, NAVER_CLIENT_SECRET, LLM_API_KEY
          (선택) LLM_PROVIDER = gemini(기본) | anthropic, (선택) MODEL
@@ -140,6 +141,8 @@ def write_summary(report, removed: int, stopped: str | None, cleaned: int = 0, r
         lines.append("바뀐 일정이 없어요.")
     if reset_removed:
         lines += ["", f"초기화로 기존 일정 {reset_removed}건 삭제 후 다시 수집"]
+    if reset_removed and stopped:
+        lines += ["", "초기화 중에 멈춘 게임은 다음 예약 실행(6시간마다)에서 이어서 채워져요."]
     if cleaned:
         lines += ["", f"중복·표기 정리 {cleaned}건"]
     if removed:
@@ -173,6 +176,7 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="파일 저장 없이 추출 결과만 출력")
     parser.add_argument("--reprocess", action="store_true", help="이미 본 기사도 다시 분석")
     parser.add_argument("--reset", action="store_true", help="--game 의 일정을 지우고 처음부터 다시 수집")
+    parser.add_argument("--reset-all", action="store_true", help="모든 게임 일정을 지우고 처음부터 다시 수집")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
@@ -196,7 +200,10 @@ def main() -> int:
         log.error("알 수 없는 게임 id: %s (가능: %s)", args.game, ", ".join(GAMES_BY_ID))
         return 1
     if args.reset and not args.game:
-        log.error("--reset 은 --game 과 함께 써야 해요 (전체 초기화 방지)")
+        log.error("--reset 은 --game 과 함께 써야 해요. 전체 초기화는 --reset-all 을 쓰세요.")
+        return 1
+    if args.reset_all and args.game:
+        log.error("--reset-all 은 --game 없이 써야 해요.")
         return 1
     targets = [GAMES_BY_ID[args.game]] if args.game else GAMES
 
@@ -204,7 +211,12 @@ def main() -> int:
     events = {key_of(e): e for e in doc.get("events", [])}
     seen = load_json(SEEN_PATH, {})
     reset_removed = 0
-    if args.reset and not args.dry_run:
+    if args.reset_all and not args.dry_run:
+        reset_removed = len(events)
+        events.clear()
+        seen = {}
+        log.info("전체 초기화: 일정 %d건, 분석 기록 전부 삭제", reset_removed)
+    elif args.reset and not args.dry_run:
         for k in [k for k, e in events.items() if e["gameId"] == args.game]:
             del events[k]
             reset_removed += 1
@@ -215,8 +227,9 @@ def main() -> int:
     stopped = None
     for game in targets:
         try:
-            run_game(game, events, seen, env, args.dry_run, report, args.reprocess or args.reset,
-                     MAX_ARTICLES_ON_RESET if args.reset else MAX_NEW_ARTICLES_PER_GAME)
+            resetting = args.reset or args.reset_all
+            run_game(game, events, seen, env, args.dry_run, report, args.reprocess or resetting,
+                     MAX_ARTICLES_ON_RESET if resetting else MAX_NEW_ARTICLES_PER_GAME)
         except RateLimited as e:
             stopped = f"{game['name']}에서 멈췄어요 ({e})."
             log.warning("%s (%s)", stopped, e)
@@ -224,6 +237,14 @@ def main() -> int:
 
     if args.dry_run:
         return 0
+
+    all_failed = ((STATS["search_ok"] == 0 and STATS["search_fail"] > 0)
+                  or (STATS["extract_ok"] == 0 and STATS["extract_fail"] > 0))
+    if reset_removed and all_failed:
+        # 초기화했는데 수집이 전부 실패했으면 빈 데이터로 덮어쓰지 않는다
+        log.error("초기화 중 수집이 전부 실패해서 저장하지 않았어요. 기존 일정은 그대로 남아 있어요.")
+        write_summary(report, 0, "초기화 중 수집이 전부 실패해서 저장하지 않았어요. 기존 일정은 그대로예요.")
+        return 1
 
     cleaned = cleanup(events)
     removed = prune_old(events)

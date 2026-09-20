@@ -16,6 +16,7 @@ RANK = {"LEAK": 1, "ESTIMATED": 2, "OFFICIAL": 3}
 TYPES = {"VERSION_UPDATE", "BANNER"}
 DATE_VERSION = re.compile(r"\d{4}-\d{2}-\d{2}")
 MATCH_WINDOW_DAYS = 3
+HALF_VERSION_DAYS = 21  # 버전 하나가 보통 6주, 전반·후반 각 3주
 
 _NAME_KEY_STRIP = re.compile(r"[\s:：·・()（）\[\]「」『』'\"\-]")
 
@@ -342,15 +343,23 @@ def _repair_version_banners(events: dict[str, dict]) -> int:
             continue
         if not _banner_start_problem(events, e["gameId"], e["version"], e["phase"], e["startAt"]):
             continue
-        new_start = None
+        new_start, guessed = None, False
+        vs = _version_start(events, e["gameId"], e["version"])
         if e["phase"] == 1:
-            new_start = _version_start(events, e["gameId"], e["version"])
+            new_start = vs
         else:
             p1 = events.get(event_key(e["gameId"], "BANNER", e["version"], 1))
             if p1 and p1.get("endAt"):
                 new_start = p1["endAt"]
+            elif vs:
+                # 전반 종료일도 모르면 보통 3주 뒤에 후반이 시작하니 그렇게 추정
+                new_start = (datetime.fromisoformat(vs) + timedelta(days=HALF_VERSION_DAYS)).isoformat()
+                guessed = True
         if new_start and new_start != e["startAt"]:
             e["startAt"], e["timeKnown"] = new_start, False
+            if guessed:
+                e["status"] = "ESTIMATED" if e.get("status") == "OFFICIAL" else e.get("status")
+                e["note"] = "시작일은 업데이트 3주 뒤로 추정"
             fixed += 1
     return fixed
 

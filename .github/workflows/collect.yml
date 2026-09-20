@@ -15,10 +15,13 @@ on:
         required: false
         default: false
       reset:
-        description: "선택한 게임의 일정을 지우고 처음부터 다시 수집 (game 필수)"
-        type: boolean
-        required: false
-        default: false
+        description: "일정 초기화 후 다시 수집"
+        type: choice
+        options:
+          - "안 함"
+          - "선택한 게임만 (game 필수)"
+          - "전체 게임"
+        default: "안 함"
 
 permissions:
   contents: write            # data/ 커밋용
@@ -30,7 +33,7 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 45   # 전체 초기화 때는 게임 9개 × 기사 12개라 오래 걸림
     steps:
       - uses: actions/checkout@v6
 
@@ -56,7 +59,14 @@ jobs:
           ARGS=""
           if [ -n "$GAME" ]; then ARGS="$ARGS --game $GAME"; fi
           if [ "$REPROCESS" = "true" ]; then ARGS="$ARGS --reprocess"; fi
-          if [ "$RESET" = "true" ]; then ARGS="$ARGS --reset"; fi
+          case "$RESET" in
+            "선택한 게임만"*)
+              if [ -z "$GAME" ]; then echo "::error::'선택한 게임만' 초기화는 game 칸을 채워야 해요"; exit 1; fi
+              ARGS="$ARGS --reset" ;;
+            "전체 게임")
+              if [ -n "$GAME" ]; then echo "::error::'전체 게임' 초기화는 game 칸을 비워야 해요"; exit 1; fi
+              ARGS="$ARGS --reset-all" ;;
+          esac
           python collector/collect.py $ARGS
 
       - name: 변경 사항 커밋

@@ -31,12 +31,33 @@
 4. **Actions 탭 → 일정 수집 → Run workflow** 로 한 번 수동 실행. `game`에 `genshin` 을 넣어 한 게임만 먼저 테스트하는 걸 추천해요.
 5. 실행 결과 페이지 아래 Summary에 추가·갱신된 일정 표가 나와요. 바뀐 게 있으면 `data:` 로 시작하는 커밋이 생깁니다.
 
+## 수동 실행 옵션 (Actions → 일정 수집 → Run workflow)
+
+| 항목 | 설명 |
+|---|---|
+| `game` | 게임 id. 비우면 전체. `genshin`, `hsr`, `wuwa`, `nte`, `zzz`, `bluearchive`, `arknights`, `endfield`, `nikke` |
+| `reprocess` | 이미 분석한 기사도 다시 분석 (추출 규칙을 고친 뒤에 사용) |
+| `reset` | `안 함` / `선택한 게임만` (game 필수) / `전체 게임` (game 비움). 일정을 지우고 최근 기사로 처음부터 다시 수집 |
+
+- 초기화는 최근 기사만 다시 보기 때문에 이미 끝난 오래된 픽업은 다시 안 잡힐 수 있어요.
+- 초기화 중 검색이나 추출이 전부 실패하면 저장하지 않아서 기존 일정이 그대로 남아요.
+
+## 병합 규칙 요약
+
+- 신뢰도는 `OFFICIAL` > `ESTIMATED` > `LEAK`. 낮은 쪽이 높은 쪽을 덮어쓰지 못해요.
+- 날짜만 있는 정보끼리는 먼저 저장된 것을 믿고, 시각이 새로 확인되거나 더 믿을 만한 출처일 때만 바꿔요.
+- 버전 있는 게임: 전반 픽업은 버전 업데이트일(±2일), 후반 픽업은 업데이트 7일 이후에 시작해야 해요. 어긋나는 날짜는 버리고, 이미 잘못 저장된 날짜는 매 실행마다 자동으로 바로잡아요.
+- 버전 없는 게임(니케, 블루 아카이브 등): 픽업만 저장하고, 시작일이 3일 이내이면서 신규 캐릭터가 겹치면 같은 픽업으로 합쳐요. 날짜는 더 이른 날(점검 종료일)을 남겨요.
+- 캐릭터 이름은 띄어쓰기·콜론·괄호 표기를 통일해서 비교하고, 기사마다 일부만 언급해도 목록을 합쳐요.
+
 ## 로컬에서 테스트 (Windows PowerShell)
 
 ```powershell
 pip install -r collector/requirements.txt
 $env:NAVER_CLIENT_ID="..."; $env:NAVER_CLIENT_SECRET="..."; $env:LLM_API_KEY="..."
 python collector/collect.py --game genshin --dry-run   # 저장 없이 추출 결과만 출력
+python collector/collect.py --game nikke --reset       # 한 게임 초기화 후 다시 수집
+python collector/collect.py --reset-all                # 전체 초기화 후 다시 수집
 ```
 
 ## 비용과 한도
