@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-20T04:04:03+09:00",
+  "updatedAt": "2026-09-20T11:47:34+09:00",
   "games": [
     {
       "id": "genshin",
@@ -49,6 +49,54 @@
   ],
   "events": [
     {
+      "id": "nte-1.2-p0",
+      "gameId": "nte",
+      "type": "BANNER",
+      "version": "1.2",
+      "phase": null,
+      "title": "1.2 신쿠 픽업",
+      "characters": [
+        {
+          "name": "신쿠",
+          "rarity": null,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-07-08T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-07-29T06:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://www.gameple.co.kr/news/articleView.html?idxno=216010",
+      "evidence": "7월 8일 업데이트 후부터 7월 29일 6시 59분까지",
+      "updatedAt": "2026-09-20T11:45:21+09:00"
+    },
+    {
+      "id": "nte-1.2-p1",
+      "gameId": "nte",
+      "type": "BANNER",
+      "version": "1.2",
+      "phase": 1,
+      "title": "1.2 전반 픽업",
+      "characters": [
+        {
+          "name": "신쿠",
+          "rarity": null,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-07-08T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-07-29T06:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://www.gamemeca.com/mv.php?inflow=naver&gid=1777110",
+      "evidence": "신쿠 한정 픽업 7월 8일~29일 오전 6:59",
+      "updatedAt": "2026-09-20T11:45:30+09:00"
+    },
+    {
       "id": "hsr-4.4-p0",
       "gameId": "hsr",
       "type": "BANNER",
@@ -78,6 +126,90 @@
       "updatedAt": "2026-09-20T03:57:57+09:00"
     },
     {
+      "id": "nte-1.2-p2",
+      "gameId": "nte",
+      "type": "BANNER",
+      "version": "1.2",
+      "phase": 2,
+      "title": "1.2 후반 픽업",
+      "characters": [
+        {
+          "name": "일로이",
+          "rarity": null,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-07-29T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-08-19T06:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://www.gamemeca.com/mv.php?inflow=naver&gid=1777110",
+      "evidence": "일로이 한정 픽업 7월 29일~8월 19일 오전 6:59",
+      "updatedAt": "2026-09-20T11:45:30+09:00"
+    },
+    {
+      "id": "zzz-3.1-update",
+      "gameId": "zzz",
+      "type": "VERSION_UPDATE",
+      "version": "3.1",
+      "phase": null,
+      "title": "3.1 버전 업데이트",
+      "characters": [],
+      "startAt": "2026-07-29T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://gamefocus.co.kr/detail.php?number=177847",
+      "evidence": "3.1 버전 기나긴 이별 지난 29일 업데이트",
+      "updatedAt": "2026-09-20T11:45:51+09:00"
+    },
+    {
+      "id": "zzz-3.1-p1",
+      "gameId": "zzz",
+      "type": "BANNER",
+      "version": "3.1",
+      "phase": 1,
+      "title": "3.1 전반 픽업",
+      "characters": [
+        {
+          "name": "레미엘",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-07-29T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://www.gameple.co.kr/news/articleView.html?idxno=216102",
+      "evidence": "초대 공허 사냥꾼인 '레미엘'이 전반부 픽업으로 등장한다",
+      "updatedAt": "2026-09-20T11:45:59+09:00"
+    },
+    {
+      "id": "nte-1.3-update",
+      "gameId": "nte",
+      "type": "VERSION_UPDATE",
+      "version": "1.3",
+      "phase": null,
+      "title": "1.3 안개 너머의 별빛 업데이트",
+      "characters": [],
+      "startAt": "2026-08-19T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-09-30T23:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://www.inven.co.kr/webzine/news/?news=319336",
+      "evidence": "1.3 버전은 8월 19일부터 9월 30일까지 진행",
+      "updatedAt": "2026-09-20T11:45:12+09:00"
+    },
+    {
       "id": "nte-1.3-p1",
       "gameId": "nte",
       "type": "BANNER",
@@ -98,13 +230,31 @@
       ],
       "startAt": "2026-08-19T00:00:00+09:00",
       "timeKnown": false,
-      "endAt": "2026-09-09T00:00:00+09:00",
+      "endAt": "2026-09-09T06:59:00+09:00",
       "endConfirmed": true,
       "status": "OFFICIAL",
-      "sourceUrl": "https://ntegame.net/ko/guides/",
+      "sourceUrl": "https://www.inven.co.kr/webzine/news/?news=319336",
       "note": null,
-      "evidence": null,
-      "updatedAt": "2026-09-19T18:00:00+09:00"
+      "evidence": "1.3 전반기 잔홍, 나나리 픽업",
+      "updatedAt": "2026-09-20T11:45:12+09:00"
+    },
+    {
+      "id": "wuwa-3.6-update",
+      "gameId": "wuwa",
+      "type": "VERSION_UPDATE",
+      "version": "3.6",
+      "phase": null,
+      "title": "3.6 버전 업데이트",
+      "characters": [],
+      "startAt": "2026-08-20T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://www.gameple.co.kr/news/articleView.html?idxno=216215",
+      "evidence": "8월 20일 업데이트되는 3.6 버전",
+      "updatedAt": "2026-09-20T11:44:34+09:00"
     },
     {
       "id": "wuwa-3.6-p1",
@@ -134,6 +284,40 @@
       "note": null,
       "evidence": null,
       "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "wuwa-3.6-p2",
+      "gameId": "wuwa",
+      "type": "BANNER",
+      "version": "3.6",
+      "phase": 2,
+      "title": "3.6 후반 픽업",
+      "characters": [
+        {
+          "name": "경연",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "히유키",
+          "rarity": 5,
+          "isNew": false
+        },
+        {
+          "name": "모니에",
+          "rarity": 5,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-08-20T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-09-30T05:00:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "sourceUrl": "https://www.gamemeca.com/mv.php?inflow=naver&gid=1778892",
+      "note": null,
+      "evidence": "3.6 후반부 경연, 히유키, 모니에 픽업",
+      "updatedAt": "2026-09-20T11:44:44+09:00"
     },
     {
       "id": "hsr-4.5-p1",
@@ -242,6 +426,30 @@
       "updatedAt": "2026-09-20T04:03:00+09:00"
     },
     {
+      "id": "nikke-2026-09-03-p0",
+      "gameId": "nikke",
+      "type": "BANNER",
+      "version": "2026-09-03",
+      "phase": null,
+      "title": "드레이크 : 그레이트 빌런 모집",
+      "characters": [
+        {
+          "name": "드레이크 : 그레이트 빌런",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-09-03T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-09-17T23:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://www.thisisgame.com/articles/429665",
+      "evidence": "드레이크 : 그레이트 빌런 모집 기간",
+      "updatedAt": "2026-09-20T11:47:34+09:00"
+    },
+    {
       "id": "nte-1.3-p2",
       "gameId": "nte",
       "type": "BANNER",
@@ -253,6 +461,11 @@
           "name": "링코",
           "rarity": 5,
           "isNew": true
+        },
+        {
+          "name": "호토리",
+          "rarity": null,
+          "isNew": false
         }
       ],
       "startAt": "2026-09-09T00:00:00+09:00",
@@ -260,10 +473,10 @@
       "endAt": "2026-09-30T06:59:00+09:00",
       "endConfirmed": true,
       "status": "OFFICIAL",
-      "sourceUrl": "https://ntegame.net/ko/guides/upcoming-characters/",
+      "sourceUrl": "https://www.inven.co.kr/webzine/news/?news=319336",
       "note": null,
-      "evidence": null,
-      "updatedAt": "2026-09-19T18:00:00+09:00"
+      "evidence": "1.3 후반기 링코, 호토리 픽업",
+      "updatedAt": "2026-09-20T11:45:12+09:00"
     },
     {
       "id": "zzz-3.2-update",
@@ -306,40 +519,6 @@
       "sourceUrl": "http://www.technoa.co.kr/news/articleView.html?idxno=101344",
       "evidence": "3.2 버전 상반기 S급 클라렛 등장",
       "updatedAt": "2026-09-20T04:00:49+09:00"
-    },
-    {
-      "id": "wuwa-3.6-p2",
-      "gameId": "wuwa",
-      "type": "BANNER",
-      "version": "3.6",
-      "phase": 2,
-      "title": "3.6 후반 픽업",
-      "characters": [
-        {
-          "name": "경연",
-          "rarity": 5,
-          "isNew": true
-        },
-        {
-          "name": "히유키",
-          "rarity": 5,
-          "isNew": false
-        },
-        {
-          "name": "모니에",
-          "rarity": 5,
-          "isNew": false
-        }
-      ],
-      "startAt": "2026-09-10T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": "2026-09-30T05:00:00+09:00",
-      "endConfirmed": true,
-      "status": "OFFICIAL",
-      "sourceUrl": "https://www.gamsgo.com/ko/blog/%EB%AA%85%EC%A1%B0-%EC%9B%8C%EB%8D%94%EB%A7%81-%EC%9B%A8%EC%9D%B4%EB%B8%8C-3-6-%ED%94%BD%EC%97%85",
-      "note": null,
-      "evidence": null,
-      "updatedAt": "2026-09-19T18:00:00+09:00"
     },
     {
       "id": "hsr-4.5-p2",
@@ -500,17 +679,22 @@
           "name": "길로틴: 윈터 슬레이어",
           "rarity": null,
           "isNew": false
+        },
+        {
+          "name": "미카 : 스노우 버디",
+          "rarity": null,
+          "isNew": false
         }
       ],
       "startAt": "2026-09-17T00:00:00+09:00",
       "timeKnown": false,
-      "endAt": "2026-10-08T23:59:00+09:00",
+      "endAt": "2026-10-08T04:59:00+09:00",
       "endConfirmed": true,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://www.gamemeca.com/mv.php?inflow=naver_s&gid=1780652",
-      "evidence": "10월 8일까지 기간 한정 선택 모집 진행",
-      "updatedAt": "2026-09-20T04:03:53+09:00"
+      "sourceUrl": "https://www.gamechosun.co.kr/webzine/article/view.php?no=225222",
+      "evidence": "길티: 마이티 바니 9월 17일 점검 종료 후부터 10월 8일",
+      "updatedAt": "2026-09-20T11:47:18+09:00"
     },
     {
       "id": "nikke-2026-09-18-p0",
@@ -620,17 +804,22 @@
           "name": "신 : 스위프트 바니",
           "rarity": 5,
           "isNew": true
+        },
+        {
+          "name": "신: 스위프트 바니",
+          "rarity": 5,
+          "isNew": true
         }
       ],
-      "startAt": "2026-09-24T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": "2026-10-15T23:59:00+09:00",
+      "startAt": "2026-09-24T05:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-10-15T04:59:00+09:00",
       "endConfirmed": true,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://www.xportsnews.com/article/2196959",
-      "evidence": "신 : 스위프트 바니는 24일부터 10월 15일까지",
-      "updatedAt": "2026-09-20T04:03:18+09:00"
+      "sourceUrl": "https://www.gamechosun.co.kr/webzine/article/view.php?no=225222",
+      "evidence": "신: 스위프트 바니 9월 24일 오전 5시부터 10월 15일",
+      "updatedAt": "2026-09-20T11:47:18+09:00"
     },
     {
       "id": "nte-1.4-update",
