@@ -161,6 +161,35 @@ def _absorb(keep: dict, drop: dict) -> None:
         keep["title"] = drop["title"]
 
 
+# ---------- 버전 있는 게임의 날짜 검사 ----------
+
+def _version_start(events: dict[str, dict], game_id: str, version: str) -> str | None:
+    v = events.get(event_key(game_id, "VERSION_UPDATE", version, None))
+    return v["startAt"] if v else None
+
+
+def _banner_start_problem(events: dict[str, dict], game_id: str, version: str, phase, start: str) -> str | None:
+    """말이 안 되는 픽업 시작일이면 이유를 돌려준다.
+    - 전반 픽업은 버전 업데이트 날(±2일)에 시작한다
+    - 후반 픽업은 버전 업데이트 7일 이후, 전반 픽업 시작 이후에 시작한다
+    - 어떤 픽업도 버전 업데이트보다 먼저 시작하지 않는다"""
+    vs = _version_start(events, game_id, version)
+    st = datetime.fromisoformat(start)
+    if vs:
+        v = datetime.fromisoformat(vs)
+        if phase == 1 and abs((st - v).total_seconds()) > 2 * 86400:
+            return f"전반 픽업 시작일({start[:10]})이 {version} 업데이트일({vs[:10]})과 안 맞음"
+        if phase == 2 and st <= v + timedelta(days=7):
+            return f"후반 픽업 시작일({start[:10]})이 {version} 업데이트일({vs[:10]})과 너무 가까움"
+        if st < v - timedelta(days=1):
+            return f"픽업 시작일({start[:10]})이 {version} 업데이트일({vs[:10]})보다 이름"
+    if phase == 2:
+        p1 = events.get(event_key(game_id, "BANNER", version, 1))
+        if p1 and st <= datetime.fromisoformat(p1["startAt"]):
+            return f"후반 픽업 시작일({start[:10]})이 전반 픽업 시작일({p1['startAt'][:10]}) 이전"
+    return None
+
+
 # ---------- 병합 ----------
 
 def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str) -> str | None:
@@ -170,10 +199,10 @@ def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str) -> st
     if type_ not in TYPES:
         return f"skip:알 수 없는 type({type_})"
     start = to_iso(x.get("startDate"), x.get("startTime"), "00:00")
-    if not start:
-        return f"skip:시작 날짜 없음/형식 오류({x.get('startDate')})"
     version = str(x.get("version") or "").strip()
     if not version:
+        if not start:
+            return f"skip:버전도 시작 날짜도 없음({x.get('startDate')})"
         # 모델이 버전을 비워 보내도 버리지 않고 시작 날짜로 대신한다
         version = start[:10]
     date_keyed = is_date_version(version)
@@ -181,6 +210,8 @@ def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str) -> st
         # 버전 번호가 없는 게임은 픽업 일정만 표시한다
         return "ignore:버전 번호 없는 업데이트"
     if date_keyed:
+        if not start:
+            return "skip:버전 없는 픽업인데 시작 날짜가 없음"
         version = start[:10]  # 모델이 version 과 startDate 를 다르게 줘도 시작일 기준으로 통일
 
     phase = None if (type_ == "VERSION_UPDATE" or date_keyed) else (x.get("phase") if x.get("phase") in (1, 2) else None)
@@ -196,6 +227,15 @@ def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str) -> st
 
     key = event_key(game_id, type_, version, phase)
     e = events.get(key)
+
+    start_problem = None
+    if start and type_ == "BANNER" and not date_keyed:
+        start_problem = _banner_start_problem(events, game_id, version, phase, start)
+        if start_problem:
+            start, time_known = None, False  # 틀린 날짜는 버리고 나머지 정보만 쓴다
+    if not start and e is None:
+        return f"skip:{start_problem or '시작 날짜 없음/형식 오류'}"
+
     if e is None and date_keyed:
         found = _find_same_banner(events, game_id, start, chars)
         if found:
@@ -217,20 +257,29 @@ def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str) -> st
         return None
 
     changed = False
-    merged_chars = _merge_characters(e.get("characters") or [], chars, union=date_keyed)
+    # 기사마다 일부 캐릭터만 언급하는 경우가 많아서 기본은 합치기.
+    # 더 믿을 만한 출처(예: 유출 → 공식)가 오면 그 목록으로 교체한다
+    replace = RANK[status] > RANK.get(e.get("status"), 0)
+    merged_chars = _merge_characters(e.get("characters") or [], chars, union=not replace)
     if merged_chars != (e.get("characters") or []):
         e["characters"] = merged_chars
         changed = True
 
     rekey = False
-    if date_keyed and start[:10] != e["startAt"][:10]:
-        # 같은 픽업인데 날짜가 다르면 더 이른 날(점검 종료일)을 남긴다
-        if start < e["startAt"]:
+    old_rank = RANK.get(e.get("status"), 0)
+    if not start:
+        pass  # 이번 기사에는 믿을 만한 시작일이 없음
+    elif date_keyed:
+        if start[:10] != e["startAt"][:10] and start < e["startAt"]:
+            # 같은 픽업인데 날짜가 다르면 더 이른 날(점검 종료일)을 남긴다
             e["startAt"], e["timeKnown"] = start, time_known
             changed = rekey = True
-    elif (time_known or not e.get("timeKnown")) and start != e.get("startAt"):
-        e["startAt"], e["timeKnown"] = start, time_known
-        changed = True
+    elif start != e.get("startAt"):
+        # 날짜만 있는 정보끼리는 먼저 저장된 것을 믿는다. 시각이 새로 확인됐거나
+        # 더 믿을 만한 출처(유출 → 추정 → 공식)일 때만 바꾼다
+        if (time_known and (not e.get("timeKnown") or RANK[status] >= old_rank)) or RANK[status] > old_rank:
+            e["startAt"], e["timeKnown"] = start, time_known
+            changed = True
 
     if end and (end_confirmed or not e.get("endConfirmed")) and end != e.get("endAt"):
         e["endAt"], e["endConfirmed"] = end, end_confirmed
@@ -263,6 +312,8 @@ def cleanup(events: dict[str, dict]) -> int:
             e["characters"] = chars
             changed += 1
 
+    changed += _repair_version_banners(events)
+
     for game_id in {e["gameId"] for e in events.values()}:
         while True:
             banners = sorted(
@@ -279,6 +330,29 @@ def cleanup(events: dict[str, dict]) -> int:
             del events[drop_key]
             changed += 1
     return changed
+
+
+def _repair_version_banners(events: dict[str, dict]) -> int:
+    """이미 잘못 저장된 픽업 시작일 바로잡기
+    - 전반 픽업이 버전 업데이트일과 안 맞으면 → 버전 업데이트일
+    - 후반 픽업이 말이 안 되면 → 전반 픽업 종료일"""
+    fixed = 0
+    for e in list(events.values()):
+        if e["type"] != "BANNER" or is_date_version(e["version"]) or e.get("phase") not in (1, 2):
+            continue
+        if not _banner_start_problem(events, e["gameId"], e["version"], e["phase"], e["startAt"]):
+            continue
+        new_start = None
+        if e["phase"] == 1:
+            new_start = _version_start(events, e["gameId"], e["version"])
+        else:
+            p1 = events.get(event_key(e["gameId"], "BANNER", e["version"], 1))
+            if p1 and p1.get("endAt"):
+                new_start = p1["endAt"]
+        if new_start and new_start != e["startAt"]:
+            e["startAt"], e["timeKnown"] = new_start, False
+            fixed += 1
+    return fixed
 
 
 def prune_old(events: dict[str, dict], keep_days: int = 60) -> int:
