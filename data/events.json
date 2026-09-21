@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-21T00:13:36+09:00",
+  "updatedAt": "2026-09-21T11:41:59+09:00",
   "games": [
     {
       "id": "genshin",
@@ -973,11 +973,11 @@
       "timeKnown": false,
       "endAt": null,
       "endConfirmed": false,
-      "status": "ESTIMATED",
+      "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://blog.naver.com/12512512/224418069506",
-      "evidence": "4.6 버전 프리뷰, 라이브 서버 9월 28일 적용",
-      "updatedAt": "2026-09-21T00:12:28+09:00"
+      "sourceUrl": "https://gamefocus.co.kr/detail.php?number=179292",
+      "evidence": "4.6 버전 '달 뜨기 전, 괴수와 춤을' 9월 28일 업데이트",
+      "updatedAt": "2026-09-21T11:41:04+09:00"
     },
     {
       "id": "hsr-4.6-p1",
@@ -989,12 +989,17 @@
       "characters": [
         {
           "name": "펄",
-          "rarity": null,
+          "rarity": 5,
           "isNew": true
         },
         {
           "name": "에바네시아",
-          "rarity": null,
+          "rarity": 5,
+          "isNew": false
+        },
+        {
+          "name": "천야 블레이드",
+          "rarity": 5,
           "isNew": false
         }
       ],
@@ -1002,11 +1007,11 @@
       "timeKnown": false,
       "endAt": null,
       "endConfirmed": false,
-      "status": "ESTIMATED",
+      "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://blog.naver.com/12512512/224418069506",
-      "evidence": "4.6 버전이 시작되는 9월 28일부터 펄 및 에바네시아 복각",
-      "updatedAt": "2026-09-21T00:12:28+09:00"
+      "sourceUrl": "https://www.betanews.net/article/view/beta202609210023",
+      "evidence": "4.6 버전 펄, 에바네시아, 천야 블레이드 픽업",
+      "updatedAt": "2026-09-21T11:41:21+09:00"
     },
     {
       "id": "wuwa-3.7-update",
