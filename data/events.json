@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-21T20:39:44+09:00",
+  "updatedAt": "2026-09-22T02:35:24+09:00",
   "games": [
     {
       "id": "genshin",
@@ -95,35 +95,6 @@
       "sourceUrl": "https://blog.naver.com/ldkboaz/224355851445",
       "evidence": "라플라스 픽업 7월 23일 점검 종료 후부터 8월 12일",
       "updatedAt": "2026-09-20T15:00:03+09:00"
-    },
-    {
-      "id": "hsr-4.4-p0",
-      "gameId": "hsr",
-      "type": "BANNER",
-      "version": "4.4",
-      "phase": null,
-      "title": "페이트 컬래버 2탄 픽업",
-      "characters": [
-        {
-          "name": "토오사카 린",
-          "rarity": 5,
-          "isNew": true
-        },
-        {
-          "name": "길가메시",
-          "rarity": 5,
-          "isNew": true
-        }
-      ],
-      "startAt": "2026-07-24T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://www.inven.co.kr/webzine/news/?news=318116",
-      "evidence": "토오사카 린과 길가메시는 오는 7월 24일 픽업으로 등장",
-      "updatedAt": "2026-09-20T14:44:57+09:00"
     },
     {
       "id": "hsr-4.4-update",
