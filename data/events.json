@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-21T11:41:59+09:00",
+  "updatedAt": "2026-09-21T20:39:44+09:00",
   "games": [
     {
       "id": "genshin",
@@ -1127,6 +1127,59 @@
       "sourceUrl": "https://blog.naver.com/orin2611/224418057638",
       "evidence": "후반부 10월22일 - 11월11일",
       "updatedAt": "2026-09-21T00:12:47+09:00"
+    },
+    {
+      "id": "hsr-4.7-p0",
+      "gameId": "hsr",
+      "type": "BANNER",
+      "version": "4.7",
+      "phase": null,
+      "title": "4.7 신규 픽업",
+      "characters": [
+        {
+          "name": "에이언즈 아하",
+          "rarity": null,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-11-11T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": null,
+      "sourceUrl": "https://blog.naver.com/didcjddns/224418988287",
+      "evidence": "4.7 버전 신규 에이언즈 아하",
+      "updatedAt": "2026-09-21T20:38:59+09:00"
+    },
+    {
+      "id": "hsr-4.8-p0",
+      "gameId": "hsr",
+      "type": "BANNER",
+      "version": "4.8",
+      "phase": null,
+      "title": "4.8 신규 픽업",
+      "characters": [
+        {
+          "name": "아스트라 야오",
+          "rarity": null,
+          "isNew": true
+        },
+        {
+          "name": "엘렌 조",
+          "rarity": null,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-12-23T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": null,
+      "sourceUrl": "https://blog.naver.com/didcjddns/224418988287",
+      "evidence": "4.8 버전 아스트라 야오 / 엘렌 조",
+      "updatedAt": "2026-09-21T20:38:59+09:00"
     }
   ]
 }
