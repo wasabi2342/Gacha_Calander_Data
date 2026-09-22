@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-22T02:35:24+09:00",
+  "updatedAt": "2026-09-22T19:43:32+09:00",
   "games": [
     {
       "id": "genshin",
@@ -95,24 +95,6 @@
       "sourceUrl": "https://blog.naver.com/ldkboaz/224355851445",
       "evidence": "라플라스 픽업 7월 23일 점검 종료 후부터 8월 12일",
       "updatedAt": "2026-09-20T15:00:03+09:00"
-    },
-    {
-      "id": "hsr-4.4-update",
-      "gameId": "hsr",
-      "type": "VERSION_UPDATE",
-      "version": "4.4",
-      "phase": null,
-      "title": "4.4 버전 업데이트",
-      "characters": [],
-      "startAt": "2026-07-24T12:00:00+09:00",
-      "timeKnown": true,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "ESTIMATED",
-      "note": null,
-      "sourceUrl": "https://blog.naver.com/didcjddns/224363293368",
-      "evidence": "4.4 버전 업데이트 후",
-      "updatedAt": "2026-09-20T19:23:49+09:00"
     },
     {
       "id": "nte-1.2-p2",
