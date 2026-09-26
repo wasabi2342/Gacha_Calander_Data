@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-23T19:34:14+09:00",
+  "updatedAt": "2026-09-27T00:29:23+09:00",
   "games": [
     {
       "id": "genshin",
@@ -119,53 +119,6 @@
       "sourceUrl": "https://www.gamemeca.com/mv.php?inflow=naver&gid=1777110",
       "evidence": "일로이 한정 픽업은 7월 29일 점검 후부터 8월 19일 오전 6시 59분까지",
       "updatedAt": "2026-09-20T14:50:32+09:00"
-    },
-    {
-      "id": "zzz-3.1-update",
-      "gameId": "zzz",
-      "type": "VERSION_UPDATE",
-      "version": "3.1",
-      "phase": null,
-      "title": "3.1 버전 업데이트",
-      "characters": [],
-      "startAt": "2026-07-29T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://gamefocus.co.kr/detail.php?number=177847",
-      "evidence": "3.1 버전 기나긴 이별 지난 29일 업데이트",
-      "updatedAt": "2026-09-20T14:51:49+09:00"
-    },
-    {
-      "id": "zzz-3.1-p1",
-      "gameId": "zzz",
-      "type": "BANNER",
-      "version": "3.1",
-      "phase": 1,
-      "title": "3.1 전반 픽업",
-      "characters": [
-        {
-          "name": "레미엘 댄",
-          "rarity": null,
-          "isNew": true
-        },
-        {
-          "name": "레미엘",
-          "rarity": 5,
-          "isNew": true
-        }
-      ],
-      "startAt": "2026-07-29T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://www.gameple.co.kr/news/articleView.html?idxno=216102",
-      "evidence": "초대 공허 사냥꾼인 '레미엘'이 전반부 픽업으로",
-      "updatedAt": "2026-09-20T14:51:58+09:00"
     },
     {
       "id": "nikke-2026-07-30-p0",
