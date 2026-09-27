@@ -1,0 +1,18 @@
+name: 수집기 테스트
+
+on:
+  push:
+    paths: ["collector/**", "tests/**"]
+  pull_request: {}
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r collector/requirements.txt pytest
+      - run: python -m pytest -q tests

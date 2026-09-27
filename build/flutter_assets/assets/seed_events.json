@@ -1,0 +1,510 @@
+{
+  "updatedAt": "2026-09-19T18:00:00+09:00",
+  "games": [
+    {
+      "id": "genshin",
+      "name": "원신",
+      "color": "#D4A017"
+    },
+    {
+      "id": "hsr",
+      "name": "스타레일",
+      "color": "#6B5BD6"
+    },
+    {
+      "id": "wuwa",
+      "name": "명조",
+      "color": "#1F9E89"
+    },
+    {
+      "id": "nte",
+      "name": "이환",
+      "color": "#E0457B"
+    },
+    {
+      "id": "zzz",
+      "name": "젠존제",
+      "color": "#E8772E"
+    },
+    {
+      "id": "bluearchive",
+      "name": "블루 아카이브",
+      "color": "#2D8CF0"
+    },
+    {
+      "id": "arknights",
+      "name": "명일방주",
+      "color": "#5C6670"
+    },
+    {
+      "id": "endfield",
+      "name": "엔드필드",
+      "color": "#9AAE2F"
+    },
+    {
+      "id": "nikke",
+      "name": "니케",
+      "color": "#C23B3B"
+    }
+  ],
+  "events": [
+    {
+      "id": "nte-1.3-p1",
+      "gameId": "nte",
+      "type": "BANNER",
+      "version": "1.3",
+      "phase": 1,
+      "title": "1.3 전반 픽업",
+      "characters": [
+        {
+          "name": "잔홍",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "나나리",
+          "rarity": 5,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-08-19T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-09-09T00:00:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "sourceUrl": "https://ntegame.net/ko/guides/",
+      "note": null,
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "wuwa-3.6-p1",
+      "gameId": "wuwa",
+      "type": "BANNER",
+      "version": "3.6",
+      "phase": 1,
+      "title": "3.6 전반 픽업",
+      "characters": [
+        {
+          "name": "청초",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "데니아",
+          "rarity": 5,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-08-20T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-09-10T00:00:00+09:00",
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "sourceUrl": "https://www.gamsgo.com/ko/blog/%EB%AA%85%EC%A1%B0-%EC%9B%8C%EB%8D%94%EB%A7%81-%EC%9B%A8%EC%9D%B4%EB%B8%8C-3-6-%ED%94%BD%EC%97%85",
+      "note": null,
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "hsr-4.5-p1",
+      "gameId": "hsr",
+      "type": "BANNER",
+      "version": "4.5",
+      "phase": 1,
+      "title": "4.5 전반 워프",
+      "characters": [
+        {
+          "name": "로빈·서머레토",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "히아킨",
+          "rarity": 5,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-08-26T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-09-12T12:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "sourceUrl": "https://www.xportsnews.com/article/2185283",
+      "note": null,
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "genshin-7.0-p2",
+      "gameId": "genshin",
+      "type": "BANNER",
+      "version": "7.0",
+      "phase": 2,
+      "title": "7.0 후반 픽업",
+      "characters": [
+        {
+          "name": "플린스",
+          "rarity": 5,
+          "isNew": false
+        },
+        {
+          "name": "이네파",
+          "rarity": 5,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-09-01T19:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-09-22T15:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "sourceUrl": "https://namu.wiki/w/%EC%9B%90%EC%8B%A0/%EA%B8%B0%EC%9B%90/%EB%AA%A9%EB%A1%9D",
+      "note": null,
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "nte-1.3-p2",
+      "gameId": "nte",
+      "type": "BANNER",
+      "version": "1.3",
+      "phase": 2,
+      "title": "1.3 후반 픽업",
+      "characters": [
+        {
+          "name": "링코",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-09-09T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-09-30T06:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "sourceUrl": "https://ntegame.net/ko/guides/upcoming-characters/",
+      "note": null,
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "wuwa-3.6-p2",
+      "gameId": "wuwa",
+      "type": "BANNER",
+      "version": "3.6",
+      "phase": 2,
+      "title": "3.6 후반 픽업",
+      "characters": [
+        {
+          "name": "경연",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "히유키",
+          "rarity": 5,
+          "isNew": false
+        },
+        {
+          "name": "모니에",
+          "rarity": 5,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-09-10T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-09-30T05:00:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "sourceUrl": "https://www.gamsgo.com/ko/blog/%EB%AA%85%EC%A1%B0-%EC%9B%8C%EB%8D%94%EB%A7%81-%EC%9B%A8%EC%9D%B4%EB%B8%8C-3-6-%ED%94%BD%EC%97%85",
+      "note": null,
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "hsr-4.5-p2",
+      "gameId": "hsr",
+      "type": "BANNER",
+      "version": "4.5",
+      "phase": 2,
+      "title": "4.5 후반 워프",
+      "characters": [
+        {
+          "name": "어벤츄린·웨이브",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "애쉬베일",
+          "rarity": 5,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-09-12T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-10-06T23:59:00+09:00",
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "note": "종료일은 4.6 업데이트 전날로 추정",
+      "sourceUrl": "https://www.xportsnews.com/article/2185283",
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "genshin-7.1-update",
+      "gameId": "genshin",
+      "type": "VERSION_UPDATE",
+      "version": "7.1",
+      "phase": null,
+      "title": "7.1 「죽음의 진혼곡」",
+      "characters": [],
+      "startAt": "2026-09-23T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "note": "6주년 보상: 한정 5성 1명 선택 지급",
+      "sourceUrl": "https://www.playforum.net/news/articleView.html?idxno=635349",
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "genshin-7.1-p1",
+      "gameId": "genshin",
+      "type": "BANNER",
+      "version": "7.1",
+      "phase": 1,
+      "title": "7.1 전반 픽업",
+      "characters": [
+        {
+          "name": "베스나",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "보댜니차",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-09-23T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-10-13T18:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "sourceUrl": "https://www.playforum.net/news/articleView.html?idxno=635349",
+      "note": null,
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "nte-1.4-update",
+      "gameId": "nte",
+      "type": "VERSION_UPDATE",
+      "version": "1.4",
+      "phase": null,
+      "title": "1.4 「누구를 위하여 기도를 올리나」",
+      "characters": [],
+      "startAt": "2026-09-30T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "sourceUrl": "https://namu.wiki/w/%EC%9D%B4%ED%99%98/%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8",
+      "note": null,
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "nte-1.4-p1",
+      "gameId": "nte",
+      "type": "BANNER",
+      "version": "1.4",
+      "phase": 1,
+      "title": "1.4 전반 픽업",
+      "characters": [
+        {
+          "name": "레이븐",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "라크리모사",
+          "rarity": 5,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-09-30T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-10-21T00:00:00+09:00",
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "note": "한국어 이름은 공식 표기 확정 전",
+      "sourceUrl": "https://namu.wiki/w/%EC%9D%B4%ED%99%98/%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8",
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "wuwa-3.7-update",
+      "gameId": "wuwa",
+      "type": "VERSION_UPDATE",
+      "version": "3.7",
+      "phase": null,
+      "title": "3.7 업데이트",
+      "characters": [],
+      "startAt": "2026-09-30T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "sourceUrl": "https://namu.wiki/w/%EB%AA%85%EC%A1%B0:%20%EC%9B%8C%EB%8D%94%EB%A7%81%20%EC%9B%A8%EC%9D%B4%EB%B8%8C/%EC%9D%BC%EC%A0%95",
+      "note": null,
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "wuwa-3.7-p1",
+      "gameId": "wuwa",
+      "type": "BANNER",
+      "version": "3.7",
+      "phase": 1,
+      "title": "3.7 전반 픽업",
+      "characters": [
+        {
+          "name": "여우의 별자리(신)",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-09-30T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-10-21T00:00:00+09:00",
+      "endConfirmed": false,
+      "status": "LEAK",
+      "note": "캐릭터는 공식 공개, 전후반 순서는 유출 기준",
+      "sourceUrl": "https://wuwa.uk/ko/articles/wuwa-3-7-preview-2026",
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "hsr-4.6-update",
+      "gameId": "hsr",
+      "type": "VERSION_UPDATE",
+      "version": "4.6",
+      "phase": null,
+      "title": "4.6 「달 뜨기 전, 괴수와 춤을」",
+      "characters": [],
+      "startAt": "2026-10-07T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": "6주 주기 기준 추정. 9/20 20:30 프리뷰 방송에서 확정",
+      "sourceUrl": "https://bbs.ruliweb.com/news/board/1001/read/2362503",
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "hsr-4.6-p1",
+      "gameId": "hsr",
+      "type": "BANNER",
+      "version": "4.6",
+      "phase": 1,
+      "title": "4.6 전반 워프",
+      "characters": [
+        {
+          "name": "펄",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-10-07T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-10-27T23:59:00+09:00",
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": "프리뷰 방송 소개 캐릭터. 픽업 순서 미확정",
+      "sourceUrl": "https://bbs.ruliweb.com/news/board/1001/read/2362503",
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "genshin-7.1-p2",
+      "gameId": "genshin",
+      "type": "BANNER",
+      "version": "7.1",
+      "phase": 2,
+      "title": "7.1 후반 픽업",
+      "characters": [
+        {
+          "name": "스커크",
+          "rarity": 5,
+          "isNew": false
+        },
+        {
+          "name": "에스코피에",
+          "rarity": 5,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-10-13T19:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-11-03T15:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "sourceUrl": "https://namu.wiki/w/%EC%9B%90%EC%8B%A0/%EA%B8%B0%EC%9B%90/%EB%AA%A9%EB%A1%9D",
+      "note": null,
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "nte-1.4-p2",
+      "gameId": "nte",
+      "type": "BANNER",
+      "version": "1.4",
+      "phase": 2,
+      "title": "1.4 후반 픽업",
+      "characters": [
+        {
+          "name": "아카네 린",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-10-21T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-11-11T00:00:00+09:00",
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": "후반 시작일은 3주 주기 기준 추정",
+      "sourceUrl": "https://namu.wiki/w/%EC%9D%B4%ED%99%98/%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8",
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    },
+    {
+      "id": "wuwa-3.7-p2",
+      "gameId": "wuwa",
+      "type": "BANNER",
+      "version": "3.7",
+      "phase": 2,
+      "title": "3.7 후반 픽업",
+      "characters": [
+        {
+          "name": "쇄명",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-10-21T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-11-11T00:00:00+09:00",
+      "endConfirmed": false,
+      "status": "LEAK",
+      "note": "캐릭터는 공식 공개, 전후반 순서는 유출 기준",
+      "sourceUrl": "https://wuwa.uk/ko/articles/wuwa-3-7-preview-2026",
+      "evidence": null,
+      "updatedAt": "2026-09-19T18:00:00+09:00"
+    }
+  ]
+}

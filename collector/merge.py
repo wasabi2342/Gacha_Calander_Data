@@ -5,6 +5,8 @@
   기사마다 시작일이 하루씩 다르게 적히는 일이 많아서, 시작일이 MATCH_WINDOW_DAYS 이내이고
   신규 캐릭터가 겹치면 같은 픽업으로 본다. 이때 시작일은 더 이른 날(점검 종료일)을 남긴다.
 - 신뢰도가 낮은 정보(LEAK)는 높은 정보(OFFICIAL)를 덮어쓰지 못한다.
+- 게임사 공식 공지에서 온 정보는 verified=True 로 저장하고 가장 높게 친다.
+  (뉴스가 "공식 발표"라고 옮긴 OFFICIAL 보다도 위. 뉴스·블로그는 verified 일정을 바꾸지 못한다)
 - 시각까지 확인된 값은 날짜만 있는 값으로 덮어쓰지 않는다.
 - 캐릭터 이름은 띄어쓰기·콜론·괄호 표기를 통일해서 비교한다.
 """
@@ -13,6 +15,16 @@ from datetime import datetime, timedelta, timezone
 
 KST = timezone(timedelta(hours=9))
 RANK = {"LEAK": 1, "ESTIMATED": 2, "OFFICIAL": 3}
+VERIFIED_BONUS = 1  # 공식 공지 출처는 OFFICIAL 보다 한 단계 위
+
+
+def rank_of(status: str | None, verified: bool = False) -> int:
+    return RANK.get(status, 0) + (VERIFIED_BONUS if verified else 0)
+
+
+def erank(e: dict) -> int:
+    """저장된 일정의 신뢰도 (공식 공지 확인 여부 포함)"""
+    return rank_of(e.get("status"), bool(e.get("verified")))
 TYPES = {"VERSION_UPDATE", "BANNER"}
 DATE_VERSION = re.compile(r"\d{4}-\d{2}-\d{2}")
 MATCH_WINDOW_DAYS = 3
@@ -165,8 +177,10 @@ def _rekey(events: dict[str, dict], old_key: str, e: dict) -> None:
 def _absorb(keep: dict, drop: dict) -> None:
     """drop 의 정보를 keep 에 합친다 (keep 이 더 이른 픽업)"""
     keep["characters"] = _merge_characters(keep.get("characters") or [], drop.get("characters") or [], union=True)
-    if RANK.get(drop.get("status"), 0) > RANK.get(keep.get("status"), 0):
+    if erank(drop) > erank(keep):
         keep["status"] = drop["status"]
+        if drop.get("verified"):
+            keep["verified"] = True
     if drop.get("endAt") and (not keep.get("endAt") or (drop.get("endConfirmed") and not keep.get("endConfirmed"))):
         keep["endAt"], keep["endConfirmed"] = drop["endAt"], drop.get("endConfirmed", False)
     if not keep.get("title") and drop.get("title"):
@@ -204,8 +218,8 @@ def _banner_start_problem(events: dict[str, dict], game_id: str, version: str, p
 
 # ---------- 병합 ----------
 
-def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str) -> str | None:
-    """events(키 → 일정)를 제자리에서 갱신.
+def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str, verified: bool = False) -> str | None:
+    """events(키 → 일정)를 제자리에서 갱신. verified=True 면 게임사 공식 공지에서 온 정보.
     반환: 'added' / 'updated' / None(이미 같은 정보) / 'skip:사유'(형식 문제로 버림) / 'ignore:사유'(일부러 제외)"""
     type_ = x.get("type")
     if type_ not in TYPES:
@@ -227,7 +241,8 @@ def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str) -> st
         version = start[:10]  # 모델이 version 과 startDate 를 다르게 줘도 시작일 기준으로 통일
 
     phase = None if (type_ == "VERSION_UPDATE" or date_keyed) else (x.get("phase") if x.get("phase") in (1, 2) else None)
-    status = x.get("status") if x.get("status") in RANK else "ESTIMATED"
+    status = "OFFICIAL" if verified else (x.get("status") if x.get("status") in RANK else "ESTIMATED")
+    new_rank = rank_of(status, verified)
     time_known = bool(x.get("startTime")) and to_iso(x.get("startDate"), x.get("startTime"), "00:00") is not None
     end = to_iso(x.get("endDate"), x.get("endTime"), "23:59")
     end_confirmed = end is not None and status == "OFFICIAL"
@@ -241,7 +256,8 @@ def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str) -> st
     e = events.get(key)
 
     start_problem = None
-    if start and type_ == "BANNER" and not date_keyed:
+    if start and type_ == "BANNER" and not date_keyed and not verified:
+        # 공식 공지 날짜는 검사하지 않는다 (틀린 쪽은 뉴스에서 온 업데이트일일 가능성이 더 큼)
         start_problem = _banner_start_problem(events, game_id, version, phase, start)
         if start_problem:
             start, time_known = None, False  # 틀린 날짜는 버리고 나머지 정보만 쓴다
@@ -258,7 +274,7 @@ def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str) -> st
         if found:
             key, e = found, events[found]
     if e is None:
-        events[key] = {
+        events[key] = new = {
             "id": event_id(game_id, type_, version, phase),
             "gameId": game_id, "type": type_, "version": version, "phase": phase,
             "title": title or f"{version} {'업데이트' if type_ == 'VERSION_UPDATE' else '픽업'}",
@@ -268,41 +284,45 @@ def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str) -> st
             "status": status, "note": None,
             "sourceUrl": source_url, "evidence": x.get("evidence"), "updatedAt": now,
         }
+        if verified:
+            new["verified"] = True
         return "added"
 
-    if RANK[status] < RANK.get(e.get("status"), 0):
+    old_rank = erank(e)
+    if new_rank < old_rank:
         return None
 
     changed = False
     # 기사마다 일부 캐릭터만 언급하는 경우가 많아서 기본은 합치기.
-    # 더 믿을 만한 출처(예: 유출 → 공식)가 오면 그 목록으로 교체한다
-    replace = RANK[status] > RANK.get(e.get("status"), 0)
+    # 더 믿을 만한 출처(예: 유출 → 공식, 뉴스 → 공식 공지)가 오면 그 목록으로 교체한다
+    replace = new_rank > old_rank
     merged_chars = _merge_characters(e.get("characters") or [], chars, union=not replace)
     if merged_chars != (e.get("characters") or []):
         e["characters"] = merged_chars
         changed = True
 
     rekey = False
-    old_rank = RANK.get(e.get("status"), 0)
     if not start:
         pass  # 이번 기사에는 믿을 만한 시작일이 없음
     elif date_keyed:
-        if start[:10] != e["startAt"][:10] and start < e["startAt"]:
+        if start[:10] != e["startAt"][:10] and (start < e["startAt"] or new_rank > old_rank):
             # 같은 픽업인데 날짜가 다르면 더 이른 날(점검 종료일)을 남긴다
             e["startAt"], e["timeKnown"] = start, time_known
             changed = rekey = True
     elif start != e.get("startAt"):
         # 날짜만 있는 정보끼리는 먼저 저장된 것을 믿는다. 시각이 새로 확인됐거나
         # 더 믿을 만한 출처(유출 → 추정 → 공식)일 때만 바꾼다
-        if (time_known and (not e.get("timeKnown") or RANK[status] >= old_rank)) or RANK[status] > old_rank:
+        if (time_known and (not e.get("timeKnown") or new_rank >= old_rank)) or new_rank > old_rank:
             e["startAt"], e["timeKnown"] = start, time_known
             changed = True
 
-    if end and (end_confirmed or not e.get("endConfirmed")) and end != e.get("endAt"):
+    if end and (end_confirmed or not e.get("endConfirmed") or new_rank > old_rank) and end != e.get("endAt"):
         e["endAt"], e["endConfirmed"] = end, end_confirmed
         changed = True
-    if RANK[status] > RANK.get(e.get("status"), 0):
+    if new_rank > old_rank:
         e["status"] = status
+        if verified:
+            e["verified"] = True
         changed = True
     if changed:
         # 제목은 기사마다 표현만 다르다("상반기"/"전반")라서 비어 있을 때만 채운다
@@ -366,6 +386,8 @@ def _repair_version_banners(events: dict[str, dict]) -> int:
     for e in list(events.values()):
         if e["type"] != "BANNER" or is_date_version(e["version"]) or e.get("phase") not in (1, 2):
             continue
+        if e.get("verified"):
+            continue  # 공식 공지로 확인된 날짜는 건드리지 않는다
         if not _banner_start_problem(events, e["gameId"], e["version"], e["phase"], e["startAt"]):
             continue
         new_start, guessed = None, False

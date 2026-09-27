@@ -25,10 +25,13 @@ SYSTEM_PROMPT = """너는 서브컬처 게임 뉴스에서 '버전 업데이트'
 9. 여러 기존 캐릭터 중 하나를 고르는 "선택 모집", "복각 선택", "셀렉트" 류는 추출하지 않는다.
 10. characters: 픽업 캐릭터만. 신규면 isNew true, 복각이면 false. 등급을 모르면 rarity null. 무기·광추·코스튬(스킨)만 있는 픽업은 넣지 않는다.
 11. status: 공식 발표나 공식 공지를 인용한 내용은 "OFFICIAL", '예정', '전망', '~경' 같은 추정은 "ESTIMATED", 유출·리크·데이터마이닝은 "LEAK".
+    글 종류가 "게임사 공식 공지"면 그 공지에 적힌 일정은 모두 "OFFICIAL"이다.
 12. 날짜는 "YYYY-MM-DD", 시각은 한국 시간 "HH:mm". 모르면 null.
 13. title: "7.1 전반 픽업", "3.7 「부제」"처럼 짧게.
 14. evidence: 근거가 된 기사 내용을 30자 이내로 요약한다.
 15. 일정이 없으면 []. JSON 배열만 출력하고 다른 텍스트는 쓰지 않는다.
+16. 본문 맨 앞에 [시간대 안내]가 있으면 그대로 따라서 한국 시간으로 바꾼다. 공지 게시 기간은 참고용이고, 본문에 적힌 픽업·업데이트 기간이 우선이다.
+17. 공식 공지에서 "버전 업데이트 후", "점검 후"처럼 시작 시각이 정확히 없으면 startTime은 null, 날짜는 업데이트(점검) 날짜로 쓴다.
 
 출력 예시
 [{"type":"BANNER","version":"7.1","phase":1,"title":"7.1 전반 픽업","characters":[{"name":"베스나","rarity":5,"isNew":true}],"startDate":"2026-09-23","startTime":null,"endDate":"2026-10-13","endTime":"18:59","status":"OFFICIAL","evidence":"7.1 전반부 베스나 픽업"}]
@@ -102,7 +105,10 @@ PROVIDERS = {"gemini": _call_gemini, "anthropic": _call_anthropic}
 
 def extract(provider: str, api_key: str, model: str, game_full_name: str, title: str, body: str,
             published_at: datetime, source: str = "news") -> list[dict]:
-    kind = "개인 블로그 글 (팬이 정리한 글이라 틀릴 수 있음)" if source == "blog" else "뉴스 기사"
+    kind = {
+        "blog": "개인 블로그 글 (팬이 정리한 글이라 틀릴 수 있음)",
+        "official": "게임사 공식 공지 (1차 출처, 가장 정확함)",
+    }.get(source, "뉴스 기사")
     user = (f"게임: {game_full_name}\n"
             f"글 종류: {kind}\n"
             f"작성 시각(KST): {_fmt_pub(published_at)}\n"

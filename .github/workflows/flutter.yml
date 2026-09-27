@@ -1,0 +1,20 @@
+name: 앱 검사
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch: {}
+
+jobs:
+  flutter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter analyze --no-fatal-infos
+      - run: flutter test
+      - run: flutter build web --release

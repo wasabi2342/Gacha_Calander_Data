@@ -30,7 +30,8 @@ class NewsItem:
     url: str
     description: str
     published_at: datetime
-    source: str = "news"  # "news" 또는 "blog"
+    source: str = "news"  # "news" / "blog" / "official"
+    body: str | None = None  # 공식 공지는 본문을 미리 채워 둔다 (fetch_article_text 생략)
 
 
 def _strip_html(s: str) -> str:
