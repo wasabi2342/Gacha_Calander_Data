@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-27T00:29:23+09:00",
+  "updatedAt": "2026-09-27T11:54:55+09:00",
   "games": [
     {
       "id": "genshin",
@@ -48,30 +48,6 @@
     }
   ],
   "events": [
-    {
-      "id": "nte-1.2-p1",
-      "gameId": "nte",
-      "type": "BANNER",
-      "version": "1.2",
-      "phase": 1,
-      "title": "1.2 전반 픽업",
-      "characters": [
-        {
-          "name": "신쿠",
-          "rarity": null,
-          "isNew": true
-        }
-      ],
-      "startAt": "2026-07-08T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": "2026-07-29T06:59:00+09:00",
-      "endConfirmed": true,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://www.gamemeca.com/mv.php?inflow=naver&gid=1777110",
-      "evidence": "신쿠 한정 픽업은 7월 8일 업데이트부터 29일 오전 6시 59분까지",
-      "updatedAt": "2026-09-20T14:50:32+09:00"
-    },
     {
       "id": "nikke-2026-07-23-p0",
       "gameId": "nikke",
