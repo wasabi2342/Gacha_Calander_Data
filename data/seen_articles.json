@@ -1188,5 +1188,40 @@
     "source": "news",
     "seenAt": "2026-09-25T01:16:23+09:00",
     "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21946#v=2b24afe8": {
+    "game": "genshin",
+    "title": "「죽음의 진혼곡」 7.1 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-09-28T03:54:45+09:00",
+    "changes": 1
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21876#v=f0b633ec": {
+    "game": "genshin",
+    "title": "「봄바람의 춤」 기원: 「눈꽃 연회의 검·베스나(바람)」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-09-28T03:54:52+09:00",
+    "changes": 1
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21877#v=ce44fcd8": {
+    "game": "genshin",
+    "title": "「파도의 노래」 기원: 「깊은 호수의 노래·보댜니차(물)」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-09-28T03:54:59+09:00",
+    "changes": 1
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21878#v=47a1e4c8": {
+    "game": "genshin",
+    "title": "「신의 주조」 기원: 「한손검·나비의 우화」, 「법구·파도의 찬송가」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-09-28T03:55:05+09:00",
+    "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21885#v=1c6fc1b2": {
+    "game": "genshin",
+    "title": "「검에 서린 설원의 여정」 이벤트: 원하는 「세상 여행」 일반 기원의 ★5 캐릭터 초대 가능",
+    "source": "official",
+    "seenAt": "2026-09-28T03:55:13+09:00",
+    "changes": 0
   }
 }

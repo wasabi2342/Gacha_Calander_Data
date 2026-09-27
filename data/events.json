@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-27T11:54:55+09:00",
+  "updatedAt": "2026-09-28T03:55:16+09:00",
   "games": [
     {
       "id": "genshin",
@@ -768,24 +768,6 @@
       "updatedAt": "2026-09-20T14:58:58+09:00"
     },
     {
-      "id": "genshin-7.1-update",
-      "gameId": "genshin",
-      "type": "VERSION_UPDATE",
-      "version": "7.1",
-      "phase": null,
-      "title": "7.1 버전 업데이트",
-      "characters": [],
-      "startAt": "2026-09-23T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://www.apnews.kr/news/articleView.html?idxno=3051280",
-      "evidence": "오는 23일 원신 7.1버전 업데이트",
-      "updatedAt": "2026-09-20T14:40:44+09:00"
-    },
-    {
       "id": "genshin-7.1-p1",
       "gameId": "genshin",
       "type": "BANNER",
@@ -799,6 +781,21 @@
           "isNew": true
         },
         {
+          "name": "디오나",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
+          "name": "파루잔",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
+          "name": "중운",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
           "name": "보댜니차",
           "rarity": 5,
           "isNew": true
@@ -806,13 +803,33 @@
       ],
       "startAt": "2026-09-23T00:00:00+09:00",
       "timeKnown": false,
+      "endAt": "2026-10-13T18:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21877#v=ce44fcd8",
+      "evidence": "7.1 버전 업데이트 후 보댜니차 픽업",
+      "updatedAt": "2026-09-28T03:54:59+09:00",
+      "verified": true
+    },
+    {
+      "id": "genshin-7.1-update",
+      "gameId": "genshin",
+      "type": "VERSION_UPDATE",
+      "version": "7.1",
+      "phase": null,
+      "title": "7.1 버전 업데이트",
+      "characters": [],
+      "startAt": "2026-09-23T07:00:00+09:00",
+      "timeKnown": true,
       "endAt": null,
       "endConfirmed": false,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://www.apnews.kr/news/articleView.html?idxno=3051280",
-      "evidence": "7.1 버전 상반기 베스나, 보댜니차 등장",
-      "updatedAt": "2026-09-20T14:40:44+09:00"
+      "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21946#v=2b24afe8",
+      "evidence": "7.1 버전 「죽음의 진혼곡」 업데이트 안내",
+      "updatedAt": "2026-09-28T03:54:45+09:00",
+      "verified": true
     },
     {
       "id": "nikke-2026-09-24-p0",
