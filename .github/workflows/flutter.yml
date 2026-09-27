@@ -1,8 +1,11 @@
 name: 앱 검사
 
+# 앱 코드가 바뀔 때만 돈다 (6시간마다 올라오는 data/ 커밋에는 안 돎)
 on:
   push:
+    paths: ["lib/**", "test/**", "assets/**", "pubspec.yaml", "pubspec.lock", "analysis_options.yaml", ".github/workflows/flutter.yml"]
   pull_request:
+    paths: ["lib/**", "test/**", "assets/**", "pubspec.yaml"]
   workflow_dispatch: {}
 
 jobs:

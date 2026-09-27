@@ -1,4 +1,32 @@
+# ---------- 수집기 (Python) ----------
 __pycache__/
 *.pyc
 .venv/
 .env
+.pytest_cache/
+
+# ---------- 앱 (Flutter) ----------
+# 빌드 결과물·캐시: 올리면 저장소가 수백 MB가 되고, Actions가 매번 그만큼 받아야 해요
+/build/
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/coverage/
+**/ios/Flutter/.last_build_id
+**/doc/api/
+app.*.symbols
+app.*.map.json
+/android/app/debug
+/android/app/profile
+/android/app/release
+android/local.properties
+android/.gradle/
+**/ephemeral/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.DS_Store

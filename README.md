@@ -1,10 +1,12 @@
-# gacha-calendar-data
+# 픽업 달력 (앱 + 일정 데이터)
+
+서브컬처 게임 버전 업데이트·픽업 일정 달력. 이 저장소 하나에 **Flutter 앱**(`lib/`)과 **일정 수집기**(`collector/`, `data/`)가 같이 들어 있다.
 
 픽업 달력 앱이 읽는 게임 일정 데이터 저장소. GitHub Actions가 6시간마다 **게임사 공식 공지**와 뉴스를 읽어서 `data/events.json`을 갱신한다.
 
 ```
 [Actions, 6시간마다] ① 게임사 공식 공지 → ② 네이버 뉴스 → ③ 블로그 → Gemini로 일정 추출 → 병합 → data/ 커밋
-[앱] https://raw.githubusercontent.com/<계정>/gacha-calendar-data/main/data/events.json 읽기
+[앱] https://raw.githubusercontent.com/wasabi2342/Gacha_Calander_Data/main/data/events.json 읽기
 ```
 
 ## 파일
@@ -105,3 +107,15 @@ python collector/collect.py --reset-all                # 전체 초기화 후 �
 ## 추출이 틀렸을 때
 
 `data/events.json` 을 직접 고쳐서 커밋하면 돼요. 고친 일정에 `"status": "OFFICIAL"` 과 `"verified": true` 를 넣으면 이후 뉴스·블로그로는 덮어써지지 않아요. 각 일정의 `evidence`, `sourceUrl` 로 어떤 기사에서 왔는지 확인할 수 있어요.
+
+## 앱 (Flutter)
+
+```bash
+flutter pub get
+flutter run
+```
+
+- 데이터 주소는 `lib/config.dart` (이 저장소의 `data/events.json`).
+- 화면: 달력(선택한 날 픽업·D-day), 일정 목록, 타임라인. 공휴일 `assets/holidays.json`, 오프라인 캐시, 당겨서 새로고침.
+- 앱 코드를 푸시하면 `.github/workflows/flutter.yml` 이 analyze / test / 웹 빌드를 확인해요.
+- `build/`, `.dart_tool/`, `.idea/` 는 올리지 않아요 (`.gitignore`).
