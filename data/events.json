@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-28T03:55:16+09:00",
+  "updatedAt": "2026-09-28T04:18:46+09:00",
   "games": [
     {
       "id": "genshin",
@@ -49,30 +49,6 @@
   ],
   "events": [
     {
-      "id": "nikke-2026-07-23-p0",
-      "gameId": "nikke",
-      "type": "BANNER",
-      "version": "2026-07-23",
-      "phase": null,
-      "title": "라플라스: 얼티밋 히어로 픽업",
-      "characters": [
-        {
-          "name": "라플라스: 얼티밋 히어로",
-          "rarity": null,
-          "isNew": true
-        }
-      ],
-      "startAt": "2026-07-23T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": "2026-08-12T23:59:00+09:00",
-      "endConfirmed": false,
-      "status": "ESTIMATED",
-      "note": null,
-      "sourceUrl": "https://blog.naver.com/ldkboaz/224355851445",
-      "evidence": "라플라스 픽업 7월 23일 점검 종료 후부터 8월 12일",
-      "updatedAt": "2026-09-20T15:00:03+09:00"
-    },
-    {
       "id": "nte-1.2-p2",
       "gameId": "nte",
       "type": "BANNER",
@@ -89,156 +65,12 @@
       "startAt": "2026-07-29T00:00:00+09:00",
       "timeKnown": false,
       "endAt": "2026-08-19T06:59:00+09:00",
-      "endConfirmed": true,
-      "status": "OFFICIAL",
+      "endConfirmed": false,
+      "status": "ESTIMATED",
       "note": null,
       "sourceUrl": "https://www.gamemeca.com/mv.php?inflow=naver&gid=1777110",
       "evidence": "일로이 한정 픽업은 7월 29일 점검 후부터 8월 19일 오전 6시 59분까지",
-      "updatedAt": "2026-09-20T14:50:32+09:00"
-    },
-    {
-      "id": "nikke-2026-07-30-p0",
-      "gameId": "nikke",
-      "type": "BANNER",
-      "version": "2026-07-30",
-      "phase": null,
-      "title": "맥스웰: 오디너리 미케닉 픽업",
-      "characters": [
-        {
-          "name": "맥스웰: 오디너리 미케닉",
-          "rarity": null,
-          "isNew": true
-        }
-      ],
-      "startAt": "2026-07-30T05:00:00+09:00",
-      "timeKnown": true,
-      "endAt": "2026-08-20T04:59:00+09:00",
-      "endConfirmed": false,
-      "status": "ESTIMATED",
-      "note": null,
-      "sourceUrl": "https://blog.naver.com/ldkboaz/224355851445",
-      "evidence": "맥스웰 픽업 7월 30일 오전 5시부터 8월 20일 오전 4시 59분",
-      "updatedAt": "2026-09-20T15:00:03+09:00"
-    },
-    {
-      "id": "bluearchive-2026-08-04-p0",
-      "gameId": "bluearchive",
-      "type": "BANNER",
-      "version": "2026-08-04",
-      "phase": null,
-      "title": "교카네, 세이아, 교스나, 바토키 복각/픽업",
-      "characters": [
-        {
-          "name": "무로카사 아카네",
-          "rarity": null,
-          "isNew": false
-        },
-        {
-          "name": "유리조노 세이아",
-          "rarity": null,
-          "isNew": false
-        },
-        {
-          "name": "이치노세 아스나",
-          "rarity": null,
-          "isNew": false
-        },
-        {
-          "name": "아스마 토키",
-          "rarity": null,
-          "isNew": false
-        }
-      ],
-      "startAt": "2026-08-04T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "ESTIMATED",
-      "note": null,
-      "sourceUrl": "https://blog.naver.com/ssoyun0901/224365826348",
-      "evidence": "8월 4일 교카네, 세이아, 교스나, 바토키 모집",
-      "updatedAt": "2026-09-20T14:54:29+09:00"
-    },
-    {
-      "id": "genshin-7.0-update",
-      "gameId": "genshin",
-      "type": "VERSION_UPDATE",
-      "version": "7.0",
-      "phase": null,
-      "title": "7.0 업데이트",
-      "characters": [],
-      "startAt": "2026-08-12T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "ESTIMATED",
-      "note": null,
-      "sourceUrl": "https://blog.naver.com/orin2611/224366654614",
-      "evidence": "7.0 일정은 26년8월12일(수)에 업데이트 예정",
-      "updatedAt": "2026-09-20T19:23:15+09:00"
-    },
-    {
-      "id": "genshin-7.0-p1",
-      "gameId": "genshin",
-      "type": "BANNER",
-      "version": "7.0",
-      "phase": 1,
-      "title": "7.0 전반 픽업",
-      "characters": [
-        {
-          "name": "오데트",
-          "rarity": 5,
-          "isNew": true
-        },
-        {
-          "name": "아를레키노",
-          "rarity": 5,
-          "isNew": false
-        },
-        {
-          "name": "알료사",
-          "rarity": 4,
-          "isNew": true
-        },
-        {
-          "name": "알료샤",
-          "rarity": 4,
-          "isNew": true
-        }
-      ],
-      "startAt": "2026-08-12T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "ESTIMATED",
-      "note": null,
-      "sourceUrl": "https://blog.naver.com/didcjddns/224366173205",
-      "evidence": "원신 7.0 버전 전반 픽업 배너",
-      "updatedAt": "2026-09-20T19:23:23+09:00"
-    },
-    {
-      "id": "nikke-2026-08-13-p0",
-      "gameId": "nikke",
-      "type": "BANNER",
-      "version": "2026-08-13",
-      "phase": null,
-      "title": "퀸(니지마 마코토) 픽업",
-      "characters": [
-        {
-          "name": "퀸",
-          "rarity": 5,
-          "isNew": true
-        }
-      ],
-      "startAt": "2026-08-13T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": "2026-09-10T04:59:00+09:00",
-      "endConfirmed": false,
-      "status": "ESTIMATED",
-      "note": null,
-      "sourceUrl": "https://blog.naver.com/hantiger24/224377869200",
-      "evidence": "8월 13일 점검 종료 후 퀸 픽업 시작",
-      "updatedAt": "2026-09-20T14:59:30+09:00"
+      "updatedAt": "2026-09-28T04:13:17+09:00"
     },
     {
       "id": "bluearchive-2026-08-18-p0",
@@ -246,28 +78,29 @@
       "type": "BANNER",
       "version": "2026-08-18",
       "phase": null,
-      "title": "요시노 니코, 타카쿠라 쿠루미 픽업",
+      "title": "니코, 쿠루미 특별 픽업 모집",
       "characters": [
         {
-          "name": "요시노 니코",
-          "rarity": null,
+          "name": "니코",
+          "rarity": 3,
           "isNew": true
         },
         {
-          "name": "타카쿠라 쿠루미",
-          "rarity": null,
+          "name": "쿠루미",
+          "rarity": 3,
           "isNew": true
         }
       ],
       "startAt": "2026-08-18T00:00:00+09:00",
       "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "ESTIMATED",
+      "endAt": "2026-09-01T10:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://blog.naver.com/ssoyun0901/224365826348",
-      "evidence": "8월 18일 요시노 니코, 타카쿠라 쿠루미 픽업",
-      "updatedAt": "2026-09-20T14:54:29+09:00"
+      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3515599#v=12f2469f",
+      "evidence": "니코, 쿠루미 특별 픽업 모집",
+      "updatedAt": "2026-09-28T04:15:07+09:00",
+      "verified": true
     },
     {
       "id": "nte-1.3-update",
@@ -275,17 +108,17 @@
       "type": "VERSION_UPDATE",
       "version": "1.3",
       "phase": null,
-      "title": "1.3 '안개 너머의 별빛' 업데이트",
+      "title": "1.3 버전 '안개 너머의 별빛' 업데이트",
       "characters": [],
       "startAt": "2026-08-19T00:00:00+09:00",
       "timeKnown": false,
       "endAt": "2026-09-30T23:59:00+09:00",
-      "endConfirmed": true,
-      "status": "OFFICIAL",
+      "endConfirmed": false,
+      "status": "ESTIMATED",
       "note": null,
       "sourceUrl": "https://www.inven.co.kr/webzine/news/?news=319336",
-      "evidence": "1.3 버전은 8월 19일(수)부터 9월 30일(수)까지",
-      "updatedAt": "2026-09-20T14:50:14+09:00"
+      "evidence": "1.3 버전은 8월 19일부터 9월 30일까지",
+      "updatedAt": "2026-09-28T04:13:00+09:00"
     },
     {
       "id": "nte-1.3-p1",
@@ -309,61 +142,12 @@
       "startAt": "2026-08-19T00:00:00+09:00",
       "timeKnown": false,
       "endAt": "2026-09-09T06:59:00+09:00",
-      "endConfirmed": true,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://www.inven.co.kr/webzine/news/?news=319336",
-      "evidence": "1.3 전반기에는 잔홍... 나나리의 복각 보드... 8월 19일 버전 업데이트 후부터 9월 9일 06:59까지",
-      "updatedAt": "2026-09-20T14:50:14+09:00"
-    },
-    {
-      "id": "zzz-3.1-p2",
-      "gameId": "zzz",
-      "type": "BANNER",
-      "version": "3.1",
-      "phase": 2,
-      "title": "3.1 후반 픽업",
-      "characters": [
-        {
-          "name": "시그리드 드라주르",
-          "rarity": 5,
-          "isNew": true
-        },
-        {
-          "name": "다이아린",
-          "rarity": 5,
-          "isNew": false
-        },
-        {
-          "name": "유즈하",
-          "rarity": null,
-          "isNew": false
-        },
-        {
-          "name": "하루마사",
-          "rarity": null,
-          "isNew": false
-        },
-        {
-          "name": "우키나미 유즈하",
-          "rarity": 5,
-          "isNew": false
-        },
-        {
-          "name": "아사바 하루마사",
-          "rarity": 5,
-          "isNew": false
-        }
-      ],
-      "startAt": "2026-08-19T13:00:00+09:00",
-      "timeKnown": true,
-      "endAt": "2026-09-08T15:59:00+09:00",
       "endConfirmed": false,
       "status": "ESTIMATED",
       "note": null,
-      "sourceUrl": "https://blog.naver.com/didcjddns/224350554417",
-      "evidence": "후반 시그리드 및 복각 3인 픽업",
-      "updatedAt": "2026-09-20T14:53:11+09:00"
+      "sourceUrl": "https://www.inven.co.kr/webzine/news/?news=319336",
+      "evidence": "1.3 전반기에는 잔홍... 나나리... 8월 19일 버전 업데이트 후부터 9월 9일 06:59까지",
+      "updatedAt": "2026-09-28T04:13:00+09:00"
     },
     {
       "id": "wuwa-3.6-update",
@@ -377,11 +161,11 @@
       "timeKnown": false,
       "endAt": null,
       "endConfirmed": false,
-      "status": "OFFICIAL",
+      "status": "ESTIMATED",
       "note": null,
       "sourceUrl": "https://www.gameple.co.kr/news/articleView.html?idxno=216215",
       "evidence": "오는 8월 20일 업데이트되는 3.6 버전",
-      "updatedAt": "2026-09-20T14:47:32+09:00"
+      "updatedAt": "2026-09-28T04:11:25+09:00"
     },
     {
       "id": "wuwa-3.6-p1",
@@ -389,7 +173,7 @@
       "type": "BANNER",
       "version": "3.6",
       "phase": 1,
-      "title": "3.6 전반 픽업",
+      "title": "3.6 전반부 픽업",
       "characters": [
         {
           "name": "청초",
@@ -400,6 +184,11 @@
           "name": "데니아",
           "rarity": null,
           "isNew": false
+        },
+        {
+          "name": "경연",
+          "rarity": 5,
+          "isNew": true
         }
       ],
       "startAt": "2026-08-20T00:00:00+09:00",
@@ -408,92 +197,67 @@
       "endConfirmed": false,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://www.gamemeca.com/mv.php?inflow=naver&gid=1778892",
-      "evidence": "3.6 전반부 픽업 청초, 데니아",
-      "updatedAt": "2026-09-20T14:47:41+09:00"
+      "sourceUrl": "https://www.gameple.co.kr/news/articleView.html?idxno=216215",
+      "evidence": "전반부 청초, 후반부 경연/ 전반부 데니아 복각",
+      "updatedAt": "2026-09-28T04:11:25+09:00",
+      "verified": true
     },
     {
-      "id": "nikke-2026-08-20-p0",
-      "gameId": "nikke",
+      "id": "bluearchive-2026-09-01-p0",
+      "gameId": "bluearchive",
       "type": "BANNER",
-      "version": "2026-08-20",
+      "version": "2026-09-01",
       "phase": null,
-      "title": "아마기 유키코 픽업",
+      "title": "스미레, 레이, 아카리, 이즈미, 하루카 복각 픽업",
       "characters": [
         {
-          "name": "아마기 유키코",
-          "rarity": 5,
-          "isNew": true
-        }
-      ],
-      "startAt": "2026-08-20T05:00:00+09:00",
-      "timeKnown": true,
-      "endAt": "2026-09-10T04:59:00+09:00",
-      "endConfirmed": false,
-      "status": "ESTIMATED",
-      "note": null,
-      "sourceUrl": "https://blog.naver.com/hantiger24/224377869200",
-      "evidence": "8월 20일 오전 5시 유키코 픽업 시작",
-      "updatedAt": "2026-09-20T14:59:30+09:00"
-    },
-    {
-      "id": "hsr-4.5-update",
-      "gameId": "hsr",
-      "type": "VERSION_UPDATE",
-      "version": "4.5",
-      "phase": null,
-      "title": "4.5 버전 업데이트",
-      "characters": [],
-      "startAt": "2026-08-26T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "ESTIMATED",
-      "note": null,
-      "sourceUrl": "https://techpost.tistory.com/728",
-      "evidence": "4.5 버전 (2026년 8월 26일 예정)",
-      "updatedAt": "2026-09-20T14:45:15+09:00"
-    },
-    {
-      "id": "hsr-4.5-p1",
-      "gameId": "hsr",
-      "type": "BANNER",
-      "version": "4.5",
-      "phase": 1,
-      "title": "4.5 전반 픽업",
-      "characters": [
-        {
-          "name": "로빈·서머레토",
-          "rarity": 5,
-          "isNew": true
+          "name": "스미레(아르바이트)",
+          "rarity": 3,
+          "isNew": false
         },
         {
-          "name": "히아킨",
-          "rarity": 5,
+          "name": "레이",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "아카리(새해)",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "이즈미(새해)",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "하루카(새해)",
+          "rarity": 3,
           "isNew": false
         }
       ],
-      "startAt": "2026-08-26T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": "2026-09-16T23:59:00+09:00",
-      "endConfirmed": false,
-      "status": "ESTIMATED",
+      "startAt": "2026-09-01T11:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-09-08T10:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://blog.naver.com/orin2611/224379610916",
-      "evidence": "4.5버전 전반기 : 8월26일 - 9월16일",
-      "updatedAt": "2026-09-20T14:45:40+09:00"
+      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3515599#v=12f2469f",
+      "evidence": "스미레, 레이, 아카리, 이즈미, 하루카 복각 픽업",
+      "updatedAt": "2026-09-28T04:15:07+09:00",
+      "verified": true
     },
     {
-      "id": "endfield-2026-09-02-p0",
-      "gameId": "endfield",
+      "id": "arknights-2026-09-02-p0",
+      "gameId": "arknights",
       "type": "BANNER",
       "version": "2026-09-02",
       "phase": null,
-      "title": "티프로스 픽업",
+      "title": "신규 캐릭터 티프로스 합류",
       "characters": [
         {
           "name": "티프로스",
-          "rarity": null,
+          "rarity": 6,
           "isNew": true
         }
       ],
@@ -503,33 +267,9 @@
       "endConfirmed": false,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://www.gametoc.co.kr/news/articleView.html?idxno=111171",
-      "evidence": "2일 명일방주 엔드필드에 자연 속성 스트라이커 티프로스가 출시됐습니다",
-      "updatedAt": "2026-09-20T14:56:59+09:00"
-    },
-    {
-      "id": "nikke-2026-09-03-p0",
-      "gameId": "nikke",
-      "type": "BANNER",
-      "version": "2026-09-03",
-      "phase": null,
-      "title": "드레이크 : 그레이트 빌런 모집",
-      "characters": [
-        {
-          "name": "드레이크: 그레이트 빌런",
-          "rarity": 5,
-          "isNew": true
-        }
-      ],
-      "startAt": "2026-09-03T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": "2026-09-17T23:59:00+09:00",
-      "endConfirmed": true,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://www.thisisgame.com/articles/429665",
-      "evidence": "드레이크 : 그레이트 빌런 모집 기간 9월 3일 ~ 9월 17일",
-      "updatedAt": "2026-09-20T14:59:14+09:00"
+      "sourceUrl": "https://www.xportsnews.com/article/2187463",
+      "evidence": "9월 2일 업데이트 신규 캐릭터 티프로스",
+      "updatedAt": "2026-09-28T04:16:22+09:00"
     },
     {
       "id": "bluearchive-2026-09-08-p0",
@@ -537,23 +277,44 @@
       "type": "BANNER",
       "version": "2026-09-08",
       "phase": null,
-      "title": "9월 2주차 에리카 픽업",
+      "title": "에리카, 키라라, 츠바키, 우미카, 피나 픽업 모집",
       "characters": [
         {
           "name": "에리카",
-          "rarity": null,
+          "rarity": 3,
           "isNew": true
+        },
+        {
+          "name": "키라라",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "츠바키",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "우미카",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "피나",
+          "rarity": 3,
+          "isNew": false
         }
       ],
       "startAt": "2026-09-08T00:00:00+09:00",
       "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "ESTIMATED",
+      "endAt": "2026-09-15T10:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://blog.naver.com/jdh8803/224396678119",
-      "evidence": "9월 2주차 신규 학생 에리카 실장",
-      "updatedAt": "2026-09-20T14:54:21+09:00"
+      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3532788#v=67b39613",
+      "evidence": "9월 8일 점검 후 ~ 9월 15일 픽업 모집",
+      "updatedAt": "2026-09-28T04:14:59+09:00",
+      "verified": true
     },
     {
       "id": "nte-1.3-p2",
@@ -561,7 +322,7 @@
       "type": "BANNER",
       "version": "1.3",
       "phase": 2,
-      "title": "1.3 후반부 픽업",
+      "title": "1.3 후반기 픽업",
       "characters": [
         {
           "name": "링코",
@@ -577,30 +338,12 @@
       "startAt": "2026-09-09T00:00:00+09:00",
       "timeKnown": false,
       "endAt": "2026-09-30T06:59:00+09:00",
-      "endConfirmed": true,
-      "status": "OFFICIAL",
+      "endConfirmed": false,
+      "status": "ESTIMATED",
       "note": null,
       "sourceUrl": "https://www.inven.co.kr/webzine/news/?news=319336",
-      "evidence": "후반기에는 링코의... 호토리의 복각 보드... 9월 9일 점검 후부터 9월 30일 06:59까지",
-      "updatedAt": "2026-09-20T14:50:14+09:00"
-    },
-    {
-      "id": "zzz-3.2-update",
-      "gameId": "zzz",
-      "type": "VERSION_UPDATE",
-      "version": "3.2",
-      "phase": null,
-      "title": "3.2 버전 업데이트",
-      "characters": [],
-      "startAt": "2026-09-09T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://www.tgdaily.co.kr/news/articleView.html?idxno=406683",
-      "evidence": "9일 3.2 버전 업데이트 '그녀들의 숨겨진 과거'",
-      "updatedAt": "2026-09-20T14:51:04+09:00"
+      "evidence": "후반기에는 링코의... 호토리의... 9월 9일 점검 후부터 9월 30일 06:59까지",
+      "updatedAt": "2026-09-28T04:13:00+09:00"
     },
     {
       "id": "zzz-3.2-p1",
@@ -608,13 +351,8 @@
       "type": "BANNER",
       "version": "3.2",
       "phase": 1,
-      "title": "3.2 전반 변조",
+      "title": "3.2 상반기 복각 픽업",
       "characters": [
-        {
-          "name": "클라렛",
-          "rarity": 5,
-          "isNew": true
-        },
         {
           "name": "남궁우",
           "rarity": 5,
@@ -625,79 +363,75 @@
       "timeKnown": false,
       "endAt": null,
       "endConfirmed": false,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://www.xportsnews.com/article/2190233",
-      "evidence": "3.2 버전 상반기 클라렛, 남궁우 복각",
-      "updatedAt": "2026-09-20T14:51:13+09:00"
-    },
-    {
-      "id": "wuwa-3.6-p2",
-      "gameId": "wuwa",
-      "type": "BANNER",
-      "version": "3.6",
-      "phase": 2,
-      "title": "3.6 후반 픽업",
-      "characters": [
-        {
-          "name": "경연",
-          "rarity": null,
-          "isNew": true
-        },
-        {
-          "name": "히유키",
-          "rarity": null,
-          "isNew": false
-        },
-        {
-          "name": "모니에",
-          "rarity": null,
-          "isNew": false
-        }
-      ],
-      "startAt": "2026-09-10T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": "2026-10-01T23:59:00+09:00",
-      "endConfirmed": false,
       "status": "ESTIMATED",
       "note": null,
-      "sourceUrl": "https://blog.naver.com/orin2611/224371639395",
-      "evidence": "경연의 픽업 일정은 청초 픽업이 끝나는 9월10일부터 10월1일까지",
-      "updatedAt": "2026-09-20T19:23:59+09:00"
+      "sourceUrl": "https://www.fomos.kr/redirect/news_view?news_cate_id=2&entry_id=155555",
+      "evidence": "상반기 S급 에이전트 남궁우 복각",
+      "updatedAt": "2026-09-28T04:14:06+09:00"
     },
     {
-      "id": "hsr-4.5-p2",
+      "id": "zzz-3.2-update",
+      "gameId": "zzz",
+      "type": "VERSION_UPDATE",
+      "version": "3.2",
+      "phase": null,
+      "title": "3.2 버전 업데이트",
+      "characters": [],
+      "startAt": "2026-09-09T07:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-10-21T07:00:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://zenless.hoyoverse.com/ko-kr/news?ann=1297#v=dc00e102",
+      "evidence": "3.2 버전 업데이트 공지",
+      "updatedAt": "2026-09-28T04:13:35+09:00",
+      "verified": true
+    },
+    {
+      "id": "hsr-4.5-p0",
       "gameId": "hsr",
       "type": "BANNER",
       "version": "4.5",
-      "phase": 2,
-      "title": "4.5 후반 픽업",
+      "phase": null,
+      "title": "4.5 버전 이벤트 워프",
       "characters": [
         {
-          "name": "어벤츄린·웨이브",
+          "name": "어벤츄린•웨이브",
           "rarity": 5,
           "isNew": true
+        },
+        {
+          "name": "삼포",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
+          "name": "후크",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
+          "name": "계네빈",
+          "rarity": 4,
+          "isNew": false
         },
         {
           "name": "애쉬베일",
           "rarity": 5,
-          "isNew": false
-        },
-        {
-          "name": "에쉬베일",
-          "rarity": null,
-          "isNew": false
+          "isNew": true
         }
       ],
-      "startAt": "2026-09-12T12:00:00+09:00",
+      "startAt": "2026-09-12T13:00:00+09:00",
       "timeKnown": true,
-      "endAt": "2026-10-06T23:59:00+09:00",
-      "endConfirmed": false,
-      "status": "ESTIMATED",
+      "endAt": "2026-09-28T04:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://blog.naver.com/orin2611/224379610916",
-      "evidence": "4.5버전 후반기 : 9월16일 - 10월6일",
-      "updatedAt": "2026-09-20T14:45:40+09:00"
+      "sourceUrl": "https://hsr.hoyoverse.com/ko-kr/news?ann=1331#v=b385ee2a",
+      "evidence": "4.5 버전 이벤트 워프 일정",
+      "updatedAt": "2026-09-28T04:08:26+09:00",
+      "verified": true
     },
     {
       "id": "bluearchive-2026-09-15-p0",
@@ -705,38 +439,44 @@
       "type": "BANNER",
       "version": "2026-09-15",
       "phase": null,
-      "title": "게헨나 학원 드레스 픽업",
+      "title": "드레스 무츠키/하루카 및 복각 픽업",
       "characters": [
         {
-          "name": "무츠키(드레스)",
-          "rarity": null,
-          "isNew": true
-        },
-        {
-          "name": "하루카(드레스)",
-          "rarity": null,
-          "isNew": true
-        },
-        {
           "name": "무츠키",
-          "rarity": null,
+          "rarity": 3,
           "isNew": true
         },
         {
           "name": "하루카",
-          "rarity": null,
+          "rarity": 3,
           "isNew": true
+        },
+        {
+          "name": "아루",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "카요코",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "사오리",
+          "rarity": 3,
+          "isNew": false
         }
       ],
       "startAt": "2026-09-15T00:00:00+09:00",
       "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
+      "endAt": "2026-09-29T10:59:00+09:00",
+      "endConfirmed": true,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "http://www.worktoday.co.kr/news/articleView.html?idxno=89310",
-      "evidence": "무츠키·하루카 드레스 버전 추가",
-      "updatedAt": "2026-09-20T14:53:37+09:00"
+      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3536012#v=5d22be8f",
+      "evidence": "9/15(화) 픽업 모집 안내",
+      "updatedAt": "2026-09-28T04:14:52+09:00",
+      "verified": true
     },
     {
       "id": "nikke-2026-09-17-p0",
@@ -752,9 +492,34 @@
           "isNew": true
         },
         {
-          "name": "길티",
-          "rarity": 5,
-          "isNew": true
+          "name": "루피: 윈터 쇼퍼",
+          "rarity": null,
+          "isNew": false
+        },
+        {
+          "name": "앤: 미라클 페어리",
+          "rarity": null,
+          "isNew": false
+        },
+        {
+          "name": "루드밀라: 윈터 오너",
+          "rarity": null,
+          "isNew": false
+        },
+        {
+          "name": "미카: 스노우 버디",
+          "rarity": null,
+          "isNew": false
+        },
+        {
+          "name": "메이든: 아이스 로즈",
+          "rarity": null,
+          "isNew": false
+        },
+        {
+          "name": "길로틴: 윈터 슬레이어",
+          "rarity": null,
+          "isNew": false
         }
       ],
       "startAt": "2026-09-17T00:00:00+09:00",
@@ -764,8 +529,8 @@
       "status": "OFFICIAL",
       "note": null,
       "sourceUrl": "https://www.gamechosun.co.kr/webzine/article/view.php?no=225222",
-      "evidence": "길티: 마이티 바니 픽업 9월 17일 점검 후",
-      "updatedAt": "2026-09-20T14:58:58+09:00"
+      "evidence": "길티 마이티 바니 픽업 9월 17일 점검 종료 후 시작",
+      "updatedAt": "2026-09-28T04:18:38+09:00"
     },
     {
       "id": "genshin-7.1-p1",
@@ -781,36 +546,25 @@
           "isNew": true
         },
         {
-          "name": "디오나",
-          "rarity": 4,
-          "isNew": false
-        },
-        {
-          "name": "파루잔",
-          "rarity": 4,
-          "isNew": false
-        },
-        {
-          "name": "중운",
-          "rarity": 4,
-          "isNew": false
-        },
-        {
           "name": "보댜니차",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "베ส나",
           "rarity": 5,
           "isNew": true
         }
       ],
       "startAt": "2026-09-23T00:00:00+09:00",
       "timeKnown": false,
-      "endAt": "2026-10-13T18:59:00+09:00",
-      "endConfirmed": true,
-      "status": "OFFICIAL",
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "ESTIMATED",
       "note": null,
-      "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21877#v=ce44fcd8",
-      "evidence": "7.1 버전 업데이트 후 보댜니차 픽업",
-      "updatedAt": "2026-09-28T03:54:59+09:00",
-      "verified": true
+      "sourceUrl": "https://zdnet.co.kr/view/?no=20260922095257",
+      "evidence": "7.1 버전 업데이트와 함께 신규 캐릭터 합류",
+      "updatedAt": "2026-09-28T04:06:20+09:00"
     },
     {
       "id": "genshin-7.1-update",
@@ -826,10 +580,53 @@
       "endConfirmed": false,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21946#v=2b24afe8",
-      "evidence": "7.1 버전 「죽음의 진혼곡」 업데이트 안내",
-      "updatedAt": "2026-09-28T03:54:45+09:00",
+      "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21946#v=60bf0ed5",
+      "evidence": "7.1 버전 「죽음의 진혼곡」 업데이트",
+      "updatedAt": "2026-09-28T04:05:23+09:00",
       "verified": true
+    },
+    {
+      "id": "hsr-4.6-update",
+      "gameId": "hsr",
+      "type": "VERSION_UPDATE",
+      "version": "4.6",
+      "phase": null,
+      "title": "4.6 버전 업데이트",
+      "characters": [],
+      "startAt": "2026-09-23T12:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-11-11T07:00:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://hsr.hoyoverse.com/ko-kr/news?ann=1421#v=354ddb41",
+      "evidence": "4.6 버전 업데이트 안내",
+      "updatedAt": "2026-09-28T04:08:12+09:00",
+      "verified": true
+    },
+    {
+      "id": "arknights-2026-09-24-p0",
+      "gameId": "arknights",
+      "type": "BANNER",
+      "version": "2026-09-24",
+      "phase": null,
+      "title": "후반 이벤트 픽업",
+      "characters": [
+        {
+          "name": "푸치나",
+          "rarity": null,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-09-24T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://www.xportsnews.com/article/2187463",
+      "evidence": "버전 후반인 9월 24일 이벤트 푸치나 획득",
+      "updatedAt": "2026-09-28T04:16:22+09:00"
     },
     {
       "id": "nikke-2026-09-24-p0",
@@ -837,15 +634,10 @@
       "type": "BANNER",
       "version": "2026-09-24",
       "phase": null,
-      "title": "신 : 스위프트 바니 특수 모집",
+      "title": "신: 스위프트 바니 특수 모집",
       "characters": [
         {
           "name": "신: 스위프트 바니",
-          "rarity": 5,
-          "isNew": true
-        },
-        {
-          "name": "신",
           "rarity": 5,
           "isNew": true
         }
@@ -857,60 +649,32 @@
       "status": "OFFICIAL",
       "note": null,
       "sourceUrl": "https://www.gamechosun.co.kr/webzine/article/view.php?no=225222",
-      "evidence": "신: 스위프트 바니 9월 24일 픽업 진행",
-      "updatedAt": "2026-09-20T14:58:58+09:00"
+      "evidence": "신 스위프트 바니 9월 24일 오전 5시 픽업 시작",
+      "updatedAt": "2026-09-28T04:18:38+09:00"
     },
     {
-      "id": "hsr-4.6-update",
-      "gameId": "hsr",
-      "type": "VERSION_UPDATE",
-      "version": "4.6",
-      "phase": null,
-      "title": "4.6 버전 업데이트",
-      "characters": [],
-      "startAt": "2026-09-28T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://gamefocus.co.kr/detail.php?number=179292",
-      "evidence": "4.6 버전 '달 뜨기 전, 괴수와 춤을' 9월 28일 업데이트",
-      "updatedAt": "2026-09-21T11:41:04+09:00"
-    },
-    {
-      "id": "hsr-4.6-p1",
+      "id": "hsr-4.6-p0",
       "gameId": "hsr",
       "type": "BANNER",
       "version": "4.6",
-      "phase": 1,
-      "title": "4.6 전반 픽업",
+      "phase": null,
+      "title": "4.6 버전 펄 픽업",
       "characters": [
         {
           "name": "펄",
           "rarity": 5,
           "isNew": true
-        },
-        {
-          "name": "에바네시아",
-          "rarity": 5,
-          "isNew": false
-        },
-        {
-          "name": "천야 블레이드",
-          "rarity": 5,
-          "isNew": false
         }
       ],
       "startAt": "2026-09-28T00:00:00+09:00",
       "timeKnown": false,
       "endAt": null,
       "endConfirmed": false,
-      "status": "OFFICIAL",
+      "status": "ESTIMATED",
       "note": null,
-      "sourceUrl": "https://www.betanews.net/article/view/beta202609210023",
-      "evidence": "4.6 버전 펄, 에바네시아, 천야 블레이드 픽업",
-      "updatedAt": "2026-09-21T11:41:21+09:00"
+      "sourceUrl": "http://www.smedaily.co.kr/news/articleView.html?idxno=363589",
+      "evidence": "4.6 버전 펄 추가",
+      "updatedAt": "2026-09-28T04:09:16+09:00"
     },
     {
       "id": "wuwa-3.7-update",
@@ -924,11 +688,11 @@
       "timeKnown": false,
       "endAt": null,
       "endConfirmed": false,
-      "status": "OFFICIAL",
+      "status": "ESTIMATED",
       "note": null,
       "sourceUrl": "https://www.gametoc.co.kr/news/articleView.html?idxno=111648",
-      "evidence": "3.7 버전은 9월 30일 정식 오픈할 예정",
-      "updatedAt": "2026-09-20T14:46:50+09:00"
+      "evidence": "3.7 버전 9월 30일 정식 오픈",
+      "updatedAt": "2026-09-28T04:10:44+09:00"
     },
     {
       "id": "wuwa-3.7-p1",
@@ -958,127 +722,11 @@
       "timeKnown": false,
       "endAt": null,
       "endConfirmed": false,
-      "status": "OFFICIAL",
+      "status": "ESTIMATED",
       "note": null,
       "sourceUrl": "https://www.gametoc.co.kr/news/articleView.html?idxno=111648",
-      "evidence": "3.7 버전 픽업 튜닝 전반부 여우의 별자리, 유노, 치사",
-      "updatedAt": "2026-09-20T14:46:50+09:00"
-    },
-    {
-      "id": "genshin-7.1-p2",
-      "gameId": "genshin",
-      "type": "BANNER",
-      "version": "7.1",
-      "phase": 2,
-      "title": "7.1 후반 픽업",
-      "characters": [
-        {
-          "name": "스커크",
-          "rarity": null,
-          "isNew": false
-        },
-        {
-          "name": "에스코피에",
-          "rarity": null,
-          "isNew": false
-        }
-      ],
-      "startAt": "2026-10-13T19:00:00+09:00",
-      "timeKnown": true,
-      "endAt": "2026-11-03T23:59:00+09:00",
-      "endConfirmed": false,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://www.gameple.co.kr/news/articleView.html?idxno=216556",
-      "evidence": "후반에는 스커크와 에스코피에가 복각한다",
-      "updatedAt": "2026-09-23T19:33:51+09:00"
-    },
-    {
-      "id": "wuwa-3.7-p2",
-      "gameId": "wuwa",
-      "type": "BANNER",
-      "version": "3.7",
-      "phase": 2,
-      "title": "3.7 후반 픽업",
-      "characters": [
-        {
-          "name": "쇄명",
-          "rarity": 5,
-          "isNew": true
-        },
-        {
-          "name": "루실라",
-          "rarity": null,
-          "isNew": false
-        },
-        {
-          "name": "린네",
-          "rarity": null,
-          "isNew": false
-        }
-      ],
-      "startAt": "2026-10-22T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": "2026-11-11T23:59:00+09:00",
-      "endConfirmed": false,
-      "status": "ESTIMATED",
-      "note": null,
-      "sourceUrl": "https://blog.naver.com/orin2611/224418057638",
-      "evidence": "후반부 10월22일 - 11월11일",
-      "updatedAt": "2026-09-21T00:12:47+09:00"
-    },
-    {
-      "id": "hsr-4.7-p0",
-      "gameId": "hsr",
-      "type": "BANNER",
-      "version": "4.7",
-      "phase": null,
-      "title": "4.7 신규 픽업",
-      "characters": [
-        {
-          "name": "에이언즈 아하",
-          "rarity": null,
-          "isNew": true
-        }
-      ],
-      "startAt": "2026-11-11T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "ESTIMATED",
-      "note": null,
-      "sourceUrl": "https://blog.naver.com/didcjddns/224418988287",
-      "evidence": "4.7 버전 신규 에이언즈 아하",
-      "updatedAt": "2026-09-21T20:38:59+09:00"
-    },
-    {
-      "id": "hsr-4.8-p0",
-      "gameId": "hsr",
-      "type": "BANNER",
-      "version": "4.8",
-      "phase": null,
-      "title": "4.8 신규 픽업",
-      "characters": [
-        {
-          "name": "아스트라 야오",
-          "rarity": null,
-          "isNew": true
-        },
-        {
-          "name": "엘렌 조",
-          "rarity": null,
-          "isNew": true
-        }
-      ],
-      "startAt": "2026-12-23T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "ESTIMATED",
-      "note": null,
-      "sourceUrl": "https://blog.naver.com/didcjddns/224418988287",
-      "evidence": "4.8 버전 아스트라 야오 / 엘렌 조",
-      "updatedAt": "2026-09-21T20:38:59+09:00"
+      "evidence": "3.7 버전 픽업 튜닝 전반부",
+      "updatedAt": "2026-09-28T04:10:44+09:00"
     }
   ]
 }
