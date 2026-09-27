@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -37,10 +38,22 @@ void main() {
     final now = DateTime.now().toUtc().add(const Duration(hours: 9));
     expect(find.text('${now.month}월'), findsOneWidget);
 
-    // 테스트에선 네트워크가 막혀 있어서 샘플로 넘어간다. 대기 중인 타임아웃 타이머까지 흘려보낸다.
+    // 테스트에선 네트워크가 막혀 있다. 저장된 일정도 없으니 예시로 가리지 않고 '다시 시도' 화면이 나와야 한다.
     await tester.pump(const Duration(seconds: 12));
     await tester.pump(const Duration(seconds: 12));
-    expect(find.textContaining('진행 중인 픽업'), findsOneWidget);
+    expect(find.text('다시 시도'), findsOneWidget);
+    expect(find.textContaining('진행 중인 픽업'), findsNothing);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('저장된 일정이 있으면 네트워크가 안 돼도 그걸 보여준다', (WidgetTester tester) async {
+    final raw = (await tester.runAsync(() => rootBundle.loadString('assets/seed_events.json')))!;
+    SharedPreferences.setMockInitialValues({'events_cache_v1': raw});
+    await tester.pumpWidget(const GachaCalendarApp());
+    await tester.pump(const Duration(seconds: 12));
+    await tester.pump(const Duration(seconds: 12));
+    expect(find.textContaining('마지막으로 받은 일정'), findsOneWidget);
+    expect(find.text('다시 시도'), findsNothing);
     expect(tester.takeException(), isNull);
   });
 

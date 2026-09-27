@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../config.dart';
@@ -28,6 +30,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   Set<String> _hidden = {};
   CalendarMode _mode = CalendarMode.month;
   bool _refreshing = false;
+
+  /// 처음 불러오기에 실패했을 때 이유 (저장된 일정도 없을 때만 화면에 보임)
+  String? _loadError;
 
   late DateTime _today = dateOnly(kstNow());
   late DateTime _selected = _today;
@@ -69,23 +74,35 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
       _hidden = hidden;
       _mode = CalendarMode.values.firstWhere((m) => m.name == modeName, orElse: () => CalendarMode.month);
       _holidays = holidays;
-      if (cached != null) _data = cached;
+      // 저장된 일정이 비어 있으면 없는 것으로 본다
+      if (cached != null && cached.events.isNotEmpty) _data = cached;
     });
-    await _refresh(silent: cached != null);
+    await _refresh(silent: _data != null);
   }
 
-  /// 네트워크에서 새로 받기. 실패하면 지금 보여주는 걸 유지 (아무것도 없으면 샘플)
+  /// 네트워크에서 새로 받기.
+  /// - 받았는데 수집된 일정이 0개면 → 예시 일정
+  /// - 못 받았으면 → 저장된 일정 유지, 그것도 없으면 오류 화면 (예시로 가리지 않는다)
   Future<void> _refresh({bool silent = false}) async {
     if (_refreshing) return;
     _refreshing = true;
     try {
-      final fresh = await _repo.fetch();
-      if (mounted) setState(() => _data = fresh);
-    } catch (_) {
+      var fresh = await _repo.fetch();
+      if (fresh.events.isEmpty) fresh = await _repo.loadSample();
+      if (mounted) {
+        setState(() {
+          _data = fresh;
+          _loadError = null;
+        });
+      }
+    } catch (e) {
       if (!mounted) return;
-      if (_data == null) {
+      if (!isDataUrlConfigured) {
+        // 데이터 주소를 아직 안 넣었을 때만 예시로 보여준다
         final sample = await _repo.loadSample();
         if (mounted) setState(() => _data = sample);
+      } else if (_data == null) {
+        setState(() => _loadError = _describeError(e));
       } else if (!silent) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('새 일정을 받지 못했어요. 저장된 일정을 보여줄게요.')),
@@ -167,7 +184,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
     Widget body;
     if (data == null) {
-      body = const Center(child: CircularProgressIndicator());
+      body = _loadError == null ? const Center(child: CircularProgressIndicator()) : _errorView(_loadError!);
     } else {
       final Widget content = switch (_mode) {
         CalendarMode.month => _monthBody(events, visibleGamesById, openEvent),
@@ -233,6 +250,36 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         ],
       ),
       body: body,
+    );
+  }
+
+  String _describeError(Object e) {
+    if (e is TimeoutException) return '서버 응답이 너무 늦어요 (10초 초과).';
+    final msg = e.toString();
+    if (msg.contains('HTTP 404')) return '데이터 파일을 찾지 못했어요 (404). lib/config.dart의 주소를 확인해 주세요.';
+    return '일정을 불러오지 못했어요. 인터넷 연결을 확인해 주세요.\n($msg)';
+  }
+
+  Widget _errorView(String message) {
+    final p = context.pal;
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(32),
+        child: Column(mainAxisSize: MainAxisSize.min, children: [
+          Icon(Icons.cloud_off_outlined, size: 48, color: p.muted),
+          const SizedBox(height: 16),
+          Text(message, textAlign: TextAlign.center, style: TextStyle(fontSize: 14, color: p.muted, height: 1.5)),
+          const SizedBox(height: 20),
+          FilledButton.icon(
+            onPressed: () {
+              setState(() => _loadError = null);
+              _refresh();
+            },
+            icon: const Icon(Icons.refresh),
+            label: const Text('다시 시도'),
+          ),
+        ]),
+      ),
     );
   }
 
@@ -425,7 +472,7 @@ class _SampleNotice extends StatelessWidget {
     final p = context.pal;
     final text = source == DataSource.cache
         ? '인터넷에 연결되지 않아 마지막으로 받은 일정을 보여주고 있어요.'
-        : (configured ? '최신 일정을 불러오지 못해 샘플을 보여주고 있어요.' : '샘플 일정이에요. lib/config.dart에 데이터 주소를 넣어 주세요.');
+        : (configured ? '아직 수집된 일정이 없어서 예시 일정을 보여주고 있어요.' : '예시 일정이에요. lib/config.dart에 데이터 주소를 넣어 주세요.');
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.fromLTRB(12, 0, 12, 6),
@@ -459,7 +506,7 @@ class _AppDrawer extends StatelessWidget {
     final p = context.pal;
     final updated = data.updatedAt;
     final status = switch (data.source) {
-      DataSource.sample => '샘플 일정을 보여주는 중',
+      DataSource.sample => '예시 일정을 보여주는 중 (수집된 일정 없음)',
       DataSource.cache => updated == null ? '저장된 일정 (오프라인)' : '저장된 일정 · 마지막 변경 ${fmtDateTime(updated)}',
       DataSource.network => updated == null ? '' : '일정 마지막 변경: ${fmtDateTime(updated)}',
     };
