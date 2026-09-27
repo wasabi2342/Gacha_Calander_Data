@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-28T04:18:46+09:00",
+  "updatedAt": "2026-09-28T05:43:29+09:00",
   "games": [
     {
       "id": "genshin",
@@ -354,20 +354,41 @@
       "title": "3.2 상반기 복각 픽업",
       "characters": [
         {
+          "name": "클라렛",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "앤톤",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
+          "name": "니콜",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
           "name": "남궁우",
           "rarity": 5,
-          "isNew": false
+          "isNew": true
+        },
+        {
+          "name": "록시",
+          "rarity": 5,
+          "isNew": true
         }
       ],
       "startAt": "2026-09-09T00:00:00+09:00",
       "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "ESTIMATED",
+      "endAt": "2026-09-30T12:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://www.fomos.kr/redirect/news_view?news_cate_id=2&entry_id=155555",
-      "evidence": "상반기 S급 에이전트 남궁우 복각",
-      "updatedAt": "2026-09-28T04:14:06+09:00"
+      "sourceUrl": "https://zenless.hoyoverse.com/ko-kr/news?ann=238#v=b5890058",
+      "evidence": "3.2 전반부 남궁우 픽업",
+      "updatedAt": "2026-09-28T05:43:06+09:00",
+      "verified": true
     },
     {
       "id": "zzz-3.2-update",
@@ -546,25 +567,36 @@
           "isNew": true
         },
         {
-          "name": "보댜니차",
-          "rarity": 5,
-          "isNew": true
+          "name": "디오나",
+          "rarity": 4,
+          "isNew": false
         },
         {
-          "name": "베ส나",
+          "name": "파루잔",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
+          "name": "중운",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
+          "name": "보댜니차",
           "rarity": 5,
           "isNew": true
         }
       ],
       "startAt": "2026-09-23T00:00:00+09:00",
       "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "ESTIMATED",
+      "endAt": "2026-10-13T18:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://zdnet.co.kr/view/?no=20260922095257",
-      "evidence": "7.1 버전 업데이트와 함께 신규 캐릭터 합류",
-      "updatedAt": "2026-09-28T04:06:20+09:00"
+      "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21877#v=ce44fcd8",
+      "evidence": "7.1 버전 업데이트 후~2026/10/13 17:59 보댜니차 픽업",
+      "updatedAt": "2026-09-28T05:41:15+09:00",
+      "verified": true
     },
     {
       "id": "genshin-7.1-update",

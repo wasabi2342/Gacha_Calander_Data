@@ -642,5 +642,96 @@
     "source": "news",
     "seenAt": "2026-09-28T04:18:46+09:00",
     "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21946#v=2b24afe8": {
+    "game": "genshin",
+    "title": "「죽음의 진혼곡」 7.1 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-09-28T05:40:22+09:00",
+    "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21876#v=f0b633ec": {
+    "game": "genshin",
+    "title": "「봄바람의 춤」 기원: 「눈꽃 연회의 검·베스나(바람)」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-09-28T05:40:29+09:00",
+    "changes": 1
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21877#v=ce44fcd8": {
+    "game": "genshin",
+    "title": "「파도의 노래」 기원: 「깊은 호수의 노래·보댜니차(물)」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-09-28T05:41:15+09:00",
+    "changes": 1
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21878#v=47a1e4c8": {
+    "game": "genshin",
+    "title": "「신의 주조」 기원: 「한손검·나비의 우화」, 「법구·파도의 찬송가」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-09-28T05:41:22+09:00",
+    "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21885#v=1c6fc1b2": {
+    "game": "genshin",
+    "title": "「검에 서린 설원의 여정」 이벤트: 원하는 「세상 여행」 일반 기원의 ★5 캐릭터 초대 가능",
+    "source": "official",
+    "seenAt": "2026-09-28T05:41:28+09:00",
+    "changes": 0
+  },
+  "https://gamefocus.co.kr/detail.php?number=178502": {
+    "game": "genshin",
+    "title": "호요버스 코리아 '원신', 서비스 6주년 기념 '원신 숲 프로젝트' 공개",
+    "source": "news",
+    "seenAt": "2026-09-28T05:41:41+09:00",
+    "changes": 0
+  },
+  "https://www.tgdaily.co.kr/news/articleView.html?idxno=406533": {
+    "game": "genshin",
+    "title": "호요버스 코리아 '원신 숲 프로젝트' 진행",
+    "source": "news",
+    "seenAt": "2026-09-28T05:41:49+09:00",
+    "changes": 0
+  },
+  "https://www.khgames.co.kr/news/articleView.html?idxno=307628": {
+    "game": "genshin",
+    "title": "호요버스 '원신', 당근과 손잡고 '원신 숲 프로젝트' 진행",
+    "source": "news",
+    "seenAt": "2026-09-28T05:41:59+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1420#v=b2d92302": {
+    "game": "hsr",
+    "title": "4.5 버전 게임 최적화 및 발견한 문제 안내",
+    "source": "official",
+    "seenAt": "2026-09-28T05:42:06+09:00",
+    "changes": 0
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=1297#v=ce923133": {
+    "game": "zzz",
+    "title": "3.2 버전 「그녀들의 숨겨진 과거」 업데이트 공지",
+    "source": "official",
+    "seenAt": "2026-09-28T05:42:34+09:00",
+    "changes": 2
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=1299#v=6cc61c72": {
+    "game": "zzz",
+    "title": "3.2 버전 「상점」 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-09-28T05:42:41+09:00",
+    "changes": 0
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=1298#v=1fa9bdae": {
+    "game": "zzz",
+    "title": "3.2 버전 「리두 펀드」 설명",
+    "source": "official",
+    "seenAt": "2026-09-28T05:42:48+09:00",
+    "changes": 0
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=238#v=b5890058": {
+    "game": "zzz",
+    "title": "3.2 버전 기간 한정 채널(상반기)",
+    "source": "official",
+    "seenAt": "2026-09-28T05:43:06+09:00",
+    "changes": 2
   }
 }
