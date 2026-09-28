@@ -733,5 +733,75 @@
     "source": "official",
     "seenAt": "2026-09-28T05:43:06+09:00",
     "changes": 2
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21946#v=c11b32ce": {
+    "game": "genshin",
+    "title": "「죽음의 진혼곡」 7.1 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-09-28T11:54:25+09:00",
+    "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21876#v=85ffa5fe": {
+    "game": "genshin",
+    "title": "「봄바람의 춤」 기원: 「눈꽃 연회의 검·베스나(바람)」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-09-28T11:54:32+09:00",
+    "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21877#v=a54c86bf": {
+    "game": "genshin",
+    "title": "「파도의 노래」 기원: 「깊은 호수의 노래·보댜니차(물)」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-09-28T11:54:39+09:00",
+    "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21878#v=0509326a": {
+    "game": "genshin",
+    "title": "「신의 주조」 기원: 「한손검·나비의 우화」, 「법구·파도의 찬송가」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-09-28T11:54:46+09:00",
+    "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21885#v=323b8a9f": {
+    "game": "genshin",
+    "title": "「검에 서린 설원의 여정」 이벤트: 원하는 「세상 여행」 일반 기원의 ★5 캐릭터 초대 가능",
+    "source": "official",
+    "seenAt": "2026-09-28T11:54:52+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1437#v=871ae2f2": {
+    "game": "hsr",
+    "title": "4.6 버전 「달 뜨기 전, 괴수와 춤을」 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-09-28T11:55:10+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1337#v=9294be89": {
+    "game": "hsr",
+    "title": "「차분화 우주•낙원 만필」 4.5 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-09-28T11:55:16+09:00",
+    "changes": 0
+  },
+  "http://www.newskr.kr/news/articleView.html?idxno=106698": {
+    "game": "hsr",
+    "title": "메가MGC커피, '붕괴: 스타레일'과 맞손... 30일부터 한정판 굿즈 사전예...",
+    "source": "news",
+    "seenAt": "2026-09-28T11:55:26+09:00",
+    "changes": 0
+  },
+  "https://www.maxmovie.com/news/articleView.html?idxno=502093": {
+    "game": "hsr",
+    "title": "메가MGC커피, 인기 게임 '붕괴: 스타레일'과 맞손… 한정판 굿즈 사전예...",
+    "source": "news",
+    "seenAt": "2026-09-28T11:55:34+09:00",
+    "changes": 0
+  },
+  "https://www.slist.kr/news/articleView.html?idxno=769200": {
+    "game": "hsr",
+    "title": "메가MGC커피, 인기게임 '붕괴: 스타레일' 굿즈 사전예약",
+    "source": "news",
+    "seenAt": "2026-09-28T11:55:43+09:00",
+    "changes": 0
   }
 }
