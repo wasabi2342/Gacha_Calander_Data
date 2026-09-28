@@ -803,5 +803,96 @@
     "source": "news",
     "seenAt": "2026-09-28T11:55:43+09:00",
     "changes": 0
+  },
+  "https://www.gamechosun.co.kr/webzine/article/view.php?no=225771": {
+    "game": "genshin",
+    "title": "신이 사랑하지 않은 설국의 진짜 얼굴, 원신 7.1 '죽음의 진혼곡'",
+    "source": "news",
+    "seenAt": "2026-09-29T07:50:26+09:00",
+    "changes": 0
+  },
+  "https://www.xportsnews.com/article/2201600": {
+    "game": "genshin",
+    "title": "'원신 숲' 나무 4,010그루 심었다…연간 이산화탄소 2.67톤 흡수 기대",
+    "source": "news",
+    "seenAt": "2026-09-29T07:50:35+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1399#v=7de06659": {
+    "game": "hsr",
+    "title": "「은하 워프 프로젝트」 가입 초대",
+    "source": "official",
+    "seenAt": "2026-09-29T07:50:46+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1447#v=eebd4d0c": {
+    "game": "hsr",
+    "title": "4.6 버전 게임 최적화 및 발견한 문제 안내",
+    "source": "official",
+    "seenAt": "2026-09-29T07:50:53+09:00",
+    "changes": 0
+  },
+  "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065601435843540": {
+    "game": "hsr",
+    "title": "[G-MEGA 패치] 호요버스 스타레일·메가커피 협업 外",
+    "source": "news",
+    "seenAt": "2026-09-29T07:51:03+09:00",
+    "changes": 0
+  },
+  "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065597987660333": {
+    "game": "hsr",
+    "title": "메가MGC커피, ‘붕괴: 스타레일’ 협업 굿즈 선봬",
+    "source": "news",
+    "seenAt": "2026-09-29T07:51:12+09:00",
+    "changes": 0
+  },
+  "https://www.gametoc.co.kr/news/articleView.html?idxno=111811": {
+    "game": "wuwa",
+    "title": "[명조] \"목우 나와, 우리 여우의 별자리를 의심해?\"",
+    "source": "news",
+    "seenAt": "2026-09-29T07:51:25+09:00",
+    "changes": 0
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=243#v=02d172ec": {
+    "game": "zzz",
+    "title": "3.2 버전 기간 한정 채널(하반기)",
+    "source": "official",
+    "seenAt": "2026-09-29T07:51:37+09:00",
+    "changes": 2
+  },
+  "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3542434#v=edf23585": {
+    "game": "bluearchive",
+    "title": "9/29(화) 업데이트 상세 안내",
+    "source": "official",
+    "seenAt": "2026-09-29T07:51:55+09:00",
+    "changes": 2
+  },
+  "https://www.gametoc.co.kr/news/articleView.html?idxno=111764": {
+    "game": "bluearchive",
+    "title": "일본에서 여전히 굳건한 '블루 아카이브'",
+    "source": "news",
+    "seenAt": "2026-09-29T07:52:04+09:00",
+    "changes": 0
+  },
+  "https://www.gamechosun.co.kr/webzine/article/view.php?no=225789": {
+    "game": "nikke",
+    "title": "분명 완벽한 무대였는데… ‘승리의 여신: 니케’, MINIKKE 작은 동화집...",
+    "source": "news",
+    "seenAt": "2026-09-29T07:52:18+09:00",
+    "changes": 0
+  },
+  "https://www.thisisgame.com/articles/430448": {
+    "game": "nikke",
+    "title": "[니케 공략] 초보자도 범용적으로 사용하기 좋은 딜러 '신 : 스위프트 바...",
+    "source": "news",
+    "seenAt": "2026-09-29T07:52:25+09:00",
+    "changes": 0
+  },
+  "https://www.thisisgame.com/articles/429969": {
+    "game": "nikke",
+    "title": "[니케 공략] 모드 전환 딜러 '길티 : 마이티 바니'",
+    "source": "news",
+    "seenAt": "2026-09-29T07:52:33+09:00",
+    "changes": 0
   }
 }

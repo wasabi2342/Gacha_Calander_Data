@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-28T05:43:29+09:00",
+  "updatedAt": "2026-09-29T07:52:34+09:00",
   "games": [
     {
       "id": "genshin",
@@ -709,6 +709,46 @@
       "updatedAt": "2026-09-28T04:09:16+09:00"
     },
     {
+      "id": "bluearchive-2026-09-29-p0",
+      "gameId": "bluearchive",
+      "type": "BANNER",
+      "version": "2026-09-29",
+      "phase": null,
+      "title": "나구사(수영복), 키쿄(수영복) 등 픽업",
+      "characters": [
+        {
+          "name": "나구사",
+          "rarity": 3,
+          "isNew": true
+        },
+        {
+          "name": "키쿄",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "렌게",
+          "rarity": 2,
+          "isNew": false
+        },
+        {
+          "name": "유카리",
+          "rarity": 3,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-09-29T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-10-06T10:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3542434#v=edf23585",
+      "evidence": "9월 29일 점검 후 수영복 픽업 모집",
+      "updatedAt": "2026-09-29T07:51:55+09:00",
+      "verified": true
+    },
+    {
       "id": "wuwa-3.7-update",
       "gameId": "wuwa",
       "type": "VERSION_UPDATE",
@@ -759,6 +799,71 @@
       "sourceUrl": "https://www.gametoc.co.kr/news/articleView.html?idxno=111648",
       "evidence": "3.7 버전 픽업 튜닝 전반부",
       "updatedAt": "2026-09-28T04:10:44+09:00"
+    },
+    {
+      "id": "zzz-3.2-p2",
+      "gameId": "zzz",
+      "type": "BANNER",
+      "version": "3.2",
+      "phase": 2,
+      "title": "3.2 하반기 록시 픽업",
+      "characters": [
+        {
+          "name": "록시",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "프로미아",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-09-30T13:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-10-20T15:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://zenless.hoyoverse.com/ko-kr/news?ann=243#v=02d172ec",
+      "evidence": "3.2 하반기 프로미아 변조 이벤트",
+      "updatedAt": "2026-09-29T07:51:37+09:00",
+      "verified": true
+    },
+    {
+      "id": "bluearchive-2026-10-06-p0",
+      "gameId": "bluearchive",
+      "type": "BANNER",
+      "version": "2026-10-06",
+      "phase": null,
+      "title": "카즈사(밴드), 요시미(밴드), 나츠(밴드) 픽업",
+      "characters": [
+        {
+          "name": "카즈사",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "요시미",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "나츠",
+          "rarity": 3,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-10-06T11:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-10-13T10:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3542434#v=edf23585",
+      "evidence": "10월 6일 특별 픽업 모집 시작",
+      "updatedAt": "2026-09-29T07:51:55+09:00",
+      "verified": true
     }
   ]
 }
