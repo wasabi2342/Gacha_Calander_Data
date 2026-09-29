@@ -894,5 +894,19 @@
     "source": "news",
     "seenAt": "2026-09-29T07:52:33+09:00",
     "changes": 0
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=243#v=1ff6bdab": {
+    "game": "zzz",
+    "title": "3.2 버전 기간 한정 채널(하반기)",
+    "source": "official",
+    "seenAt": "2026-09-29T12:35:22+09:00",
+    "changes": 0
+  },
+  "https://www.wolyo.co.kr/news/articleView.html?idxno=318423": {
+    "game": "bluearchive",
+    "title": "흰색+흰색, 블루 아카이브에 '수영복 나구사' 등장",
+    "source": "news",
+    "seenAt": "2026-09-29T12:35:43+09:00",
+    "changes": 0
   }
 }
