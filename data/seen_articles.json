@@ -1048,5 +1048,26 @@
     "source": "news",
     "seenAt": "2026-09-30T20:44:25+09:00",
     "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1392#v=bae8378f": {
+    "game": "hsr",
+    "title": "「은하열차 공략 가이드」 웹 페이지 업데이트, 4.6 버전 공략 공모 이벤트 절찬리 진행 중!",
+    "source": "official",
+    "seenAt": "2026-10-01T02:22:18+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1447#v=f50b553e": {
+    "game": "hsr",
+    "title": "4.6 버전 게임 최적화 및 발견한 문제 안내",
+    "source": "official",
+    "seenAt": "2026-10-01T02:22:24+09:00",
+    "changes": 0
+  },
+  "https://www.gameple.co.kr/news/articleView.html?idxno=216596": {
+    "game": "wuwa",
+    "title": "명조 첫 수호신 플레이어블, '여우의 별자리' 육성 가이드",
+    "source": "news",
+    "seenAt": "2026-10-01T02:22:47+09:00",
+    "changes": 1
   }
 }
