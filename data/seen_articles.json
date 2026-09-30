@@ -978,5 +978,75 @@
     "source": "official",
     "seenAt": "2026-09-30T12:21:29+09:00",
     "changes": 0
+  },
+  "https://www.gamemeca.com/mv.php?inflow=naver_s&gid=1781205": {
+    "game": "genshin",
+    "title": "[순위분석] 명조 제치고 돌아온 ‘서브컬처 1황’ 원신",
+    "source": "news",
+    "seenAt": "2026-09-30T20:42:23+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1399#v=4cdba242": {
+    "game": "hsr",
+    "title": "「은하 워프 프로젝트」 가입 초대",
+    "source": "official",
+    "seenAt": "2026-09-30T20:42:32+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1437#v=3ccfa767": {
+    "game": "hsr",
+    "title": "4.6 버전 「달 뜨기 전, 괴수와 춤을」 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-09-30T20:42:39+09:00",
+    "changes": 1
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1447#v=cf7eb4ab": {
+    "game": "hsr",
+    "title": "4.6 버전 게임 최적화 및 발견한 문제 안내",
+    "source": "official",
+    "seenAt": "2026-09-30T20:42:46+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1366#v=cd44b8d2": {
+    "game": "hsr",
+    "title": "4.6 버전 이벤트 워프 (1)",
+    "source": "official",
+    "seenAt": "2026-09-30T20:42:53+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1416#v=10f17650": {
+    "game": "hsr",
+    "title": "4.6 버전 「무명의 공훈」 업데이트",
+    "source": "official",
+    "seenAt": "2026-09-30T20:42:59+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1406#v=0661e41d": {
+    "game": "hsr",
+    "title": "4.6 버전 신규 스테이지",
+    "source": "official",
+    "seenAt": "2026-09-30T20:43:06+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1421#v=19a35912": {
+    "game": "hsr",
+    "title": "「화폐 전쟁•제로섬 게임」 4.6 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-09-30T20:43:45+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1365#v=64ee59b5": {
+    "game": "hsr",
+    "title": "4.6 버전 상점 신상 출시",
+    "source": "official",
+    "seenAt": "2026-09-30T20:44:14+09:00",
+    "changes": 0
+  },
+  "https://www.apnews.kr/news/articleView.html?idxno=3051626": {
+    "game": "hsr",
+    "title": "\"'이상 낙원'이 현실로\"…'붕괴: 스타레일' 호요랜드서 개척자 만난다",
+    "source": "news",
+    "seenAt": "2026-09-30T20:44:25+09:00",
+    "changes": 0
   }
 }
