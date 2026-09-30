@@ -957,5 +957,26 @@
     "source": "news",
     "seenAt": "2026-09-29T20:55:50+09:00",
     "changes": 0
+  },
+  "https://gamefocus.co.kr/detail.php?number=179444": {
+    "game": "genshin",
+    "title": "'원신' 7.1 버전 '죽음의 진혼곡', 클라이막스에 대비해 힘을 비축해야...",
+    "source": "news",
+    "seenAt": "2026-09-30T12:20:47+09:00",
+    "changes": 0
+  },
+  "https://www.gameshot.net/common/con_view.php?code=GA6abbc206ef44d": {
+    "game": "genshin",
+    "title": "궁금증을 풀어내니 새로운 궁금증이? '원신' 7.1",
+    "source": "news",
+    "seenAt": "2026-09-30T12:21:14+09:00",
+    "changes": 0
+  },
+  "https://wutheringwaves.kurogames.com/kr/main/news/detail/5572#v=c07b7d5d": {
+    "game": "wuwa",
+    "title": "「거울에 잠긴 허상, 마음이 비추는 인간 세상」 3.7 버전 업데이트 내용 안내",
+    "source": "official",
+    "seenAt": "2026-09-30T12:21:29+09:00",
+    "changes": 0
   }
 }
