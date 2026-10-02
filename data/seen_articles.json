@@ -1090,5 +1090,19 @@
     "source": "news",
     "seenAt": "2026-10-02T12:27:27+09:00",
     "changes": 0
+  },
+  "https://www.gamemeca.com/mv.php?inflow=naver_s&gid=1781297": {
+    "game": "nikke",
+    "title": "[공커 위클리] '에고비스타' 공략 니케 조합을 알려주세요",
+    "source": "news",
+    "seenAt": "2026-10-02T20:41:24+09:00",
+    "changes": 0
+  },
+  "https://www.gamechosun.co.kr/webzine/article/view.php?no=225949": {
+    "game": "nikke",
+    "title": "트릭 오어 트릿은 역시 이 아이들! ‘승리의 여신: 니케’ 할로윈 시즌...",
+    "source": "news",
+    "seenAt": "2026-10-02T20:41:32+09:00",
+    "changes": 1
   }
 }
