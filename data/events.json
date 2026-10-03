@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T20:41:33+09:00",
+  "updatedAt": "2026-10-03T12:12:16+09:00",
   "games": [
     {
       "id": "genshin",
@@ -697,15 +697,15 @@
       "phase": null,
       "title": "4.6 버전 업데이트",
       "characters": [],
-      "startAt": "2026-09-28T07:00:00+09:00",
+      "startAt": "2026-09-28T06:00:00+09:00",
       "timeKnown": true,
-      "endAt": "2026-11-11T07:00:00+09:00",
+      "endAt": "2026-11-11T06:00:00+09:00",
       "endConfirmed": true,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://hsr.hoyoverse.com/ko-kr/news?ann=1437#v=3ccfa767",
+      "sourceUrl": "https://hsr.hoyoverse.com/ko-kr/news?ann=1437#v=1d454fc3",
       "evidence": "4.6 버전 업데이트 안내",
-      "updatedAt": "2026-09-30T20:42:39+09:00",
+      "updatedAt": "2026-10-03T12:11:22+09:00",
       "verified": true
     },
     {

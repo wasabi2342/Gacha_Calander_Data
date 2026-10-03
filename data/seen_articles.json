@@ -1104,5 +1104,40 @@
     "source": "news",
     "seenAt": "2026-10-02T20:41:32+09:00",
     "changes": 1
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1437#v=1d454fc3": {
+    "game": "hsr",
+    "title": "4.6 버전 「달 뜨기 전, 괴수와 춤을」 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-10-03T12:11:22+09:00",
+    "changes": 1
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1447#v=73472d35": {
+    "game": "hsr",
+    "title": "4.6 버전 게임 최적화 및 발견한 문제 안내",
+    "source": "official",
+    "seenAt": "2026-10-03T12:11:29+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1416#v=ebfe7992": {
+    "game": "hsr",
+    "title": "4.6 버전 「무명의 공훈」 업데이트",
+    "source": "official",
+    "seenAt": "2026-10-03T12:11:35+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1406#v=aba003ec": {
+    "game": "hsr",
+    "title": "4.6 버전 신규 스테이지",
+    "source": "official",
+    "seenAt": "2026-10-03T12:11:42+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1421#v=6fbe9a2c": {
+    "game": "hsr",
+    "title": "「화폐 전쟁•제로섬 게임」 4.6 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-10-03T12:11:49+09:00",
+    "changes": 0
   }
 }
