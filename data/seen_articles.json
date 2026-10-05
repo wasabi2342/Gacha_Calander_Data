@@ -1174,5 +1174,19 @@
     "source": "news",
     "seenAt": "2026-10-05T22:14:03+09:00",
     "changes": 0
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=250#v=7be26087": {
+    "game": "zzz",
+    "title": "3.3 버전 「다시 하늘을 향해」 특별 방송 예고",
+    "source": "official",
+    "seenAt": "2026-10-06T08:33:08+09:00",
+    "changes": 0
+  },
+  "https://www.gamechosun.co.kr/webzine/article/view.php?no=225993": {
+    "game": "nikke",
+    "title": "‘마녀 벨로타부터 메이드 신데렐라까지’…‘승리의 여신: 니케’, 4주...",
+    "source": "news",
+    "seenAt": "2026-10-06T08:33:37+09:00",
+    "changes": 0
   }
 }
