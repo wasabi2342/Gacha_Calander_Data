@@ -1146,5 +1146,33 @@
     "source": "news",
     "seenAt": "2026-10-05T01:15:44+09:00",
     "changes": 0
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=250#v=47472f81": {
+    "game": "zzz",
+    "title": "3.3 버전 「다시 하늘을 향해」 특별 방송 예고",
+    "source": "official",
+    "seenAt": "2026-10-05T22:13:26+09:00",
+    "changes": 0
+  },
+  "https://www.gamechosun.co.kr/webzine/article/view.php?no=225989": {
+    "game": "nikke",
+    "title": "승리의 여신 전원 집결!…‘승리의 여신: 니케’, 10월 24일 4주년 특별...",
+    "source": "news",
+    "seenAt": "2026-10-05T22:13:45+09:00",
+    "changes": 0
+  },
+  "https://www.gametoc.co.kr/news/articleView.html?idxno=111984": {
+    "game": "nikke",
+    "title": "[니케] \"신데렐라 메이드복 투표한 나, 칭찬해\"",
+    "source": "news",
+    "seenAt": "2026-10-05T22:13:54+09:00",
+    "changes": 0
+  },
+  "https://www.gamemeca.com/mv.php?inflow=naver&gid=1781357": {
+    "game": "nikke",
+    "title": "큰 거 오나? 니케 4주년 기념 방송 24일 저녁 7시 방영",
+    "source": "news",
+    "seenAt": "2026-10-05T22:14:03+09:00",
+    "changes": 0
   }
 }
