@@ -1272,5 +1272,68 @@
     "source": "news",
     "seenAt": "2026-10-06T13:12:18+09:00",
     "changes": 0
+  },
+  "https://gamefocus.co.kr/detail.php?number=179600": {
+    "game": "wuwa",
+    "title": "'제우스: 오만의 신' 등 MMORPG 5종 매출 순위 경쟁... '명조' '이환'도 상...",
+    "source": "news",
+    "seenAt": "2026-10-06T21:32:35+09:00",
+    "changes": 1
+  },
+  "https://www.xportsnews.com/article/2204502": {
+    "game": "bluearchive",
+    "title": "와카모·시로코 재출격…'월드 오브 워쉽', '블루 아카이브' 컬래버 전개",
+    "source": "news",
+    "seenAt": "2026-10-06T21:32:56+09:00",
+    "changes": 0
+  },
+  "https://gamefocus.co.kr/detail.php?number=179606": {
+    "game": "bluearchive",
+    "title": "워게이밍, '월드 오브 워쉽' 15.9 업데이트로 '블루 아카이브' 콜라보 콘...",
+    "source": "news",
+    "seenAt": "2026-10-06T21:33:05+09:00",
+    "changes": 0
+  },
+  "https://www.globale.co.kr/news/articleView.html?idxno=40821": {
+    "game": "nikke",
+    "title": "게임업계 4분기 총력전, 니케 4주년·SWC2026·검사모 출격",
+    "source": "news",
+    "seenAt": "2026-10-06T21:33:20+09:00",
+    "changes": 0
+  },
+  "https://www.xportsnews.com/article/2204522": {
+    "game": "nikke",
+    "title": "랩쳐 퀸과 결전 앞둔 '니케', 3차 지상 탈환전 서사 예고…4주년 방송 '...",
+    "source": "news",
+    "seenAt": "2026-10-06T21:33:28+09:00",
+    "changes": 0
+  },
+  "https://www.mk.co.kr/article/12169415": {
+    "game": "nikke",
+    "title": "‘승리의 여신: 니케’, 출시 4주년 맞아 특별 방송 개최",
+    "source": "news",
+    "seenAt": "2026-10-06T21:33:36+09:00",
+    "changes": 0
+  },
+  "https://game.donga.com/124568/": {
+    "game": "nikke",
+    "title": "시프트업 '승리의 여신 니케', 4주년 기념 소통을 위한 특별 방송 예고",
+    "source": "news",
+    "seenAt": "2026-10-06T21:33:44+09:00",
+    "changes": 0
+  },
+  "http://game.dailyesports.com/view.php?ud=20261006105946774543da15d9d2_26": {
+    "game": "nikke",
+    "title": "레벨 인피니트, 24일 '니케' 4주년 방송서 신규 업데이트 공개",
+    "source": "news",
+    "seenAt": "2026-10-06T21:33:54+09:00",
+    "changes": 0
+  },
+  "https://www.sportschosun.com/entertainment/2026-10-06/202610060100039050002513": {
+    "game": "nikke",
+    "title": "'승리의 여신: 니케', 4주년 특별 방송…3차 지상 탈환전 베일 벗는다",
+    "source": "news",
+    "seenAt": "2026-10-06T21:34:02+09:00",
+    "changes": 0
   }
 }

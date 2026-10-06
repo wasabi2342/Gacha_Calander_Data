@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-03T12:12:16+09:00",
+  "updatedAt": "2026-10-06T21:34:03+09:00",
   "games": [
     {
       "id": "genshin",
@@ -812,6 +812,21 @@
           "name": "치사",
           "rarity": 5,
           "isNew": false
+        },
+        {
+          "name": "쇄명",
+          "rarity": null,
+          "isNew": true
+        },
+        {
+          "name": "린네",
+          "rarity": null,
+          "isNew": false
+        },
+        {
+          "name": "루실라",
+          "rarity": null,
+          "isNew": false
         }
       ],
       "startAt": "2026-09-30T00:00:00+09:00",
@@ -820,9 +835,9 @@
       "endConfirmed": false,
       "status": "ESTIMATED",
       "note": null,
-      "sourceUrl": "https://www.gametoc.co.kr/news/articleView.html?idxno=111648",
-      "evidence": "3.7 버전 픽업 튜닝 전반부",
-      "updatedAt": "2026-09-28T04:10:44+09:00"
+      "sourceUrl": "https://gamefocus.co.kr/detail.php?number=179600",
+      "evidence": "3.7 버전 신규 및 복각 캐릭터 픽업",
+      "updatedAt": "2026-10-06T21:32:35+09:00"
     },
     {
       "id": "zzz-3.2-p2",
