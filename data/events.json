@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-06T21:34:03+09:00",
+  "updatedAt": "2026-10-07T07:06:44+09:00",
   "games": [
     {
       "id": "genshin",
@@ -927,6 +927,30 @@
       "sourceUrl": "https://www.gamechosun.co.kr/webzine/article/view.php?no=225949",
       "evidence": "10월 8일 점검 종료 후 10월 28일 오후 11시 59분까지",
       "updatedAt": "2026-10-02T20:41:32+09:00"
+    },
+    {
+      "id": "arknights-1.6-p0",
+      "gameId": "arknights",
+      "type": "BANNER",
+      "version": "1.6",
+      "phase": null,
+      "title": "탕탕 복각 픽업",
+      "characters": [
+        {
+          "name": "탕탕",
+          "rarity": null,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-10-29T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-11-19T23:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://www.inven.co.kr/webzine/news/?news=321825",
+      "evidence": "10월 29일부터 11월 19일까지 탕탕 헤드헌팅 복각",
+      "updatedAt": "2026-10-07T07:06:25+09:00"
     }
   ]
 }

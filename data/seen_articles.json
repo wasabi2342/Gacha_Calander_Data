@@ -1335,5 +1335,33 @@
     "source": "news",
     "seenAt": "2026-10-06T21:34:02+09:00",
     "changes": 0
+  },
+  "https://www.gametoc.co.kr/news/articleView.html?idxno=112005": {
+    "game": "bluearchive",
+    "title": "월드 오브 워쉽에 블루 아카이브 다시 온다",
+    "source": "news",
+    "seenAt": "2026-10-07T07:06:14+09:00",
+    "changes": 0
+  },
+  "https://www.inven.co.kr/webzine/news/?news=321825": {
+    "game": "arknights",
+    "title": "로도스 아일랜드 등장 예고, 명일방주: 엔드필드 1.6 특별방송",
+    "source": "news",
+    "seenAt": "2026-10-07T07:06:25+09:00",
+    "changes": 1
+  },
+  "https://www.gametoc.co.kr/news/articleView.html?idxno=112007": {
+    "game": "endfield",
+    "title": "엔드필드에서 3D 와파린을 볼 수 있다고",
+    "source": "news",
+    "seenAt": "2026-10-07T07:06:35+09:00",
+    "changes": 0
+  },
+  "https://www.gametoc.co.kr/news/articleView.html?idxno=112008": {
+    "game": "nikke",
+    "title": "[니케] 4주년 방송 딱 기다려",
+    "source": "news",
+    "seenAt": "2026-10-07T07:06:44+09:00",
+    "changes": 0
   }
 }
