@@ -1426,5 +1426,61 @@
     "source": "news",
     "seenAt": "2026-10-07T12:39:22+09:00",
     "changes": 1
+  },
+  "https://www.gamemeca.com/mv.php?inflow=naver_s&gid=1781510": {
+    "game": "genshin",
+    "title": "[순위분석] 여우의 별자리 하드캐리, 원신 잡은 명조",
+    "source": "news",
+    "seenAt": "2026-10-07T21:25:28+09:00",
+    "changes": 0
+  },
+  "https://www.gametoc.co.kr/news/articleView.html?idxno=112025": {
+    "game": "wuwa",
+    "title": "[명조] \"방랑자님, 3.7 버전 만족스러우셨나요?\"",
+    "source": "news",
+    "seenAt": "2026-10-07T21:25:46+09:00",
+    "changes": 0
+  },
+  "https://www.xportsnews.com/article/2205071": {
+    "game": "arknights",
+    "title": "붓으로 길 잇는 탐험…'명일방주: 엔드필드', 신규 버전 '단청도' 업데이...",
+    "source": "news",
+    "seenAt": "2026-10-07T21:26:06+09:00",
+    "changes": 0
+  },
+  "https://gamefocus.co.kr/detail.php?number=179631": {
+    "game": "arknights",
+    "title": "그리프라인 '명일방주: 엔드필드' 15일 스팀 플랫폼 출시, 크로스 플랫폼...",
+    "source": "news",
+    "seenAt": "2026-10-07T21:26:17+09:00",
+    "changes": 2
+  },
+  "http://game.dailyesports.com/view.php?ud=20261007122328772843da15d9d2_26": {
+    "game": "arknights",
+    "title": "그리프라인 '명일방주: 엔드필드', 15일 스팀 출시…신규 업데이트 '단청...",
+    "source": "news",
+    "seenAt": "2026-10-07T21:26:26+09:00",
+    "changes": 0
+  },
+  "https://www.gamechosun.co.kr/webzine/article/view.php?no=226072": {
+    "game": "arknights",
+    "title": "그리프라인 ‘명일방주: 엔드필드’, 15일 스팀 출시…신규 버전 ‘단청...",
+    "source": "news",
+    "seenAt": "2026-10-07T21:26:35+09:00",
+    "changes": 0
+  },
+  "https://www.gameple.co.kr/news/articleView.html?idxno=216636": {
+    "game": "nikke",
+    "title": "'니케' 4주년, 모든 이야기가 하나로 모인다",
+    "source": "news",
+    "seenAt": "2026-10-07T21:26:47+09:00",
+    "changes": 0
+  },
+  "https://www.kmib.co.kr/article/view.asp?arcid=9000020578&cp=nv": {
+    "game": "nikke",
+    "title": "‘승리의 여신: 니케’ 4주년… 24일 기념 방송서 업데이트 공개",
+    "source": "news",
+    "seenAt": "2026-10-07T21:26:56+09:00",
+    "changes": 0
   }
 }

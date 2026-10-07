@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T12:39:26+09:00",
+  "updatedAt": "2026-10-07T21:26:56+09:00",
   "games": [
     {
       "id": "genshin",
@@ -927,6 +927,53 @@
       "sourceUrl": "https://www.gamechosun.co.kr/webzine/article/view.php?no=225949",
       "evidence": "10월 8일 점검 종료 후 10월 28일 오후 11시 59분까지",
       "updatedAt": "2026-10-02T20:41:32+09:00"
+    },
+    {
+      "id": "arknights-단청도-update",
+      "gameId": "arknights",
+      "type": "VERSION_UPDATE",
+      "version": "단청도",
+      "phase": null,
+      "title": "단청도 업데이트",
+      "characters": [],
+      "startAt": "2026-10-15T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://gamefocus.co.kr/detail.php?number=179631",
+      "evidence": "15일 스팀에 출시하고 신규 버전 단청도 선보여",
+      "updatedAt": "2026-10-07T21:26:17+09:00"
+    },
+    {
+      "id": "arknights-2026-10-15-p0",
+      "gameId": "arknights",
+      "type": "BANNER",
+      "version": "2026-10-15",
+      "phase": null,
+      "title": "단청도 신규 오퍼레이터 모집",
+      "characters": [
+        {
+          "name": "사",
+          "rarity": null,
+          "isNew": true
+        },
+        {
+          "name": "명하",
+          "rarity": null,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-10-15T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://gamefocus.co.kr/detail.php?number=179631",
+      "evidence": "업데이트 기간 순차적으로 진행되는 모집 이벤트",
+      "updatedAt": "2026-10-07T21:26:17+09:00"
     },
     {
       "id": "endfield-단청도-update",
