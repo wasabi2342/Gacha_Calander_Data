@@ -1363,5 +1363,68 @@
     "source": "news",
     "seenAt": "2026-10-07T07:06:44+09:00",
     "changes": 0
+  },
+  "https://www.khgames.co.kr/news/articleView.html?idxno=309079": {
+    "game": "wuwa",
+    "title": "[차트픽] '명조' 日 구글 매출 1위…韓 4위·대만 3위",
+    "source": "news",
+    "seenAt": "2026-10-07T12:37:59+09:00",
+    "changes": 0
+  },
+  "https://www.apnews.kr/news/articleView.html?idxno=3051800": {
+    "game": "arknights",
+    "title": "\"'명일방주: 엔드필드' 스팀 진출\"…그리프라인, 신규 버전 '단청도' 출...",
+    "source": "news",
+    "seenAt": "2026-10-07T12:38:19+09:00",
+    "changes": 0
+  },
+  "https://www.betanews.net/article/view/beta202610070067": {
+    "game": "arknights",
+    "title": "명일방주: 엔드필드, 단청도 업데이트 및 스팀 10월 15일 출시",
+    "source": "news",
+    "seenAt": "2026-10-07T12:38:34+09:00",
+    "changes": 0
+  },
+  "https://www.gamemeca.com/mv.php?inflow=naver_s&gid=1781485": {
+    "game": "arknights",
+    "title": "명일방주 엔드필드 스팀 15일 출시, 1주년 행사도 예고",
+    "source": "news",
+    "seenAt": "2026-10-07T12:38:42+09:00",
+    "changes": 0
+  },
+  "http://www.smedaily.co.kr/news/articleView.html?idxno=364281": {
+    "game": "arknights",
+    "title": "명일방주: 엔드필드, 15일 스팀 출시…대규모 업데이트 '단청도'",
+    "source": "news",
+    "seenAt": "2026-10-07T12:38:50+09:00",
+    "changes": 0
+  },
+  "https://www.khgames.co.kr/news/articleView.html?idxno=309080": {
+    "game": "arknights",
+    "title": "'명일방주: 엔드필드', 15일 스팀 출시…신규 버전 '단청도' 공개",
+    "source": "news",
+    "seenAt": "2026-10-07T12:38:58+09:00",
+    "changes": 0
+  },
+  "https://www.joongangenews.com/news/articleView.html?idxno=553097": {
+    "game": "arknights",
+    "title": "그리프라인, '명일방주: 엔드필드' 오는 15일 스팀 출시...신규 버전 '단...",
+    "source": "news",
+    "seenAt": "2026-10-07T12:39:06+09:00",
+    "changes": 0
+  },
+  "https://www.fomos.kr/redirect/news_view?news_cate_id=2&entry_id=156445": {
+    "game": "endfield",
+    "title": "'명일방주: 엔드필드', 단청도 업데이트...15일 스팀 입점",
+    "source": "news",
+    "seenAt": "2026-10-07T12:39:14+09:00",
+    "changes": 1
+  },
+  "http://www.inews24.com/view/2012522": {
+    "game": "endfield",
+    "title": "그리프라인, '명일방주: 엔드필드' 15일 스팀 출시",
+    "source": "news",
+    "seenAt": "2026-10-07T12:39:22+09:00",
+    "changes": 1
   }
 }
