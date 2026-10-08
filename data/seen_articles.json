@@ -1482,5 +1482,54 @@
     "source": "news",
     "seenAt": "2026-10-07T21:26:56+09:00",
     "changes": 0
+  },
+  "https://www.tgdaily.co.kr/news/articleView.html?idxno=407301": {
+    "game": "arknights",
+    "title": "'명일방주 : 엔드필드' 에 새 버전 전격 투입키로",
+    "source": "news",
+    "seenAt": "2026-10-08T12:52:37+09:00",
+    "changes": 0
+  },
+  "https://www.gamemeca.com/mv.php?inflow=naver&gid=1781545": {
+    "game": "nikke",
+    "title": "마녀가 된 벨로타, 승리의 여신: 니케에 할로윈 찾아온다",
+    "source": "news",
+    "seenAt": "2026-10-08T12:52:55+09:00",
+    "changes": 0
+  },
+  "https://www.etnews.com/20261008000175": {
+    "game": "nikke",
+    "title": "'승리의 여신: 니케', 할로윈 맞이 'LITTLE WITCH TRICK' 업데이트",
+    "source": "news",
+    "seenAt": "2026-10-08T12:53:03+09:00",
+    "changes": 0
+  },
+  "https://www.apnews.kr/news/articleView.html?idxno=3051858": {
+    "game": "nikke",
+    "title": "\"'할로윈 벨로타' 등장\"…레벨 인피니트, '승리의 여신: 니케'에 할로윈...",
+    "source": "news",
+    "seenAt": "2026-10-08T12:53:13+09:00",
+    "changes": 0
+  },
+  "https://www.gamemeca.com/mv.php?inflow=naver_s&gid=1781529": {
+    "game": "nikke",
+    "title": "승리의 여신: 니케 핼러윈 맞아 '벨로타: 펌킨 위치' 등장",
+    "source": "news",
+    "seenAt": "2026-10-08T12:53:25+09:00",
+    "changes": 0
+  },
+  "https://www.fomos.kr/redirect/news_view?news_cate_id=2&entry_id=156470": {
+    "game": "nikke",
+    "title": "승리의 여신: 니케, 핼러윈 테마 SSR 니케 '벨로타' 추가",
+    "source": "news",
+    "seenAt": "2026-10-08T12:53:32+09:00",
+    "changes": 0
+  },
+  "https://www.betanews.net/article/view/beta202610080089": {
+    "game": "nikke",
+    "title": "승리의 여신: 니케, 신규 스토리 LITTLE WITCH TRICK 업데이트",
+    "source": "news",
+    "seenAt": "2026-10-08T12:53:41+09:00",
+    "changes": 0
   }
 }
