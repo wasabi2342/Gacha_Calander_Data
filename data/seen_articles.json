@@ -1531,5 +1531,82 @@
     "source": "news",
     "seenAt": "2026-10-08T12:53:41+09:00",
     "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21888#v=dfacb824": {
+    "game": "genshin",
+    "title": "「도래한 허계의 별」 기원: 「허계의 별·스커크(얼음)」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-10-08T21:34:58+09:00",
+    "changes": 1
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21889#v=e9c9ddfd": {
+    "game": "genshin",
+    "title": "「베리 샹송」 기원: 「화려한 맛의 화음·에스코피에(얼음)」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-10-08T21:35:06+09:00",
+    "changes": 1
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21890#v=c8064adc": {
+    "game": "genshin",
+    "title": "「신의 주조」 기원: 「한손검·창백한 섬광」, 「장병기·맛의 지휘자」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-10-08T21:35:12+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1366#v=2ab97a3f": {
+    "game": "hsr",
+    "title": "4.6 버전 이벤트 워프 (1)",
+    "source": "official",
+    "seenAt": "2026-10-08T21:35:24+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1365#v=63fd2dab": {
+    "game": "hsr",
+    "title": "4.6 버전 상점 신상 출시",
+    "source": "official",
+    "seenAt": "2026-10-08T21:35:30+09:00",
+    "changes": 0
+  },
+  "https://www.gametoc.co.kr/news/articleView.html?idxno=112057": {
+    "game": "wuwa",
+    "title": "[명조] 다음 지역은 신 연방 확정? 권총 수녀 릴리 떴다",
+    "source": "news",
+    "seenAt": "2026-10-08T21:35:46+09:00",
+    "changes": 0
+  },
+  "https://www.gameple.co.kr/news/articleView.html?idxno=216653": {
+    "game": "nikke",
+    "title": "[10월 8일] '니케', 신규 SSR '벨로타: 펌킨 위치' 추가 등 게임 업계 핫...",
+    "source": "news",
+    "seenAt": "2026-10-08T21:36:16+09:00",
+    "changes": 0
+  },
+  "https://www.thisisgame.com/articles/430796": {
+    "game": "nikke",
+    "title": "승리의 여신: 니케, 신규 업데이트 'LITTLE WITCH TRICK' 출시",
+    "source": "news",
+    "seenAt": "2026-10-08T21:36:23+09:00",
+    "changes": 0
+  },
+  "https://www.inven.co.kr/webzine/news/?news=321911": {
+    "game": "nikke",
+    "title": "[정보] 승리의 여신: 니케, 메이드 신데렐라 스킨 배포와 할로윈 이벤트...",
+    "source": "news",
+    "seenAt": "2026-10-08T21:36:41+09:00",
+    "changes": 0
+  },
+  "https://www.viva100.com/article/20261008500774": {
+    "game": "nikke",
+    "title": "[게임 업데이트] 일곱 개의 대죄: 오리진-이클립스-미르4-니케-라그나로...",
+    "source": "news",
+    "seenAt": "2026-10-08T21:36:50+09:00",
+    "changes": 0
+  },
+  "https://www.gametoc.co.kr/news/articleView.html?idxno=112056": {
+    "game": "nikke",
+    "title": "[니케] 벨로타 펌킨 위치 \"4주년 앞두고 쉬어갑니다\"",
+    "source": "news",
+    "seenAt": "2026-10-08T21:36:59+09:00",
+    "changes": 0
   }
 }

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T21:26:56+09:00",
+  "updatedAt": "2026-10-08T21:36:59+09:00",
   "games": [
     {
       "id": "genshin",
@@ -927,6 +927,51 @@
       "sourceUrl": "https://www.gamechosun.co.kr/webzine/article/view.php?no=225949",
       "evidence": "10월 8일 점검 종료 후 10월 28일 오후 11시 59분까지",
       "updatedAt": "2026-10-02T20:41:32+09:00"
+    },
+    {
+      "id": "genshin-2026-10-13-p0",
+      "gameId": "genshin",
+      "type": "BANNER",
+      "version": "2026-10-13",
+      "phase": null,
+      "title": "「도래한 허계의 별」 기원",
+      "characters": [
+        {
+          "name": "스커크",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "달리아",
+          "rarity": 4,
+          "isNew": true
+        },
+        {
+          "name": "캔디스",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
+          "name": "미카",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
+          "name": "에스코피에",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-10-13T19:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-11-03T15:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21889#v=e9c9ddfd",
+      "evidence": "2026/10/13 18:00부터 11/03 14:59까지 (KST 변환)",
+      "updatedAt": "2026-10-08T21:35:06+09:00",
+      "verified": true
     },
     {
       "id": "arknights-단청도-update",
