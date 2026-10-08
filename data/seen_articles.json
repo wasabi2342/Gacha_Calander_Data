@@ -1608,5 +1608,40 @@
     "source": "news",
     "seenAt": "2026-10-08T21:36:59+09:00",
     "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21888#v=69cae28d": {
+    "game": "genshin",
+    "title": "「도래한 허계의 별」 기원: 「허계의 별·스커크(얼음)」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-10-09T07:43:09+09:00",
+    "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21889#v=7d56ffed": {
+    "game": "genshin",
+    "title": "「베리 샹송」 기원: 「화려한 맛의 화음·에스코피에(얼음)」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-10-09T07:43:16+09:00",
+    "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21890#v=6e9c3180": {
+    "game": "genshin",
+    "title": "「신의 주조」 기원: 「한손검·창백한 섬광」, 「장병기·맛의 지휘자」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-10-09T07:43:22+09:00",
+    "changes": 0
+  },
+  "https://www.gamechosun.co.kr/webzine/article/view.php?no=226173": {
+    "game": "nikke",
+    "title": "지상 탈환을 위한 ‘전원 집결’ 카운트다운! ‘승리의 여신: 니케’, 4...",
+    "source": "news",
+    "seenAt": "2026-10-09T07:44:00+09:00",
+    "changes": 0
+  },
+  "https://www.gametoc.co.kr/news/articleView.html?idxno=112069": {
+    "game": "nikke",
+    "title": "할로윈 맞이 마녀 니케 등장",
+    "source": "news",
+    "seenAt": "2026-10-09T07:44:08+09:00",
+    "changes": 0
   }
 }
