@@ -1664,5 +1664,33 @@
     "source": "news",
     "seenAt": "2026-10-10T07:05:26+09:00",
     "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21888#v=1e3d0101": {
+    "game": "genshin",
+    "title": "「도래한 허계의 별」 기원: 「허계의 별·스커크(얼음)」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-10-10T12:41:45+09:00",
+    "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21889#v=b861f284": {
+    "game": "genshin",
+    "title": "「베리 샹송」 기원: 「화려한 맛의 화음·에스코피에(얼음)」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-10-10T12:41:52+09:00",
+    "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21890#v=d4af4d32": {
+    "game": "genshin",
+    "title": "「신의 주조」 기원: 「한손검·창백한 섬광」, 「장병기·맛의 지휘자」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-10-10T12:41:59+09:00",
+    "changes": 0
+  },
+  "https://www.gamemeca.com/mv.php?inflow=naver&gid=1781610": {
+    "game": "hsr",
+    "title": "젠레스 존 제로에 붕괴 스타레일 카프카, 로빈 나온다",
+    "source": "news",
+    "seenAt": "2026-10-10T12:42:12+09:00",
+    "changes": 0
   }
 }
