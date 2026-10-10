@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T21:36:59+09:00",
+  "updatedAt": "2026-10-11T01:43:52+09:00",
   "games": [
     {
       "id": "genshin",
@@ -1066,6 +1066,53 @@
       "sourceUrl": "http://www.inews24.com/view/2012522",
       "evidence": "사와 명하는 업데이트 기간 순차적으로 진행되는 모집",
       "updatedAt": "2026-10-07T12:39:22+09:00"
+    },
+    {
+      "id": "zzz-3.3-update",
+      "gameId": "zzz",
+      "type": "VERSION_UPDATE",
+      "version": "3.3",
+      "phase": null,
+      "title": "3.3 버전 업데이트",
+      "characters": [],
+      "startAt": "2026-10-21T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": null,
+      "sourceUrl": "https://www.tleaves.co.kr/news/articleView.html?idxno=9953",
+      "evidence": "오는 21일 업데이트 예정인 3.3 버전",
+      "updatedAt": "2026-10-11T01:43:40+09:00"
+    },
+    {
+      "id": "zzz-3.3-p1",
+      "gameId": "zzz",
+      "type": "BANNER",
+      "version": "3.3",
+      "phase": 1,
+      "title": "3.3 버전 전반 픽업",
+      "characters": [
+        {
+          "name": "피닉스",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "벨리나",
+          "rarity": 5,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-10-21T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": null,
+      "sourceUrl": "https://www.tleaves.co.kr/news/articleView.html?idxno=9953",
+      "evidence": "버전 상반기 피닉스 및 벨리나 복각",
+      "updatedAt": "2026-10-11T01:43:40+09:00"
     },
     {
       "id": "arknights-1.6-p0",
