@@ -1713,5 +1713,47 @@
     "source": "news",
     "seenAt": "2026-10-11T20:55:01+09:00",
     "changes": 0
+  },
+  "https://www.fomos.kr/redirect/news_view?news_cate_id=2&entry_id=156525": {
+    "game": "zzz",
+    "title": "젠레스 존 제로, 21일 3.3 버전 '다시 하늘을 향해' 업데이트",
+    "source": "news",
+    "seenAt": "2026-10-12T12:38:07+09:00",
+    "changes": 0
+  },
+  "https://gamefocus.co.kr/detail.php?number=179709": {
+    "game": "zzz",
+    "title": "불 속성 이상 캐릭터 '피닉스' 등장, 호요버스 '젠레스 존 제로' 신규 3...",
+    "source": "news",
+    "seenAt": "2026-10-12T12:38:17+09:00",
+    "changes": 0
+  },
+  "https://www.mk.co.kr/article/12173408": {
+    "game": "zzz",
+    "title": "호요버스 ‘젠레스 존 제로’, 3.3 버전 ‘다시 하늘을 향해’ 예고",
+    "source": "news",
+    "seenAt": "2026-10-12T12:38:27+09:00",
+    "changes": 0
+  },
+  "http://game.dailyesports.com/view.php?ud=20261012103627924843da15d9d2_26": {
+    "game": "zzz",
+    "title": "'젠레스 존 제로', 21일 3.3 업데이트…신규 에이전트·메카 전투 추가",
+    "source": "news",
+    "seenAt": "2026-10-12T12:38:38+09:00",
+    "changes": 1
+  },
+  "https://www.thisisgame.com/articles/430844": {
+    "game": "zzz",
+    "title": "호요버스 '젠레스 존 제로', 3.3 버전 '다시 하늘을 향해' 오는 21일 업데...",
+    "source": "news",
+    "seenAt": "2026-10-12T12:38:46+09:00",
+    "changes": 0
+  },
+  "https://www.gamechosun.co.kr/webzine/article/view.php?no=226252": {
+    "game": "zzz",
+    "title": "호요버스 '젠레스 존 제로' 3.3 버전 '다시 하늘을 향해' 10월 21일 업데...",
+    "source": "news",
+    "seenAt": "2026-10-12T12:38:55+09:00",
+    "changes": 0
   }
 }

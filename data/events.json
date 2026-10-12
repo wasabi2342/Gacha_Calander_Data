@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T01:43:52+09:00",
+  "updatedAt": "2026-10-12T12:39:08+09:00",
   "games": [
     {
       "id": "genshin",
@@ -1102,6 +1102,11 @@
           "name": "벨리나",
           "rarity": 5,
           "isNew": false
+        },
+        {
+          "name": "세베리안",
+          "rarity": 5,
+          "isNew": true
         }
       ],
       "startAt": "2026-10-21T00:00:00+09:00",
@@ -1110,9 +1115,9 @@
       "endConfirmed": false,
       "status": "ESTIMATED",
       "note": null,
-      "sourceUrl": "https://www.tleaves.co.kr/news/articleView.html?idxno=9953",
-      "evidence": "버전 상반기 피닉스 및 벨리나 복각",
-      "updatedAt": "2026-10-11T01:43:40+09:00"
+      "sourceUrl": "http://game.dailyesports.com/view.php?ud=20261012103627924843da15d9d2_26",
+      "evidence": "신규 S급 에이전트 2명 순차적 등장",
+      "updatedAt": "2026-10-12T12:38:38+09:00"
     },
     {
       "id": "arknights-1.6-p0",
