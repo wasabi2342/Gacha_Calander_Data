@@ -1825,5 +1825,12 @@
     "source": "news",
     "seenAt": "2026-10-13T09:00:37+09:00",
     "changes": 0
+  },
+  "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3555107#v=2791c74e": {
+    "game": "bluearchive",
+    "title": "(완료) 10/13(화) 업데이트 상세 안내 (10/12 추가)",
+    "source": "official",
+    "seenAt": "2026-10-13T15:26:11+09:00",
+    "changes": 1
   }
 }

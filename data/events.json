@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T23:05:26+09:00",
+  "updatedAt": "2026-10-13T15:26:19+09:00",
   "games": [
     {
       "id": "genshin",
@@ -945,6 +945,16 @@
           "name": "슌(수영복)",
           "rarity": 3,
           "isNew": true
+        },
+        {
+          "name": "키사키",
+          "rarity": 3,
+          "isNew": true
+        },
+        {
+          "name": "슌",
+          "rarity": 3,
+          "isNew": true
         }
       ],
       "startAt": "2026-10-13T00:00:00+09:00",
@@ -953,9 +963,9 @@
       "endConfirmed": true,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3555107#v=a1782a20",
-      "evidence": "키사키(수영복), 슌(수영복) 픽업 모집 일정",
-      "updatedAt": "2026-10-12T23:05:04+09:00",
+      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3555107#v=2791c74e",
+      "evidence": "키사키(수영복), 슌(수영복) 픽업 모집",
+      "updatedAt": "2026-10-13T15:26:11+09:00",
       "verified": true
     },
     {
