@@ -1832,5 +1832,61 @@
     "source": "official",
     "seenAt": "2026-10-13T15:26:11+09:00",
     "changes": 1
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1447#v=57b872b8": {
+    "game": "hsr",
+    "title": "4.6 버전 게임 최적화 및 발견한 문제 안내",
+    "source": "official",
+    "seenAt": "2026-10-14T03:44:29+09:00",
+    "changes": 0
+  },
+  "https://www.gametoc.co.kr/news/articleView.html?idxno=112189": {
+    "game": "bluearchive",
+    "title": "블루 아카이브 페스티벌 티케팅 준비하세요",
+    "source": "news",
+    "seenAt": "2026-10-14T03:45:40+09:00",
+    "changes": 0
+  },
+  "https://www.gameple.co.kr/news/articleView.html?idxno=216679": {
+    "game": "bluearchive",
+    "title": "[10월 13일] 블루 아카이브, 이벤트 스토리 '람과천청' 업데이트 등 게임...",
+    "source": "news",
+    "seenAt": "2026-10-14T03:46:19+09:00",
+    "changes": 0
+  },
+  "https://www.onews.tv/news/articleView.html?idxno=289054": {
+    "game": "bluearchive",
+    "title": "'블루 아카이브' 5주년 페스티벌 예매 14일 시작…신규 스토리도 업데이...",
+    "source": "news",
+    "seenAt": "2026-10-14T03:46:44+09:00",
+    "changes": 0
+  },
+  "http://game.dailyesports.com/view.php?ud=20261013160444269643da15d9d2_26": {
+    "game": "bluearchive",
+    "title": "'블루 아카이브'의 여름은 이제 시작! 수영복 키사키·슌 등장",
+    "source": "news",
+    "seenAt": "2026-10-14T03:48:02+09:00",
+    "changes": 0
+  },
+  "https://www.gameshot.net/common/con_view.php?code=GA6acdf442d2f9e": {
+    "game": "bluearchive",
+    "title": "블루 아카이브, 신규 이벤트 스토리 ‘람과천청’ 공개...수영복 콘셉트...",
+    "source": "news",
+    "seenAt": "2026-10-14T03:48:48+09:00",
+    "changes": 0
+  },
+  "https://game.donga.com/124652/": {
+    "game": "bluearchive",
+    "title": "‘블루 아카이브’, 서비스 5주년 페스티벌 예매 실시",
+    "source": "news",
+    "seenAt": "2026-10-14T03:49:30+09:00",
+    "changes": 0
+  },
+  "https://www.xportsnews.com/article/2207155": {
+    "game": "endfield",
+    "title": "'명일방주: 엔드필드', 네이버 웹툰과 2차 창작 공모전 개최…부문별 금...",
+    "source": "news",
+    "seenAt": "2026-10-14T03:50:38+09:00",
+    "changes": 0
   }
 }
