@@ -1818,5 +1818,12 @@
     "source": "news",
     "seenAt": "2026-10-12T23:05:26+09:00",
     "changes": 0
+  },
+  "http://www.biztribune.co.kr/news/articleView.html?idxno=360484": {
+    "game": "zzz",
+    "title": "호요버스 '젠레스 존제로', 3.3 버전 '다시 하늘을 향해' 출격… 메차전...",
+    "source": "news",
+    "seenAt": "2026-10-13T09:00:37+09:00",
+    "changes": 0
   }
 }
