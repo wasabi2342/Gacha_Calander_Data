@@ -1923,5 +1923,33 @@
     "source": "news",
     "seenAt": "2026-10-14T11:59:52+09:00",
     "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1447#v=9f38734d": {
+    "game": "hsr",
+    "title": "4.6 버전 게임 최적화 및 발견한 문제 안내",
+    "source": "official",
+    "seenAt": "2026-10-14T19:57:44+09:00",
+    "changes": 0
+  },
+  "https://www.sisaon.co.kr/news/articleView.html?idxno=205113": {
+    "game": "bluearchive",
+    "title": "넥슨 '블루 아카이브', GS25와 세 번째 협업…크래프톤, AI 역량 갖춘 신...",
+    "source": "news",
+    "seenAt": "2026-10-14T19:58:14+09:00",
+    "changes": 0
+  },
+  "http://game.dailyesports.com/view.php?ud=20261014151453407121ad998911_26": {
+    "game": "bluearchive",
+    "title": "블루 아카이브, ‘람과천청’ 업데이트 힘입어 스팀 인기 2위 탈환",
+    "source": "news",
+    "seenAt": "2026-10-14T19:58:26+09:00",
+    "changes": 0
+  },
+  "https://www.apnews.kr/news/articleView.html?idxno=3052057": {
+    "game": "bluearchive",
+    "title": "\"'블루 아카이브' 축제 예매하세요\"…넥슨, 5주년 페스티벌 예매 돌입",
+    "source": "news",
+    "seenAt": "2026-10-14T19:58:34+09:00",
+    "changes": 0
   }
 }
