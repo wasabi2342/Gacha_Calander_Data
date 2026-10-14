@@ -1951,5 +1951,19 @@
     "source": "news",
     "seenAt": "2026-10-14T19:58:34+09:00",
     "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1447#v=164759c2": {
+    "game": "hsr",
+    "title": "4.6 버전 게임 최적화 및 발견한 문제 안내",
+    "source": "official",
+    "seenAt": "2026-10-15T01:16:51+09:00",
+    "changes": 0
+  },
+  "https://gamefocus.co.kr/detail.php?number=179789": {
+    "game": "bluearchive",
+    "title": "'블루 아카이브 5주년 페스티벌' 입장권 1차 예매, 3분 만에 8000장 전석...",
+    "source": "news",
+    "seenAt": "2026-10-15T01:17:17+09:00",
+    "changes": 0
   }
 }
