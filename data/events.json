@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-28T04:18:46+09:00",
+  "updatedAt": "2026-10-13T15:26:19+09:00",
   "games": [
     {
       "id": "genshin",
@@ -346,30 +346,6 @@
       "updatedAt": "2026-09-28T04:13:00+09:00"
     },
     {
-      "id": "zzz-3.2-p1",
-      "gameId": "zzz",
-      "type": "BANNER",
-      "version": "3.2",
-      "phase": 1,
-      "title": "3.2 상반기 복각 픽업",
-      "characters": [
-        {
-          "name": "남궁우",
-          "rarity": 5,
-          "isNew": false
-        }
-      ],
-      "startAt": "2026-09-09T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "ESTIMATED",
-      "note": null,
-      "sourceUrl": "https://www.fomos.kr/redirect/news_view?news_cate_id=2&entry_id=155555",
-      "evidence": "상반기 S급 에이전트 남궁우 복각",
-      "updatedAt": "2026-09-28T04:14:06+09:00"
-    },
-    {
       "id": "zzz-3.2-update",
       "gameId": "zzz",
       "type": "VERSION_UPDATE",
@@ -386,6 +362,51 @@
       "sourceUrl": "https://zenless.hoyoverse.com/ko-kr/news?ann=1297#v=dc00e102",
       "evidence": "3.2 버전 업데이트 공지",
       "updatedAt": "2026-09-28T04:13:35+09:00",
+      "verified": true
+    },
+    {
+      "id": "zzz-3.2-p1",
+      "gameId": "zzz",
+      "type": "BANNER",
+      "version": "3.2",
+      "phase": 1,
+      "title": "3.2 상반기 복각 픽업",
+      "characters": [
+        {
+          "name": "클라렛",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "앤톤",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
+          "name": "니콜",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
+          "name": "남궁우",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "록시",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-09-09T07:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-09-30T12:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://zenless.hoyoverse.com/ko-kr/news?ann=1297#v=e341b70b",
+      "evidence": "3.2 버전 업데이트 후 채널 변조 획득 가능",
+      "updatedAt": "2026-09-29T20:55:09+09:00",
       "verified": true
     },
     {
@@ -546,25 +567,36 @@
           "isNew": true
         },
         {
-          "name": "보댜니차",
-          "rarity": 5,
-          "isNew": true
+          "name": "디오나",
+          "rarity": 4,
+          "isNew": false
         },
         {
-          "name": "베ส나",
+          "name": "파루잔",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
+          "name": "중운",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
+          "name": "보댜니차",
           "rarity": 5,
           "isNew": true
         }
       ],
       "startAt": "2026-09-23T00:00:00+09:00",
       "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "ESTIMATED",
+      "endAt": "2026-10-13T18:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://zdnet.co.kr/view/?no=20260922095257",
-      "evidence": "7.1 버전 업데이트와 함께 신규 캐릭터 합류",
-      "updatedAt": "2026-09-28T04:06:20+09:00"
+      "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21877#v=ce44fcd8",
+      "evidence": "7.1 버전 업데이트 후~2026/10/13 17:59 보댜니차 픽업",
+      "updatedAt": "2026-09-28T05:41:15+09:00",
+      "verified": true
     },
     {
       "id": "genshin-7.1-update",
@@ -583,25 +615,6 @@
       "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21946#v=60bf0ed5",
       "evidence": "7.1 버전 「죽음의 진혼곡」 업데이트",
       "updatedAt": "2026-09-28T04:05:23+09:00",
-      "verified": true
-    },
-    {
-      "id": "hsr-4.6-update",
-      "gameId": "hsr",
-      "type": "VERSION_UPDATE",
-      "version": "4.6",
-      "phase": null,
-      "title": "4.6 버전 업데이트",
-      "characters": [],
-      "startAt": "2026-09-23T12:00:00+09:00",
-      "timeKnown": true,
-      "endAt": "2026-11-11T07:00:00+09:00",
-      "endConfirmed": true,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://hsr.hoyoverse.com/ko-kr/news?ann=1421#v=354ddb41",
-      "evidence": "4.6 버전 업데이트 안내",
-      "updatedAt": "2026-09-28T04:08:12+09:00",
       "verified": true
     },
     {
@@ -677,6 +690,65 @@
       "updatedAt": "2026-09-28T04:09:16+09:00"
     },
     {
+      "id": "hsr-4.6-update",
+      "gameId": "hsr",
+      "type": "VERSION_UPDATE",
+      "version": "4.6",
+      "phase": null,
+      "title": "4.6 버전 업데이트",
+      "characters": [],
+      "startAt": "2026-09-28T06:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-11-11T06:00:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://hsr.hoyoverse.com/ko-kr/news?ann=1437#v=1d454fc3",
+      "evidence": "4.6 버전 업데이트 안내",
+      "updatedAt": "2026-10-03T12:11:22+09:00",
+      "verified": true
+    },
+    {
+      "id": "bluearchive-2026-09-29-p0",
+      "gameId": "bluearchive",
+      "type": "BANNER",
+      "version": "2026-09-29",
+      "phase": null,
+      "title": "나구사(수영복), 키쿄(수영복) 등 픽업",
+      "characters": [
+        {
+          "name": "나구사",
+          "rarity": 3,
+          "isNew": true
+        },
+        {
+          "name": "키쿄",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "렌게",
+          "rarity": 2,
+          "isNew": false
+        },
+        {
+          "name": "유카리",
+          "rarity": 3,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-09-29T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-10-06T10:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3542434#v=edf23585",
+      "evidence": "9월 29일 점검 후 수영복 픽업 모집",
+      "updatedAt": "2026-09-29T07:51:55+09:00",
+      "verified": true
+    },
+    {
       "id": "wuwa-3.7-update",
       "gameId": "wuwa",
       "type": "VERSION_UPDATE",
@@ -693,6 +765,30 @@
       "sourceUrl": "https://www.gametoc.co.kr/news/articleView.html?idxno=111648",
       "evidence": "3.7 버전 9월 30일 정식 오픈",
       "updatedAt": "2026-09-28T04:10:44+09:00"
+    },
+    {
+      "id": "wuwa-2026-09-30-p0",
+      "gameId": "wuwa",
+      "type": "BANNER",
+      "version": "2026-09-30",
+      "phase": null,
+      "title": "여우의 별자리 픽업",
+      "characters": [
+        {
+          "name": "여우의 별자리",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-09-30T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": null,
+      "sourceUrl": "https://www.gameple.co.kr/news/articleView.html?idxno=216596",
+      "evidence": "30일 신규 5성 공명자 여우의 별자리가 등장했다",
+      "updatedAt": "2026-10-01T02:22:47+09:00"
     },
     {
       "id": "wuwa-3.7-p1",
@@ -716,6 +812,21 @@
           "name": "치사",
           "rarity": 5,
           "isNew": false
+        },
+        {
+          "name": "쇄명",
+          "rarity": null,
+          "isNew": true
+        },
+        {
+          "name": "린네",
+          "rarity": null,
+          "isNew": false
+        },
+        {
+          "name": "루실라",
+          "rarity": null,
+          "isNew": false
         }
       ],
       "startAt": "2026-09-30T00:00:00+09:00",
@@ -724,9 +835,353 @@
       "endConfirmed": false,
       "status": "ESTIMATED",
       "note": null,
-      "sourceUrl": "https://www.gametoc.co.kr/news/articleView.html?idxno=111648",
-      "evidence": "3.7 버전 픽업 튜닝 전반부",
-      "updatedAt": "2026-09-28T04:10:44+09:00"
+      "sourceUrl": "https://gamefocus.co.kr/detail.php?number=179600",
+      "evidence": "3.7 버전 신규 및 복각 캐릭터 픽업",
+      "updatedAt": "2026-10-06T21:32:35+09:00"
+    },
+    {
+      "id": "zzz-3.2-p2",
+      "gameId": "zzz",
+      "type": "BANNER",
+      "version": "3.2",
+      "phase": 2,
+      "title": "3.2 하반기 록시 픽업",
+      "characters": [
+        {
+          "name": "록시",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "프로미아",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-09-30T13:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-10-20T15:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://zenless.hoyoverse.com/ko-kr/news?ann=243#v=02d172ec",
+      "evidence": "3.2 하반기 프로미아 변조 이벤트",
+      "updatedAt": "2026-09-29T07:51:37+09:00",
+      "verified": true
+    },
+    {
+      "id": "bluearchive-2026-10-06-p0",
+      "gameId": "bluearchive",
+      "type": "BANNER",
+      "version": "2026-10-06",
+      "phase": null,
+      "title": "카즈사(밴드), 요시미(밴드), 나츠(밴드) 픽업",
+      "characters": [
+        {
+          "name": "카즈사",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "요시미",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "나츠",
+          "rarity": 3,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-10-06T11:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-10-13T10:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3542434#v=edf23585",
+      "evidence": "10월 6일 특별 픽업 모집 시작",
+      "updatedAt": "2026-09-29T07:51:55+09:00",
+      "verified": true
+    },
+    {
+      "id": "nikke-2026-10-08-p0",
+      "gameId": "nikke",
+      "type": "BANNER",
+      "version": "2026-10-08",
+      "phase": null,
+      "title": "벨로타: 펌킨 위치 픽업",
+      "characters": [
+        {
+          "name": "벨로타: 펌킨 위치",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-10-08T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-10-28T23:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://www.gamechosun.co.kr/webzine/article/view.php?no=225949",
+      "evidence": "10월 8일 점검 종료 후 10월 28일 오후 11시 59분까지",
+      "updatedAt": "2026-10-02T20:41:32+09:00"
+    },
+    {
+      "id": "bluearchive-2026-10-13-p0",
+      "gameId": "bluearchive",
+      "type": "BANNER",
+      "version": "2026-10-13",
+      "phase": null,
+      "title": "키사키(수영복), 슌(수영복) 픽업 모집",
+      "characters": [
+        {
+          "name": "키사키(수영복)",
+          "rarity": 3,
+          "isNew": true
+        },
+        {
+          "name": "슌(수영복)",
+          "rarity": 3,
+          "isNew": true
+        },
+        {
+          "name": "키사키",
+          "rarity": 3,
+          "isNew": true
+        },
+        {
+          "name": "슌",
+          "rarity": 3,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-10-13T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-10-27T10:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3555107#v=2791c74e",
+      "evidence": "키사키(수영복), 슌(수영복) 픽업 모집",
+      "updatedAt": "2026-10-13T15:26:11+09:00",
+      "verified": true
+    },
+    {
+      "id": "genshin-2026-10-13-p0",
+      "gameId": "genshin",
+      "type": "BANNER",
+      "version": "2026-10-13",
+      "phase": null,
+      "title": "「도래한 허계의 별」 기원",
+      "characters": [
+        {
+          "name": "스커크",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "달리아",
+          "rarity": 4,
+          "isNew": true
+        },
+        {
+          "name": "캔디스",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
+          "name": "미카",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
+          "name": "에스코피에",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-10-13T19:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-11-03T15:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21889#v=e9c9ddfd",
+      "evidence": "2026/10/13 18:00부터 11/03 14:59까지 (KST 변환)",
+      "updatedAt": "2026-10-08T21:35:06+09:00",
+      "verified": true
+    },
+    {
+      "id": "arknights-단청도-update",
+      "gameId": "arknights",
+      "type": "VERSION_UPDATE",
+      "version": "단청도",
+      "phase": null,
+      "title": "단청도 업데이트",
+      "characters": [],
+      "startAt": "2026-10-15T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://gamefocus.co.kr/detail.php?number=179631",
+      "evidence": "15일 스팀에 출시하고 신규 버전 단청도 선보여",
+      "updatedAt": "2026-10-07T21:26:17+09:00"
+    },
+    {
+      "id": "arknights-2026-10-15-p0",
+      "gameId": "arknights",
+      "type": "BANNER",
+      "version": "2026-10-15",
+      "phase": null,
+      "title": "단청도 신규 오퍼레이터 모집",
+      "characters": [
+        {
+          "name": "사",
+          "rarity": null,
+          "isNew": true
+        },
+        {
+          "name": "명하",
+          "rarity": null,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-10-15T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://gamefocus.co.kr/detail.php?number=179631",
+      "evidence": "업데이트 기간 순차적으로 진행되는 모집 이벤트",
+      "updatedAt": "2026-10-07T21:26:17+09:00"
+    },
+    {
+      "id": "endfield-단청도-update",
+      "gameId": "endfield",
+      "type": "VERSION_UPDATE",
+      "version": "단청도",
+      "phase": null,
+      "title": "단청도 업데이트",
+      "characters": [],
+      "startAt": "2026-10-15T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": null,
+      "sourceUrl": "https://www.fomos.kr/redirect/news_view?news_cate_id=2&entry_id=156445",
+      "evidence": "15일 스팀 출시 및 신규 버전 단청도",
+      "updatedAt": "2026-10-07T12:39:14+09:00"
+    },
+    {
+      "id": "endfield-단청도-p0",
+      "gameId": "endfield",
+      "type": "BANNER",
+      "version": "단청도",
+      "phase": null,
+      "title": "단청도 신규 오퍼레이터 모집",
+      "characters": [
+        {
+          "name": "사",
+          "rarity": null,
+          "isNew": true
+        },
+        {
+          "name": "명하",
+          "rarity": null,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-10-15T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": null,
+      "sourceUrl": "http://www.inews24.com/view/2012522",
+      "evidence": "사와 명하는 업데이트 기간 순차적으로 진행되는 모집",
+      "updatedAt": "2026-10-07T12:39:22+09:00"
+    },
+    {
+      "id": "zzz-3.3-update",
+      "gameId": "zzz",
+      "type": "VERSION_UPDATE",
+      "version": "3.3",
+      "phase": null,
+      "title": "3.3 버전 업데이트",
+      "characters": [],
+      "startAt": "2026-10-21T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": null,
+      "sourceUrl": "https://www.tleaves.co.kr/news/articleView.html?idxno=9953",
+      "evidence": "오는 21일 업데이트 예정인 3.3 버전",
+      "updatedAt": "2026-10-11T01:43:40+09:00"
+    },
+    {
+      "id": "zzz-3.3-p1",
+      "gameId": "zzz",
+      "type": "BANNER",
+      "version": "3.3",
+      "phase": 1,
+      "title": "3.3 버전 전반 픽업",
+      "characters": [
+        {
+          "name": "피닉스",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "벨리나",
+          "rarity": 5,
+          "isNew": false
+        },
+        {
+          "name": "세베리안",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-10-21T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "ESTIMATED",
+      "note": null,
+      "sourceUrl": "http://game.dailyesports.com/view.php?ud=20261012103627924843da15d9d2_26",
+      "evidence": "신규 S급 에이전트 2명 순차적 등장",
+      "updatedAt": "2026-10-12T12:38:38+09:00"
+    },
+    {
+      "id": "arknights-1.6-p0",
+      "gameId": "arknights",
+      "type": "BANNER",
+      "version": "1.6",
+      "phase": null,
+      "title": "탕탕 복각 픽업",
+      "characters": [
+        {
+          "name": "탕탕",
+          "rarity": null,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-10-29T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-11-19T23:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://www.inven.co.kr/webzine/news/?news=321825",
+      "evidence": "10월 29일부터 11월 19일까지 탕탕 헤드헌팅 복각",
+      "updatedAt": "2026-10-07T07:06:25+09:00"
     }
   ]
 }
