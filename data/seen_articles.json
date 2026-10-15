@@ -103,5 +103,26 @@
     "source": "official",
     "seenAt": "2026-10-16T01:56:05+09:00",
     "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21888#v=dfacb824": {
+    "game": "genshin",
+    "title": "「도래한 허계의 별」 기원: 「허계의 별·스커크(얼음)」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-10-16T05:48:27+09:00",
+    "changes": 1
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21889#v=e9c9ddfd": {
+    "game": "genshin",
+    "title": "「베리 샹송」 기원: 「화려한 맛의 화음·에스코피에(얼음)」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-10-16T05:48:34+09:00",
+    "changes": 1
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21946#v=2b24afe8": {
+    "game": "genshin",
+    "title": "「죽음의 진혼곡」 7.1 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-10-16T05:48:41+09:00",
+    "changes": 0
   }
 }
