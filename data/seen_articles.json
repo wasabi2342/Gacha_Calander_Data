@@ -1979,5 +1979,19 @@
     "source": "news",
     "seenAt": "2026-10-15T11:38:55+09:00",
     "changes": 0
+  },
+  "http://game.dailyesports.com/view.php?ud=20261015110605203943da15d9d2_26": {
+    "game": "bluearchive",
+    "title": "블루 아카이브, 5주년 페스티벌 1차 예매 조기 매진",
+    "source": "news",
+    "seenAt": "2026-10-15T19:39:40+09:00",
+    "changes": 0
+  },
+  "https://www.gamemeca.com/mv.php?inflow=naver_s&gid=1781815": {
+    "game": "nikke",
+    "title": "[메카 랭킹] 니케 챔레나 BETA 마지막 시즌 진급전 종료",
+    "source": "news",
+    "seenAt": "2026-10-15T19:39:55+09:00",
+    "changes": 0
   }
 }
