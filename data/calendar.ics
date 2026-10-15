@@ -10,146 +10,19 @@ X-WR-TIMEZONE:Asia/Seoul
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
-UID:nte-1.2-p2@gacha-calander-data
-DTSTAMP:20260927T191317Z
-DTSTART;VALUE=DATE:20260729
-DTEND;VALUE=DATE:20260820
-SUMMARY:(추정) [이환] 1.2 후반 픽업 - 일로이
-DESCRIPTION:게임: 이환\n종류: 픽업\n시작: 2026-07-29 (시각 미
- 정)\n종료: 2026-08-19 06:59 (추정)\n캐릭터: 일로이\n상태: 추
- 정\n출처: https://www.gamemeca.com/mv.php?inflow=naver&gid=1777110\n(
- 한국 시간 기준)
-CATEGORIES:이환,픽업
-TRANSP:TRANSPARENT
-STATUS:TENTATIVE
-URL:https://www.gamemeca.com/mv.php?inflow=naver&gid=1777110
-END:VEVENT
-BEGIN:VEVENT
-UID:bluearchive-2026-08-18-p0@gacha-calander-data
-DTSTAMP:20260927T191507Z
-DTSTART;VALUE=DATE:20260818
-DTEND;VALUE=DATE:20260902
-SUMMARY:[블루 아카이브] 니코\, 쿠루미 특별 픽업 모집 - 니
- 코\, 쿠루미
-DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-08-18
-  (시각 미정)\n종료: 2026-09-01 10:59\n캐릭터: 니코\, 쿠루미\
- n상태: 공식 공지 확인\n출처: https://forum.nexon.com/bluearchive
- /board_view?board=1076&thread=3515599\n(한국 시간 기준)
-CATEGORIES:블루 아카이브,픽업
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=351559
- 9
-END:VEVENT
-BEGIN:VEVENT
-UID:nte-1.3-update@gacha-calander-data
-DTSTAMP:20260927T191300Z
-DTSTART;VALUE=DATE:20260819
-DTEND;VALUE=DATE:20260820
-SUMMARY:(추정) [이환] 1.3 버전 '안개 너머의 별빛' 업데이트
-DESCRIPTION:게임: 이환\n종류: 버전 업데이트\n시작: 2026-08-19
-  (시각 미정)\n상태: 추정\n출처: https://www.inven.co.kr/webzine/
- news/?news=319336\n(한국 시간 기준)
-CATEGORIES:이환,업데이트
-TRANSP:TRANSPARENT
-STATUS:TENTATIVE
-URL:https://www.inven.co.kr/webzine/news/?news=319336
-END:VEVENT
-BEGIN:VEVENT
-UID:nte-1.3-p1@gacha-calander-data
-DTSTAMP:20260927T191300Z
-DTSTART;VALUE=DATE:20260819
-DTEND;VALUE=DATE:20260910
-SUMMARY:(추정) [이환] 1.3 전반 픽업 - 잔홍\, 나나리(복각)
-DESCRIPTION:게임: 이환\n종류: 픽업\n시작: 2026-08-19 (시각 미
- 정)\n종료: 2026-09-09 06:59 (추정)\n캐릭터: 잔홍\, 나나리(복
- 각)\n상태: 추정\n출처: https://www.inven.co.kr/webzine/news/?news=3
- 19336\n(한국 시간 기준)
-CATEGORIES:이환,픽업
-TRANSP:TRANSPARENT
-STATUS:TENTATIVE
-URL:https://www.inven.co.kr/webzine/news/?news=319336
-END:VEVENT
-BEGIN:VEVENT
-UID:wuwa-3.6-update@gacha-calander-data
-DTSTAMP:20260927T191125Z
-DTSTART;VALUE=DATE:20260820
-DTEND;VALUE=DATE:20260821
-SUMMARY:(추정) [명조] 3.6 버전 업데이트
-DESCRIPTION:게임: 명조\n종류: 버전 업데이트\n시작: 2026-08-20
-  (시각 미정)\n상태: 추정\n출처: https://www.gameple.co.kr/news/a
- rticleView.html?idxno=216215\n(한국 시간 기준)
-CATEGORIES:명조,업데이트
-TRANSP:TRANSPARENT
-STATUS:TENTATIVE
-URL:https://www.gameple.co.kr/news/articleView.html?idxno=216215
-END:VEVENT
-BEGIN:VEVENT
-UID:wuwa-3.6-p1@gacha-calander-data
-DTSTAMP:20260927T191125Z
-DTSTART;VALUE=DATE:20260820
-DTEND;VALUE=DATE:20260821
-SUMMARY:[명조] 3.6 전반부 픽업 - 청초\, 경연\, 데니아(복각)
-  (종료일 미정)
-DESCRIPTION:게임: 명조\n종류: 픽업\n시작: 2026-08-20 (시각 미
- 정)\n종료: 아직 발표 전\n캐릭터: 청초\, 경연\, 데니아(
- 복각)\n상태: 공식 공지 확인\n출처: https://www.gameple.co.kr/n
- ews/articleView.html?idxno=216215\n(한국 시간 기준)
-CATEGORIES:명조,픽업
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://www.gameple.co.kr/news/articleView.html?idxno=216215
-END:VEVENT
-BEGIN:VEVENT
-UID:bluearchive-2026-09-01-p0@gacha-calander-data
-DTSTAMP:20260927T191507Z
-DTSTART;VALUE=DATE:20260901
-DTEND;VALUE=DATE:20260909
-SUMMARY:[블루 아카이브] 스미레\, 레이\, 아카리\, 이즈미\, 
- 하루카 복각 픽업 - 스미레(아르바이트)(복각)\, 레이(복
- 각)\, 아카리(새해)(복각)\, 이즈미(새해)(복각)\, 하루카(
- 새해)(복각)
-DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-09-01
-  11:00\n종료: 2026-09-08 10:59\n캐릭터: 스미레(아르바이트)(
- 복각)\, 레이(복각)\, 아카리(새해)(복각)\, 이즈미(새해)(
- 복각)\, 하루카(새해)(복각)\n상태: 공식 공지 확인\n출처:
-  https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3515599\
- n(한국 시간 기준)
-CATEGORIES:블루 아카이브,픽업
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=351559
- 9
-END:VEVENT
-BEGIN:VEVENT
-UID:arknights-2026-09-02-p0@gacha-calander-data
-DTSTAMP:20260927T191622Z
-DTSTART;VALUE=DATE:20260902
-DTEND;VALUE=DATE:20260903
-SUMMARY:[명일방주] 신규 캐릭터 티프로스 합류 - 티프로스 
- (종료일 미정)
-DESCRIPTION:게임: 명일방주\n종류: 픽업\n시작: 2026-09-02 (시
- 각 미정)\n종료: 아직 발표 전\n캐릭터: 티프로스\n상태: 
- 공식\n출처: https://www.xportsnews.com/article/2187463\n(한국 시간
-  기준)
-CATEGORIES:명일방주,픽업
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://www.xportsnews.com/article/2187463
-END:VEVENT
-BEGIN:VEVENT
 UID:bluearchive-2026-09-08-p0@gacha-calander-data
-DTSTAMP:20260927T191459Z
+DTSTAMP:20261015T165542Z
 DTSTART;VALUE=DATE:20260908
 DTEND;VALUE=DATE:20260916
-SUMMARY:[블루 아카이브] 에리카\, 키라라\, 츠바키\, 우미카
- \, 피나 픽업 모집 - 에리카\, 키라라(복각)\, 츠바키(복각
- )\, 우미카(복각)\, 피나(복각)
+SUMMARY:[블루 아카이브] 에리카\, 키라라 외 4종 픽업 - 에
+ 리카\, 키라라(복각)\, 츠바키(가이드)(복각)\, 우미카(복
+ 각)\, 피나(가이드)(복각)
 DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-09-08
   (시각 미정)\n종료: 2026-09-15 10:59\n캐릭터: 에리카\, 키라
- 라(복각)\, 츠바키(복각)\, 우미카(복각)\, 피나(복각)\n상
- 태: 공식 공지 확인\n출처: https://forum.nexon.com/bluearchive/boa
- rd_view?board=1076&thread=3532788\n(한국 시간 기준)
+ 라(복각)\, 츠바키(가이드)(복각)\, 우미카(복각)\, 피나(
+ 가이드)(복각)\n상태: 공식 공지 확인\n출처: https://forum.ne
+ xon.com/bluearchive/board_view?board=1076&thread=3532788\n(한국 시간 
+ 기준)
 CATEGORIES:블루 아카이브,픽업
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
@@ -157,75 +30,12 @@ URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=353278
  8
 END:VEVENT
 BEGIN:VEVENT
-UID:nte-1.3-p2@gacha-calander-data
-DTSTAMP:20260927T191300Z
-DTSTART;VALUE=DATE:20260909
-DTEND;VALUE=DATE:20261001
-SUMMARY:(추정) [이환] 1.3 후반기 픽업 - 링코\, 호토리(복각)
-DESCRIPTION:게임: 이환\n종류: 픽업\n시작: 2026-09-09 (시각 미
- 정)\n종료: 2026-09-30 06:59 (추정)\n캐릭터: 링코\, 호토리(복
- 각)\n상태: 추정\n출처: https://www.inven.co.kr/webzine/news/?news=3
- 19336\n(한국 시간 기준)
-CATEGORIES:이환,픽업
-TRANSP:TRANSPARENT
-STATUS:TENTATIVE
-URL:https://www.inven.co.kr/webzine/news/?news=319336
-END:VEVENT
-BEGIN:VEVENT
-UID:zzz-3.2-update@gacha-calander-data
-DTSTAMP:20260927T191335Z
-DTSTART;VALUE=DATE:20260909
-DTEND;VALUE=DATE:20260910
-SUMMARY:[젠존제] 3.2 버전 업데이트
-DESCRIPTION:게임: 젠존제\n종류: 버전 업데이트\n시작: 2026-09
- -09 07:00\n상태: 공식 공지 확인\n출처: https://zenless.hoyoverse
- .com/ko-kr/news?ann=1297\n(한국 시간 기준)
-CATEGORIES:젠존제,업데이트
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://zenless.hoyoverse.com/ko-kr/news?ann=1297
-END:VEVENT
-BEGIN:VEVENT
-UID:zzz-3.2-p1@gacha-calander-data
-DTSTAMP:20260929T115509Z
-DTSTART;VALUE=DATE:20260909
-DTEND;VALUE=DATE:20261001
-SUMMARY:[젠존제] 3.2 상반기 복각 픽업 - 클라렛\, 남궁우\, 
- 록시\, 앤톤(복각)\, 니콜(복각)
-DESCRIPTION:게임: 젠존제\n종류: 픽업\n시작: 2026-09-09 07:00\n
- 종료: 2026-09-30 12:59\n캐릭터: 클라렛\, 남궁우\, 록시\, 앤
- 톤(복각)\, 니콜(복각)\n상태: 공식 공지 확인\n출처: https:
- //zenless.hoyoverse.com/ko-kr/news?ann=1297\n(한국 시간 기준)
-CATEGORIES:젠존제,픽업
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://zenless.hoyoverse.com/ko-kr/news?ann=1297
-END:VEVENT
-BEGIN:VEVENT
-UID:hsr-4.5-p0@gacha-calander-data
-DTSTAMP:20260927T190826Z
-DTSTART;VALUE=DATE:20260912
-DTEND;VALUE=DATE:20260928
-SUMMARY:[스타레일] 4.5 버전 이벤트 워프 - 어벤츄린•웨이
- 브\, 애쉬베일\, 삼포(복각)\, 후크(복각)\, 계네빈(복각)
-DESCRIPTION:게임: 스타레일\n종류: 픽업\n시작: 2026-09-12 13:00\
- n종료: 2026-09-28 04:59\n캐릭터: 어벤츄린•웨이브\, 애쉬베
- 일\, 삼포(복각)\, 후크(복각)\, 계네빈(복각)\n상태: 공식 
- 공지 확인\n출처: https://hsr.hoyoverse.com/ko-kr/news?ann=1331\n(한
- 국 시간 기준)
-CATEGORIES:스타레일,픽업
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://hsr.hoyoverse.com/ko-kr/news?ann=1331
-END:VEVENT
-BEGIN:VEVENT
 UID:bluearchive-2026-09-15-p0@gacha-calander-data
-DTSTAMP:20260927T191452Z
+DTSTAMP:20261015T165534Z
 DTSTART;VALUE=DATE:20260915
 DTEND;VALUE=DATE:20260930
-SUMMARY:[블루 아카이브] 드레스 무츠키/하루카 및 복각 픽
- 업 - 무츠키\, 하루카\, 아루(복각)\, 카요코(복각)\, 사오
- 리(복각)
+SUMMARY:[블루 아카이브] 드레스 학생 픽업 모집 - 무츠키\, 
+ 하루카\, 아루(복각)\, 카요코(복각)\, 사오리(복각)
 DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-09-15
   (시각 미정)\n종료: 2026-09-29 10:59\n캐릭터: 무츠키\, 하루
  카\, 아루(복각)\, 카요코(복각)\, 사오리(복각)\n상태: 공
@@ -238,47 +48,8 @@ URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=353601
  2
 END:VEVENT
 BEGIN:VEVENT
-UID:nikke-2026-09-17-p0@gacha-calander-data
-DTSTAMP:20260927T191838Z
-DTSTART;VALUE=DATE:20260917
-DTEND;VALUE=DATE:20261008
-SUMMARY:[니케] 길티 : 마이티 바니 특수 모집 - 길티: 마이
- 티 바니\, 루피: 윈터 쇼퍼(복각)\, 앤: 미라클 페어리(복
- 각)\, 루드밀라: 윈터 오너(복각)\, 미카: 스노우 버디(복
- 각)\, 메이든: 아이스 로즈(복각)\, 길로틴: 윈터 슬레이
- 어(복각)
-DESCRIPTION:게임: 니케\n종류: 픽업\n시작: 2026-09-17 (시각 미
- 정)\n종료: 2026-10-08 04:59\n캐릭터: 길티: 마이티 바니\, 루
- 피: 윈터 쇼퍼(복각)\, 앤: 미라클 페어리(복각)\, 루드밀
- 라: 윈터 오너(복각)\, 미카: 스노우 버디(복각)\, 메이든:
-  아이스 로즈(복각)\, 길로틴: 윈터 슬레이어(복각)\n상태
- : 공식\n출처: https://www.gamechosun.co.kr/webzine/article/view.php?no
- =225222\n(한국 시간 기준)
-CATEGORIES:니케,픽업
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://www.gamechosun.co.kr/webzine/article/view.php?no=225222
-END:VEVENT
-BEGIN:VEVENT
-UID:genshin-7.1-p1@gacha-calander-data
-DTSTAMP:20260927T204115Z
-DTSTART;VALUE=DATE:20260923
-DTEND;VALUE=DATE:20261014
-SUMMARY:[원신] 7.1 전반 픽업 - 베스나\, 보댜니차\, 디오나(
- 복각)\, 파루잔(복각)\, 중운(복각)
-DESCRIPTION:게임: 원신\n종류: 픽업\n시작: 2026-09-23 (시각 미
- 정)\n종료: 2026-10-13 18:59\n캐릭터: 베스나\, 보댜니차\, 디
- 오나(복각)\, 파루잔(복각)\, 중운(복각)\n상태: 공식 공지
-  확인\n출처: https://genshin.hoyoverse.com/ko/news?ann=21877\n(한국 
- 시간 기준)
-CATEGORIES:원신,픽업
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://genshin.hoyoverse.com/ko/news?ann=21877
-END:VEVENT
-BEGIN:VEVENT
 UID:genshin-7.1-update@gacha-calander-data
-DTSTAMP:20260927T190523Z
+DTSTAMP:20261015T165354Z
 DTSTART;VALUE=DATE:20260923
 DTEND;VALUE=DATE:20260924
 SUMMARY:[원신] 7.1 버전 업데이트
@@ -291,61 +62,13 @@ STATUS:CONFIRMED
 URL:https://genshin.hoyoverse.com/ko/news?ann=21946
 END:VEVENT
 BEGIN:VEVENT
-UID:arknights-2026-09-24-p0@gacha-calander-data
-DTSTAMP:20260927T191622Z
-DTSTART;VALUE=DATE:20260924
-DTEND;VALUE=DATE:20260925
-SUMMARY:[명일방주] 후반 이벤트 픽업 - 푸치나 (종료일 미
- 정)
-DESCRIPTION:게임: 명일방주\n종류: 픽업\n시작: 2026-09-24 (시
- 각 미정)\n종료: 아직 발표 전\n캐릭터: 푸치나\n상태: 공
- 식\n출처: https://www.xportsnews.com/article/2187463\n(한국 시간 
- 기준)
-CATEGORIES:명일방주,픽업
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://www.xportsnews.com/article/2187463
-END:VEVENT
-BEGIN:VEVENT
-UID:nikke-2026-09-24-p0@gacha-calander-data
-DTSTAMP:20260927T191838Z
-DTSTART;VALUE=DATE:20260924
-DTEND;VALUE=DATE:20261015
-SUMMARY:[니케] 신: 스위프트 바니 특수 모집 - 신: 스위프트
-  바니
-DESCRIPTION:게임: 니케\n종류: 픽업\n시작: 2026-09-24 (시각 미
- 정)\n종료: 2026-10-15 04:59\n캐릭터: 신: 스위프트 바니\n상
- 태: 공식\n출처: https://www.gamechosun.co.kr/webzine/article/view.php
- ?no=225222\n(한국 시간 기준)
-CATEGORIES:니케,픽업
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://www.gamechosun.co.kr/webzine/article/view.php?no=225222
-END:VEVENT
-BEGIN:VEVENT
-UID:hsr-4.6-p0@gacha-calander-data
-DTSTAMP:20260927T190916Z
-DTSTART;VALUE=DATE:20260928
-DTEND;VALUE=DATE:20260929
-SUMMARY:(추정) [스타레일] 4.6 버전 펄 픽업 - 펄 (종료일 미
- 정)
-DESCRIPTION:게임: 스타레일\n종류: 픽업\n시작: 2026-09-28 (시
- 각 미정)\n종료: 아직 발표 전\n캐릭터: 펄\n상태: 추정\n
- 출처: http://www.smedaily.co.kr/news/articleView.html?idxno=363589\n(한
- 국 시간 기준)
-CATEGORIES:스타레일,픽업
-TRANSP:TRANSPARENT
-STATUS:TENTATIVE
-URL:http://www.smedaily.co.kr/news/articleView.html?idxno=363589
-END:VEVENT
-BEGIN:VEVENT
 UID:hsr-4.6-update@gacha-calander-data
-DTSTAMP:20261003T031122Z
+DTSTAMP:20261015T165408Z
 DTSTART;VALUE=DATE:20260928
 DTEND;VALUE=DATE:20260929
 SUMMARY:[스타레일] 4.6 버전 업데이트
 DESCRIPTION:게임: 스타레일\n종류: 버전 업데이트\n시작: 2026
- -09-28 06:00\n상태: 공식 공지 확인\n출처: https://hsr.hoyoverse.
+ -09-28 07:00\n상태: 공식 공지 확인\n출처: https://hsr.hoyoverse.
  com/ko-kr/news?ann=1437\n(한국 시간 기준)
 CATEGORIES:스타레일,업데이트
 TRANSP:TRANSPARENT
@@ -354,11 +77,12 @@ URL:https://hsr.hoyoverse.com/ko-kr/news?ann=1437
 END:VEVENT
 BEGIN:VEVENT
 UID:bluearchive-2026-09-29-p0@gacha-calander-data
-DTSTAMP:20260928T225155Z
+DTSTAMP:20261015T165524Z
 DTSTART;VALUE=DATE:20260929
 DTEND;VALUE=DATE:20261007
-SUMMARY:[블루 아카이브] 나구사(수영복)\, 키쿄(수영복) 등 
- 픽업 - 나구사\, 키쿄(복각)\, 렌게(복각)\, 유카리(복각)
+SUMMARY:[블루 아카이브] 수영복 나구사\, 키쿄\, 렌게\, 유
+ 카리 픽업 - 나구사\, 키쿄(복각)\, 렌게(복각)\, 유카리(
+ 복각)
 DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-09-29
   (시각 미정)\n종료: 2026-10-06 10:59\n캐릭터: 나구사\, 키쿄(
  복각)\, 렌게(복각)\, 유카리(복각)\n상태: 공식 공지 확인
@@ -371,59 +95,27 @@ URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=354243
  4
 END:VEVENT
 BEGIN:VEVENT
-UID:wuwa-3.7-update@gacha-calander-data
-DTSTAMP:20260927T191044Z
+UID:wuwa-3.7-p0@gacha-calander-data
+DTSTAMP:20261015T165443Z
 DTSTART;VALUE=DATE:20260930
 DTEND;VALUE=DATE:20261001
-SUMMARY:(추정) [명조] 3.7 버전 업데이트
-DESCRIPTION:게임: 명조\n종류: 버전 업데이트\n시작: 2026-09-30
-  (시각 미정)\n상태: 추정\n출처: https://www.gametoc.co.kr/news/a
- rticleView.html?idxno=111648\n(한국 시간 기준)
-CATEGORIES:명조,업데이트
-TRANSP:TRANSPARENT
-STATUS:TENTATIVE
-URL:https://www.gametoc.co.kr/news/articleView.html?idxno=111648
-END:VEVENT
-BEGIN:VEVENT
-UID:wuwa-2026-09-30-p0@gacha-calander-data
-DTSTAMP:20260930T172247Z
-DTSTART;VALUE=DATE:20260930
-DTEND;VALUE=DATE:20261001
-SUMMARY:(추정) [명조] 여우의 별자리 픽업 - 여우의 별자리 
- (종료일 미정)
-DESCRIPTION:게임: 명조\n종류: 픽업\n시작: 2026-09-30 (시각 미
- 정)\n종료: 아직 발표 전\n캐릭터: 여우의 별자리\n상태: 
- 추정\n출처: https://www.gameple.co.kr/news/articleView.html?idxno=2165
- 96\n(한국 시간 기준)
+SUMMARY:[명조] 3.7 버전 신규 캐릭터 픽업 - 여우의 별자리\,
+  쇄명 (종료일 미정)
+DESCRIPTION:게임: 명조\n종류: 픽업\n시작: 2026-09-30 12:00\n종
+ 료: 아직 발표 전\n캐릭터: 여우의 별자리\, 쇄명\n상태: 
+ 공식 공지 확인\n출처: https://wutheringwaves.kurogames.com/kr/main
+ /news/detail/5572\n(한국 시간 기준)
 CATEGORIES:명조,픽업
 TRANSP:TRANSPARENT
-STATUS:TENTATIVE
-URL:https://www.gameple.co.kr/news/articleView.html?idxno=216596
-END:VEVENT
-BEGIN:VEVENT
-UID:wuwa-3.7-p1@gacha-calander-data
-DTSTAMP:20261006T123235Z
-DTSTART;VALUE=DATE:20260930
-DTEND;VALUE=DATE:20261001
-SUMMARY:(추정) [명조] 3.7 전반 픽업 - 여우의 별자리\, 쇄명\
- , 유노(복각)\, 치사(복각)\, 린네(복각)\, 루실라(복각) (
- 종료일 미정)
-DESCRIPTION:게임: 명조\n종류: 픽업\n시작: 2026-09-30 (시각 미
- 정)\n종료: 아직 발표 전\n캐릭터: 여우의 별자리\, 쇄명\,
-  유노(복각)\, 치사(복각)\, 린네(복각)\, 루실라(복각)\n상
- 태: 추정\n출처: https://gamefocus.co.kr/detail.php?number=179600\n(
- 한국 시간 기준)
-CATEGORIES:명조,픽업
-TRANSP:TRANSPARENT
-STATUS:TENTATIVE
-URL:https://gamefocus.co.kr/detail.php?number=179600
+STATUS:CONFIRMED
+URL:https://wutheringwaves.kurogames.com/kr/main/news/detail/5572
 END:VEVENT
 BEGIN:VEVENT
 UID:zzz-3.2-p2@gacha-calander-data
-DTSTAMP:20260928T225137Z
+DTSTAMP:20261015T165457Z
 DTSTART;VALUE=DATE:20260930
 DTEND;VALUE=DATE:20261021
-SUMMARY:[젠존제] 3.2 하반기 록시 픽업 - 록시\, 프로미아
+SUMMARY:[젠존제] 3.2 하반기 픽업 - 록시\, 프로미아
 DESCRIPTION:게임: 젠존제\n종류: 픽업\n시작: 2026-09-30 13:00\n
  종료: 2026-10-20 15:59\n캐릭터: 록시\, 프로미아\n상태: 공식
   공지 확인\n출처: https://zenless.hoyoverse.com/ko-kr/news?ann=243\n
@@ -435,12 +127,11 @@ URL:https://zenless.hoyoverse.com/ko-kr/news?ann=243
 END:VEVENT
 BEGIN:VEVENT
 UID:bluearchive-2026-10-06-p0@gacha-calander-data
-DTSTAMP:20260928T225155Z
+DTSTAMP:20261015T165524Z
 DTSTART;VALUE=DATE:20261006
 DTEND;VALUE=DATE:20261014
-SUMMARY:[블루 아카이브] 카즈사(밴드)\, 요시미(밴드)\, 나
- 츠(밴드) 픽업 - 카즈사(복각)\, 요시미(복각)\, 나츠(복각
- )
+SUMMARY:[블루 아카이브] 밴드 카즈사\, 요시미\, 나츠 픽업 
+ - 카즈사(복각)\, 요시미(복각)\, 나츠(복각)
 DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-10-06
   11:00\n종료: 2026-10-13 10:59\n캐릭터: 카즈사(복각)\, 요시미
  (복각)\, 나츠(복각)\n상태: 공식 공지 확인\n출처: https://f
@@ -453,23 +144,25 @@ URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=354243
  4
 END:VEVENT
 BEGIN:VEVENT
-UID:nikke-2026-10-08-p0@gacha-calander-data
-DTSTAMP:20261002T114132Z
-DTSTART;VALUE=DATE:20261008
-DTEND;VALUE=DATE:20261029
-SUMMARY:[니케] 벨로타: 펌킨 위치 픽업 - 벨로타: 펌킨 위치
-DESCRIPTION:게임: 니케\n종류: 픽업\n시작: 2026-10-08 (시각 미
- 정)\n종료: 2026-10-28 23:59\n캐릭터: 벨로타: 펌킨 위치\n상
- 태: 공식\n출처: https://www.gamechosun.co.kr/webzine/article/view.php
- ?no=225949\n(한국 시간 기준)
-CATEGORIES:니케,픽업
+UID:bluearchive-2026-10-13-p0@gacha-calander-data
+DTSTAMP:20261015T165516Z
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261028
+SUMMARY:[블루 아카이브] 키사키(수영복)\, 슌(수영복) 픽업 
+ 모집 - 키사키\, 슌
+DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-10-13
+  (시각 미정)\n종료: 2026-10-27 10:59\n캐릭터: 키사키\, 슌\n
+ 상태: 공식 공지 확인\n출처: https://forum.nexon.com/bluearchive/
+ board_view?board=1076&thread=3555107\n(한국 시간 기준)
+CATEGORIES:블루 아카이브,픽업
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
-URL:https://www.gamechosun.co.kr/webzine/article/view.php?no=225949
+URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=355510
+ 7
 END:VEVENT
 BEGIN:VEVENT
 UID:genshin-2026-10-13-p0@gacha-calander-data
-DTSTAMP:20261008T123506Z
+DTSTAMP:20261015T165346Z
 DTSTART;VALUE=DATE:20261013
 DTEND;VALUE=DATE:20261104
 SUMMARY:[원신] 「도래한 허계의 별」 기원 - 스커크\, 달리
@@ -484,108 +177,50 @@ STATUS:CONFIRMED
 URL:https://genshin.hoyoverse.com/ko/news?ann=21889
 END:VEVENT
 BEGIN:VEVENT
-UID:arknights-단청도-update@gacha-calander-data
-DTSTAMP:20261007T122617Z
+UID:endfield-2026-10-15-p0@gacha-calander-data
+DTSTAMP:20261015T165557Z
 DTSTART;VALUE=DATE:20261015
-DTEND;VALUE=DATE:20261016
-SUMMARY:[명일방주] 단청도 업데이트
-DESCRIPTION:게임: 명일방주\n종류: 버전 업데이트\n시작: 2026
- -10-15 (시각 미정)\n상태: 공식\n출처: https://gamefocus.co.kr/de
- tail.php?number=179631\n(한국 시간 기준)
-CATEGORIES:명일방주,업데이트
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://gamefocus.co.kr/detail.php?number=179631
-END:VEVENT
-BEGIN:VEVENT
-UID:arknights-2026-10-15-p0@gacha-calander-data
-DTSTAMP:20261007T122617Z
-DTSTART;VALUE=DATE:20261015
-DTEND;VALUE=DATE:20261016
-SUMMARY:[명일방주] 단청도 신규 오퍼레이터 모집 - 사\, 명
- 하 (종료일 미정)
-DESCRIPTION:게임: 명일방주\n종류: 픽업\n시작: 2026-10-15 (시
- 각 미정)\n종료: 아직 발표 전\n캐릭터: 사\, 명하\n상태: 
- 공식\n출처: https://gamefocus.co.kr/detail.php?number=179631\n(한국 
- 시간 기준)
-CATEGORIES:명일방주,픽업
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://gamefocus.co.kr/detail.php?number=179631
-END:VEVENT
-BEGIN:VEVENT
-UID:endfield-단청도-update@gacha-calander-data
-DTSTAMP:20261007T033914Z
-DTSTART;VALUE=DATE:20261015
-DTEND;VALUE=DATE:20261016
-SUMMARY:(추정) [엔드필드] 단청도 업데이트
-DESCRIPTION:게임: 엔드필드\n종류: 버전 업데이트\n시작: 2026
- -10-15 (시각 미정)\n상태: 추정\n출처: https://www.fomos.kr/redir
- ect/news_view?news_cate_id=2&entry_id=156445\n(한국 시간 기준)
-CATEGORIES:엔드필드,업데이트
-TRANSP:TRANSPARENT
-STATUS:TENTATIVE
-URL:https://www.fomos.kr/redirect/news_view?news_cate_id=2&entry_id=156445
-END:VEVENT
-BEGIN:VEVENT
-UID:endfield-단청도-p0@gacha-calander-data
-DTSTAMP:20261007T033922Z
-DTSTART;VALUE=DATE:20261015
-DTEND;VALUE=DATE:20261016
-SUMMARY:(추정) [엔드필드] 단청도 신규 오퍼레이터 모집 - 
- 사\, 명하 (종료일 미정)
-DESCRIPTION:게임: 엔드필드\n종류: 픽업\n시작: 2026-10-15 (시
- 각 미정)\n종료: 아직 발표 전\n캐릭터: 사\, 명하\n상태: 
- 추정\n출처: http://www.inews24.com/view/2012522\n(한국 시간 기준
- )
+DTEND;VALUE=DATE:20261106
+SUMMARY:[엔드필드] 만물의 재구성 헤드헌팅 - 사
+DESCRIPTION:게임: 엔드필드\n종류: 픽업\n시작: 2026-10-15 13:00\
+ n종료: 2026-11-05 12:59\n캐릭터: 사\n상태: 공식 공지 확인\n
+ 출처: https://endfield.gryphline.com/ko-kr/news?cid=2194\n(한국 시간
+  기준)
 CATEGORIES:엔드필드,픽업
 TRANSP:TRANSPARENT
-STATUS:TENTATIVE
-URL:http://www.inews24.com/view/2012522
+STATUS:CONFIRMED
+URL:https://endfield.gryphline.com/ko-kr/news?cid=2194
 END:VEVENT
 BEGIN:VEVENT
-UID:zzz-3.3-update@gacha-calander-data
-DTSTAMP:20261010T164340Z
-DTSTART;VALUE=DATE:20261021
-DTEND;VALUE=DATE:20261022
-SUMMARY:(추정) [젠존제] 3.3 버전 업데이트
-DESCRIPTION:게임: 젠존제\n종류: 버전 업데이트\n시작: 2026-10
- -21 (시각 미정)\n상태: 추정\n출처: https://www.tleaves.co.kr/new
- s/articleView.html?idxno=9953\n(한국 시간 기준)
-CATEGORIES:젠존제,업데이트
-TRANSP:TRANSPARENT
-STATUS:TENTATIVE
-URL:https://www.tleaves.co.kr/news/articleView.html?idxno=9953
-END:VEVENT
-BEGIN:VEVENT
-UID:zzz-3.3-p1@gacha-calander-data
-DTSTAMP:20261010T164340Z
-DTSTART;VALUE=DATE:20261021
-DTEND;VALUE=DATE:20261022
-SUMMARY:(추정) [젠존제] 3.3 버전 전반 픽업 - 피닉스\, 벨리
- 나(복각) (종료일 미정)
-DESCRIPTION:게임: 젠존제\n종류: 픽업\n시작: 2026-10-21 (시각 
- 미정)\n종료: 아직 발표 전\n캐릭터: 피닉스\, 벨리나(복
- 각)\n상태: 추정\n출처: https://www.tleaves.co.kr/news/articleView.h
- tml?idxno=9953\n(한국 시간 기준)
-CATEGORIES:젠존제,픽업
-TRANSP:TRANSPARENT
-STATUS:TENTATIVE
-URL:https://www.tleaves.co.kr/news/articleView.html?idxno=9953
-END:VEVENT
-BEGIN:VEVENT
-UID:arknights-1.6-p0@gacha-calander-data
-DTSTAMP:20261006T220625Z
+UID:endfield-2026-10-29-p0@gacha-calander-data
+DTSTAMP:20261015T165557Z
 DTSTART;VALUE=DATE:20261029
 DTEND;VALUE=DATE:20261120
-SUMMARY:[명일방주] 탕탕 복각 픽업 - 탕탕(복각)
-DESCRIPTION:게임: 명일방주\n종류: 픽업\n시작: 2026-10-29 (시
- 각 미정)\n종료: 2026-11-19 23:59\n캐릭터: 탕탕(복각)\n상태: 
- 공식\n출처: https://www.inven.co.kr/webzine/news/?news=321825\n(한국
-  시간 기준)
-CATEGORIES:명일방주,픽업
+SUMMARY:[엔드필드] 선조의 샘의 새로운 물결 재구축 헤드
+ 헌팅#1 - 탕탕(복각)
+DESCRIPTION:게임: 엔드필드\n종류: 픽업\n시작: 2026-10-29 13:00\
+ n종료: 2026-11-19 12:59\n캐릭터: 탕탕(복각)\n상태: 공식 공
+ 지 확인\n출처: https://endfield.gryphline.com/ko-kr/news?cid=2194\n(
+ 한국 시간 기준)
+CATEGORIES:엔드필드,픽업
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
-URL:https://www.inven.co.kr/webzine/news/?news=321825
+URL:https://endfield.gryphline.com/ko-kr/news?cid=2194
+END:VEVENT
+BEGIN:VEVENT
+UID:endfield-2026-11-05-p0@gacha-calander-data
+DTSTAMP:20261015T165557Z
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261106
+SUMMARY:[엔드필드] 은하수를 부르는 불꽃 헤드헌팅 - 명하 
+ (종료일 미정)
+DESCRIPTION:게임: 엔드필드\n종류: 픽업\n시작: 2026-11-05 13:00\
+ n종료: 아직 발표 전\n캐릭터: 명하\n상태: 공식 공지 확
+ 인\n출처: https://endfield.gryphline.com/ko-kr/news?cid=2194\n(한국 
+ 시간 기준)
+CATEGORIES:엔드필드,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://endfield.gryphline.com/ko-kr/news?cid=2194
 END:VEVENT
 END:VCALENDAR
