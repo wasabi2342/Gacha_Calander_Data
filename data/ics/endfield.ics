@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Gacha Calendar//subculture schedule//KO
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:엔드필드 일정
+X-WR-CALDESC:게임사 공식 공지로 모은 버전 업데이트·픽업 
+ 일정 (6시간마다 갱신)
+X-WR-TIMEZONE:Asia/Seoul
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:endfield-단청도-update@gacha-calander-data
+DTSTAMP:20261007T033914Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:(추정) [엔드필드] 단청도 업데이트
+DESCRIPTION:게임: 엔드필드\n종류: 버전 업데이트\n시작: 2026
+ -10-15 (시각 미정)\n상태: 추정\n출처: https://www.fomos.kr/redir
+ ect/news_view?news_cate_id=2&entry_id=156445\n(한국 시간 기준)
+CATEGORIES:엔드필드,업데이트
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+URL:https://www.fomos.kr/redirect/news_view?news_cate_id=2&entry_id=156445
+END:VEVENT
+BEGIN:VEVENT
+UID:endfield-단청도-p0@gacha-calander-data
+DTSTAMP:20261007T033922Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:(추정) [엔드필드] 단청도 신규 오퍼레이터 모집 - 
+ 사\, 명하 (종료일 미정)
+DESCRIPTION:게임: 엔드필드\n종류: 픽업\n시작: 2026-10-15 (시
+ 각 미정)\n종료: 아직 발표 전\n캐릭터: 사\, 명하\n상태: 
+ 추정\n출처: http://www.inews24.com/view/2012522\n(한국 시간 기준
+ )
+CATEGORIES:엔드필드,픽업
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+URL:http://www.inews24.com/view/2012522
+END:VEVENT
+END:VCALENDAR

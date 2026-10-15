@@ -1,0 +1,90 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Gacha Calendar//subculture schedule//KO
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:명조 일정
+X-WR-CALDESC:게임사 공식 공지로 모은 버전 업데이트·픽업 
+ 일정 (6시간마다 갱신)
+X-WR-TIMEZONE:Asia/Seoul
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:wuwa-3.6-update@gacha-calander-data
+DTSTAMP:20260927T191125Z
+DTSTART;VALUE=DATE:20260820
+DTEND;VALUE=DATE:20260821
+SUMMARY:(추정) [명조] 3.6 버전 업데이트
+DESCRIPTION:게임: 명조\n종류: 버전 업데이트\n시작: 2026-08-20
+  (시각 미정)\n상태: 추정\n출처: https://www.gameple.co.kr/news/a
+ rticleView.html?idxno=216215\n(한국 시간 기준)
+CATEGORIES:명조,업데이트
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+URL:https://www.gameple.co.kr/news/articleView.html?idxno=216215
+END:VEVENT
+BEGIN:VEVENT
+UID:wuwa-3.6-p1@gacha-calander-data
+DTSTAMP:20260927T191125Z
+DTSTART;VALUE=DATE:20260820
+DTEND;VALUE=DATE:20260821
+SUMMARY:[명조] 3.6 전반부 픽업 - 청초\, 경연\, 데니아(복각)
+  (종료일 미정)
+DESCRIPTION:게임: 명조\n종류: 픽업\n시작: 2026-08-20 (시각 미
+ 정)\n종료: 아직 발표 전\n캐릭터: 청초\, 경연\, 데니아(
+ 복각)\n상태: 공식 공지 확인\n출처: https://www.gameple.co.kr/n
+ ews/articleView.html?idxno=216215\n(한국 시간 기준)
+CATEGORIES:명조,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.gameple.co.kr/news/articleView.html?idxno=216215
+END:VEVENT
+BEGIN:VEVENT
+UID:wuwa-3.7-update@gacha-calander-data
+DTSTAMP:20260927T191044Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:(추정) [명조] 3.7 버전 업데이트
+DESCRIPTION:게임: 명조\n종류: 버전 업데이트\n시작: 2026-09-30
+  (시각 미정)\n상태: 추정\n출처: https://www.gametoc.co.kr/news/a
+ rticleView.html?idxno=111648\n(한국 시간 기준)
+CATEGORIES:명조,업데이트
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+URL:https://www.gametoc.co.kr/news/articleView.html?idxno=111648
+END:VEVENT
+BEGIN:VEVENT
+UID:wuwa-2026-09-30-p0@gacha-calander-data
+DTSTAMP:20260930T172247Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:(추정) [명조] 여우의 별자리 픽업 - 여우의 별자리 
+ (종료일 미정)
+DESCRIPTION:게임: 명조\n종류: 픽업\n시작: 2026-09-30 (시각 미
+ 정)\n종료: 아직 발표 전\n캐릭터: 여우의 별자리\n상태: 
+ 추정\n출처: https://www.gameple.co.kr/news/articleView.html?idxno=2165
+ 96\n(한국 시간 기준)
+CATEGORIES:명조,픽업
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+URL:https://www.gameple.co.kr/news/articleView.html?idxno=216596
+END:VEVENT
+BEGIN:VEVENT
+UID:wuwa-3.7-p1@gacha-calander-data
+DTSTAMP:20261006T123235Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:(추정) [명조] 3.7 전반 픽업 - 여우의 별자리\, 쇄명\
+ , 유노(복각)\, 치사(복각)\, 린네(복각)\, 루실라(복각) (
+ 종료일 미정)
+DESCRIPTION:게임: 명조\n종류: 픽업\n시작: 2026-09-30 (시각 미
+ 정)\n종료: 아직 발표 전\n캐릭터: 여우의 별자리\, 쇄명\,
+  유노(복각)\, 치사(복각)\, 린네(복각)\, 루실라(복각)\n상
+ 태: 추정\n출처: https://gamefocus.co.kr/detail.php?number=179600\n(
+ 한국 시간 기준)
+CATEGORIES:명조,픽업
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+URL:https://gamefocus.co.kr/detail.php?number=179600
+END:VEVENT
+END:VCALENDAR

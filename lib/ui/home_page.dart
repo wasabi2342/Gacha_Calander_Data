@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../config.dart';
 import '../data/kst.dart';
@@ -568,6 +569,14 @@ class _AppDrawer extends StatelessWidget {
                   ],
                 ]),
               ),
+            const Divider(height: 24),
+            ListTile(
+              leading: Icon(Icons.event_available_outlined, color: p.ink),
+              title: const Text('내 캘린더에 구독하기', style: TextStyle(fontWeight: FontWeight.w600)),
+              subtitle: Text('구글·아이폰 캘린더에 일정 넣기', style: TextStyle(fontSize: 12, color: p.muted)),
+              // 메뉴 위에 바로 띄운다 (메뉴를 먼저 닫으면 '복사했어요' 안내를 띄울 화면이 사라짐)
+              onTap: () => showSubscribeDialog(context, data.games.where((g) => !hidden.contains(g.id)).toList()),
+            ),
             const Padding(
               padding: EdgeInsets.fromLTRB(16, 20, 16, 0),
               child: Text(
@@ -580,4 +589,56 @@ class _AppDrawer extends StatelessWidget {
       ),
     );
   }
+}
+
+/// 캘린더 구독 주소 안내. 전체 또는 게임별 .ics 주소를 복사해서 캘린더 앱에 'URL로 추가'하면 된다
+void showSubscribeDialog(BuildContext context, List<Game> games) {
+  final p = context.pal;
+
+  Widget row(String label, String url, {Color? color}) => ListTile(
+        dense: true,
+        contentPadding: EdgeInsets.zero,
+        leading: Container(
+          width: 10,
+          height: 10,
+          decoration: BoxDecoration(color: color ?? p.ink, shape: BoxShape.circle),
+        ),
+        title: Text(label, style: const TextStyle(fontWeight: FontWeight.w600)),
+        subtitle: Text(url, maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 11, color: p.muted)),
+        trailing: IconButton(
+          tooltip: '주소 복사',
+          icon: const Icon(Icons.copy, size: 20),
+          onPressed: () async {
+            await Clipboard.setData(ClipboardData(text: url));
+            if (context.mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$label 캘린더 주소를 복사했어요')));
+            }
+          },
+        ),
+      );
+
+  showDialog<void>(
+    context: context,
+    builder: (ctx) => AlertDialog(
+      title: const Text('내 캘린더에 구독하기'),
+      content: SizedBox(
+        width: 420,
+        child: SingleChildScrollView(
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [
+            Text(
+              '주소를 복사해서 캘린더 앱에 추가하면, 새 일정이 자동으로 들어와요.\n'
+              '· 구글 캘린더(PC 웹): 다른 캘린더 + → URL로 추가\n'
+              '· 아이폰: 설정 → 캘린더 → 계정 → 계정 추가 → 기타 → 구독 캘린더 추가\n'
+              '· 삼성 캘린더: 구글 캘린더에 추가하면 같은 구글 계정으로 함께 보여요',
+              style: TextStyle(fontSize: 13, height: 1.5, color: p.muted),
+            ),
+            const SizedBox(height: 12),
+            row('전체 게임', calendarUrl),
+            for (final g in games) row(g.name, calendarUrlFor(g.id), color: g.color),
+          ]),
+        ),
+      ),
+      actions: [TextButton(onPressed: () => Navigator.of(ctx).pop(), child: const Text('닫기'))],
+    ),
+  );
 }

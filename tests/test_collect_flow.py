@@ -42,7 +42,8 @@ def setup(monkeypatch, official_items):
 
 
 ENV = {"naver_id": "x", "naver_secret": "y", "provider": "gemini", "api_key": "k", "model": "m",
-       "use_blog": False, "use_official": True, "news_cap": True}
+       "use_news": True, "use_blog": False, "use_official": True, "news_cap": True}
+OFFICIAL_ONLY = {**ENV, "use_news": False}
 
 
 def test_official_first_then_news_capped(monkeypatch):
@@ -88,3 +89,25 @@ def test_games_without_official_keep_news_status(monkeypatch):
     collect.run_game(collect.GAMES_BY_ID["arknights"], events, {}, ENV, False, [])
     # 명일방주는 공식 공지 출처가 없어서 예전처럼 뉴스의 OFFICIAL 을 그대로 둔다
     assert events["arknights|VERSION_UPDATE|7.2|-"]["status"] == "OFFICIAL"
+
+
+def test_official_only_does_not_search_news(monkeypatch):
+    official_item = NewsItem("「봄바람의 춤」 기원: 베스나", "https://genshin.hoyoverse.com/ko/news?ann=1#v=abc", "요약", NOW,
+                             source="official", body="공식 공지 본문")
+    calls = setup(monkeypatch, [official_item])
+    searched = []
+    monkeypatch.setattr(collect, "search_news", lambda *a, **k: searched.append(a) or [])
+    events = {}
+    collect.run_game(collect.GAMES_BY_ID["genshin"], events, {}, OFFICIAL_ONLY, False, [])
+    assert searched == []                          # 뉴스 검색 안 함
+    assert [src for src, _ in calls["body"]] == ["official"]
+    assert events["genshin|BANNER|7.1|1"]["verified"] is True
+
+
+def test_official_only_skips_games_without_source(monkeypatch):
+    calls = setup(monkeypatch, [])
+    collect.OFFICIAL_RESULT.clear()
+    events = {}
+    collect.run_game(collect.GAMES_BY_ID["nikke"], events, {}, OFFICIAL_ONLY, False, [])
+    assert events == {} and calls["body"] == []
+    assert "공식 출처 없음" in collect.OFFICIAL_RESULT["nikke"]

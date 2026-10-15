@@ -1,0 +1,87 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Gacha Calendar//subculture schedule//KO
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:젠존제 일정
+X-WR-CALDESC:게임사 공식 공지로 모은 버전 업데이트·픽업 
+ 일정 (6시간마다 갱신)
+X-WR-TIMEZONE:Asia/Seoul
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:zzz-3.2-update@gacha-calander-data
+DTSTAMP:20260927T191335Z
+DTSTART;VALUE=DATE:20260909
+DTEND;VALUE=DATE:20260910
+SUMMARY:[젠존제] 3.2 버전 업데이트
+DESCRIPTION:게임: 젠존제\n종류: 버전 업데이트\n시작: 2026-09
+ -09 07:00\n상태: 공식 공지 확인\n출처: https://zenless.hoyoverse
+ .com/ko-kr/news?ann=1297\n(한국 시간 기준)
+CATEGORIES:젠존제,업데이트
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://zenless.hoyoverse.com/ko-kr/news?ann=1297
+END:VEVENT
+BEGIN:VEVENT
+UID:zzz-3.2-p1@gacha-calander-data
+DTSTAMP:20260929T115509Z
+DTSTART;VALUE=DATE:20260909
+DTEND;VALUE=DATE:20261001
+SUMMARY:[젠존제] 3.2 상반기 복각 픽업 - 클라렛\, 남궁우\, 
+ 록시\, 앤톤(복각)\, 니콜(복각)
+DESCRIPTION:게임: 젠존제\n종류: 픽업\n시작: 2026-09-09 07:00\n
+ 종료: 2026-09-30 12:59\n캐릭터: 클라렛\, 남궁우\, 록시\, 앤
+ 톤(복각)\, 니콜(복각)\n상태: 공식 공지 확인\n출처: https:
+ //zenless.hoyoverse.com/ko-kr/news?ann=1297\n(한국 시간 기준)
+CATEGORIES:젠존제,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://zenless.hoyoverse.com/ko-kr/news?ann=1297
+END:VEVENT
+BEGIN:VEVENT
+UID:zzz-3.2-p2@gacha-calander-data
+DTSTAMP:20260928T225137Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261021
+SUMMARY:[젠존제] 3.2 하반기 록시 픽업 - 록시\, 프로미아
+DESCRIPTION:게임: 젠존제\n종류: 픽업\n시작: 2026-09-30 13:00\n
+ 종료: 2026-10-20 15:59\n캐릭터: 록시\, 프로미아\n상태: 공식
+  공지 확인\n출처: https://zenless.hoyoverse.com/ko-kr/news?ann=243\n
+ (한국 시간 기준)
+CATEGORIES:젠존제,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://zenless.hoyoverse.com/ko-kr/news?ann=243
+END:VEVENT
+BEGIN:VEVENT
+UID:zzz-3.3-update@gacha-calander-data
+DTSTAMP:20261010T164340Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+SUMMARY:(추정) [젠존제] 3.3 버전 업데이트
+DESCRIPTION:게임: 젠존제\n종류: 버전 업데이트\n시작: 2026-10
+ -21 (시각 미정)\n상태: 추정\n출처: https://www.tleaves.co.kr/new
+ s/articleView.html?idxno=9953\n(한국 시간 기준)
+CATEGORIES:젠존제,업데이트
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+URL:https://www.tleaves.co.kr/news/articleView.html?idxno=9953
+END:VEVENT
+BEGIN:VEVENT
+UID:zzz-3.3-p1@gacha-calander-data
+DTSTAMP:20261010T164340Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+SUMMARY:(추정) [젠존제] 3.3 버전 전반 픽업 - 피닉스\, 벨리
+ 나(복각) (종료일 미정)
+DESCRIPTION:게임: 젠존제\n종류: 픽업\n시작: 2026-10-21 (시각 
+ 미정)\n종료: 아직 발표 전\n캐릭터: 피닉스\, 벨리나(복
+ 각)\n상태: 추정\n출처: https://www.tleaves.co.kr/news/articleView.h
+ tml?idxno=9953\n(한국 시간 기준)
+CATEGORIES:젠존제,픽업
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+URL:https://www.tleaves.co.kr/news/articleView.html?idxno=9953
+END:VEVENT
+END:VCALENDAR

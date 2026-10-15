@@ -9,10 +9,16 @@
 
 환경 변수: NAVER_CLIENT_ID, NAVER_CLIENT_SECRET, LLM_API_KEY
          (선택) LLM_PROVIDER = gemini(기본) | anthropic, (선택) MODEL
+         (선택) USE_NEWS = true 로 두면 네이버 뉴스 검색도 함께 한다 (기본 꺼짐 → 공식 공지만)
+                이때만 NAVER_CLIENT_ID / NAVER_CLIENT_SECRET 가 필요하다
+         (선택) USE_BLOG = true 로 두면 블로그도 본다 (USE_NEWS 가 켜져 있을 때만, 기본 꺼짐)
          (선택) USE_OFFICIAL = false 로 두면 공식 공지 수집을 끈다 (기본 켜짐)
          (선택) NEWS_CAP = false 로 두면 공식 공지가 있는 게임도 뉴스를 OFFICIAL 로 저장한다 (기본: ESTIMATED 까지만)
 
-순서: 게임사 공식 공지 → 뉴스 → 블로그. 공식 공지에서 온 일정은 verified 로 저장돼 뉴스가 덮어쓰지 못한다.
+    python collector/collect.py --purge-unverified   # 공식 공지로 확인 안 된 일정 지우고 공식 공지 다시 읽기
+
+기본은 게임사 공식 공지만 읽는다. 공식 출처가 없는 게임(니케, 명일방주)은 새로 수집하지 않는다.
+수집이 끝나면 data/calendar.ics (전체)와 data/ics/<게임>.ics 캘린더 구독 파일도 만든다.
 """
 import argparse
 import json
@@ -25,6 +31,7 @@ from pathlib import Path
 
 from extractor import DEFAULT_MODELS, PROVIDERS, ExtractError, RateLimited, extract
 from games import GAMES, GAMES_BY_ID, is_relevant
+from calendar_ics import write_calendars
 from merge import cleanup, key_of, merge, prune_old
 from official import fetch_official, has_official
 from sources import fetch_article_text, search_blog, search_news
@@ -51,6 +58,7 @@ log = logging.getLogger("collect")
 STATS = {"search_ok": 0, "search_fail": 0, "extract_ok": 0, "extract_fail": 0, "relevant": 0,
          "items": 0, "items_skipped": 0, "items_same": 0, "items_ignored": 0, "blog_ok": 0,
          "official_ok": 0, "official_fail": 0, "official_read": 0}
+OFFICIAL_RESULT: dict[str, str] = {}  # 게임 id → Summary 에 보여줄 공식 공지 상태
 FIRST_ERROR: dict[str, str] = {}
 CONSECUTIVE_FAILS = [0]
 
@@ -75,8 +83,10 @@ def run_game(game, events, seen, env, dry_run, report, reprocess=False, limit=MA
     visited: set[str] = set()
 
     # (소스, 검색어, 이 소스에서 분석할 최대 기사 수)
-    jobs = [("news", f"{term} {suffix}", limit) for term in game["search_terms"] for suffix in QUERY_SUFFIXES]
-    if env.get("use_blog"):
+    jobs = []
+    if env.get("use_news"):
+        jobs += [("news", f"{term} {suffix}", limit) for term in game["search_terms"] for suffix in QUERY_SUFFIXES]
+    if env.get("use_news") and env.get("use_blog"):
         blog_limit = MAX_BLOG_ARTICLES_PER_GAME * (2 if limit > MAX_NEW_ARTICLES_PER_GAME else 1)
         jobs += [("blog", f"{term} {BLOG_QUERY_SUFFIX}", blog_limit) for term in game["search_terms"][:1]]
     analyzed = {"news": 0, "blog": 0}
@@ -85,17 +95,23 @@ def run_game(game, events, seen, env, dry_run, report, reprocess=False, limit=MA
     if official_game:
         # 게임사 공식 공지를 가장 먼저 본다 (검색어 없이 목록을 통째로 받아 옴)
         jobs.insert(0, ("official", None, MAX_OFFICIAL_PER_GAME))
+    elif not jobs:
+        OFFICIAL_RESULT[game["id"]] = "공식 출처 없음 (건너뜀)"
+        log.info("[%s] 공식 공지 출처가 없고 뉴스 검색도 꺼져 있어서 건너뛰어요", game["id"])
+        return
     analyzed["official"] = 0
 
     for source, query, cap in jobs:
         if source == "official":
             try:
                 items = fetch_official(game["id"], limit=MAX_OFFICIAL_PER_GAME)
-            except Exception as e:  # noqa: BLE001 - 공식 출처가 막혀도 뉴스로 계속 진행
+            except Exception as e:  # noqa: BLE001 - 한 게임 출처가 막혀도 다른 게임은 계속
                 log.warning("[%s] 공식 공지 가져오기 실패: %s", game["id"], e)
                 _record_error("official_fail", f"[{game['id']}] {e}")
+                OFFICIAL_RESULT[game["id"]] = f"❌ 실패: {str(e)[:120]}"
                 continue
             STATS["official_ok"] += 1
+            OFFICIAL_RESULT[game["id"]] = f"✅ 공지 {len(items)}건 확인"
             log.info("[%s] 공식 공지 %d건 확인", game["id"], len(items))
         else:
             search = search_blog if source == "blog" else search_news
@@ -195,6 +211,9 @@ def write_summary(report, removed: int, stopped: str | None, cleaned: int = 0, r
         lines += ["", f"오래된 일정 {removed}건 정리"]
     if stopped:
         lines += ["", f"⚠️ {stopped} 남은 기사는 다음 실행에서 이어서 분석해요."]
+    if OFFICIAL_RESULT:
+        lines += ["", "### 게임별 공식 공지", "", "| 게임 | 상태 |", "|---|---|"]
+        lines += [f"| {GAMES_BY_ID[g]['name'] if g in GAMES_BY_ID else g} | {r} |" for g, r in OFFICIAL_RESULT.items()]
     lines += [
         "", "### 진단", "",
         f"- 공식 공지: 가져오기 성공 {STATS['official_ok']} / 실패 {STATS['official_fail']}, 새로 분석한 공지 {STATS['official_read']}",
@@ -224,6 +243,8 @@ def main() -> int:
     parser.add_argument("--reprocess", action="store_true", help="이미 본 기사도 다시 분석")
     parser.add_argument("--reset", action="store_true", help="--game 의 일정을 지우고 처음부터 다시 수집")
     parser.add_argument("--reset-all", action="store_true", help="모든 게임 일정을 지우고 처음부터 다시 수집")
+    parser.add_argument("--purge-unverified", action="store_true",
+                        help="공식 출처가 있는 게임에서 공식 공지로 확인 안 된 일정(뉴스·블로그 출처)을 지우고 공식 공지를 다시 읽기")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
@@ -233,7 +254,9 @@ def main() -> int:
         "provider": (os.environ.get("LLM_PROVIDER") or "gemini").strip().lower(),
         "api_key": os.environ.get("LLM_API_KEY", ""),
         # 저장소 Variables 에 USE_BLOG=false 를 넣으면 블로그 검색을 끈다
-        "use_blog": (os.environ.get("USE_BLOG") or "true").strip().lower() not in ("false", "0", "no", "off"),
+        # 기본은 공식 공지만. 저장소 Variables 에 USE_NEWS=true 를 넣으면 뉴스도 본다
+        "use_news": (os.environ.get("USE_NEWS") or "false").strip().lower() in ("true", "1", "yes", "on"),
+        "use_blog": (os.environ.get("USE_BLOG") or "false").strip().lower() in ("true", "1", "yes", "on"),
         "use_official": (os.environ.get("USE_OFFICIAL") or "true").strip().lower() not in ("false", "0", "no", "off"),
         "news_cap": (os.environ.get("NEWS_CAP") or "true").strip().lower() not in ("false", "0", "no", "off"),
     }
@@ -241,12 +264,17 @@ def main() -> int:
         log.error("LLM_PROVIDER 는 %s 중 하나여야 해요 (지금: %s)", " / ".join(PROVIDERS), env["provider"])
         return 1
     env["model"] = os.environ.get("MODEL") or DEFAULT_MODELS[env["provider"]]
-    missing = [k for k in ("naver_id", "naver_secret", "api_key") if not env[k]]
-    if missing:
-        log.error("환경 변수가 비어 있어요: NAVER_CLIENT_ID / NAVER_CLIENT_SECRET / LLM_API_KEY 를 확인하세요.")
+    if not env["api_key"]:
+        log.error("환경 변수 LLM_API_KEY 가 비어 있어요.")
         return 1
-    log.info("추출 모델: %s / %s, 공식 공지: %s, 블로그 검색: %s", env["provider"], env["model"],
-             "켜짐" if env["use_official"] else "꺼짐", "켜짐" if env["use_blog"] else "꺼짐")
+    if env["use_news"] and not (env["naver_id"] and env["naver_secret"]):
+        log.error("USE_NEWS 가 켜져 있으면 NAVER_CLIENT_ID / NAVER_CLIENT_SECRET 이 필요해요.")
+        return 1
+
+    def on(b):
+        return "켜짐" if b else "꺼짐"
+    log.info("추출 모델: %s / %s, 공식 공지: %s, 뉴스: %s, 블로그: %s", env["provider"], env["model"],
+             on(env["use_official"]), on(env["use_news"]), on(env["use_news"] and env["use_blog"]))
 
     if args.game and args.game not in GAMES_BY_ID:
         log.error("알 수 없는 게임 id: %s (가능: %s)", args.game, ", ".join(GAMES_BY_ID))
@@ -274,12 +302,21 @@ def main() -> int:
             reset_removed += 1
         seen = {u: v for u, v in seen.items() if v.get("game") != args.game}
         log.info("[%s] 초기화: 일정 %d건 삭제", args.game, reset_removed)
+    if args.purge_unverified and not args.dry_run:
+        # 공식 출처가 있는 게임만: verified 가 아닌 일정 삭제 + 공식 공지를 처음부터 다시 읽도록 기록 삭제
+        purge_games = {g["id"] for g in targets if has_official(g["id"])}
+        for k in [k for k, e in events.items() if e["gameId"] in purge_games and not e.get("verified")]:
+            del events[k]
+            reset_removed += 1
+        seen = {u: v for u, v in seen.items()
+                if not (v.get("game") in purge_games and v.get("source") == "official")}
+        log.info("공식 확인 안 된 일정 %d건 삭제 (%s)", reset_removed, ", ".join(sorted(purge_games)))
 
     report: list = []
     stopped = None
     for game in targets:
         try:
-            resetting = args.reset or args.reset_all
+            resetting = args.reset or args.reset_all or args.purge_unverified
             run_game(game, events, seen, env, args.dry_run, report, args.reprocess or resetting,
                      MAX_ARTICLES_ON_RESET if resetting else MAX_NEW_ARTICLES_PER_GAME)
         except RateLimited as e:
@@ -291,6 +328,7 @@ def main() -> int:
         return 0
 
     all_failed = ((STATS["search_ok"] == 0 and STATS["search_fail"] > 0)
+                  or (STATS["official_ok"] == 0 and STATS["official_fail"] > 0)
                   or (STATS["extract_ok"] == 0 and STATS["extract_fail"] > 0))
     if reset_removed and all_failed:
         # 초기화했는데 수집이 전부 실패했으면 빈 데이터로 덮어쓰지 않는다
@@ -312,10 +350,19 @@ def main() -> int:
     # 일정이 안 바뀌었으면 updatedAt 만 바뀌는 커밋을 만들지 않는다
     if report or removed or cleaned or reset_removed or doc.get("games") != new_doc["games"] or "updatedAt" not in doc:
         save_json(EVENTS_PATH, new_doc)
+    else:
+        new_doc["updatedAt"] = doc.get("updatedAt")
     save_json(SEEN_PATH, seen)
+    # 캘린더 구독 파일 (내용이 바뀐 파일만 다시 씀)
+    ics_changed = write_calendars(new_doc, ROOT / "data")
+    if ics_changed:
+        log.info("캘린더 파일 갱신: %s", ", ".join(ics_changed))
     write_summary(report, removed, stopped, cleaned, reset_removed)
 
     # 전부 실패했으면 실행을 실패(빨간 X)로 표시해서 바로 알아챌 수 있게 한다
+    if STATS["official_ok"] == 0 and STATS["official_fail"] > 0:
+        log.error("공식 공지를 하나도 못 가져왔어요. Summary 의 '게임별 공식 공지'를 확인하세요.")
+        return 1
     if STATS["search_ok"] == 0 and STATS["search_fail"] > 0:
         log.error("뉴스 검색이 전부 실패했어요. NAVER API HUB 키와 'NAVER 검색' API 선택 여부를 확인하세요.")
         return 1

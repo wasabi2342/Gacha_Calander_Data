@@ -2,12 +2,27 @@
 
 서브컬처 게임 버전 업데이트·픽업 일정 달력. 이 저장소 하나에 **Flutter 앱**(`lib/`)과 **일정 수집기**(`collector/`, `data/`)가 같이 들어 있다.
 
-픽업 달력 앱이 읽는 게임 일정 데이터 저장소. GitHub Actions가 6시간마다 **게임사 공식 공지**와 뉴스를 읽어서 `data/events.json`을 갱신한다.
+GitHub Actions가 6시간마다 **게임사 공식 공지만** 읽어서 `data/events.json`과 캘린더 구독 파일(`.ics`)을 갱신한다.
 
 ```
-[Actions, 6시간마다] ① 게임사 공식 공지 → ② 네이버 뉴스 → ③ 블로그 → Gemini로 일정 추출 → 병합 → data/ 커밋
-[앱] https://raw.githubusercontent.com/wasabi2342/Gacha_Calander_Data/main/data/events.json 읽기
+[Actions, 6시간마다] 게임사 공식 공지 → Gemini로 일정 추출 → 병합 → data/events.json + data/calendar.ics 커밋
+[앱]       https://raw.githubusercontent.com/wasabi2342/Gacha_Calander_Data/main/data/events.json
+[캘린더]   https://raw.githubusercontent.com/wasabi2342/Gacha_Calander_Data/main/data/calendar.ics
 ```
+
+## 캘린더 구독 (구글 / 아이폰 / 삼성 캘린더)
+
+아래 주소를 캘린더 앱에 "URL로 추가"하면 새 일정이 자동으로 들어와요. 앱 메뉴 → **내 캘린더에 구독하기**에서도 주소를 복사할 수 있어요.
+
+| 범위 | 주소 |
+|---|---|
+| 전체 게임 | `https://raw.githubusercontent.com/wasabi2342/Gacha_Calander_Data/main/data/calendar.ics` |
+| 게임 하나만 | `https://raw.githubusercontent.com/wasabi2342/Gacha_Calander_Data/main/data/ics/<게임 id>.ics` (예: `genshin`, `hsr`, `zzz`, `wuwa`, `nte`, `endfield`, `bluearchive`) |
+
+- **구글 캘린더**: PC 웹(calendar.google.com) → 왼쪽 "다른 캘린더" `+` → **URL로 추가** → 주소 붙여넣기. 휴대폰 구글 캘린더·삼성 캘린더(구글 계정 연동)에도 같이 보여요.
+- **아이폰**: 설정 → 캘린더 → 계정 → 계정 추가 → 기타 → **구독 캘린더 추가**.
+- 일정은 모두 '하루 종일'로 들어가고, 정확한 시각·캐릭터·출처는 일정 설명에 있어요. 추정 일정은 제목 앞에 `(추정)`.
+- 구글 캘린더는 구독 캘린더를 **보통 몇 시간~하루에 한 번** 새로 읽어요 (구글이 정하는 주기라 바꿀 수 없음).
 
 ## 파일
 
@@ -21,36 +36,40 @@
 | `collector/sources.py` | 네이버 뉴스·블로그 검색, 본문 추출 |
 | `collector/extractor.py` | 추출 프롬프트와 모델 호출 (Gemini 기본, Anthropic 선택 가능) |
 | `collector/merge.py` | 병합 규칙 (공식 > 추정 > 유출) |
+| `collector/calendar_ics.py` | `events.json` → 캘린더 구독 파일 (`data/calendar.ics`, `data/ics/<게임>.ics`) |
+| `data/calendar.ics`, `data/ics/` | 캘린더 구독 파일 (수집 때마다 자동 생성) |
 
 ## 공식 공지 출처
 
-뉴스 기사는 날짜를 옮겨 적다 틀리거나 루머가 섞이는 일이 많아서, 게임사가 직접 올린 공지를 가장 먼저 읽어요.
-공식 공지에서 온 일정은 `"verified": true` 로 저장되고, 뉴스·블로그로는 바뀌지 않아요.
+뉴스 기사는 날짜를 옮겨 적다 틀리거나 루머가 섞이는 일이 많아서, **기본은 게임사가 직접 올린 공지만** 읽어요.
+공식 공지에서 온 일정은 `"verified": true` 로 저장돼요.
 
 | 게임 | 공식 출처 |
 |---|---|
 | 원신 / 스타레일 / 젠존제 | 게임 안 공지 (HoYoverse 공지 API, 한국어) |
 | 명조 | 공식 사이트 소식 (한국어) |
 | 블루 아카이브 | 넥슨 커뮤니티 공지사항 게시판 |
-| 엔드필드 | 공식 사이트 소식 (한국어) |
+| 엔드필드 | 게임 안 공지 (한국어) |
 | 이환 | 공식 사이트 소식 (한국어) |
-| 니케 / 명일방주 | 아직 없음 → 예전처럼 뉴스·블로그만 사용 |
+| 니케 / 명일방주 | 아직 없음 → **새로 수집하지 않아요** (이미 저장된 일정은 끝난 뒤 60일 지나면 정리) |
 
-- 공식 출처가 있는 게임은, 공지로 확인되기 전까지 뉴스에서 온 일정을 `ESTIMATED`(앱에서 "추정")로 저장해요.
-  공지가 올라오면 자동으로 `OFFICIAL` + `verified` 로 바뀌어요.
+- 공지에 버전 번호가 없는 픽업("「...」 기원" 등)은 저장된 버전 업데이트 날짜로 버전과 전반/후반을 붙여요.
+- 뉴스도 같이 보고 싶으면 Variables 에 `USE_NEWS=true` (이때는 네이버 키 필요). 공식 출처가 있는 게임은 뉴스 정보를 `ESTIMATED` 로만 저장해요.
 - 공지 내용이 수정되면(본문이 바뀌면) 다시 분석해요.
 - 호요버스 게임 공지의 시각은 서버 시간(UTC+8)이라 한국 시간으로 1시간 더해서 저장해요.
-- 어떤 출처가 막히면(사이트 구조 변경 등) 그 게임은 뉴스로 계속 수집하고, 실행 결과 Summary의 "공식 공지 첫 오류"에 이유가 나와요.
+- 실행 결과 Summary 의 **"게임별 공식 공지"** 표에 게임마다 성공(✅ 공지 N건) / 실패(❌ 이유) / 출처 없음이 나와요.
+  출처가 막히면(사이트 구조 변경 등) 그 게임만 건너뛰고, 모든 게임이 실패하면 실행이 빨간 X로 끝나요.
 
 ## 처음 설정
 
 1. **이 폴더를 공개(Public) 저장소로 올린다.** 앱이 로그인 없이 파일을 읽으려면 공개여야 해요.
 2. 저장소 **Settings → Secrets and variables → Actions → Secrets** 에 추가
-   - `NAVER_CLIENT_ID`, `NAVER_CLIENT_SECRET` (네이버 클라우드 플랫폼 콘솔 → NAVER API HUB → Application → 인증 정보). Application에서 **뉴스**와 **블로그** API를 둘 다 선택해야 해요
    - `LLM_API_KEY` (Google AI Studio → Get API key 에서 발급한 Gemini 키)
+   - (뉴스도 볼 때만) `NAVER_CLIENT_ID`, `NAVER_CLIENT_SECRET` (네이버 클라우드 플랫폼 콘솔 → NAVER API HUB)
 3. (선택) 같은 화면 **Variables** 탭
    - `MODEL`: 모델 이름을 직접 지정 (비워두면 `gemini-flash-lite-latest`)
-   - `USE_BLOG`: `false` 로 두면 블로그 검색을 꺼요 (기본 켜짐)
+   - `USE_NEWS`: `true` 로 두면 네이버 뉴스도 봐요 (기본 꺼짐 = 공식 공지만)
+   - `USE_BLOG`: `true` 로 두면 블로그도 봐요 (`USE_NEWS` 가 켜졌을 때만, 기본 꺼짐)
    - `USE_OFFICIAL`: `false` 로 두면 공식 공지 수집을 꺼요 (기본 켜짐)
    - `NEWS_CAP`: `false` 로 두면 공식 출처가 있는 게임도 뉴스 정보를 `OFFICIAL` 로 저장해요 (기본: `ESTIMATED` 까지만)
    - `LLM_PROVIDER`: `anthropic` 으로 바꾸면 Claude API를 사용. 이때 `LLM_API_KEY` 에는 Anthropic 키를 넣어요 (기본 모델 `claude-haiku-4-5-20251001`)
@@ -63,6 +82,7 @@
 |---|---|
 | `game` | 게임 id. 비우면 전체. `genshin`, `hsr`, `wuwa`, `nte`, `zzz`, `bluearchive`, `arknights`, `endfield`, `nikke` |
 | `reprocess` | 이미 분석한 기사도 다시 분석 (추출 규칙을 고친 뒤에 사용) |
+| `purge` | 공식 공지로 확인 안 된 일정(예전 뉴스·블로그 출처)을 지우고 공식 공지를 처음부터 다시 읽기. 공식 출처가 있는 게임만 해당 (니케·명일방주는 그대로) |
 | `reset` | `안 함` / `선택한 게임만` (game 필수) / `전체 게임` (game 비움). 일정을 지우고 최근 기사로 처음부터 다시 수집 |
 
 - 초기화는 최근 기사만 다시 보기 때문에 이미 끝난 오래된 픽업은 다시 안 잡힐 수 있어요.
@@ -70,7 +90,7 @@
 
 ## 병합 규칙 요약
 
-- 블로그는 보조 소스예요. 게임당 최대 3개(초기화 때 6개)만 보고, 블로그에서 나온 정보는 최대 `ESTIMATED` 로만 저장해서 공식 뉴스 정보를 덮어쓰지 못해요.
+- (뉴스·블로그를 켰을 때) 블로그는 보조 소스예요. 블로그에서 나온 정보는 최대 `ESTIMATED` 로만 저장해요.
 
 - 신뢰도는 공식 공지(`OFFICIAL` + `verified`) > `OFFICIAL` > `ESTIMATED` > `LEAK`. 낮은 쪽이 높은 쪽을 덮어쓰지 못해요.
 - 공식 공지 날짜는 "버전 업데이트일과 안 맞음" 검사와 자동 보정에서 빠져요 (틀린 쪽은 보통 뉴스에서 온 업데이트일이라서).

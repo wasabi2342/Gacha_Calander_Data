@@ -1,0 +1,65 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Gacha Calendar//subculture schedule//KO
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:니케 일정
+X-WR-CALDESC:게임사 공식 공지로 모은 버전 업데이트·픽업 
+ 일정 (6시간마다 갱신)
+X-WR-TIMEZONE:Asia/Seoul
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:nikke-2026-09-17-p0@gacha-calander-data
+DTSTAMP:20260927T191838Z
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20261008
+SUMMARY:[니케] 길티 : 마이티 바니 특수 모집 - 길티: 마이
+ 티 바니\, 루피: 윈터 쇼퍼(복각)\, 앤: 미라클 페어리(복
+ 각)\, 루드밀라: 윈터 오너(복각)\, 미카: 스노우 버디(복
+ 각)\, 메이든: 아이스 로즈(복각)\, 길로틴: 윈터 슬레이
+ 어(복각)
+DESCRIPTION:게임: 니케\n종류: 픽업\n시작: 2026-09-17 (시각 미
+ 정)\n종료: 2026-10-08 04:59\n캐릭터: 길티: 마이티 바니\, 루
+ 피: 윈터 쇼퍼(복각)\, 앤: 미라클 페어리(복각)\, 루드밀
+ 라: 윈터 오너(복각)\, 미카: 스노우 버디(복각)\, 메이든:
+  아이스 로즈(복각)\, 길로틴: 윈터 슬레이어(복각)\n상태
+ : 공식\n출처: https://www.gamechosun.co.kr/webzine/article/view.php?no
+ =225222\n(한국 시간 기준)
+CATEGORIES:니케,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.gamechosun.co.kr/webzine/article/view.php?no=225222
+END:VEVENT
+BEGIN:VEVENT
+UID:nikke-2026-09-24-p0@gacha-calander-data
+DTSTAMP:20260927T191838Z
+DTSTART;VALUE=DATE:20260924
+DTEND;VALUE=DATE:20261015
+SUMMARY:[니케] 신: 스위프트 바니 특수 모집 - 신: 스위프트
+  바니
+DESCRIPTION:게임: 니케\n종류: 픽업\n시작: 2026-09-24 (시각 미
+ 정)\n종료: 2026-10-15 04:59\n캐릭터: 신: 스위프트 바니\n상
+ 태: 공식\n출처: https://www.gamechosun.co.kr/webzine/article/view.php
+ ?no=225222\n(한국 시간 기준)
+CATEGORIES:니케,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.gamechosun.co.kr/webzine/article/view.php?no=225222
+END:VEVENT
+BEGIN:VEVENT
+UID:nikke-2026-10-08-p0@gacha-calander-data
+DTSTAMP:20261002T114132Z
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261029
+SUMMARY:[니케] 벨로타: 펌킨 위치 픽업 - 벨로타: 펌킨 위치
+DESCRIPTION:게임: 니케\n종류: 픽업\n시작: 2026-10-08 (시각 미
+ 정)\n종료: 2026-10-28 23:59\n캐릭터: 벨로타: 펌킨 위치\n상
+ 태: 공식\n출처: https://www.gamechosun.co.kr/webzine/article/view.php
+ ?no=225949\n(한국 시간 기준)
+CATEGORIES:니케,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.gamechosun.co.kr/webzine/article/view.php?no=225949
+END:VEVENT
+END:VCALENDAR

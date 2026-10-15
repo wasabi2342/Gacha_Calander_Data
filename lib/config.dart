@@ -10,3 +10,8 @@ bool get isDataUrlConfigured => !dataUrl.contains('<');
 
 /// events.json 옆에 holidays.json을 두면 앱이 공휴일을 갱신해요 (없어도 앱에 든 기본값 사용).
 String get holidaysUrl => dataUrl.replaceFirst(RegExp(r'events\.json$'), 'holidays.json');
+
+/// 캘린더 구독 파일 (수집기가 events.json 옆에 만들어요). 게임 하나만: calendarUrlFor('genshin')
+String get calendarUrl => dataUrl.replaceFirst(RegExp(r'events\.json$'), 'calendar.ics');
+
+String calendarUrlFor(String gameId) => dataUrl.replaceFirst(RegExp(r'events\.json$'), 'ics/$gameId.ics');

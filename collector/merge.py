@@ -28,6 +28,9 @@ def erank(e: dict) -> int:
 TYPES = {"VERSION_UPDATE", "BANNER"}
 DATE_VERSION = re.compile(r"\d{4}-\d{2}-\d{2}")
 MATCH_WINDOW_DAYS = 3
+# 버전 번호를 쓰는 게임. 공지에 버전이 안 적힌 픽업은 저장된 업데이트 날짜로 버전·전반/후반을 추정한다
+VERSIONED_GAMES = {"genshin", "hsr", "zzz", "wuwa", "nte", "endfield"}
+VERSION_SPAN_DAYS = 45
 HALF_VERSION_DAYS = 21  # 버전 하나가 보통 6주, 전반·후반 각 3주
 
 _NAME_KEY_STRIP = re.compile(r"[\s:：·・()（）\[\]「」『』'\"\-]")
@@ -216,6 +219,21 @@ def _banner_start_problem(events: dict[str, dict], game_id: str, version: str, p
     return None
 
 
+def infer_version(events: dict[str, dict], game_id: str, start_iso: str) -> tuple[str, int] | None:
+    """픽업 시작일이 속한 버전과 전반(1)/후반(2). 저장된 버전 업데이트가 없으면 None"""
+    st = datetime.fromisoformat(start_iso)
+    best = None
+    for e in events.values():
+        if e["gameId"] != game_id or e["type"] != "VERSION_UPDATE" or is_date_version(e["version"]):
+            continue
+        v = datetime.fromisoformat(e["startAt"])
+        if v - timedelta(days=2) <= st <= v + timedelta(days=VERSION_SPAN_DAYS) and (best is None or v > best[0]):
+            best = (v, e["version"])
+    if best is None:
+        return None
+    return best[1], (1 if st <= best[0] + timedelta(days=2) else 2)
+
+
 # ---------- 병합 ----------
 
 def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str, verified: bool = False) -> str | None:
@@ -226,6 +244,13 @@ def merge(events: dict[str, dict], game_id: str, x: dict, source_url: str, verif
         return f"skip:알 수 없는 type({type_})"
     start = to_iso(x.get("startDate"), x.get("startTime"), "00:00")
     version = str(x.get("version") or "").strip()
+    if (type_ == "BANNER" and start and game_id in VERSIONED_GAMES
+            and (not version or is_date_version(version))):
+        # 공식 공지는 "「...」 기원"처럼 버전 번호 없이 오는 일이 많다 → 업데이트 날짜로 버전을 붙인다
+        guess = infer_version(events, game_id, start)
+        if guess:
+            version = guess[0]
+            x = {**x, "version": version, "phase": guess[1]}
     if not version:
         if not start:
             return f"skip:버전도 시작 날짜도 없음({x.get('startDate')})"

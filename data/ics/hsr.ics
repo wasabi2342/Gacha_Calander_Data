@@ -1,0 +1,59 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Gacha Calendar//subculture schedule//KO
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:스타레일 일정
+X-WR-CALDESC:게임사 공식 공지로 모은 버전 업데이트·픽업 
+ 일정 (6시간마다 갱신)
+X-WR-TIMEZONE:Asia/Seoul
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:hsr-4.5-p0@gacha-calander-data
+DTSTAMP:20260927T190826Z
+DTSTART;VALUE=DATE:20260912
+DTEND;VALUE=DATE:20260928
+SUMMARY:[스타레일] 4.5 버전 이벤트 워프 - 어벤츄린•웨이
+ 브\, 애쉬베일\, 삼포(복각)\, 후크(복각)\, 계네빈(복각)
+DESCRIPTION:게임: 스타레일\n종류: 픽업\n시작: 2026-09-12 13:00\
+ n종료: 2026-09-28 04:59\n캐릭터: 어벤츄린•웨이브\, 애쉬베
+ 일\, 삼포(복각)\, 후크(복각)\, 계네빈(복각)\n상태: 공식 
+ 공지 확인\n출처: https://hsr.hoyoverse.com/ko-kr/news?ann=1331\n(한
+ 국 시간 기준)
+CATEGORIES:스타레일,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://hsr.hoyoverse.com/ko-kr/news?ann=1331
+END:VEVENT
+BEGIN:VEVENT
+UID:hsr-4.6-p0@gacha-calander-data
+DTSTAMP:20260927T190916Z
+DTSTART;VALUE=DATE:20260928
+DTEND;VALUE=DATE:20260929
+SUMMARY:(추정) [스타레일] 4.6 버전 펄 픽업 - 펄 (종료일 미
+ 정)
+DESCRIPTION:게임: 스타레일\n종류: 픽업\n시작: 2026-09-28 (시
+ 각 미정)\n종료: 아직 발표 전\n캐릭터: 펄\n상태: 추정\n
+ 출처: http://www.smedaily.co.kr/news/articleView.html?idxno=363589\n(한
+ 국 시간 기준)
+CATEGORIES:스타레일,픽업
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+URL:http://www.smedaily.co.kr/news/articleView.html?idxno=363589
+END:VEVENT
+BEGIN:VEVENT
+UID:hsr-4.6-update@gacha-calander-data
+DTSTAMP:20261003T031122Z
+DTSTART;VALUE=DATE:20260928
+DTEND;VALUE=DATE:20260929
+SUMMARY:[스타레일] 4.6 버전 업데이트
+DESCRIPTION:게임: 스타레일\n종류: 버전 업데이트\n시작: 2026
+ -09-28 06:00\n상태: 공식 공지 확인\n출처: https://hsr.hoyoverse.
+ com/ko-kr/news?ann=1437\n(한국 시간 기준)
+CATEGORIES:스타레일,업데이트
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://hsr.hoyoverse.com/ko-kr/news?ann=1437
+END:VEVENT
+END:VCALENDAR

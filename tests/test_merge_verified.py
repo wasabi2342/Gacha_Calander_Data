@@ -64,10 +64,33 @@ def test_verified_date_keyed_banner_can_move_later():
 
 
 def test_existing_data_unchanged_by_new_rules():
-    """지금 저장된 events.json 에 cleanup 을 돌려도 새 규칙 때문에 달라지는 게 없어야 한다 (verified 가 없으니까)"""
+    """지금 저장된 events.json 에 cleanup 을 돌려도 새 규칙 때문에 달라지는 게 없어야 한다"""
     doc = json.loads((ROOT / "data" / "events.json").read_text(encoding="utf-8"))
     events = {M.key_of(e): e for e in doc["events"]}
     snapshot = copy.deepcopy(events)
     M.cleanup(events)
     assert events == snapshot
-    assert not any("verified" in e for e in events.values())
+
+
+def test_unversioned_official_banner_gets_version_and_phase():
+    ev = {}
+    M.merge(ev, "genshin", {"type": "VERSION_UPDATE", "version": "7.1", "phase": None, "title": "7.1",
+                            "startDate": "2026-09-23", "startTime": "07:00", "status": "OFFICIAL"}, "official://v", verified=True)
+    # 공지에 버전 번호가 없는 후반 기원 (예: 「도래한 허계의 별」 기원)
+    x = {"type": "BANNER", "version": None, "phase": None, "title": "「도래한 허계의 별」 기원",
+         "characters": [{"name": "스커크", "rarity": 5, "isNew": False}],
+         "startDate": "2026-10-13", "startTime": "18:00", "endDate": "2026-11-03", "endTime": "15:59", "status": "OFFICIAL"}
+    assert M.merge(ev, "genshin", x, "official://2", verified=True) == "added"
+    assert "genshin|BANNER|7.1|2" in ev
+    # 전반(업데이트 당일 시작)도 마찬가지
+    y = dict(x, startDate="2026-09-23", startTime=None, characters=[{"name": "베스나", "isNew": True}])
+    M.merge(ev, "genshin", y, "official://1", verified=True)
+    assert "genshin|BANNER|7.1|1" in ev
+
+
+def test_unversioned_banner_without_known_version_stays_date_keyed():
+    ev = {}
+    x = {"type": "BANNER", "version": None, "phase": None, "title": "기원", "characters": [{"name": "A", "isNew": True}],
+         "startDate": "2026-10-13", "endDate": "2026-11-03", "status": "OFFICIAL"}
+    M.merge(ev, "genshin", x, "official://2", verified=True)
+    assert "genshin|BANNER|2026-10-13|-" in ev

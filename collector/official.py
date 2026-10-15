@@ -8,7 +8,7 @@
 | 원신 / 스타레일 / 젠존제 | 게임 안 공지 API (HoYoverse announcement getAnnList / getAnnContent) |
 | 명조 | 공식 사이트 소식 JSON (kurogame G152/kr) |
 | 블루 아카이브 | 넥슨 커뮤니티 공지 게시판 API |
-| 엔드필드 | 공식 사이트 소식 (endfield.gryphline.com/ko-kr/news) |
+| 엔드필드 | 게임 안 공지 API (game-hub.gryphline.com bulletin) |
 | 이환 | 공식 사이트 소식 (nte.perfectworld.com/kr) |
 | 니케 / 명일방주 | 기계로 읽을 수 있는 공식 공지 출처를 아직 못 찾음 → 뉴스 검색만 사용 |
 
@@ -88,26 +88,33 @@ HOYO = {
         "base": "https://sg-hk4e-api.hoyoverse.com/common/hk4e_global/announcement/api",
         "params": {"game": "hk4e", "game_biz": "hk4e_global", "bundle_id": "hk4e_global", "platform": "pc",
                    "region": "os_asia", "level": "60", "uid": "100000000", "channel_id": "1"},
-        "keywords": ["기원", "버전", "업데이트"],
+        # 캐릭터 기원: "「봄바람의 춤」 기원: ..." / 버전: "「...」 7.1 버전 업데이트 안내"
+        "keywords": ["기원:", "버전업데이트"],
+        "exclude": ["신의주조", "이벤트:", "세상여행"],  # 무기 기원, 이벤트 공지
         "link": "https://genshin.hoyoverse.com/ko/news",
     },
     "hsr": {
         "base": "https://sg-hkrpg-api.hoyoverse.com/common/hkrpg_global/announcement/api",
         "params": {"game": "hkrpg", "game_biz": "hkrpg_global", "bundle_id": "hkrpg_global", "platform": "pc",
                    "region": "prod_official_asia", "level": "70", "uid": "100000000", "channel_id": "1"},
-        "keywords": ["워프", "버전", "업데이트"],
+        # "4.6 버전 이벤트 워프 (1)", "... 버전 업데이트 안내", "4.6 버전 업데이트 점검 예고"
+        "keywords": ["이벤트워프", "콜라보워프", "버전업데이트안내", "업데이트점검"],
+        "exclude": ["가입초대", "광추"],
         "link": "https://hsr.hoyoverse.com/ko-kr/news",
     },
     "zzz": {
         "base": "https://sg-announcement-api.hoyoverse.com/common/nap_global/announcement/api",
         "params": {"game": "nap", "game_biz": "nap_global", "bundle_id": "nap_global", "platform": "pc",
                    "region": "prod_gf_jp", "level": "60", "uid": "1000000000", "channel_id": "1"},
-        "keywords": ["채널", "버전", "업데이트"],
+        # "3.2 버전 기간 한정 채널(상반기)", "3.2 버전 「...」 업데이트 공지"
+        "keywords": ["한정채널", "업데이트공지", "업데이트점검"],
+        "exclude": ["음동기", "W-엔진"],
         "link": "https://zenless.hoyoverse.com/ko-kr/news",
     },
 }
-# 게임 이용과 상관없는 공지는 건너뛴다
-HOYO_EXCLUDE = ["수정및최적화", "보상", "제재", "이용약관", "개인정보", "설문", "쿠폰", "리딤", "PlayStation", "모바일기기"]
+# 게임 이용과 상관없는 공지는 건너뛴다 (게임별 exclude 와 함께 적용)
+HOYO_EXCLUDE = ["수정및최적화", "최적화및", "발견한문제", "보상", "제재", "이용약관", "개인정보", "설문", "쿠폰", "리딤",
+                "PlayStation", "모바일기기", "상점", "신규스테이지", "공략", "웹페이지"]
 
 
 def _hoyo_time(s: str | None, tz_hours: int) -> datetime | None:
@@ -131,7 +138,7 @@ def parse_hoyo(game_id: str, ann_list: dict, ann_content: dict, now: datetime) -
             continue
         seen.add(aid)
         title = html_to_text(a.get("title") or a.get("subtitle") or "")
-        if not _wanted(title, cfg["keywords"], HOYO_EXCLUDE):
+        if not _wanted(title, cfg["keywords"], HOYO_EXCLUDE + cfg.get("exclude", [])):
             continue
         start = _hoyo_time(a.get("start_time"), tz_hours)
         if not _recent(start, now):
@@ -262,13 +269,6 @@ def fetch_blue_archive(now: datetime, limit: int) -> list[NewsItem]:
 # ---------------- HTML 목록 페이지 (엔드필드 / 이환) ----------------
 
 HTML_SITES = {
-    "endfield": {
-        "lists": ["https://endfield.gryphline.com/ko-kr/news"],
-        "link_re": re.compile(r"/ko-kr/news/\d+$"),
-        "keywords": ["헤드헌팅", "버전업데이트", "업데이트설명", "업데이트예고"],
-        "exclude": ["확률상세", "사전테스트", "게임도구", "Discord", "Steam", "판매"],
-        "tz_note": "시각 옆에 시간대(UTC+8 등)가 적혀 있으면 한국 시간(UTC+9)으로 바꾼다. 적혀 있지 않으면 한국 시간으로 본다.",
-    },
     "nte": {
         "lists": ["https://nte.perfectworld.com/kr/article/news/index.html",
                   "https://nte.perfectworld.com/kr/article/news/index1.html"],
@@ -282,17 +282,19 @@ _DATE_IN_TEXT = re.compile(r"(20\d{2})[.\-/](\d{1,2})[.\-/](\d{1,2})")
 
 
 def parse_list_page(game_id: str, html: str, base_url: str) -> list[dict]:
-    """목록 페이지 HTML → [{url, title, date}] (공지 링크만)"""
+    """목록 페이지 HTML → [{url, title, date}] (공지 링크만).
+    <a> 태그가 아니라 스크립트 안에 주소만 있는 경우도 찾는다 (제목은 비워 두고 본문 페이지에서 채움)"""
     cfg = HTML_SITES[game_id]
     soup = BeautifulSoup(html or "", "html.parser")
     out, seen = [], set()
-    for a in soup.find_all("a", href=True):
-        url = urljoin(base_url, a["href"]).split("#")[0].split("?")[0]
+    candidates = [(a["href"], a.get_text(" ", strip=True) or a.get("title", "")) for a in soup.find_all("a", href=True)]
+    candidates += [(m.group(0), "") for m in re.finditer(r"(?:https?:)?//?[\w./-]*?/kr/article/news/\w+/\d{8}/\d+\.html", html or "")]
+    for href, title in candidates:
+        url = urljoin(base_url, href).split("#")[0].split("?")[0]
         m = cfg["link_re"].search(url)
         if not m or url in seen:
             continue
-        title = a.get_text(" ", strip=True)
-        if not title:
+        if not title and any(r["url"] == url for r in out):
             continue
         seen.add(url)
         date = None
@@ -325,6 +327,14 @@ def fetch_html_site(game_id: str, now: datetime, limit: int) -> list[NewsItem]:
                 rows.append(r)
     if not rows:
         raise RuntimeError("공지 목록에서 글을 하나도 못 찾았어요 (사이트 구조가 바뀌었을 수 있어요)")
+    # 제목을 못 얻은 링크는 본문 페이지의 <title> 로 채운다 (최근 글만)
+    for r in rows:
+        if not r["title"] and _recent(r["date"], now):
+            try:
+                t = BeautifulSoup(_get(r["url"]).text, "html.parser").title
+                r["title"] = re.split(r"\s*-\s*NTE", t.get_text(strip=True))[0] if t else ""
+            except requests.RequestException:
+                pass
     rows = [r for r in rows if _wanted(r["title"], cfg["keywords"], cfg["exclude"]) and _recent(r["date"], now)]
     rows.sort(key=lambda r: r["date"] or now, reverse=True)
 
@@ -338,9 +348,48 @@ def fetch_html_site(game_id: str, now: datetime, limit: int) -> list[NewsItem]:
     return items
 
 
+# ---------------- 엔드필드 (게임 안 공지 API) ----------------
+# 게임 클라이언트가 띄우는 공지와 같은 데이터. 공식 사이트 소식 목록은 자바스크립트로 그려져서 읽을 수 없다.
+EF_BULLETIN = "https://game-hub.gryphline.com/bulletin/v2/aggregate"
+EF_PARAMS = {"lang": "ko-kr", "platform": "Windows", "channel": "6", "type": "0",
+             "code": "endfield_U35PW8", "hideDetail": "0", "server": "3"}  # server 3 = 아시아
+EF_LINK = "https://endfield.gryphline.com/ko-kr/news"
+EF_KEYWORDS = ["헤드헌팅", "버전업데이트", "업데이트설명", "업데이트예고"]
+EF_EXCLUDE = ["확률상세", "사전테스트", "게임도구", "Discord", "Steam", "판매"]
+
+
+def parse_endfield(resp: dict, now: datetime, limit: int) -> list[NewsItem]:
+    if resp.get("code") not in (0, None):
+        raise RuntimeError(f"bulletin code={resp.get('code')} {resp.get('msg')}")
+    rows = []
+    for b in _walk(resp.get("data") or {}, ("cid", "title", "startAt")):
+        title = html_to_text(b.get("title") or b.get("header") or "")
+        if not _wanted(title, EF_KEYWORDS, EF_EXCLUDE):
+            continue
+        html = (b.get("data") or {}).get("html") if isinstance(b.get("data"), dict) else None
+        text = html_to_text(html or "")
+        if not text:
+            continue
+        start = datetime.fromtimestamp(b["startAt"], KST) if isinstance(b.get("startAt"), (int, float)) else None
+        rows.append((start, title, b["cid"], text))
+    rows.sort(key=lambda r: r[0] or now, reverse=True)
+    items = []
+    for start, title, cid, text in rows[:limit]:
+        # 공지 게시 시각(startAt)은 처음 올린 날이라 오래돼 보여도, 내용(기간)은 최신일 수 있다 → 날짜로 거르지 않는다
+        body = ("[시간대 안내] '서버 시간'은 아시아 서버(UTC+8) 기준이니 한국 시간으로 1시간 더한다. "
+                "'버전 업데이트 점검 전'처럼 끝 시각이 정확히 없으면 endTime 은 null.\n\n" + text)[:MAX_BODY_CHARS]
+        items.append(NewsItem(title, _versioned(f"{EF_LINK}?cid={cid}", body), text[:200], start or now,
+                              source="official", body=body))
+    return items
+
+
+def fetch_endfield(now: datetime, limit: int) -> list[NewsItem]:
+    return parse_endfield(_get(EF_BULLETIN, params=EF_PARAMS).json(), now, limit)
+
+
 # ---------------- 진입점 ----------------
 
-OFFICIAL_GAMES = set(HOYO) | {"wuwa", "bluearchive"} | set(HTML_SITES)
+OFFICIAL_GAMES = set(HOYO) | {"wuwa", "bluearchive", "endfield"} | set(HTML_SITES)
 
 
 def has_official(game_id: str) -> bool:
@@ -358,6 +407,8 @@ def fetch_official(game_id: str, limit: int = 8, now: datetime | None = None) ->
         return fetch_wuwa(now, limit)
     if game_id == "bluearchive":
         return fetch_blue_archive(now, limit)
+    if game_id == "endfield":
+        return fetch_endfield(now, limit)
     if game_id in HTML_SITES:
         return fetch_html_site(game_id, now, limit)
     return []

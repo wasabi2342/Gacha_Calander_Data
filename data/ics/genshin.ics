@@ -1,0 +1,59 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Gacha Calendar//subculture schedule//KO
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:원신 일정
+X-WR-CALDESC:게임사 공식 공지로 모은 버전 업데이트·픽업 
+ 일정 (6시간마다 갱신)
+X-WR-TIMEZONE:Asia/Seoul
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:genshin-7.1-p1@gacha-calander-data
+DTSTAMP:20260927T204115Z
+DTSTART;VALUE=DATE:20260923
+DTEND;VALUE=DATE:20261014
+SUMMARY:[원신] 7.1 전반 픽업 - 베스나\, 보댜니차\, 디오나(
+ 복각)\, 파루잔(복각)\, 중운(복각)
+DESCRIPTION:게임: 원신\n종류: 픽업\n시작: 2026-09-23 (시각 미
+ 정)\n종료: 2026-10-13 18:59\n캐릭터: 베스나\, 보댜니차\, 디
+ 오나(복각)\, 파루잔(복각)\, 중운(복각)\n상태: 공식 공지
+  확인\n출처: https://genshin.hoyoverse.com/ko/news?ann=21877\n(한국 
+ 시간 기준)
+CATEGORIES:원신,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://genshin.hoyoverse.com/ko/news?ann=21877
+END:VEVENT
+BEGIN:VEVENT
+UID:genshin-7.1-update@gacha-calander-data
+DTSTAMP:20260927T190523Z
+DTSTART;VALUE=DATE:20260923
+DTEND;VALUE=DATE:20260924
+SUMMARY:[원신] 7.1 버전 업데이트
+DESCRIPTION:게임: 원신\n종류: 버전 업데이트\n시작: 2026-09-23
+  07:00\n상태: 공식 공지 확인\n출처: https://genshin.hoyoverse.co
+ m/ko/news?ann=21946\n(한국 시간 기준)
+CATEGORIES:원신,업데이트
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://genshin.hoyoverse.com/ko/news?ann=21946
+END:VEVENT
+BEGIN:VEVENT
+UID:genshin-2026-10-13-p0@gacha-calander-data
+DTSTAMP:20261008T123506Z
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261104
+SUMMARY:[원신] 「도래한 허계의 별」 기원 - 스커크\, 달리
+ 아\, 에스코피에\, 캔디스(복각)\, 미카(복각)
+DESCRIPTION:게임: 원신\n종류: 픽업\n시작: 2026-10-13 19:00\n종
+ 료: 2026-11-03 15:59\n캐릭터: 스커크\, 달리아\, 에스코피에\
+ , 캔디스(복각)\, 미카(복각)\n상태: 공식 공지 확인\n출처
+ : https://genshin.hoyoverse.com/ko/news?ann=21889\n(한국 시간 기준)
+CATEGORIES:원신,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://genshin.hoyoverse.com/ko/news?ann=21889
+END:VEVENT
+END:VCALENDAR
