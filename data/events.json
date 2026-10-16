@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T19:26:44+09:00",
+  "updatedAt": "2026-10-17T05:21:46+09:00",
   "games": [
     {
       "id": "genshin",
@@ -91,6 +91,36 @@
       "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3532788#v=67b39613",
       "evidence": "에리카, 키라라, 츠바키 등 픽업 모집",
       "updatedAt": "2026-10-16T01:55:42+09:00",
+      "verified": true
+    },
+    {
+      "id": "zzz-3.2-p1",
+      "gameId": "zzz",
+      "type": "BANNER",
+      "version": "3.2",
+      "phase": 1,
+      "title": "3.2 신규 에이전트 [클라렛], [록시] 변조",
+      "characters": [
+        {
+          "name": "클라렛",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "록시",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-09-09T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-10-21T07:00:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://zenless.hoyoverse.com/ko-kr/news?ann=1297#v=dc00e102",
+      "evidence": "3.2 버전 업데이트 후 S급 에이전트 클라렛, 록시 획득 가능",
+      "updatedAt": "2026-10-17T05:21:40+09:00",
       "verified": true
     },
     {
