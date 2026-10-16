@@ -48,6 +48,20 @@ URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=353601
  2
 END:VEVENT
 BEGIN:VEVENT
+UID:hsr-4.6-update@gacha-calander-data
+DTSTAMP:20261016T102620Z
+DTSTART;VALUE=DATE:20260923
+DTEND;VALUE=DATE:20260924
+SUMMARY:[스타레일] 4.6 버전 업데이트
+DESCRIPTION:게임: 스타레일\n종류: 버전 업데이트\n시작: 2026
+ -09-23 05:00\n상태: 공식 공지 확인\n출처: https://hsr.hoyoverse.
+ com/ko-kr/news?ann=1421\n(한국 시간 기준)
+CATEGORIES:스타레일,업데이트
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://hsr.hoyoverse.com/ko-kr/news?ann=1421
+END:VEVENT
+BEGIN:VEVENT
 UID:genshin-7.1-update@gacha-calander-data
 DTSTAMP:20261015T165354Z
 DTSTART;VALUE=DATE:20260923
@@ -60,20 +74,6 @@ CATEGORIES:원신,업데이트
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 URL:https://genshin.hoyoverse.com/ko/news?ann=21946
-END:VEVENT
-BEGIN:VEVENT
-UID:hsr-4.6-update@gacha-calander-data
-DTSTAMP:20261015T165408Z
-DTSTART;VALUE=DATE:20260928
-DTEND;VALUE=DATE:20260929
-SUMMARY:[스타레일] 4.6 버전 업데이트
-DESCRIPTION:게임: 스타레일\n종류: 버전 업데이트\n시작: 2026
- -09-28 07:00\n상태: 공식 공지 확인\n출처: https://hsr.hoyoverse.
- com/ko-kr/news?ann=1437\n(한국 시간 기준)
-CATEGORIES:스타레일,업데이트
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://hsr.hoyoverse.com/ko-kr/news?ann=1437
 END:VEVENT
 BEGIN:VEVENT
 UID:bluearchive-2026-09-29-p0@gacha-calander-data
