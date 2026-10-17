@@ -11,18 +11,17 @@ REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:bluearchive-2026-09-08-p0@gacha-calander-data
-DTSTAMP:20261015T165542Z
+DTSTAMP:20261017T082343Z
 DTSTART;VALUE=DATE:20260908
 DTEND;VALUE=DATE:20260916
-SUMMARY:[블루 아카이브] 에리카\, 키라라 외 4종 픽업 - 에
- 리카\, 키라라(복각)\, 츠바키(가이드)(복각)\, 우미카(복
- 각)\, 피나(가이드)(복각)
+SUMMARY:[블루 아카이브] 에리카\, 키라라 등 5인 픽업 - 에
+ 리카\, 키라라(복각)\, 츠바키(복각)\, 우미카(복각)\, 피
+ 나(복각)
 DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-09-08
   (시각 미정)\n종료: 2026-09-15 10:59\n캐릭터: 에리카\, 키라
- 라(복각)\, 츠바키(가이드)(복각)\, 우미카(복각)\, 피나(
- 가이드)(복각)\n상태: 공식 공지 확인\n출처: https://forum.ne
- xon.com/bluearchive/board_view?board=1076&thread=3532788\n(한국 시간 
- 기준)
+ 라(복각)\, 츠바키(복각)\, 우미카(복각)\, 피나(복각)\n상
+ 태: 공식 공지 확인\n출처: https://forum.nexon.com/bluearchive/boa
+ rd_view?board=1076&thread=3532788\n(한국 시간 기준)
 CATEGORIES:블루 아카이브,픽업
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
@@ -30,24 +29,8 @@ URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=353278
  8
 END:VEVENT
 BEGIN:VEVENT
-UID:zzz-3.2-p1@gacha-calander-data
-DTSTAMP:20261016T202140Z
-DTSTART;VALUE=DATE:20260909
-DTEND;VALUE=DATE:20261022
-SUMMARY:[젠존제] 3.2 신규 에이전트 [클라렛]\, [록시] 변조 -
-  클라렛\, 록시
-DESCRIPTION:게임: 젠존제\n종류: 픽업\n시작: 2026-09-09 (시각 
- 미정)\n종료: 2026-10-21 07:00\n캐릭터: 클라렛\, 록시\n상태: 
- 공식 공지 확인\n출처: https://zenless.hoyoverse.com/ko-kr/news?ann
- =1297\n(한국 시간 기준)
-CATEGORIES:젠존제,픽업
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://zenless.hoyoverse.com/ko-kr/news?ann=1297
-END:VEVENT
-BEGIN:VEVENT
 UID:zzz-3.2-update@gacha-calander-data
-DTSTAMP:20261017T022704Z
+DTSTAMP:20261017T082309Z
 DTSTART;VALUE=DATE:20260909
 DTEND;VALUE=DATE:20260910
 SUMMARY:[젠존제] 3.2 버전 업데이트
@@ -61,7 +44,7 @@ URL:https://zenless.hoyoverse.com/ko-kr/news?ann=1297
 END:VEVENT
 BEGIN:VEVENT
 UID:bluearchive-2026-09-15-p0@gacha-calander-data
-DTSTAMP:20261015T165534Z
+DTSTAMP:20261017T082335Z
 DTSTART;VALUE=DATE:20260915
 DTEND;VALUE=DATE:20260930
 SUMMARY:[블루 아카이브] 드레스 학생 픽업 모집 - 무츠키\, 
@@ -79,7 +62,7 @@ URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=353601
 END:VEVENT
 BEGIN:VEVENT
 UID:genshin-7.1-update@gacha-calander-data
-DTSTAMP:20261015T165354Z
+DTSTAMP:20261017T082150Z
 DTSTART;VALUE=DATE:20260923
 DTEND;VALUE=DATE:20260924
 SUMMARY:[원신] 7.1 버전 업데이트
@@ -93,12 +76,13 @@ URL:https://genshin.hoyoverse.com/ko/news?ann=21946
 END:VEVENT
 BEGIN:VEVENT
 UID:hsr-4.6-update@gacha-calander-data
-DTSTAMP:20261017T022638Z
+DTSTAMP:20261017T082158Z
 DTSTART;VALUE=DATE:20260928
 DTEND;VALUE=DATE:20260929
-SUMMARY:[스타레일] 4.6 버전 업데이트
+SUMMARY:[스타레일] 4.6 버전 「달 뜨기 전\, 괴수와 춤을」 
+ 업데이트
 DESCRIPTION:게임: 스타레일\n종류: 버전 업데이트\n시작: 2026
- -09-28 06:00\n상태: 공식 공지 확인\n출처: https://hsr.hoyoverse.
+ -09-28 07:00\n상태: 공식 공지 확인\n출처: https://hsr.hoyoverse.
  com/ko-kr/news?ann=1437\n(한국 시간 기준)
 CATEGORIES:스타레일,업데이트
 TRANSP:TRANSPARENT
@@ -107,17 +91,17 @@ URL:https://hsr.hoyoverse.com/ko-kr/news?ann=1437
 END:VEVENT
 BEGIN:VEVENT
 UID:bluearchive-2026-09-29-p0@gacha-calander-data
-DTSTAMP:20261015T165524Z
+DTSTAMP:20261017T082328Z
 DTSTART;VALUE=DATE:20260929
 DTEND;VALUE=DATE:20261007
 SUMMARY:[블루 아카이브] 수영복 나구사\, 키쿄\, 렌게\, 유
- 카리 픽업 - 나구사\, 키쿄(복각)\, 렌게(복각)\, 유카리(
- 복각)
+ 카리 픽업 모집 - 나구사\, 키쿄(복각)\, 렌게(복각)\, 유
+ 카리(복각)
 DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-09-29
-  (시각 미정)\n종료: 2026-10-06 10:59\n캐릭터: 나구사\, 키쿄(
- 복각)\, 렌게(복각)\, 유카리(복각)\n상태: 공식 공지 확인
- \n출처: https://forum.nexon.com/bluearchive/board_view?board=1076&thread
- =3542434\n(한국 시간 기준)
+  14:00\n종료: 2026-10-06 10:59\n캐릭터: 나구사\, 키쿄(복각)\, 
+ 렌게(복각)\, 유카리(복각)\n상태: 공식 공지 확인\n출처: 
+ https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3542434\n
+ (한국 시간 기준)
 CATEGORIES:블루 아카이브,픽업
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
@@ -125,43 +109,42 @@ URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=354243
  4
 END:VEVENT
 BEGIN:VEVENT
-UID:wuwa-3.7-p0@gacha-calander-data
-DTSTAMP:20261015T165443Z
+UID:wuwa-3.7-update@gacha-calander-data
+DTSTAMP:20261017T082232Z
 DTSTART;VALUE=DATE:20260930
 DTEND;VALUE=DATE:20261001
-SUMMARY:[명조] 3.7 버전 신규 캐릭터 픽업 - 여우의 별자리\,
-  쇄명 (종료일 미정)
-DESCRIPTION:게임: 명조\n종류: 픽업\n시작: 2026-09-30 12:00\n종
- 료: 아직 발표 전\n캐릭터: 여우의 별자리\, 쇄명\n상태: 
- 공식 공지 확인\n출처: https://wutheringwaves.kurogames.com/kr/main
- /news/detail/5572\n(한국 시간 기준)
-CATEGORIES:명조,픽업
+SUMMARY:[명조] 3.7 버전 업데이트
+DESCRIPTION:게임: 명조\n종류: 버전 업데이트\n시작: 2026-09-30
+  05:00\n상태: 공식 공지 확인\n출처: https://game.naver.com/loung
+ e/WutheringWaves/board/detail/8263816\n(한국 시간 기준)
+CATEGORIES:명조,업데이트
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
-URL:https://wutheringwaves.kurogames.com/kr/main/news/detail/5572
+URL:https://game.naver.com/lounge/WutheringWaves/board/detail/8263816
 END:VEVENT
 BEGIN:VEVENT
 UID:zzz-3.2-p2@gacha-calander-data
-DTSTAMP:20261015T165457Z
+DTSTAMP:20261017T082309Z
 DTSTART;VALUE=DATE:20260930
-DTEND;VALUE=DATE:20261021
-SUMMARY:[젠존제] 3.2 하반기 픽업 - 록시\, 프로미아
+DTEND;VALUE=DATE:20261022
+SUMMARY:[젠존제] 3.2 하반기 픽업 - 록시\, 프로미아\, 클라
+ 렛
 DESCRIPTION:게임: 젠존제\n종류: 픽업\n시작: 2026-09-30 13:00\n
- 종료: 2026-10-20 15:59\n캐릭터: 록시\, 프로미아\n상태: 공식
-  공지 확인\n출처: https://zenless.hoyoverse.com/ko-kr/news?ann=243\n
- (한국 시간 기준)
+ 종료: 2026-10-21 07:00\n캐릭터: 록시\, 프로미아\, 클라렛\n
+ 상태: 공식 공지 확인\n출처: https://zenless.hoyoverse.com/ko-kr/
+ news?ann=1297\n(한국 시간 기준)
 CATEGORIES:젠존제,픽업
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
-URL:https://zenless.hoyoverse.com/ko-kr/news?ann=243
+URL:https://zenless.hoyoverse.com/ko-kr/news?ann=1297
 END:VEVENT
 BEGIN:VEVENT
 UID:bluearchive-2026-10-06-p0@gacha-calander-data
-DTSTAMP:20261015T165524Z
+DTSTAMP:20261017T082328Z
 DTSTART;VALUE=DATE:20261006
 DTEND;VALUE=DATE:20261014
-SUMMARY:[블루 아카이브] 밴드 카즈사\, 요시미\, 나츠 픽업 
- - 카즈사(복각)\, 요시미(복각)\, 나츠(복각)
+SUMMARY:[블루 아카이브] 밴드 카즈사\, 요시미\, 나츠 특별 
+ 픽업 모집 - 카즈사(복각)\, 요시미(복각)\, 나츠(복각)
 DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-10-06
   11:00\n종료: 2026-10-13 10:59\n캐릭터: 카즈사(복각)\, 요시미
  (복각)\, 나츠(복각)\n상태: 공식 공지 확인\n출처: https://f
@@ -175,15 +158,16 @@ URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=354243
 END:VEVENT
 BEGIN:VEVENT
 UID:bluearchive-2026-10-13-p0@gacha-calander-data
-DTSTAMP:20261015T165516Z
+DTSTAMP:20261017T082321Z
 DTSTART;VALUE=DATE:20261013
 DTEND;VALUE=DATE:20261028
 SUMMARY:[블루 아카이브] 키사키(수영복)\, 슌(수영복) 픽업 
- 모집 - 키사키\, 슌
+ 모집 - 키사키(수영복)\, 슌(수영복)
 DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-10-13
-  (시각 미정)\n종료: 2026-10-27 10:59\n캐릭터: 키사키\, 슌\n
- 상태: 공식 공지 확인\n출처: https://forum.nexon.com/bluearchive/
- board_view?board=1076&thread=3555107\n(한국 시간 기준)
+  (시각 미정)\n종료: 2026-10-27 10:59\n캐릭터: 키사키(수영복
+ )\, 슌(수영복)\n상태: 공식 공지 확인\n출처: https://forum.ne
+ xon.com/bluearchive/board_view?board=1076&thread=3555107\n(한국 시간 
+ 기준)
 CATEGORIES:블루 아카이브,픽업
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
@@ -192,27 +176,11 @@ URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=355510
 END:VEVENT
 BEGIN:VEVENT
 UID:genshin-2026-10-13-p0@gacha-calander-data
-DTSTAMP:20261015T165346Z
+DTSTAMP:20261017T082143Z
 DTSTART;VALUE=DATE:20261013
 DTEND;VALUE=DATE:20261104
-SUMMARY:[원신] 「도래한 허계의 별」 기원 - 스커크\, 달리
- 아\, 에스코피에\, 캔디스(복각)\, 미카(복각)
-DESCRIPTION:게임: 원신\n종류: 픽업\n시작: 2026-10-13 19:00\n종
- 료: 2026-11-03 15:59\n캐릭터: 스커크\, 달리아\, 에스코피에\
- , 캔디스(복각)\, 미카(복각)\n상태: 공식 공지 확인\n출처
- : https://genshin.hoyoverse.com/ko/news?ann=21889\n(한국 시간 기준)
-CATEGORIES:원신,픽업
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://genshin.hoyoverse.com/ko/news?ann=21889
-END:VEVENT
-BEGIN:VEVENT
-UID:genshin-7.1-p2@gacha-calander-data
-DTSTAMP:20261015T204834Z
-DTSTART;VALUE=DATE:20261013
-DTEND;VALUE=DATE:20261104
-SUMMARY:[원신] 「도래한 허계의 별」 기원 - 스커크\, 달리
- 아\, 에스코피에\, 캔디스(복각)\, 미카(복각)
+SUMMARY:[원신] 허계의 별·스커크 기원 - 스커크\, 달리아\, 
+ 에스코피에\, 캔디스(복각)\, 미카(복각)
 DESCRIPTION:게임: 원신\n종류: 픽업\n시작: 2026-10-13 19:00\n종
  료: 2026-11-03 15:59\n캐릭터: 스커크\, 달리아\, 에스코피에\
  , 캔디스(복각)\, 미카(복각)\n상태: 공식 공지 확인\n출처
@@ -224,7 +192,7 @@ URL:https://genshin.hoyoverse.com/ko/news?ann=21889
 END:VEVENT
 BEGIN:VEVENT
 UID:endfield-2026-10-15-p0@gacha-calander-data
-DTSTAMP:20261015T165557Z
+DTSTAMP:20261017T082350Z
 DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261106
 SUMMARY:[엔드필드] 만물의 재구성 헤드헌팅 - 사
@@ -239,11 +207,11 @@ URL:https://endfield.gryphline.com/ko-kr/news?cid=2194
 END:VEVENT
 BEGIN:VEVENT
 UID:endfield-2026-10-29-p0@gacha-calander-data
-DTSTAMP:20261015T165557Z
+DTSTAMP:20261017T082350Z
 DTSTART;VALUE=DATE:20261029
 DTEND;VALUE=DATE:20261120
-SUMMARY:[엔드필드] 선조의 샘의 새로운 물결 재구축 헤드
- 헌팅#1 - 탕탕(복각)
+SUMMARY:[엔드필드] 선조의 샘의 새로운 물결 헤드헌팅#1 - 
+ 탕탕(복각)
 DESCRIPTION:게임: 엔드필드\n종류: 픽업\n시작: 2026-10-29 13:00\
  n종료: 2026-11-19 12:59\n캐릭터: 탕탕(복각)\n상태: 공식 공
  지 확인\n출처: https://endfield.gryphline.com/ko-kr/news?cid=2194\n(
@@ -255,7 +223,7 @@ URL:https://endfield.gryphline.com/ko-kr/news?cid=2194
 END:VEVENT
 BEGIN:VEVENT
 UID:endfield-2026-11-05-p0@gacha-calander-data
-DTSTAMP:20261015T165557Z
+DTSTAMP:20261017T082350Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:[엔드필드] 은하수를 부르는 불꽃 헤드헌팅 - 명하 

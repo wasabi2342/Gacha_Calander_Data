@@ -11,7 +11,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:endfield-2026-10-15-p0@gacha-calander-data
-DTSTAMP:20261015T165557Z
+DTSTAMP:20261017T082350Z
 DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261106
 SUMMARY:[엔드필드] 만물의 재구성 헤드헌팅 - 사
@@ -26,11 +26,11 @@ URL:https://endfield.gryphline.com/ko-kr/news?cid=2194
 END:VEVENT
 BEGIN:VEVENT
 UID:endfield-2026-10-29-p0@gacha-calander-data
-DTSTAMP:20261015T165557Z
+DTSTAMP:20261017T082350Z
 DTSTART;VALUE=DATE:20261029
 DTEND;VALUE=DATE:20261120
-SUMMARY:[엔드필드] 선조의 샘의 새로운 물결 재구축 헤드
- 헌팅#1 - 탕탕(복각)
+SUMMARY:[엔드필드] 선조의 샘의 새로운 물결 헤드헌팅#1 - 
+ 탕탕(복각)
 DESCRIPTION:게임: 엔드필드\n종류: 픽업\n시작: 2026-10-29 13:00\
  n종료: 2026-11-19 12:59\n캐릭터: 탕탕(복각)\n상태: 공식 공
  지 확인\n출처: https://endfield.gryphline.com/ko-kr/news?cid=2194\n(
@@ -42,7 +42,7 @@ URL:https://endfield.gryphline.com/ko-kr/news?cid=2194
 END:VEVENT
 BEGIN:VEVENT
 UID:endfield-2026-11-05-p0@gacha-calander-data
-DTSTAMP:20261015T165557Z
+DTSTAMP:20261017T082350Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:[엔드필드] 은하수를 부르는 불꽃 헤드헌팅 - 명하 

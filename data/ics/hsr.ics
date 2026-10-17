@@ -11,12 +11,13 @@ REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:hsr-4.6-update@gacha-calander-data
-DTSTAMP:20261017T022638Z
+DTSTAMP:20261017T082158Z
 DTSTART;VALUE=DATE:20260928
 DTEND;VALUE=DATE:20260929
-SUMMARY:[스타레일] 4.6 버전 업데이트
+SUMMARY:[스타레일] 4.6 버전 「달 뜨기 전\, 괴수와 춤을」 
+ 업데이트
 DESCRIPTION:게임: 스타레일\n종류: 버전 업데이트\n시작: 2026
- -09-28 06:00\n상태: 공식 공지 확인\n출처: https://hsr.hoyoverse.
+ -09-28 07:00\n상태: 공식 공지 확인\n출처: https://hsr.hoyoverse.
  com/ko-kr/news?ann=1437\n(한국 시간 기준)
 CATEGORIES:스타레일,업데이트
 TRANSP:TRANSPARENT

@@ -10,19 +10,17 @@ X-WR-TIMEZONE:Asia/Seoul
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
-UID:wuwa-3.7-p0@gacha-calander-data
-DTSTAMP:20261015T165443Z
+UID:wuwa-3.7-update@gacha-calander-data
+DTSTAMP:20261017T082232Z
 DTSTART;VALUE=DATE:20260930
 DTEND;VALUE=DATE:20261001
-SUMMARY:[명조] 3.7 버전 신규 캐릭터 픽업 - 여우의 별자리\,
-  쇄명 (종료일 미정)
-DESCRIPTION:게임: 명조\n종류: 픽업\n시작: 2026-09-30 12:00\n종
- 료: 아직 발표 전\n캐릭터: 여우의 별자리\, 쇄명\n상태: 
- 공식 공지 확인\n출처: https://wutheringwaves.kurogames.com/kr/main
- /news/detail/5572\n(한국 시간 기준)
-CATEGORIES:명조,픽업
+SUMMARY:[명조] 3.7 버전 업데이트
+DESCRIPTION:게임: 명조\n종류: 버전 업데이트\n시작: 2026-09-30
+  05:00\n상태: 공식 공지 확인\n출처: https://game.naver.com/loung
+ e/WutheringWaves/board/detail/8263816\n(한국 시간 기준)
+CATEGORIES:명조,업데이트
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
-URL:https://wutheringwaves.kurogames.com/kr/main/news/detail/5572
+URL:https://game.naver.com/lounge/WutheringWaves/board/detail/8263816
 END:VEVENT
 END:VCALENDAR

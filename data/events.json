@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T11:27:08+09:00",
+  "updatedAt": "2026-10-17T17:24:06+09:00",
   "games": [
     {
       "id": "genshin",
@@ -54,7 +54,7 @@
       "type": "BANNER",
       "version": "2026-09-08",
       "phase": null,
-      "title": "에리카, 키라라 외 4종 픽업",
+      "title": "에리카, 키라라 등 5인 픽업",
       "characters": [
         {
           "name": "에리카",
@@ -67,7 +67,7 @@
           "isNew": false
         },
         {
-          "name": "츠바키(가이드)",
+          "name": "츠바키",
           "rarity": 3,
           "isNew": false
         },
@@ -77,7 +77,7 @@
           "isNew": false
         },
         {
-          "name": "피나(가이드)",
+          "name": "피나",
           "rarity": 3,
           "isNew": false
         }
@@ -89,38 +89,8 @@
       "status": "OFFICIAL",
       "note": null,
       "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3532788#v=67b39613",
-      "evidence": "에리카, 키라라, 츠바키 등 픽업 모집",
-      "updatedAt": "2026-10-16T01:55:42+09:00",
-      "verified": true
-    },
-    {
-      "id": "zzz-3.2-p1",
-      "gameId": "zzz",
-      "type": "BANNER",
-      "version": "3.2",
-      "phase": 1,
-      "title": "3.2 신규 에이전트 [클라렛], [록시] 변조",
-      "characters": [
-        {
-          "name": "클라렛",
-          "rarity": 5,
-          "isNew": true
-        },
-        {
-          "name": "록시",
-          "rarity": 5,
-          "isNew": true
-        }
-      ],
-      "startAt": "2026-09-09T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": "2026-10-21T07:00:00+09:00",
-      "endConfirmed": true,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://zenless.hoyoverse.com/ko-kr/news?ann=1297#v=dc00e102",
-      "evidence": "3.2 버전 업데이트 후 S급 에이전트 클라렛, 록시 획득 가능",
-      "updatedAt": "2026-10-17T05:21:40+09:00",
+      "evidence": "에리카, 키라라 등 픽업 모집",
+      "updatedAt": "2026-10-17T17:23:43+09:00",
       "verified": true
     },
     {
@@ -139,7 +109,7 @@
       "note": null,
       "sourceUrl": "https://zenless.hoyoverse.com/ko-kr/news?ann=1297#v=ce923133",
       "evidence": "3.2 버전 업데이트 공지",
-      "updatedAt": "2026-10-17T11:27:04+09:00",
+      "updatedAt": "2026-10-17T17:23:09+09:00",
       "verified": true
     },
     {
@@ -183,8 +153,8 @@
       "status": "OFFICIAL",
       "note": null,
       "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3536012#v=5d22be8f",
-      "evidence": "9/15 점검 후 ~ 9/29 픽업 모집",
-      "updatedAt": "2026-10-16T01:55:34+09:00",
+      "evidence": "9/15 점검 후 드레스 학생 픽업 진행",
+      "updatedAt": "2026-10-17T17:23:35+09:00",
       "verified": true
     },
     {
@@ -203,7 +173,7 @@
       "note": null,
       "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21946#v=c11b32ce",
       "evidence": "7.1 버전 「죽음의 진혼곡」 업데이트",
-      "updatedAt": "2026-10-16T01:53:54+09:00",
+      "updatedAt": "2026-10-17T17:21:50+09:00",
       "verified": true
     },
     {
@@ -212,17 +182,17 @@
       "type": "VERSION_UPDATE",
       "version": "4.6",
       "phase": null,
-      "title": "4.6 버전 업데이트",
+      "title": "4.6 버전 「달 뜨기 전, 괴수와 춤을」",
       "characters": [],
-      "startAt": "2026-09-28T06:00:00+09:00",
+      "startAt": "2026-09-28T07:00:00+09:00",
       "timeKnown": true,
-      "endAt": "2026-11-11T06:00:00+09:00",
+      "endAt": "2026-11-11T07:00:00+09:00",
       "endConfirmed": true,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://hsr.hoyoverse.com/ko-kr/news?ann=1437#v=3ccfa767",
-      "evidence": "4.6 버전 업데이트 안내 및 점검 시간",
-      "updatedAt": "2026-10-17T11:26:38+09:00",
+      "sourceUrl": "https://hsr.hoyoverse.com/ko-kr/news?ann=1437#v=871ae2f2",
+      "evidence": "4.6 버전 「달 뜨기 전, 괴수와 춤을」 업데이트",
+      "updatedAt": "2026-10-17T17:21:58+09:00",
       "verified": true
     },
     {
@@ -231,7 +201,7 @@
       "type": "BANNER",
       "version": "2026-09-29",
       "phase": null,
-      "title": "수영복 나구사, 키쿄, 렌게, 유카리 픽업",
+      "title": "수영복 나구사, 키쿄, 렌게, 유카리 픽업 모집",
       "characters": [
         {
           "name": "나구사",
@@ -254,45 +224,34 @@
           "isNew": false
         }
       ],
-      "startAt": "2026-09-29T00:00:00+09:00",
-      "timeKnown": false,
+      "startAt": "2026-09-29T14:00:00+09:00",
+      "timeKnown": true,
       "endAt": "2026-10-06T10:59:00+09:00",
       "endConfirmed": true,
       "status": "OFFICIAL",
       "note": null,
       "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3542434#v=edf23585",
-      "evidence": "나구사(수영복) 등 픽업 모집 일정",
-      "updatedAt": "2026-10-16T01:55:24+09:00",
+      "evidence": "9월 29일 점검 후 수영복 나구사 등 픽업",
+      "updatedAt": "2026-10-17T17:23:28+09:00",
       "verified": true
     },
     {
-      "id": "wuwa-3.7-p0",
+      "id": "wuwa-3.7-update",
       "gameId": "wuwa",
-      "type": "BANNER",
+      "type": "VERSION_UPDATE",
       "version": "3.7",
       "phase": null,
-      "title": "3.7 버전 신규 캐릭터 픽업",
-      "characters": [
-        {
-          "name": "여우의 별자리",
-          "rarity": 5,
-          "isNew": true
-        },
-        {
-          "name": "쇄명",
-          "rarity": 5,
-          "isNew": true
-        }
-      ],
-      "startAt": "2026-09-30T12:00:00+09:00",
+      "title": "3.7 버전 업데이트",
+      "characters": [],
+      "startAt": "2026-09-30T05:00:00+09:00",
       "timeKnown": true,
-      "endAt": null,
-      "endConfirmed": false,
+      "endAt": "2026-09-30T12:00:00+09:00",
+      "endConfirmed": true,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://wutheringwaves.kurogames.com/kr/main/news/detail/5572#v=c07b7d5d",
-      "evidence": "3.7 버전 업데이트 내용 안내",
-      "updatedAt": "2026-10-16T01:54:43+09:00",
+      "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8263816#v=7c379f8b",
+      "evidence": "3.7 버전 업데이트 점검 안내",
+      "updatedAt": "2026-10-17T17:22:32+09:00",
       "verified": true
     },
     {
@@ -312,17 +271,22 @@
           "name": "프로미아",
           "rarity": 5,
           "isNew": true
+        },
+        {
+          "name": "클라렛",
+          "rarity": 5,
+          "isNew": true
         }
       ],
       "startAt": "2026-09-30T13:00:00+09:00",
       "timeKnown": true,
-      "endAt": "2026-10-20T15:59:00+09:00",
+      "endAt": "2026-10-21T07:00:00+09:00",
       "endConfirmed": true,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://zenless.hoyoverse.com/ko-kr/news?ann=243#v=3511ee92",
-      "evidence": "3.2 버전 기간 한정 채널(하반기) 록시, 프로미아 픽업",
-      "updatedAt": "2026-10-16T01:54:57+09:00",
+      "sourceUrl": "https://zenless.hoyoverse.com/ko-kr/news?ann=1297#v=ce923133",
+      "evidence": "3.2 버전 업데이트 후 채널 변조",
+      "updatedAt": "2026-10-17T17:23:09+09:00",
       "verified": true
     },
     {
@@ -331,7 +295,7 @@
       "type": "BANNER",
       "version": "2026-10-06",
       "phase": null,
-      "title": "밴드 카즈사, 요시미, 나츠 픽업",
+      "title": "밴드 카즈사, 요시미, 나츠 특별 픽업 모집",
       "characters": [
         {
           "name": "카즈사",
@@ -356,8 +320,8 @@
       "status": "OFFICIAL",
       "note": null,
       "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3542434#v=edf23585",
-      "evidence": "카즈사(밴드) 등 특별 픽업 모집 일정",
-      "updatedAt": "2026-10-16T01:55:24+09:00",
+      "evidence": "10월 6일 밴드 카즈사 등 특별 픽업",
+      "updatedAt": "2026-10-17T17:23:28+09:00",
       "verified": true
     },
     {
@@ -369,12 +333,12 @@
       "title": "키사키(수영복), 슌(수영복) 픽업 모집",
       "characters": [
         {
-          "name": "키사키",
+          "name": "키사키(수영복)",
           "rarity": 3,
           "isNew": true
         },
         {
-          "name": "슌",
+          "name": "슌(수영복)",
           "rarity": 3,
           "isNew": true
         }
@@ -386,8 +350,8 @@
       "status": "OFFICIAL",
       "note": null,
       "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3555107#v=2791c74e",
-      "evidence": "키사키(수영복), 슌(수영복) 픽업 모집",
-      "updatedAt": "2026-10-16T01:55:16+09:00",
+      "evidence": "키사키(수영복), 슌(수영복) 픽업 일정",
+      "updatedAt": "2026-10-17T17:23:21+09:00",
       "verified": true
     },
     {
@@ -396,7 +360,7 @@
       "type": "BANNER",
       "version": "2026-10-13",
       "phase": null,
-      "title": "「도래한 허계의 별」 기원",
+      "title": "허계의 별·스커크 기원",
       "characters": [
         {
           "name": "스커크",
@@ -431,53 +395,8 @@
       "status": "OFFICIAL",
       "note": null,
       "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21889#v=b861f284",
-      "evidence": "10월 13일 에스코피에 기원 오픈",
-      "updatedAt": "2026-10-16T01:53:46+09:00",
-      "verified": true
-    },
-    {
-      "id": "genshin-7.1-p2",
-      "gameId": "genshin",
-      "type": "BANNER",
-      "version": "7.1",
-      "phase": 2,
-      "title": "「도래한 허계의 별」 기원",
-      "characters": [
-        {
-          "name": "스커크",
-          "rarity": 5,
-          "isNew": true
-        },
-        {
-          "name": "달리아",
-          "rarity": 4,
-          "isNew": true
-        },
-        {
-          "name": "캔디스",
-          "rarity": 4,
-          "isNew": false
-        },
-        {
-          "name": "미카",
-          "rarity": 4,
-          "isNew": false
-        },
-        {
-          "name": "에스코피에",
-          "rarity": 5,
-          "isNew": true
-        }
-      ],
-      "startAt": "2026-10-13T19:00:00+09:00",
-      "timeKnown": true,
-      "endAt": "2026-11-03T15:59:00+09:00",
-      "endConfirmed": true,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21889#v=e9c9ddfd",
-      "evidence": "2026/10/13 18:00 시작하는 에스코피에 기원",
-      "updatedAt": "2026-10-16T05:48:34+09:00",
+      "evidence": "베리 샹송 에스코피에 기원 일정",
+      "updatedAt": "2026-10-17T17:21:43+09:00",
       "verified": true
     },
     {
@@ -502,7 +421,7 @@
       "note": null,
       "sourceUrl": "https://endfield.gryphline.com/ko-kr/news?cid=2194#v=02f712ab",
       "evidence": "만물의 재구성 특별 허가 헤드헌팅",
-      "updatedAt": "2026-10-16T01:55:57+09:00",
+      "updatedAt": "2026-10-17T17:23:50+09:00",
       "verified": true
     },
     {
@@ -511,7 +430,7 @@
       "type": "BANNER",
       "version": "2026-10-29",
       "phase": null,
-      "title": "선조의 샘의 새로운 물결 재구축 헤드헌팅#1",
+      "title": "선조의 샘의 새로운 물결 헤드헌팅#1",
       "characters": [
         {
           "name": "탕탕",
@@ -527,7 +446,7 @@
       "note": null,
       "sourceUrl": "https://endfield.gryphline.com/ko-kr/news?cid=2194#v=02f712ab",
       "evidence": "선조의 샘의 새로운 물결 재구축 헤드헌팅#1",
-      "updatedAt": "2026-10-16T01:55:57+09:00",
+      "updatedAt": "2026-10-17T17:23:50+09:00",
       "verified": true
     },
     {
@@ -552,7 +471,7 @@
       "note": null,
       "sourceUrl": "https://endfield.gryphline.com/ko-kr/news?cid=2194#v=02f712ab",
       "evidence": "은하수를 부르는 불꽃 특별 허가 헤드헌팅",
-      "updatedAt": "2026-10-16T01:55:57+09:00",
+      "updatedAt": "2026-10-17T17:23:50+09:00",
       "verified": true
     }
   ]

@@ -11,18 +11,17 @@ REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:bluearchive-2026-09-08-p0@gacha-calander-data
-DTSTAMP:20261015T165542Z
+DTSTAMP:20261017T082343Z
 DTSTART;VALUE=DATE:20260908
 DTEND;VALUE=DATE:20260916
-SUMMARY:[블루 아카이브] 에리카\, 키라라 외 4종 픽업 - 에
- 리카\, 키라라(복각)\, 츠바키(가이드)(복각)\, 우미카(복
- 각)\, 피나(가이드)(복각)
+SUMMARY:[블루 아카이브] 에리카\, 키라라 등 5인 픽업 - 에
+ 리카\, 키라라(복각)\, 츠바키(복각)\, 우미카(복각)\, 피
+ 나(복각)
 DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-09-08
   (시각 미정)\n종료: 2026-09-15 10:59\n캐릭터: 에리카\, 키라
- 라(복각)\, 츠바키(가이드)(복각)\, 우미카(복각)\, 피나(
- 가이드)(복각)\n상태: 공식 공지 확인\n출처: https://forum.ne
- xon.com/bluearchive/board_view?board=1076&thread=3532788\n(한국 시간 
- 기준)
+ 라(복각)\, 츠바키(복각)\, 우미카(복각)\, 피나(복각)\n상
+ 태: 공식 공지 확인\n출처: https://forum.nexon.com/bluearchive/boa
+ rd_view?board=1076&thread=3532788\n(한국 시간 기준)
 CATEGORIES:블루 아카이브,픽업
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
@@ -31,7 +30,7 @@ URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=353278
 END:VEVENT
 BEGIN:VEVENT
 UID:bluearchive-2026-09-15-p0@gacha-calander-data
-DTSTAMP:20261015T165534Z
+DTSTAMP:20261017T082335Z
 DTSTART;VALUE=DATE:20260915
 DTEND;VALUE=DATE:20260930
 SUMMARY:[블루 아카이브] 드레스 학생 픽업 모집 - 무츠키\, 
@@ -49,17 +48,17 @@ URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=353601
 END:VEVENT
 BEGIN:VEVENT
 UID:bluearchive-2026-09-29-p0@gacha-calander-data
-DTSTAMP:20261015T165524Z
+DTSTAMP:20261017T082328Z
 DTSTART;VALUE=DATE:20260929
 DTEND;VALUE=DATE:20261007
 SUMMARY:[블루 아카이브] 수영복 나구사\, 키쿄\, 렌게\, 유
- 카리 픽업 - 나구사\, 키쿄(복각)\, 렌게(복각)\, 유카리(
- 복각)
+ 카리 픽업 모집 - 나구사\, 키쿄(복각)\, 렌게(복각)\, 유
+ 카리(복각)
 DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-09-29
-  (시각 미정)\n종료: 2026-10-06 10:59\n캐릭터: 나구사\, 키쿄(
- 복각)\, 렌게(복각)\, 유카리(복각)\n상태: 공식 공지 확인
- \n출처: https://forum.nexon.com/bluearchive/board_view?board=1076&thread
- =3542434\n(한국 시간 기준)
+  14:00\n종료: 2026-10-06 10:59\n캐릭터: 나구사\, 키쿄(복각)\, 
+ 렌게(복각)\, 유카리(복각)\n상태: 공식 공지 확인\n출처: 
+ https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3542434\n
+ (한국 시간 기준)
 CATEGORIES:블루 아카이브,픽업
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
@@ -68,11 +67,11 @@ URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=354243
 END:VEVENT
 BEGIN:VEVENT
 UID:bluearchive-2026-10-06-p0@gacha-calander-data
-DTSTAMP:20261015T165524Z
+DTSTAMP:20261017T082328Z
 DTSTART;VALUE=DATE:20261006
 DTEND;VALUE=DATE:20261014
-SUMMARY:[블루 아카이브] 밴드 카즈사\, 요시미\, 나츠 픽업 
- - 카즈사(복각)\, 요시미(복각)\, 나츠(복각)
+SUMMARY:[블루 아카이브] 밴드 카즈사\, 요시미\, 나츠 특별 
+ 픽업 모집 - 카즈사(복각)\, 요시미(복각)\, 나츠(복각)
 DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-10-06
   11:00\n종료: 2026-10-13 10:59\n캐릭터: 카즈사(복각)\, 요시미
  (복각)\, 나츠(복각)\n상태: 공식 공지 확인\n출처: https://f
@@ -86,15 +85,16 @@ URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=354243
 END:VEVENT
 BEGIN:VEVENT
 UID:bluearchive-2026-10-13-p0@gacha-calander-data
-DTSTAMP:20261015T165516Z
+DTSTAMP:20261017T082321Z
 DTSTART;VALUE=DATE:20261013
 DTEND;VALUE=DATE:20261028
 SUMMARY:[블루 아카이브] 키사키(수영복)\, 슌(수영복) 픽업 
- 모집 - 키사키\, 슌
+ 모집 - 키사키(수영복)\, 슌(수영복)
 DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-10-13
-  (시각 미정)\n종료: 2026-10-27 10:59\n캐릭터: 키사키\, 슌\n
- 상태: 공식 공지 확인\n출처: https://forum.nexon.com/bluearchive/
- board_view?board=1076&thread=3555107\n(한국 시간 기준)
+  (시각 미정)\n종료: 2026-10-27 10:59\n캐릭터: 키사키(수영복
+ )\, 슌(수영복)\n상태: 공식 공지 확인\n출처: https://forum.ne
+ xon.com/bluearchive/board_view?board=1076&thread=3555107\n(한국 시간 
+ 기준)
 CATEGORIES:블루 아카이브,픽업
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
