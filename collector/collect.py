@@ -33,7 +33,7 @@ from extractor import DEFAULT_MODELS, PROVIDERS, ExtractError, RateLimited, extr
 from games import GAMES, GAMES_BY_ID, is_relevant
 from calendar_ics import write_calendars
 from merge import cleanup, key_of, merge, prune_old
-from official import fetch_official, has_official
+from official import LOUNGE_WARNINGS, fetch_official, has_official
 from sources import fetch_article_text, search_blog, search_news
 
 KST = timezone(timedelta(hours=9))
@@ -112,6 +112,8 @@ def run_game(game, events, seen, env, dry_run, report, reprocess=False, limit=MA
                 continue
             STATS["official_ok"] += 1
             OFFICIAL_RESULT[game["id"]] = f"✅ 공지 {len(items)}건 확인"
+            if game["id"] in LOUNGE_WARNINGS:
+                OFFICIAL_RESULT[game["id"]] += f" (⚠️ 일부 실패: {LOUNGE_WARNINGS.pop(game['id'])[:150]})"
             log.info("[%s] 공식 공지 %d건 확인", game["id"], len(items))
         else:
             search = search_blog if source == "blog" else search_news

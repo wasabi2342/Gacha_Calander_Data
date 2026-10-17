@@ -10,7 +10,9 @@
 | 블루 아카이브 | 넥슨 커뮤니티 공지 게시판 API |
 | 엔드필드 | 게임 안 공지 API (game-hub.gryphline.com bulletin) |
 | 이환 | 공식 사이트 소식 (nte.perfectworld.com/kr) |
-| 니케 / 명일방주 | 기계로 읽을 수 있는 공식 공지 출처를 아직 못 찾음 → 뉴스 검색만 사용 |
+| 명조 (튜닝 기간) | 네이버 게임 라운지 인게임 공지 게시판 (WutheringWaves / 28) |
+| 니케 | 네이버 게임 라운지 공지 게시판 (nikke / 11) |
+| 명일방주 | 아직 없음 |
 
 공지 내용이 수정되면 다시 분석하도록, url 끝에 본문 해시(#v=...)를 붙여 seen 키를 바꾼다.
 """
@@ -387,9 +389,136 @@ def fetch_endfield(now: datetime, limit: int) -> list[NewsItem]:
     return parse_endfield(_get(EF_BULLETIN, params=EF_PARAMS).json(), now, limit)
 
 
+# ---------------- 네이버 게임 라운지 (명조 튜닝, 니케) ----------------
+# 게임사가 직접 올리는 공지 게시판. 라운지 화면은 자바스크립트로 그려지고, 데이터는 아래 API 에서 온다.
+# 응답 모양이 바뀌어도 버티도록 키 이름으로 찾아 들어간다 (_walk).
+LOUNGE_API = "https://comm-api.game.naver.com/nng_main/v1/community/lounge/{lounge}"
+LOUNGE_LINK = "https://game.naver.com/lounge/{lounge}/board/detail/{feed}"
+LOUNGE_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36",
+    "Accept": "application/json, text/plain, */*",
+    "Referer": "https://game.naver.com/",
+    "Origin": "https://game.naver.com",
+}
+LOUNGES = {
+    "wuwa": {
+        "lounge": "WutheringWaves", "board": 28,  # 인게임 공지 게시판
+        "keywords": ["캐릭터이벤트튜닝", "캐릭터튜닝", "버전업데이트", "업데이트점검"],
+        "exclude": ["무기", "확률", "보상", "오류"],
+        "tz_note": "시각 옆 시간대(UTC+8 / 서버 시간 등)를 따른다. '서버 시간'은 아시아 서버 UTC+8 이니 한국 시간으로 1시간 더한다. "
+                   "적혀 있지 않으면 한국 시간으로 본다. 튜닝 이름 하나가 픽업 하나다.",
+    },
+    "nikke": {
+        "lounge": "nikke", "board": 11,  # 공지사항 (공식 사이트가 안내하는 게시판)
+        "keywords": ["모집", "업데이트", "픽업"],
+        "exclude": ["점검완료", "보상", "오류", "당첨", "이벤트당첨"],
+        "tz_note": "한국 서버 공지라 시각은 한국 시간이다. '점검 후'처럼 시각이 없으면 시각은 null.",
+    },
+}
+LOUNGE_WARNINGS: dict[str, str] = {}  # 게임 id → 라운지만 실패했을 때 이유 (collect.py 가 Summary 에 표시)
+
+_DATE_KEYS = ("createdDate", "createDate", "createdAt", "regDate", "createTime", "updatedDate")
+
+
+def _lounge_time(v) -> datetime | None:
+    """라운지 날짜: 밀리초/초 숫자, 'YYYYMMDDHHmmss', ISO 문자열 등 무엇이 와도 KST datetime"""
+    if v is None:
+        return None
+    if isinstance(v, (int, float)):
+        return datetime.fromtimestamp(v / 1000 if v > 1e11 else v, KST)
+    s = str(v).strip()
+    if s.isdigit() and len(s) >= 12:
+        try:
+            return datetime.strptime(s[:14].ljust(14, "0"), "%Y%m%d%H%M%S").replace(tzinfo=KST)
+        except ValueError:
+            return None
+    try:
+        dt = datetime.fromisoformat(s.replace("Z", "+00:00"))
+        return dt.replace(tzinfo=KST) if dt.tzinfo is None else dt.astimezone(KST)
+    except ValueError:
+        return None
+
+
+def _feed_date(f: dict) -> datetime | None:
+    for k in _DATE_KEYS:
+        if f.get(k):
+            return _lounge_time(f[k])
+    return None
+
+
+def _feed_html(obj) -> str:
+    """상세 응답에서 본문 HTML 찾기 (contents / content / body 중 가장 긴 문자열)"""
+    best = ""
+    for d in _walk(obj, ("feedId",)):
+        for k in ("contents", "content", "body", "html"):
+            v = d.get(k)
+            if isinstance(v, str) and len(v) > len(best):
+                best = v
+    return best
+
+
+def parse_lounge_list(game_id: str, resp, now: datetime, limit: int) -> list[dict]:
+    cfg = LOUNGES[game_id]
+    rows, seen = [], set()
+    for f in _walk(resp, ("feedId", "title")):
+        fid = f["feedId"]
+        if fid in seen:
+            continue
+        seen.add(fid)
+        title = html_to_text(f.get("title") or "")
+        dt = _feed_date(f)
+        if _wanted(title, cfg["keywords"], cfg["exclude"]) and _recent(dt, now):
+            rows.append({"feedId": fid, "title": title, "date": dt, "html": _feed_html({"feedId": fid, **f})})
+    rows.sort(key=lambda r: r["date"] or now, reverse=True)
+    return rows[:limit]
+
+
+def lounge_item(game_id: str, row: dict, html: str, now: datetime) -> NewsItem | None:
+    cfg = LOUNGES[game_id]
+    text = html_to_text(html)
+    if not text:
+        return None
+    body = f"[시간대 안내] {cfg['tz_note']}\n\n{text}"[:MAX_BODY_CHARS]
+    url = _versioned(LOUNGE_LINK.format(lounge=cfg["lounge"], feed=row["feedId"]), body)
+    return NewsItem(row["title"], url, text[:200], row["date"] or now, source="official", body=body)
+
+
+def _lounge_get(url: str, **kw):
+    res = requests.get(url, headers=LOUNGE_HEADERS, timeout=TIMEOUT, **kw)
+    if res.status_code != 200:
+        raise RuntimeError(f"라운지 HTTP {res.status_code}: {res.text[:150]}")
+    try:
+        return res.json()
+    except ValueError as e:
+        raise RuntimeError(f"라운지 응답이 JSON 이 아님: {res.text[:150]}") from e
+
+
+def fetch_lounge(game_id: str, now: datetime, limit: int) -> list[NewsItem]:
+    cfg = LOUNGES[game_id]
+    base = LOUNGE_API.format(lounge=cfg["lounge"])
+    resp = _lounge_get(f"{base}/feed", params={"boardId": cfg["board"], "buffFilteringYN": "N",
+                                               "limit": 25, "offset": 0, "order": "NEW"})
+    rows = parse_lounge_list(game_id, resp, now, limit)
+    if not rows and not any(True for _ in _walk(resp, ("feedId", "title"))):
+        raise RuntimeError(f"라운지 목록에서 글을 못 찾음: {str(resp)[:150]}")
+    items = []
+    for r in rows:
+        html = r["html"]
+        if len(html_to_text(html)) < 100:  # 목록에 본문이 없거나 짧으면 상세를 읽는다
+            try:
+                html = _feed_html(_lounge_get(f"{base}/feed/{r['feedId']}")) or html
+            except RuntimeError as e:
+                log.warning("[%s] 라운지 글 %s 본문 실패: %s", game_id, r["feedId"], e)
+                continue
+        item = lounge_item(game_id, r, html, now)
+        if item:
+            items.append(item)
+    return items
+
+
 # ---------------- 진입점 ----------------
 
-OFFICIAL_GAMES = set(HOYO) | {"wuwa", "bluearchive", "endfield"} | set(HTML_SITES)
+OFFICIAL_GAMES = set(HOYO) | {"wuwa", "bluearchive", "endfield"} | set(HTML_SITES) | set(LOUNGES)
 
 
 def has_official(game_id: str) -> bool:
@@ -404,7 +533,20 @@ def fetch_official(game_id: str, limit: int = 8, now: datetime | None = None) ->
         items.sort(key=lambda i: i.published_at, reverse=True)
         return items[:limit]
     if game_id == "wuwa":
-        return fetch_wuwa(now, limit)
+        # 버전 공지(공식 사이트) + 튜닝 기간 공지(라운지). 한쪽이 실패해도 다른 쪽은 쓴다
+        items, errors = [], []
+        for name, fn in (("공식 사이트", lambda: fetch_wuwa(now, limit)), ("라운지", lambda: fetch_lounge("wuwa", now, limit))):
+            try:
+                items += fn()
+            except Exception as e:  # noqa: BLE001
+                errors.append(f"{name}: {e}")
+        if errors and not items:
+            raise RuntimeError(" / ".join(errors))
+        if errors:
+            LOUNGE_WARNINGS["wuwa"] = " / ".join(errors)
+        return items
+    if game_id in LOUNGES:
+        return fetch_lounge(game_id, now, limit)
     if game_id == "bluearchive":
         return fetch_blue_archive(now, limit)
     if game_id == "endfield":

@@ -108,6 +108,6 @@ def test_official_only_skips_games_without_source(monkeypatch):
     calls = setup(monkeypatch, [])
     collect.OFFICIAL_RESULT.clear()
     events = {}
-    collect.run_game(collect.GAMES_BY_ID["nikke"], events, {}, OFFICIAL_ONLY, False, [])
+    collect.run_game(collect.GAMES_BY_ID["arknights"], events, {}, OFFICIAL_ONLY, False, [])
     assert events == {} and calls["body"] == []
-    assert "공식 출처 없음" in collect.OFFICIAL_RESULT["nikke"]
+    assert "공식 출처 없음" in collect.OFFICIAL_RESULT["arknights"]

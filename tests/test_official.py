@@ -129,5 +129,60 @@ def test_nte_link_only_in_script():
 
 def test_games_without_official_source():
     assert official.has_official("genshin") and official.has_official("bluearchive") and official.has_official("endfield")
-    assert not official.has_official("nikke") and not official.has_official("arknights")
-    assert official.fetch_official("nikke") == []
+    assert official.has_official("nikke") and official.has_official("wuwa")
+    assert not official.has_official("arknights")
+    assert official.fetch_official("arknights") == []
+
+
+# ---------------- 네이버 게임 라운지 ----------------
+
+LOUNGE_LIST = {"code": 200, "message": "OK", "content": {"feeds": [
+    {"feed": {"feedId": 8258701, "boardId": 28, "title": "[부디 이 밤처럼 늘 영원하기를] 캐릭터 이벤트 튜닝",
+              "createdDate": "20260929180000"}, "user": {"nickname": "명조 공식"}},
+    {"feed": {"feedId": 8258702, "boardId": 28, "title": "[옥궐에 피는 꽃] 무기 이벤트 튜닝", "createdDate": "20260929180500"}},
+    {"feed": {"feedId": 8000000, "boardId": 28, "title": "오래된 캐릭터 이벤트 튜닝", "createdDate": "20260501120000"}},
+]}}
+
+
+def test_lounge_list_filters_and_sorts():
+    rows = official.parse_lounge_list("wuwa", LOUNGE_LIST, NOW, 8)
+    assert [r["feedId"] for r in rows] == [8258701]  # 무기 튜닝·오래된 글 제외
+    assert rows[0]["date"] == datetime(2026, 9, 29, 18, 0, tzinfo=KST)
+
+
+def test_lounge_item_body_and_link():
+    rows = official.parse_lounge_list("wuwa", LOUNGE_LIST, NOW, 8)
+    item = official.lounge_item("wuwa", rows[0], "<p>기간: 3.7 버전 업데이트 후 ~ 2026/10/21 09:59 (서버 시간)</p><p>여우의 별자리</p>", NOW)
+    assert item.url.startswith("https://game.naver.com/lounge/WutheringWaves/board/detail/8258701#v=")
+    assert "여우의 별자리" in item.body and "UTC+8" in item.body and item.source == "official"
+
+
+def test_lounge_dates_any_format():
+    assert official._lounge_time(1790758800000) == official._lounge_time(1790758800)
+    assert official._lounge_time("2026-09-29T09:00:00Z") == datetime(2026, 9, 29, 18, 0, tzinfo=KST)
+    assert official._lounge_time("20260929180000") == datetime(2026, 9, 29, 18, 0, tzinfo=KST)
+    assert official._lounge_time("이상한값") is None
+
+
+def test_lounge_detail_body_found_anywhere():
+    detail = {"code": 200, "content": {"feed": {"feedId": 1, "title": "t", "contents": "<p>긴 본문</p>" * 30}}}
+    assert "긴 본문" in official._feed_html(detail)
+
+
+def test_wuwa_uses_both_sources_and_survives_one_failure(monkeypatch):
+    from sources import NewsItem
+    a = NewsItem("3.7 버전 업데이트 내용 안내", "https://k/1#v=1", "", NOW, source="official", body="b")
+    monkeypatch.setattr(official, "fetch_wuwa", lambda now, limit: [a])
+
+    def boom(*a, **k):
+        raise RuntimeError("라운지 HTTP 403")
+    monkeypatch.setattr(official, "fetch_lounge", boom)
+    official.LOUNGE_WARNINGS.clear()
+    items = official.fetch_official("wuwa", now=NOW)
+    assert items == [a]
+    assert "라운지" in official.LOUNGE_WARNINGS["wuwa"]
+
+    monkeypatch.setattr(official, "fetch_wuwa", boom)
+    import pytest
+    with pytest.raises(RuntimeError):
+        official.fetch_official("wuwa", now=NOW)
