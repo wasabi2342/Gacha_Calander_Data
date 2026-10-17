@@ -159,5 +159,33 @@
     "source": "official",
     "seenAt": "2026-10-17T05:21:40+09:00",
     "changes": 1
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1437#v=3ccfa767": {
+    "game": "hsr",
+    "title": "4.6 버전 「달 뜨기 전, 괴수와 춤을」 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-10-17T11:26:38+09:00",
+    "changes": 1
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1421#v=19a35912": {
+    "game": "hsr",
+    "title": "「화폐 전쟁•제로섬 게임」 4.6 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-10-17T11:26:45+09:00",
+    "changes": 0
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=243#v=1ff6bdab": {
+    "game": "zzz",
+    "title": "3.2 버전 기간 한정 채널(하반기)",
+    "source": "official",
+    "seenAt": "2026-10-17T11:26:57+09:00",
+    "changes": 0
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=1297#v=ce923133": {
+    "game": "zzz",
+    "title": "3.2 버전 「그녀들의 숨겨진 과거」 업데이트 공지",
+    "source": "official",
+    "seenAt": "2026-10-17T11:27:04+09:00",
+    "changes": 1
   }
 }
