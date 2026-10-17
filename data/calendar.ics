@@ -30,6 +30,36 @@ URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=353278
  8
 END:VEVENT
 BEGIN:VEVENT
+UID:zzz-3.2-p1@gacha-calander-data
+DTSTAMP:20261016T202140Z
+DTSTART;VALUE=DATE:20260909
+DTEND;VALUE=DATE:20261022
+SUMMARY:[젠존제] 3.2 신규 에이전트 [클라렛]\, [록시] 변조 -
+  클라렛\, 록시
+DESCRIPTION:게임: 젠존제\n종류: 픽업\n시작: 2026-09-09 (시각 
+ 미정)\n종료: 2026-10-21 07:00\n캐릭터: 클라렛\, 록시\n상태: 
+ 공식 공지 확인\n출처: https://zenless.hoyoverse.com/ko-kr/news?ann
+ =1297\n(한국 시간 기준)
+CATEGORIES:젠존제,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://zenless.hoyoverse.com/ko-kr/news?ann=1297
+END:VEVENT
+BEGIN:VEVENT
+UID:zzz-3.2-update@gacha-calander-data
+DTSTAMP:20261017T022704Z
+DTSTART;VALUE=DATE:20260909
+DTEND;VALUE=DATE:20260910
+SUMMARY:[젠존제] 3.2 버전 업데이트
+DESCRIPTION:게임: 젠존제\n종류: 버전 업데이트\n시작: 2026-09
+ -09 07:00\n상태: 공식 공지 확인\n출처: https://zenless.hoyoverse
+ .com/ko-kr/news?ann=1297\n(한국 시간 기준)
+CATEGORIES:젠존제,업데이트
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://zenless.hoyoverse.com/ko-kr/news?ann=1297
+END:VEVENT
+BEGIN:VEVENT
 UID:bluearchive-2026-09-15-p0@gacha-calander-data
 DTSTAMP:20261015T165534Z
 DTSTART;VALUE=DATE:20260915
@@ -63,12 +93,12 @@ URL:https://genshin.hoyoverse.com/ko/news?ann=21946
 END:VEVENT
 BEGIN:VEVENT
 UID:hsr-4.6-update@gacha-calander-data
-DTSTAMP:20261015T165408Z
+DTSTAMP:20261017T022638Z
 DTSTART;VALUE=DATE:20260928
 DTEND;VALUE=DATE:20260929
 SUMMARY:[스타레일] 4.6 버전 업데이트
 DESCRIPTION:게임: 스타레일\n종류: 버전 업데이트\n시작: 2026
- -09-28 07:00\n상태: 공식 공지 확인\n출처: https://hsr.hoyoverse.
+ -09-28 06:00\n상태: 공식 공지 확인\n출처: https://hsr.hoyoverse.
  com/ko-kr/news?ann=1437\n(한국 시간 기준)
 CATEGORIES:스타레일,업데이트
 TRANSP:TRANSPARENT
@@ -163,6 +193,22 @@ END:VEVENT
 BEGIN:VEVENT
 UID:genshin-2026-10-13-p0@gacha-calander-data
 DTSTAMP:20261015T165346Z
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261104
+SUMMARY:[원신] 「도래한 허계의 별」 기원 - 스커크\, 달리
+ 아\, 에스코피에\, 캔디스(복각)\, 미카(복각)
+DESCRIPTION:게임: 원신\n종류: 픽업\n시작: 2026-10-13 19:00\n종
+ 료: 2026-11-03 15:59\n캐릭터: 스커크\, 달리아\, 에스코피에\
+ , 캔디스(복각)\, 미카(복각)\n상태: 공식 공지 확인\n출처
+ : https://genshin.hoyoverse.com/ko/news?ann=21889\n(한국 시간 기준)
+CATEGORIES:원신,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://genshin.hoyoverse.com/ko/news?ann=21889
+END:VEVENT
+BEGIN:VEVENT
+UID:genshin-7.1-p2@gacha-calander-data
+DTSTAMP:20261015T204834Z
 DTSTART;VALUE=DATE:20261013
 DTEND;VALUE=DATE:20261104
 SUMMARY:[원신] 「도래한 허계의 별」 기원 - 스커크\, 달리

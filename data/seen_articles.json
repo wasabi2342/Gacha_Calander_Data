@@ -103,5 +103,89 @@
     "source": "official",
     "seenAt": "2026-10-16T01:56:05+09:00",
     "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21888#v=dfacb824": {
+    "game": "genshin",
+    "title": "「도래한 허계의 별」 기원: 「허계의 별·스커크(얼음)」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-10-16T05:48:27+09:00",
+    "changes": 1
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21889#v=e9c9ddfd": {
+    "game": "genshin",
+    "title": "「베리 샹송」 기원: 「화려한 맛의 화음·에스코피에(얼음)」 확률 UP!",
+    "source": "official",
+    "seenAt": "2026-10-16T05:48:34+09:00",
+    "changes": 1
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=21946#v=2b24afe8": {
+    "game": "genshin",
+    "title": "「죽음의 진혼곡」 7.1 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-10-16T05:48:41+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1437#v=1d454fc3": {
+    "game": "hsr",
+    "title": "4.6 버전 「달 뜨기 전, 괴수와 춤을」 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-10-16T19:26:01+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1366#v=2ab97a3f": {
+    "game": "hsr",
+    "title": "4.6 버전 이벤트 워프 (1)",
+    "source": "official",
+    "seenAt": "2026-10-16T19:26:11+09:00",
+    "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1421#v=6fbe9a2c": {
+    "game": "hsr",
+    "title": "「화폐 전쟁•제로섬 게임」 4.6 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-10-16T19:26:20+09:00",
+    "changes": 1
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=243#v=02d172ec": {
+    "game": "zzz",
+    "title": "3.2 버전 기간 한정 채널(하반기)",
+    "source": "official",
+    "seenAt": "2026-10-17T00:52:46+09:00",
+    "changes": 0
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=1297#v=dc00e102": {
+    "game": "zzz",
+    "title": "3.2 버전 「그녀들의 숨겨진 과거」 업데이트 공지",
+    "source": "official",
+    "seenAt": "2026-10-17T05:21:40+09:00",
+    "changes": 1
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1437#v=3ccfa767": {
+    "game": "hsr",
+    "title": "4.6 버전 「달 뜨기 전, 괴수와 춤을」 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-10-17T11:26:38+09:00",
+    "changes": 1
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1421#v=19a35912": {
+    "game": "hsr",
+    "title": "「화폐 전쟁•제로섬 게임」 4.6 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-10-17T11:26:45+09:00",
+    "changes": 0
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=243#v=1ff6bdab": {
+    "game": "zzz",
+    "title": "3.2 버전 기간 한정 채널(하반기)",
+    "source": "official",
+    "seenAt": "2026-10-17T11:26:57+09:00",
+    "changes": 0
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=1297#v=ce923133": {
+    "game": "zzz",
+    "title": "3.2 버전 「그녀들의 숨겨진 과거」 업데이트 공지",
+    "source": "official",
+    "seenAt": "2026-10-17T11:27:04+09:00",
+    "changes": 1
   }
 }
