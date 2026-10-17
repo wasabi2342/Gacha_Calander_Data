@@ -39,4 +39,20 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 URL:https://genshin.hoyoverse.com/ko/news?ann=21889
 END:VEVENT
+BEGIN:VEVENT
+UID:genshin-7.1-p2@gacha-calander-data
+DTSTAMP:20261017T144545Z
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261104
+SUMMARY:[원신] 「도래한 허계의 별」 기원 - 스커크\, 달리
+ 아\, 에스코피에\, 캔디스(복각)\, 미카(복각)
+DESCRIPTION:게임: 원신\n종류: 픽업\n시작: 2026-10-13 19:00\n종
+ 료: 2026-11-03 15:59\n캐릭터: 스커크\, 달리아\, 에스코피에\
+ , 캔디스(복각)\, 미카(복각)\n상태: 공식 공지 확인\n출처
+ : https://genshin.hoyoverse.com/ko/news?ann=21889\n(한국 시간 기준)
+CATEGORIES:원신,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://genshin.hoyoverse.com/ko/news?ann=21889
+END:VEVENT
 END:VCALENDAR
