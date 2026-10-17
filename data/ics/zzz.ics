@@ -25,18 +25,18 @@ URL:https://zenless.hoyoverse.com/ko-kr/news?ann=1297
 END:VEVENT
 BEGIN:VEVENT
 UID:zzz-3.2-p2@gacha-calander-data
-DTSTAMP:20261017T082309Z
+DTSTAMP:20261017T195611Z
 DTSTART;VALUE=DATE:20260930
-DTEND;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261021
 SUMMARY:[젠존제] 3.2 하반기 픽업 - 록시\, 프로미아\, 클라
  렛
 DESCRIPTION:게임: 젠존제\n종류: 픽업\n시작: 2026-09-30 13:00\n
- 종료: 2026-10-21 07:00\n캐릭터: 록시\, 프로미아\, 클라렛\n
+ 종료: 2026-10-20 15:59\n캐릭터: 록시\, 프로미아\, 클라렛\n
  상태: 공식 공지 확인\n출처: https://zenless.hoyoverse.com/ko-kr/
- news?ann=1297\n(한국 시간 기준)
+ news?ann=243\n(한국 시간 기준)
 CATEGORIES:젠존제,픽업
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
-URL:https://zenless.hoyoverse.com/ko-kr/news?ann=1297
+URL:https://zenless.hoyoverse.com/ko-kr/news?ann=243
 END:VEVENT
 END:VCALENDAR
