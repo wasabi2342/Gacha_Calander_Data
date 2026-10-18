@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T19:11:06+09:00",
+  "updatedAt": "2026-10-19T00:11:07+09:00",
   "games": [
     {
       "id": "genshin",
@@ -188,25 +188,6 @@
       "verified": true
     },
     {
-      "id": "hsr-4.6-update",
-      "gameId": "hsr",
-      "type": "VERSION_UPDATE",
-      "version": "4.6",
-      "phase": null,
-      "title": "4.6 버전 「달 뜨기 전, 괴수와 춤을」",
-      "characters": [],
-      "startAt": "2026-09-23T05:00:00+09:00",
-      "timeKnown": true,
-      "endAt": "2026-11-11T07:00:00+09:00",
-      "endConfirmed": true,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://hsr.hoyoverse.com/ko-kr/news?ann=1421#v=6fbe9a2c",
-      "evidence": "4.6 버전 업데이트 안내",
-      "updatedAt": "2026-10-18T04:55:53+09:00",
-      "verified": true
-    },
-    {
       "id": "genshin-7.1-update",
       "gameId": "genshin",
       "type": "VERSION_UPDATE",
@@ -223,6 +204,25 @@
       "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21946#v=c11b32ce",
       "evidence": "7.1 버전 「죽음의 진혼곡」 업데이트",
       "updatedAt": "2026-10-17T17:21:50+09:00",
+      "verified": true
+    },
+    {
+      "id": "hsr-4.6-update",
+      "gameId": "hsr",
+      "type": "VERSION_UPDATE",
+      "version": "4.6",
+      "phase": null,
+      "title": "4.6 버전 「달 뜨기 전, 괴수와 춤을」",
+      "characters": [],
+      "startAt": "2026-09-28T06:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-11-11T06:00:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://hsr.hoyoverse.com/ko-kr/news?ann=1437#v=3ccfa767",
+      "evidence": "4.6 버전 업데이트 후 ~ 2026/11/11 06:00:00",
+      "updatedAt": "2026-10-19T00:10:49+09:00",
       "verified": true
     },
     {
