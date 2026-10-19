@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T00:11:07+09:00",
+  "updatedAt": "2026-10-19T20:44:44+09:00",
   "games": [
     {
       "id": "genshin",
@@ -497,6 +497,55 @@
       "sourceUrl": "https://endfield.gryphline.com/ko-kr/news?cid=2194#v=02f712ab",
       "evidence": "만물의 재구성 특별 허가 헤드헌팅",
       "updatedAt": "2026-10-17T17:23:50+09:00",
+      "verified": true
+    },
+    {
+      "id": "zzz-3.3-update",
+      "gameId": "zzz",
+      "type": "VERSION_UPDATE",
+      "version": "3.3",
+      "phase": null,
+      "title": "3.3 버전 업데이트",
+      "characters": [],
+      "startAt": "2026-10-19T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://zenless.hoyoverse.com/ko-kr/news?ann=253#v=094444cc",
+      "evidence": "3.3 버전 업데이트 이후",
+      "updatedAt": "2026-10-19T20:44:38+09:00",
+      "verified": true
+    },
+    {
+      "id": "zzz-3.3-p1",
+      "gameId": "zzz",
+      "type": "BANNER",
+      "version": "3.3",
+      "phase": 1,
+      "title": "3.3 상반기 픽업",
+      "characters": [
+        {
+          "name": "피닉스",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "벨리나",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-10-19T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-11-11T12:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://zenless.hoyoverse.com/ko-kr/news?ann=253#v=094444cc",
+      "evidence": "3.3 버전 업데이트 이후 ~ 2026/11/11 12:59(KST)",
+      "updatedAt": "2026-10-19T20:44:38+09:00",
       "verified": true
     },
     {

@@ -238,6 +238,35 @@ STATUS:CONFIRMED
 URL:https://endfield.gryphline.com/ko-kr/news?cid=2194
 END:VEVENT
 BEGIN:VEVENT
+UID:zzz-3.3-update@gacha-calander-data
+DTSTAMP:20261019T114438Z
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261020
+SUMMARY:[젠존제] 3.3 버전 업데이트
+DESCRIPTION:게임: 젠존제\n종류: 버전 업데이트\n시작: 2026-10
+ -19 (시각 미정)\n상태: 공식 공지 확인\n출처: https://zenless
+ .hoyoverse.com/ko-kr/news?ann=253\n(한국 시간 기준)
+CATEGORIES:젠존제,업데이트
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://zenless.hoyoverse.com/ko-kr/news?ann=253
+END:VEVENT
+BEGIN:VEVENT
+UID:zzz-3.3-p1@gacha-calander-data
+DTSTAMP:20261019T114438Z
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261112
+SUMMARY:[젠존제] 3.3 상반기 픽업 - 피닉스\, 벨리나
+DESCRIPTION:게임: 젠존제\n종류: 픽업\n시작: 2026-10-19 (시각 
+ 미정)\n종료: 2026-11-11 12:59\n캐릭터: 피닉스\, 벨리나\n상
+ 태: 공식 공지 확인\n출처: https://zenless.hoyoverse.com/ko-kr/new
+ s?ann=253\n(한국 시간 기준)
+CATEGORIES:젠존제,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://zenless.hoyoverse.com/ko-kr/news?ann=253
+END:VEVENT
+BEGIN:VEVENT
 UID:endfield-2026-10-29-p0@gacha-calander-data
 DTSTAMP:20261017T082350Z
 DTSTART;VALUE=DATE:20261029
