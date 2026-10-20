@@ -24,4 +24,22 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 URL:https://hsr.hoyoverse.com/ko-kr/news?ann=1437
 END:VEVENT
+BEGIN:VEVENT
+UID:hsr-4.6-p2@gacha-calander-data
+DTSTAMP:20261020T104516Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261111
+SUMMARY:[스타레일] 4.6 후반 천야•블레이드 복각 픽업 - 천
+ 야•블레이드(복각)\, 청작(복각)\, 설의(복각)\, 미샤(복
+ 각)
+DESCRIPTION:게임: 스타레일\n종류: 픽업\n시작: 2026-10-21 12:00\
+ n종료: 2026-11-10 15:00\n캐릭터: 천야•블레이드(복각)\, 청
+ 작(복각)\, 설의(복각)\, 미샤(복각)\n상태: 공식 공지 확
+ 인\n출처: https://hsr.hoyoverse.com/ko-kr/news?ann=1360\n(한국 시간
+  기준)
+CATEGORIES:스타레일,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://hsr.hoyoverse.com/ko-kr/news?ann=1360
+END:VEVENT
 END:VCALENDAR
