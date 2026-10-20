@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T19:45:31+09:00",
+  "updatedAt": "2026-10-21T01:08:32+09:00",
   "games": [
     {
       "id": "genshin",
@@ -577,15 +577,15 @@
           "isNew": false
         }
       ],
-      "startAt": "2026-10-21T12:00:00+09:00",
+      "startAt": "2026-10-21T13:00:00+09:00",
       "timeKnown": true,
-      "endAt": "2026-11-10T15:00:00+09:00",
+      "endAt": "2026-11-10T16:00:00+09:00",
       "endConfirmed": true,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://hsr.hoyoverse.com/ko-kr/news?ann=1360#v=31a1c11c",
-      "evidence": "천야•블레이드 복각 픽업",
-      "updatedAt": "2026-10-20T19:45:16+09:00",
+      "sourceUrl": "https://hsr.hoyoverse.com/ko-kr/news?ann=1360#v=07d536f7",
+      "evidence": "천야•블레이드 복각 픽업 일정",
+      "updatedAt": "2026-10-21T01:08:16+09:00",
       "verified": true
     },
     {
