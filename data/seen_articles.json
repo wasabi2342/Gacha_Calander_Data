@@ -257,5 +257,19 @@
     "source": "official",
     "seenAt": "2026-10-20T03:05:43+09:00",
     "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1366#v=2ab97a3f": {
+    "game": "hsr",
+    "title": "4.6 버전 이벤트 워프 (1)",
+    "source": "official",
+    "seenAt": "2026-10-20T11:52:34+09:00",
+    "changes": 0
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=253#v=13d31fdc": {
+    "game": "zzz",
+    "title": "3.3 버전 기간 한정 채널(상반기)",
+    "source": "official",
+    "seenAt": "2026-10-20T11:52:48+09:00",
+    "changes": 0
   }
 }
