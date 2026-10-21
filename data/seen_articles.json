@@ -292,5 +292,19 @@
     "source": "official",
     "seenAt": "2026-10-21T11:46:47+09:00",
     "changes": 1
+  },
+  "https://game.naver.com/lounge/WutheringWaves/board/detail/8346030#v=e0f50916": {
+    "game": "wuwa",
+    "title": "[내 마음 닿는 곳, 아홉 번 죽어도 후회 없으리] 캐릭터 이벤트 튜닝",
+    "source": "official",
+    "seenAt": "2026-10-21T19:57:17+09:00",
+    "changes": 1
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=1327#v=89e752db": {
+    "game": "zzz",
+    "title": "3.3 버전 「다시 하늘을 향해」 업데이트 공지",
+    "source": "official",
+    "seenAt": "2026-10-21T19:57:25+09:00",
+    "changes": 0
   }
 }

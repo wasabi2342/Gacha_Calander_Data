@@ -285,6 +285,22 @@ STATUS:CONFIRMED
 URL:https://hsr.hoyoverse.com/ko-kr/news?ann=1360
 END:VEVENT
 BEGIN:VEVENT
+UID:wuwa-3.7-p2@gacha-calander-data
+DTSTAMP:20261021T105717Z
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261112
+SUMMARY:[명조] 쇄명 픽업 - 쇄명\, 루미(복각)\, 단근(복각)\,
+  치샤(복각)
+DESCRIPTION:게임: 명조\n종류: 픽업\n시작: 2026-10-22 11:00\n종
+ 료: 2026-11-11 12:59\n캐릭터: 쇄명\, 루미(복각)\, 단근(복각)
+ \, 치샤(복각)\n상태: 공식 공지 확인\n출처: https://game.nave
+ r.com/lounge/WutheringWaves/board/detail/8346030\n(한국 시간 기준)
+CATEGORIES:명조,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://game.naver.com/lounge/WutheringWaves/board/detail/8346030
+END:VEVENT
+BEGIN:VEVENT
 UID:endfield-2026-10-29-p0@gacha-calander-data
 DTSTAMP:20261017T082350Z
 DTSTART;VALUE=DATE:20261029
