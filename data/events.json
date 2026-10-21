@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T01:08:32+09:00",
+  "updatedAt": "2026-10-21T11:46:55+09:00",
   "games": [
     {
       "id": "genshin",
@@ -500,25 +500,6 @@
       "verified": true
     },
     {
-      "id": "zzz-3.3-update",
-      "gameId": "zzz",
-      "type": "VERSION_UPDATE",
-      "version": "3.3",
-      "phase": null,
-      "title": "3.3 버전 업데이트",
-      "characters": [],
-      "startAt": "2026-10-19T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": null,
-      "endConfirmed": false,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://zenless.hoyoverse.com/ko-kr/news?ann=253#v=094444cc",
-      "evidence": "3.3 버전 업데이트 이후",
-      "updatedAt": "2026-10-19T20:44:38+09:00",
-      "verified": true
-    },
-    {
       "id": "zzz-3.3-p1",
       "gameId": "zzz",
       "type": "BANNER",
@@ -546,6 +527,25 @@
       "sourceUrl": "https://zenless.hoyoverse.com/ko-kr/news?ann=253#v=094444cc",
       "evidence": "3.3 버전 업데이트 이후 ~ 2026/11/11 12:59(KST)",
       "updatedAt": "2026-10-19T20:44:38+09:00",
+      "verified": true
+    },
+    {
+      "id": "zzz-3.3-update",
+      "gameId": "zzz",
+      "type": "VERSION_UPDATE",
+      "version": "3.3",
+      "phase": null,
+      "title": "3.3 버전 업데이트",
+      "characters": [],
+      "startAt": "2026-10-21T07:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-12-02T07:00:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://zenless.hoyoverse.com/ko-kr/news?ann=1327#v=d2b57850",
+      "evidence": "3.3 버전 「다시 하늘을 향해」 업데이트 공지",
+      "updatedAt": "2026-10-21T11:46:47+09:00",
       "verified": true
     },
     {
