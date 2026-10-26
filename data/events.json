@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T19:57:32+09:00",
+  "updatedAt": "2026-10-26T21:01:10+09:00",
   "games": [
     {
       "id": "genshin",
@@ -629,6 +629,51 @@
       "verified": true
     },
     {
+      "id": "bluearchive-2026-10-27-p0",
+      "gameId": "bluearchive",
+      "type": "BANNER",
+      "version": "2026-10-27",
+      "phase": null,
+      "title": "특별 픽업 모집 (히카리, 노조미 등)",
+      "characters": [
+        {
+          "name": "히카리",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "노조미",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "사오리(수영복)",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "히요리(수영복)",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "미사키(수영복)",
+          "rarity": 3,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-10-27T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-11-03T10:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3559967#v=ab0ef99a",
+      "evidence": "미사키(수영복) 픽업 모집 일정",
+      "updatedAt": "2026-10-26T21:01:07+09:00",
+      "verified": true
+    },
+    {
       "id": "endfield-2026-10-29-p0",
       "gameId": "endfield",
       "type": "BANNER",
@@ -651,6 +696,51 @@
       "sourceUrl": "https://endfield.gryphline.com/ko-kr/news?cid=2194#v=02f712ab",
       "evidence": "선조의 샘의 새로운 물결 재구축 헤드헌팅#1",
       "updatedAt": "2026-10-17T17:23:50+09:00",
+      "verified": true
+    },
+    {
+      "id": "bluearchive-2026-11-03-p0",
+      "gameId": "bluearchive",
+      "type": "BANNER",
+      "version": "2026-11-03",
+      "phase": null,
+      "title": "특별 픽업 모집 (마코토, 아코 드레스)",
+      "characters": [
+        {
+          "name": "마코토",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "아코(드레스)",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "사츠키",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "치아키",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "칸나(수영복)",
+          "rarity": 3,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-11-03T11:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-11-10T10:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3559967#v=ab0ef99a",
+      "evidence": "11월 3일 사츠키, 치아키, 칸나 픽업",
+      "updatedAt": "2026-10-26T21:01:07+09:00",
       "verified": true
     },
     {

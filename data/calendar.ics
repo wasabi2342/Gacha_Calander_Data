@@ -301,6 +301,26 @@ STATUS:CONFIRMED
 URL:https://game.naver.com/lounge/WutheringWaves/board/detail/8346030
 END:VEVENT
 BEGIN:VEVENT
+UID:bluearchive-2026-10-27-p0@gacha-calander-data
+DTSTAMP:20261026T120107Z
+DTSTART;VALUE=DATE:20261027
+DTEND;VALUE=DATE:20261104
+SUMMARY:[블루 아카이브] 특별 픽업 모집 (히카리\, 노조미 
+ 등) - 히카리(복각)\, 노조미(복각)\, 사오리(수영복)(복각
+ )\, 히요리(수영복)(복각)\, 미사키(수영복)(복각)
+DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-10-27
+  (시각 미정)\n종료: 2026-11-03 10:59\n캐릭터: 히카리(복각)\,
+  노조미(복각)\, 사오리(수영복)(복각)\, 히요리(수영복)(
+ 복각)\, 미사키(수영복)(복각)\n상태: 공식 공지 확인\n출
+ 처: https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3559
+ 967\n(한국 시간 기준)
+CATEGORIES:블루 아카이브,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=355996
+ 7
+END:VEVENT
+BEGIN:VEVENT
 UID:endfield-2026-10-29-p0@gacha-calander-data
 DTSTAMP:20261017T082350Z
 DTSTART;VALUE=DATE:20261029
@@ -315,6 +335,25 @@ CATEGORIES:엔드필드,픽업
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 URL:https://endfield.gryphline.com/ko-kr/news?cid=2194
+END:VEVENT
+BEGIN:VEVENT
+UID:bluearchive-2026-11-03-p0@gacha-calander-data
+DTSTAMP:20261026T120107Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261111
+SUMMARY:[블루 아카이브] 특별 픽업 모집 (마코토\, 아코 드
+ 레스) - 마코토(복각)\, 아코(드레스)(복각)\, 사츠키(복각
+ )\, 치아키(복각)\, 칸나(수영복)(복각)
+DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-11-03
+  11:00\n종료: 2026-11-10 10:59\n캐릭터: 마코토(복각)\, 아코(
+ 드레스)(복각)\, 사츠키(복각)\, 치아키(복각)\, 칸나(수영
+ 복)(복각)\n상태: 공식 공지 확인\n출처: https://forum.nexon.co
+ m/bluearchive/board_view?board=1076&thread=3559967\n(한국 시간 기준)
+CATEGORIES:블루 아카이브,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=355996
+ 7
 END:VEVENT
 BEGIN:VEVENT
 UID:endfield-2026-11-05-p0@gacha-calander-data
