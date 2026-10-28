@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T21:01:10+09:00",
+  "updatedAt": "2026-10-28T12:24:34+09:00",
   "games": [
     {
       "id": "genshin",
@@ -475,6 +475,25 @@
       "verified": true
     },
     {
+      "id": "endfield-단청도-update",
+      "gameId": "endfield",
+      "type": "VERSION_UPDATE",
+      "version": "단청도",
+      "phase": null,
+      "title": "단청도 버전 업데이트",
+      "characters": [],
+      "startAt": "2026-10-15T07:00:00+09:00",
+      "timeKnown": true,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://endfield.gryphline.com/ko-kr/news?cid=2194#v=66cec0b0",
+      "evidence": "신규 버전 단청도 업데이트 점검",
+      "updatedAt": "2026-10-28T12:24:33+09:00",
+      "verified": true
+    },
+    {
       "id": "endfield-2026-10-15-p0",
       "gameId": "endfield",
       "type": "BANNER",
@@ -766,6 +785,41 @@
       "sourceUrl": "https://endfield.gryphline.com/ko-kr/news?cid=2194#v=02f712ab",
       "evidence": "은하수를 부르는 불꽃 특별 허가 헤드헌팅",
       "updatedAt": "2026-10-17T17:23:50+09:00",
+      "verified": true
+    },
+    {
+      "id": "endfield-단청도-p0",
+      "gameId": "endfield",
+      "type": "BANNER",
+      "version": "단청도",
+      "phase": null,
+      "title": "만물의 재구성 헤드헌팅",
+      "characters": [
+        {
+          "name": "사",
+          "rarity": 6,
+          "isNew": true
+        },
+        {
+          "name": "탕탕",
+          "rarity": 6,
+          "isNew": false
+        },
+        {
+          "name": "명하",
+          "rarity": 6,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-11-05T13:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-11-19T12:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://endfield.gryphline.com/ko-kr/news?cid=2194#v=66cec0b0",
+      "evidence": "은하수를 부르는 불꽃 특별 허가 헤드헌팅",
+      "updatedAt": "2026-10-28T12:24:33+09:00",
       "verified": true
     }
   ]
