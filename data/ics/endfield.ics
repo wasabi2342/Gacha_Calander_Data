@@ -55,6 +55,21 @@ STATUS:CONFIRMED
 URL:https://endfield.gryphline.com/ko-kr/news?cid=2194
 END:VEVENT
 BEGIN:VEVENT
+UID:endfield-단청도-p2@gacha-calander-data
+DTSTAMP:20261028T115526Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261120
+SUMMARY:[엔드필드] 재구축 헤드헌팅#1 - 탕탕
+DESCRIPTION:게임: 엔드필드\n종류: 픽업\n시작: 2026-10-29 13:00\
+ n종료: 2026-11-19 12:59\n캐릭터: 탕탕\n상태: 공식 공지 확인
+ \n출처: https://endfield.gryphline.com/ko-kr/news?cid=3034\n(한국 시
+ 간 기준)
+CATEGORIES:엔드필드,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://endfield.gryphline.com/ko-kr/news?cid=3034
+END:VEVENT
+BEGIN:VEVENT
 UID:endfield-2026-11-05-p0@gacha-calander-data
 DTSTAMP:20261017T082350Z
 DTSTART;VALUE=DATE:20261105

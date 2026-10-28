@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T12:24:34+09:00",
+  "updatedAt": "2026-10-28T20:55:28+09:00",
   "games": [
     {
       "id": "genshin",
@@ -715,6 +715,31 @@
       "sourceUrl": "https://endfield.gryphline.com/ko-kr/news?cid=2194#v=02f712ab",
       "evidence": "선조의 샘의 새로운 물결 재구축 헤드헌팅#1",
       "updatedAt": "2026-10-17T17:23:50+09:00",
+      "verified": true
+    },
+    {
+      "id": "endfield-단청도-p2",
+      "gameId": "endfield",
+      "type": "BANNER",
+      "version": "단청도",
+      "phase": 2,
+      "title": "재구축 헤드헌팅#1",
+      "characters": [
+        {
+          "name": "탕탕",
+          "rarity": 6,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-10-29T13:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-11-19T12:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://endfield.gryphline.com/ko-kr/news?cid=3034#v=906b6273",
+      "evidence": "선조의 샘의 새로운 물결 재구축 헤드헌팅#1",
+      "updatedAt": "2026-10-28T20:55:26+09:00",
       "verified": true
     },
     {
