@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T12:45:11+09:00",
+  "updatedAt": "2026-11-02T23:25:20+09:00",
   "games": [
     {
       "id": "genshin",
@@ -740,6 +740,46 @@
       "sourceUrl": "https://endfield.gryphline.com/ko-kr/news?cid=3034#v=906b6273",
       "evidence": "선조의 샘의 새로운 물결 재구축 헤드헌팅#1",
       "updatedAt": "2026-10-28T20:55:26+09:00",
+      "verified": true
+    },
+    {
+      "id": "genshin-7.2-p1",
+      "gameId": "genshin",
+      "type": "BANNER",
+      "version": "7.2",
+      "phase": 1,
+      "title": "7.2 전반 픽업",
+      "characters": [
+        {
+          "name": "미탸",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "발레리",
+          "rarity": 4,
+          "isNew": true
+        },
+        {
+          "name": "샤를로트",
+          "rarity": 4,
+          "isNew": false
+        },
+        {
+          "name": "로자리아",
+          "rarity": 4,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-11-03T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-11-24T18:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21997#v=7d0b6109",
+      "evidence": "7.2 버전 업데이트 후 ~ 11/24 17:59 미탸 픽업",
+      "updatedAt": "2026-11-02T23:25:00+09:00",
       "verified": true
     },
     {

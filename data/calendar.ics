@@ -366,6 +366,22 @@ STATUS:CONFIRMED
 URL:https://endfield.gryphline.com/ko-kr/news?cid=3034
 END:VEVENT
 BEGIN:VEVENT
+UID:genshin-7.2-p1@gacha-calander-data
+DTSTAMP:20261102T142500Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261125
+SUMMARY:[원신] 7.2 전반 픽업 - 미탸\, 발레리\, 샤를로트(복
+ 각)\, 로자리아(복각)
+DESCRIPTION:게임: 원신\n종류: 픽업\n시작: 2026-11-03 (시각 미
+ 정)\n종료: 2026-11-24 18:59\n캐릭터: 미탸\, 발레리\, 샤를로
+ 트(복각)\, 로자리아(복각)\n상태: 공식 공지 확인\n출처: 
+ https://genshin.hoyoverse.com/ko/news?ann=21997\n(한국 시간 기준)
+CATEGORIES:원신,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://genshin.hoyoverse.com/ko/news?ann=21997
+END:VEVENT
+BEGIN:VEVENT
 UID:bluearchive-2026-11-03-p0@gacha-calander-data
 DTSTAMP:20261026T120107Z
 DTSTART;VALUE=DATE:20261103
