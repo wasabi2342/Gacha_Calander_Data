@@ -355,5 +355,12 @@
     "source": "official",
     "seenAt": "2026-10-29T12:47:05+09:00",
     "changes": 0
+  },
+  "https://genshin.hoyoverse.com/ko/news?ann=22002#v=bd36c13e": {
+    "game": "genshin",
+    "title": "7.2 버전 업데이트 점검 예고",
+    "source": "official",
+    "seenAt": "2026-11-02T12:44:54+09:00",
+    "changes": 1
   }
 }

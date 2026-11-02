@@ -385,6 +385,20 @@ URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=355996
  7
 END:VEVENT
 BEGIN:VEVENT
+UID:genshin-7.2-update@gacha-calander-data
+DTSTAMP:20261102T034454Z
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261105
+SUMMARY:[원신] 7.2 버전 업데이트
+DESCRIPTION:게임: 원신\n종류: 버전 업데이트\n시작: 2026-11-04
+  07:00\n상태: 공식 공지 확인\n출처: https://genshin.hoyoverse.co
+ m/ko/news?ann=22002\n(한국 시간 기준)
+CATEGORIES:원신,업데이트
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://genshin.hoyoverse.com/ko/news?ann=22002
+END:VEVENT
+BEGIN:VEVENT
 UID:endfield-2026-11-05-p0@gacha-calander-data
 DTSTAMP:20261017T082350Z
 DTSTART;VALUE=DATE:20261105

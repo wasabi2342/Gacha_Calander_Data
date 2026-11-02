@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T20:55:28+09:00",
+  "updatedAt": "2026-11-02T12:45:11+09:00",
   "games": [
     {
       "id": "genshin",
@@ -785,6 +785,25 @@
       "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3559967#v=ab0ef99a",
       "evidence": "11월 3일 사츠키, 치아키, 칸나 픽업",
       "updatedAt": "2026-10-26T21:01:07+09:00",
+      "verified": true
+    },
+    {
+      "id": "genshin-7.2-update",
+      "gameId": "genshin",
+      "type": "VERSION_UPDATE",
+      "version": "7.2",
+      "phase": null,
+      "title": "7.2 버전 업데이트",
+      "characters": [],
+      "startAt": "2026-11-04T07:00:00+09:00",
+      "timeKnown": true,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=22002#v=bd36c13e",
+      "evidence": "2026/11/04 06:00 점검 및 업데이트",
+      "updatedAt": "2026-11-02T12:44:54+09:00",
       "verified": true
     },
     {
