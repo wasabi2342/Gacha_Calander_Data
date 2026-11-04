@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T23:25:20+09:00",
+  "updatedAt": "2026-11-04T22:35:24+09:00",
   "games": [
     {
       "id": "genshin",
@@ -718,31 +718,6 @@
       "verified": true
     },
     {
-      "id": "endfield-단청도-p2",
-      "gameId": "endfield",
-      "type": "BANNER",
-      "version": "단청도",
-      "phase": 2,
-      "title": "재구축 헤드헌팅#1",
-      "characters": [
-        {
-          "name": "탕탕",
-          "rarity": 6,
-          "isNew": true
-        }
-      ],
-      "startAt": "2026-10-29T13:00:00+09:00",
-      "timeKnown": true,
-      "endAt": "2026-11-19T12:59:00+09:00",
-      "endConfirmed": true,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://endfield.gryphline.com/ko-kr/news?cid=3034#v=906b6273",
-      "evidence": "선조의 샘의 새로운 물결 재구축 헤드헌팅#1",
-      "updatedAt": "2026-10-28T20:55:26+09:00",
-      "verified": true
-    },
-    {
       "id": "genshin-7.2-p1",
       "gameId": "genshin",
       "type": "BANNER",
@@ -872,25 +847,25 @@
       "verified": true
     },
     {
-      "id": "endfield-단청도-p0",
+      "id": "endfield-단청도-p2",
       "gameId": "endfield",
       "type": "BANNER",
       "version": "단청도",
-      "phase": null,
-      "title": "만물의 재구성 헤드헌팅",
+      "phase": 2,
+      "title": "재구축 헤드헌팅#1",
       "characters": [
         {
-          "name": "사",
+          "name": "탕탕",
           "rarity": 6,
           "isNew": true
         },
         {
-          "name": "탕탕",
+          "name": "명하",
           "rarity": 6,
-          "isNew": false
+          "isNew": true
         },
         {
-          "name": "명하",
+          "name": "사",
           "rarity": 6,
           "isNew": true
         }
@@ -901,9 +876,9 @@
       "endConfirmed": true,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://endfield.gryphline.com/ko-kr/news?cid=2194#v=66cec0b0",
+      "sourceUrl": "https://endfield.gryphline.com/ko-kr/news?cid=7275#v=32e7b8fb",
       "evidence": "은하수를 부르는 불꽃 특별 허가 헤드헌팅",
-      "updatedAt": "2026-10-28T12:24:33+09:00",
+      "updatedAt": "2026-11-04T22:35:23+09:00",
       "verified": true
     }
   ]
