@@ -68,4 +68,19 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 URL:https://zenless.hoyoverse.com/ko-kr/news?ann=1327
 END:VEVENT
+BEGIN:VEVENT
+UID:zzz-3.3-p2@gacha-calander-data
+DTSTAMP:20261109T145108Z
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261202
+SUMMARY:[젠존제] 3.3 하반기 픽업 - 세베리안\, 노르마
+DESCRIPTION:게임: 젠존제\n종류: 픽업\n시작: 2026-11-11 13:00\n
+ 종료: 2026-12-01 15:59\n캐릭터: 세베리안\, 노르마\n상태: 공
+ 식 공지 확인\n출처: https://zenless.hoyoverse.com/ko-kr/news?ann=26
+ 0\n(한국 시간 기준)
+CATEGORIES:젠존제,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://zenless.hoyoverse.com/ko-kr/news?ann=260
+END:VEVENT
 END:VCALENDAR

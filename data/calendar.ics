@@ -414,4 +414,69 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 URL:https://endfield.gryphline.com/ko-kr/news?cid=7275
 END:VEVENT
+BEGIN:VEVENT
+UID:bluearchive-2026-11-10-p0@gacha-calander-data
+DTSTAMP:20261109T145120Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261118
+SUMMARY:[블루 아카이브] 마코토(수영복)\, 사츠키(수영복) 
+ 특별 픽업 - 마코토\, 사츠키
+DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-11-10
+  (시각 미정)\n종료: 2026-11-17 10:59\n캐릭터: 마코토\, 사츠
+ 키\n상태: 공식 공지 확인\n출처: https://forum.nexon.com/bluearc
+ hive/board_view?board=1076&thread=3566313\n(한국 시간 기준)
+CATEGORIES:블루 아카이브,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=356631
+ 3
+END:VEVENT
+BEGIN:VEVENT
+UID:hsr-4.7-update@gacha-calander-data
+DTSTAMP:20261109T145049Z
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261112
+SUMMARY:[스타레일] 4.7 버전 업데이트
+DESCRIPTION:게임: 스타레일\n종류: 버전 업데이트\n시작: 2026
+ -11-11 07:00\n상태: 공식 공지 확인\n출처: https://hsr.hoyoverse.
+ com/ko-kr/news?ann=1459\n(한국 시간 기준)
+CATEGORIES:스타레일,업데이트
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://hsr.hoyoverse.com/ko-kr/news?ann=1459
+END:VEVENT
+BEGIN:VEVENT
+UID:zzz-3.3-p2@gacha-calander-data
+DTSTAMP:20261109T145108Z
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261202
+SUMMARY:[젠존제] 3.3 하반기 픽업 - 세베리안\, 노르마
+DESCRIPTION:게임: 젠존제\n종류: 픽업\n시작: 2026-11-11 13:00\n
+ 종료: 2026-12-01 15:59\n캐릭터: 세베리안\, 노르마\n상태: 공
+ 식 공지 확인\n출처: https://zenless.hoyoverse.com/ko-kr/news?ann=26
+ 0\n(한국 시간 기준)
+CATEGORIES:젠존제,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://zenless.hoyoverse.com/ko-kr/news?ann=260
+END:VEVENT
+BEGIN:VEVENT
+UID:bluearchive-2026-11-17-p0@gacha-calander-data
+DTSTAMP:20261109T145120Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261125
+SUMMARY:[블루 아카이브] 이로하(수영복)\, 이부키(수영복)\,
+  리오\, 네루(교복) 페스 모집 - 이로하\, 이부키\, 리오(
+ 복각)\, 네루(복각)
+DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-11-17
+  11:00\n종료: 2026-11-24 10:59\n캐릭터: 이로하\, 이부키\, 리
+ 오(복각)\, 네루(복각)\n상태: 공식 공지 확인\n출처: https:
+ //forum.nexon.com/bluearchive/board_view?board=1076&thread=3566313\n(한
+ 국 시간 기준)
+CATEGORIES:블루 아카이브,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=356631
+ 3
+END:VEVENT
 END:VCALENDAR

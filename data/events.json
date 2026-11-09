@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T06:17:10+09:00",
+  "updatedAt": "2026-11-09T23:51:21+09:00",
   "games": [
     {
       "id": "genshin",
@@ -849,6 +849,125 @@
       "sourceUrl": "https://endfield.gryphline.com/ko-kr/news?cid=7275#v=32e7b8fb",
       "evidence": "은하수를 부르는 불꽃 특별 허가 헤드헌팅",
       "updatedAt": "2026-11-04T22:35:23+09:00",
+      "verified": true
+    },
+    {
+      "id": "bluearchive-2026-11-10-p0",
+      "gameId": "bluearchive",
+      "type": "BANNER",
+      "version": "2026-11-10",
+      "phase": null,
+      "title": "마코토(수영복), 사츠키(수영복) 특별 픽업",
+      "characters": [
+        {
+          "name": "마코토",
+          "rarity": 3,
+          "isNew": true
+        },
+        {
+          "name": "사츠키",
+          "rarity": 3,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-11-10T00:00:00+09:00",
+      "timeKnown": false,
+      "endAt": "2026-11-17T10:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3566313#v=8feb907e",
+      "evidence": "마코토(수영복), 사츠키(수영복) 특별 픽업",
+      "updatedAt": "2026-11-09T23:51:20+09:00",
+      "verified": true
+    },
+    {
+      "id": "hsr-4.7-update",
+      "gameId": "hsr",
+      "type": "VERSION_UPDATE",
+      "version": "4.7",
+      "phase": null,
+      "title": "4.7 버전 업데이트",
+      "characters": [],
+      "startAt": "2026-11-11T07:00:00+09:00",
+      "timeKnown": true,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://hsr.hoyoverse.com/ko-kr/news?ann=1459#v=6b62b2b2",
+      "evidence": "4.7 버전 업데이트 점검",
+      "updatedAt": "2026-11-09T23:50:49+09:00",
+      "verified": true
+    },
+    {
+      "id": "zzz-3.3-p2",
+      "gameId": "zzz",
+      "type": "BANNER",
+      "version": "3.3",
+      "phase": 2,
+      "title": "3.3 하반기 픽업",
+      "characters": [
+        {
+          "name": "세베리안",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "노르마",
+          "rarity": 5,
+          "isNew": true
+        }
+      ],
+      "startAt": "2026-11-11T13:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-12-01T15:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://zenless.hoyoverse.com/ko-kr/news?ann=260#v=9a34de71",
+      "evidence": "3.3 버전 하반기 세베리안, 노르마 픽업",
+      "updatedAt": "2026-11-09T23:51:08+09:00",
+      "verified": true
+    },
+    {
+      "id": "bluearchive-2026-11-17-p0",
+      "gameId": "bluearchive",
+      "type": "BANNER",
+      "version": "2026-11-17",
+      "phase": null,
+      "title": "이로하(수영복), 이부키(수영복), 리오, 네루(교복) 페스 모집",
+      "characters": [
+        {
+          "name": "이로하",
+          "rarity": 3,
+          "isNew": true
+        },
+        {
+          "name": "이부키",
+          "rarity": 3,
+          "isNew": true
+        },
+        {
+          "name": "리오",
+          "rarity": 3,
+          "isNew": false
+        },
+        {
+          "name": "네루",
+          "rarity": 3,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-11-17T11:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-11-24T10:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3566313#v=8feb907e",
+      "evidence": "이로하(수영복), 이부키(수영복), 리오, 네루(교복) 페스 모집",
+      "updatedAt": "2026-11-09T23:51:20+09:00",
       "verified": true
     }
   ]
