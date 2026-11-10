@@ -439,5 +439,19 @@
     "source": "official",
     "seenAt": "2026-11-10T10:02:12+09:00",
     "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1403#v=5f9435e7": {
+    "game": "hsr",
+    "title": "4.7 버전 이벤트 워프 (1)",
+    "source": "official",
+    "seenAt": "2026-11-10T23:03:43+09:00",
+    "changes": 0
+  },
+  "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3566313#v=3f974351": {
+    "game": "bluearchive",
+    "title": "(완료) 11/10(화) 업데이트 상세 안내 (11/10 수정)",
+    "source": "official",
+    "seenAt": "2026-11-10T23:04:09+09:00",
+    "changes": 2
   }
 }

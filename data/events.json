@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T23:51:21+09:00",
+  "updatedAt": "2026-11-10T23:04:11+09:00",
   "games": [
     {
       "id": "genshin",
@@ -868,6 +868,16 @@
           "name": "사츠키",
           "rarity": 3,
           "isNew": true
+        },
+        {
+          "name": "마코토(수영복)",
+          "rarity": 3,
+          "isNew": true
+        },
+        {
+          "name": "사츠키(수영복)",
+          "rarity": 3,
+          "isNew": true
         }
       ],
       "startAt": "2026-11-10T00:00:00+09:00",
@@ -876,9 +886,9 @@
       "endConfirmed": true,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3566313#v=8feb907e",
+      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3566313#v=3f974351",
       "evidence": "마코토(수영복), 사츠키(수영복) 특별 픽업",
-      "updatedAt": "2026-11-09T23:51:20+09:00",
+      "updatedAt": "2026-11-10T23:04:09+09:00",
       "verified": true
     },
     {
@@ -957,6 +967,21 @@
           "name": "네루",
           "rarity": 3,
           "isNew": false
+        },
+        {
+          "name": "이로하(수영복)",
+          "rarity": 3,
+          "isNew": true
+        },
+        {
+          "name": "이부키(수영복)",
+          "rarity": 3,
+          "isNew": true
+        },
+        {
+          "name": "네루(교복)",
+          "rarity": 3,
+          "isNew": false
         }
       ],
       "startAt": "2026-11-17T11:00:00+09:00",
@@ -965,9 +990,9 @@
       "endConfirmed": true,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3566313#v=8feb907e",
+      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3566313#v=3f974351",
       "evidence": "이로하(수영복), 이부키(수영복), 리오, 네루(교복) 페스 모집",
-      "updatedAt": "2026-11-09T23:51:20+09:00",
+      "updatedAt": "2026-11-10T23:04:09+09:00",
       "verified": true
     }
   ]
