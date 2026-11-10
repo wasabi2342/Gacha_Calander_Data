@@ -425,5 +425,19 @@
     "source": "official",
     "seenAt": "2026-11-09T23:51:20+09:00",
     "changes": 2
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1459#v=5cda1002": {
+    "game": "hsr",
+    "title": "4.7 버전 업데이트 점검 예고",
+    "source": "official",
+    "seenAt": "2026-11-10T10:01:59+09:00",
+    "changes": 0
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=260#v=514822a9": {
+    "game": "zzz",
+    "title": "3.3 버전 기간 한정 채널(하반기)",
+    "source": "official",
+    "seenAt": "2026-11-10T10:02:12+09:00",
+    "changes": 0
   }
 }
