@@ -460,5 +460,33 @@
     "source": "official",
     "seenAt": "2026-11-11T07:42:14+09:00",
     "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1457#v=cf2176d1": {
+    "game": "hsr",
+    "title": "4.7 버전 「지금, 뭇별을 웃음으로」 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-11-11T13:00:19+09:00",
+    "changes": 1
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1480#v=d3612aba": {
+    "game": "hsr",
+    "title": "Fate[UBW] 콜라보 워프 안내",
+    "source": "official",
+    "seenAt": "2026-11-11T13:00:31+09:00",
+    "changes": 0
+  },
+  "https://game.naver.com/lounge/WutheringWaves/board/detail/8443312#v=705204fa": {
+    "game": "wuwa",
+    "title": "[여정이 남긴 울림 Ⅱ] 여정이 남긴 캐릭터 튜닝",
+    "source": "official",
+    "seenAt": "2026-11-11T13:00:46+09:00",
+    "changes": 0
+  },
+  "https://game.naver.com/lounge/WutheringWaves/board/detail/8443234#v=67753f0b": {
+    "game": "wuwa",
+    "title": "[지난날의 꿈터에 만개한 꽃] 캐릭터 이벤트 튜닝",
+    "source": "official",
+    "seenAt": "2026-11-11T13:00:59+09:00",
+    "changes": 0
   }
 }
