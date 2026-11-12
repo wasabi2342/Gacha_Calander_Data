@@ -39,4 +39,33 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 URL:https://game.naver.com/lounge/WutheringWaves/board/detail/8346030
 END:VEVENT
+BEGIN:VEVENT
+UID:wuwa-3.8-update@gacha-calander-data
+DTSTAMP:20261112T051218Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+SUMMARY:[명조] 3.8 버전 업데이트
+DESCRIPTION:게임: 명조\n종류: 버전 업데이트\n시작: 2026-11-12
+  05:00\n상태: 공식 공지 확인\n출처: https://wutheringwaves.kurog
+ ames.com/kr/main/news/detail/5784\n(한국 시간 기준)
+CATEGORIES:명조,업데이트
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://wutheringwaves.kurogames.com/kr/main/news/detail/5784
+END:VEVENT
+BEGIN:VEVENT
+UID:wuwa-3.8-p1@gacha-calander-data
+DTSTAMP:20261112T051218Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+SUMMARY:[명조] 3.8 릴리 픽업 - 릴리 (종료일 미정)
+DESCRIPTION:게임: 명조\n종류: 픽업\n시작: 2026-11-12 12:00\n종
+ 료: 아직 발표 전\n캐릭터: 릴리\n상태: 공식 공지 확인\n
+ 출처: https://wutheringwaves.kurogames.com/kr/main/news/detail/5784\n(
+ 한국 시간 기준)
+CATEGORIES:명조,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://wutheringwaves.kurogames.com/kr/main/news/detail/5784
+END:VEVENT
 END:VCALENDAR
