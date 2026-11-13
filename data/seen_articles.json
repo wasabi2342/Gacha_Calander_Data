@@ -516,5 +516,26 @@
     "source": "official",
     "seenAt": "2026-11-12T23:25:02+09:00",
     "changes": 0
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1457#v=d42dcf27": {
+    "game": "hsr",
+    "title": "4.7 버전 「지금, 뭇별을 웃음으로」 버전 업데이트 안내",
+    "source": "official",
+    "seenAt": "2026-11-14T08:05:47+09:00",
+    "changes": 1
+  },
+  "https://hsr.hoyoverse.com/ko-kr/news?ann=1480#v=088db438": {
+    "game": "hsr",
+    "title": "Fate[UBW] 콜라보 워프 안내",
+    "source": "official",
+    "seenAt": "2026-11-14T08:05:54+09:00",
+    "changes": 1
+  },
+  "https://zenless.hoyoverse.com/ko-kr/news?ann=260#v=91e1d257": {
+    "game": "zzz",
+    "title": "3.3 버전 기간 한정 채널(하반기)",
+    "source": "official",
+    "seenAt": "2026-11-14T08:06:15+09:00",
+    "changes": 0
   }
 }

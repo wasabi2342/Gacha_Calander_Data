@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T14:12:34+09:00",
+  "updatedAt": "2026-11-14T08:06:20+09:00",
   "games": [
     {
       "id": "genshin",
@@ -899,15 +899,15 @@
       "phase": null,
       "title": "4.7 버전 업데이트",
       "characters": [],
-      "startAt": "2026-11-11T07:00:00+09:00",
+      "startAt": "2026-11-11T06:00:00+09:00",
       "timeKnown": true,
-      "endAt": "2026-12-23T07:00:00+09:00",
+      "endAt": "2026-12-23T06:00:00+09:00",
       "endConfirmed": true,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://hsr.hoyoverse.com/ko-kr/news?ann=1457#v=cf2176d1",
-      "evidence": "4.7 버전 「지금, 뭇별을 웃음으로」 버전 업데이트 안내",
-      "updatedAt": "2026-11-11T13:00:19+09:00",
+      "sourceUrl": "https://hsr.hoyoverse.com/ko-kr/news?ann=1457#v=d42dcf27",
+      "evidence": "4.7 버전 업데이트 시간 2026/11/11 06:00",
+      "updatedAt": "2026-11-14T08:05:47+09:00",
       "verified": true
     },
     {

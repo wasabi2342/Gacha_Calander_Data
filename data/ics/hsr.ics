@@ -44,12 +44,12 @@ URL:https://hsr.hoyoverse.com/ko-kr/news?ann=1360
 END:VEVENT
 BEGIN:VEVENT
 UID:hsr-4.7-update@gacha-calander-data
-DTSTAMP:20261111T040019Z
+DTSTAMP:20261113T230547Z
 DTSTART;VALUE=DATE:20261111
 DTEND;VALUE=DATE:20261112
 SUMMARY:[스타레일] 4.7 버전 업데이트
 DESCRIPTION:게임: 스타레일\n종류: 버전 업데이트\n시작: 2026
- -11-11 07:00\n상태: 공식 공지 확인\n출처: https://hsr.hoyoverse.
+ -11-11 06:00\n상태: 공식 공지 확인\n출처: https://hsr.hoyoverse.
  com/ko-kr/news?ann=1457\n(한국 시간 기준)
 CATEGORIES:스타레일,업데이트
 TRANSP:TRANSPARENT
