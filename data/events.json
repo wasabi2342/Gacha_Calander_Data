@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T08:06:20+09:00",
+  "updatedAt": "2026-11-14T13:24:09+09:00",
   "games": [
     {
       "id": "genshin",
@@ -48,51 +48,6 @@
     }
   ],
   "events": [
-    {
-      "id": "bluearchive-2026-09-08-p0",
-      "gameId": "bluearchive",
-      "type": "BANNER",
-      "version": "2026-09-08",
-      "phase": null,
-      "title": "에리카, 키라라 등 5인 픽업",
-      "characters": [
-        {
-          "name": "에리카",
-          "rarity": 3,
-          "isNew": true
-        },
-        {
-          "name": "키라라",
-          "rarity": 3,
-          "isNew": false
-        },
-        {
-          "name": "츠바키",
-          "rarity": 3,
-          "isNew": false
-        },
-        {
-          "name": "우미카",
-          "rarity": 3,
-          "isNew": false
-        },
-        {
-          "name": "피나",
-          "rarity": 3,
-          "isNew": false
-        }
-      ],
-      "startAt": "2026-09-08T00:00:00+09:00",
-      "timeKnown": false,
-      "endAt": "2026-09-15T10:59:00+09:00",
-      "endConfirmed": true,
-      "status": "OFFICIAL",
-      "note": null,
-      "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3532788#v=67b39613",
-      "evidence": "에리카, 키라라 등 픽업 모집",
-      "updatedAt": "2026-10-17T17:23:43+09:00",
-      "verified": true
-    },
     {
       "id": "zzz-3.2-update",
       "gameId": "zzz",

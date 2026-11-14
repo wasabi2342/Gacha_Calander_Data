@@ -10,25 +10,6 @@ X-WR-TIMEZONE:Asia/Seoul
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
-UID:bluearchive-2026-09-08-p0@gacha-calander-data
-DTSTAMP:20261017T082343Z
-DTSTART;VALUE=DATE:20260908
-DTEND;VALUE=DATE:20260916
-SUMMARY:[블루 아카이브] 에리카\, 키라라 등 5인 픽업 - 에
- 리카\, 키라라(복각)\, 츠바키(복각)\, 우미카(복각)\, 피
- 나(복각)
-DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-09-08
-  (시각 미정)\n종료: 2026-09-15 10:59\n캐릭터: 에리카\, 키라
- 라(복각)\, 츠바키(복각)\, 우미카(복각)\, 피나(복각)\n상
- 태: 공식 공지 확인\n출처: https://forum.nexon.com/bluearchive/boa
- rd_view?board=1076&thread=3532788\n(한국 시간 기준)
-CATEGORIES:블루 아카이브,픽업
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=353278
- 8
-END:VEVENT
-BEGIN:VEVENT
 UID:zzz-3.2-update@gacha-calander-data
 DTSTAMP:20261017T082309Z
 DTSTART;VALUE=DATE:20260909
