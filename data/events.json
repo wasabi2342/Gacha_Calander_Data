@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-18T09:19:53+09:00",
+  "updatedAt": "2026-11-20T00:01:05+09:00",
   "games": [
     {
       "id": "genshin",
@@ -992,6 +992,46 @@
       "sourceUrl": "https://forum.nexon.com/bluearchive/board_view?board=1076&thread=3566313#v=3f974351",
       "evidence": "이로하(수영복), 이부키(수영복), 리오, 네루(교복) 페스 모집",
       "updatedAt": "2026-11-10T23:04:09+09:00",
+      "verified": true
+    },
+    {
+      "id": "genshin-7.2-p2",
+      "gameId": "genshin",
+      "type": "BANNER",
+      "version": "7.2",
+      "phase": 2,
+      "title": "샘물에 숨은 세월 기원",
+      "characters": [
+        {
+          "name": "자백",
+          "rarity": 5,
+          "isNew": true
+        },
+        {
+          "name": "일루가",
+          "rarity": 4,
+          "isNew": true
+        },
+        {
+          "name": "아이노",
+          "rarity": 4,
+          "isNew": true
+        },
+        {
+          "name": "응광",
+          "rarity": 4,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-11-24T19:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-12-15T15:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21980#v=c681ce7e",
+      "evidence": "자백 확률 UP 기원 기간",
+      "updatedAt": "2026-11-19T23:59:48+09:00",
       "verified": true
     }
   ]
