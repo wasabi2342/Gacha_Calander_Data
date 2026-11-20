@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T00:01:05+09:00",
+  "updatedAt": "2026-11-20T09:06:28+09:00",
   "games": [
     {
       "id": "genshin",
@@ -1021,6 +1021,11 @@
           "name": "응광",
           "rarity": 4,
           "isNew": false
+        },
+        {
+          "name": "린네아",
+          "rarity": 5,
+          "isNew": true
         }
       ],
       "startAt": "2026-11-24T19:00:00+09:00",
@@ -1029,9 +1034,9 @@
       "endConfirmed": true,
       "status": "OFFICIAL",
       "note": null,
-      "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21980#v=c681ce7e",
-      "evidence": "자백 확률 UP 기원 기간",
-      "updatedAt": "2026-11-19T23:59:48+09:00",
+      "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21981#v=45b75814",
+      "evidence": "린네아 및 캐릭터 픽업 일정",
+      "updatedAt": "2026-11-20T09:06:13+09:00",
       "verified": true
     }
   ]
