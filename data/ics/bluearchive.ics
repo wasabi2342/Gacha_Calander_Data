@@ -161,4 +161,23 @@ STATUS:CONFIRMED
 URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=356631
  3
 END:VEVENT
+BEGIN:VEVENT
+UID:bluearchive-2026-11-24-p0@gacha-calander-data
+DTSTAMP:20261124T034100Z
+DTSTART;VALUE=DATE:20261124
+DTEND;VALUE=DATE:20261209
+SUMMARY:[블루 아카이브] 세나(사복)\, 주리(아르바이트)\, 
+ 나구사\, 니야 픽업 모집 - 세나(사복)(복각)\, 주리(아르
+ 바이트)(복각)\, 나구사(복각)\, 니야(복각)
+DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-11-24
+  (시각 미정)\n종료: 2026-12-08 10:59\n캐릭터: 세나(사복)(복
+ 각)\, 주리(아르바이트)(복각)\, 나구사(복각)\, 니야(복각
+ )\n상태: 공식 공지 확인\n출처: https://forum.nexon.com/bluearchi
+ ve/board_view?board=1076&thread=3580170\n(한국 시간 기준)
+CATEGORIES:블루 아카이브,픽업
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=358017
+ 0
+END:VEVENT
 END:VCALENDAR
