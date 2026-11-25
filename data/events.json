@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T12:41:02+09:00",
+  "updatedAt": "2026-11-25T10:48:09+09:00",
   "games": [
     {
       "id": "genshin",
@@ -1058,6 +1058,60 @@
       "sourceUrl": "https://genshin.hoyoverse.com/ko/news?ann=21981#v=45b75814",
       "evidence": "린네아 및 캐릭터 픽업 일정",
       "updatedAt": "2026-11-20T09:06:13+09:00",
+      "verified": true
+    },
+    {
+      "id": "endfield-뜻밖의 만남, 버섯 동산 대모험-update",
+      "gameId": "endfield",
+      "type": "VERSION_UPDATE",
+      "version": "뜻밖의 만남, 버섯 동산 대모험",
+      "phase": null,
+      "title": "뜻밖의 만남, 버섯 동산 대모험 업데이트",
+      "characters": [],
+      "startAt": "2026-11-25T07:00:00+09:00",
+      "timeKnown": true,
+      "endAt": null,
+      "endConfirmed": false,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://endfield.gryphline.com/ko-kr/news?cid=0770#v=40c9f00f",
+      "evidence": "신규 버전 업데이트 점검",
+      "updatedAt": "2026-11-25T10:47:54+09:00",
+      "verified": true
+    },
+    {
+      "id": "endfield-뜻밖의 만남, 버섯 동산 대모험-p0",
+      "gameId": "endfield",
+      "type": "BANNER",
+      "version": "뜻밖의 만남, 버섯 동산 대모험",
+      "phase": null,
+      "title": "모루, 배낭, 그리고 벌꿀 헤드헌팅",
+      "characters": [
+        {
+          "name": "케르",
+          "rarity": 6,
+          "isNew": true
+        },
+        {
+          "name": "질베르타",
+          "rarity": 6,
+          "isNew": false
+        },
+        {
+          "name": "로시",
+          "rarity": 6,
+          "isNew": false
+        }
+      ],
+      "startAt": "2026-12-16T13:00:00+09:00",
+      "timeKnown": true,
+      "endAt": "2026-12-16T12:59:00+09:00",
+      "endConfirmed": true,
+      "status": "OFFICIAL",
+      "note": null,
+      "sourceUrl": "https://endfield.gryphline.com/ko-kr/news?cid=0770#v=40c9f00f",
+      "evidence": "붉은색의 진주 재구축 헤드헌팅#1",
+      "updatedAt": "2026-11-25T10:47:54+09:00",
       "verified": true
     }
   ]
