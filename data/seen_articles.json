@@ -628,5 +628,12 @@
     "source": "official",
     "seenAt": "2026-11-27T01:08:38+09:00",
     "changes": 0
+  },
+  "https://game.naver.com/lounge/nikke/board/detail/8514067#v=056d2c36": {
+    "game": "nikke",
+    "title": "PC 런처 업데이트 관련 이슈 수정 완료 안내",
+    "source": "official",
+    "seenAt": "2026-11-27T10:22:10+09:00",
+    "changes": 0
   }
 }
