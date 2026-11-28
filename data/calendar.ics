@@ -24,24 +24,6 @@ STATUS:CONFIRMED
 URL:https://zenless.hoyoverse.com/ko-kr/news?ann=1297
 END:VEVENT
 BEGIN:VEVENT
-UID:bluearchive-2026-09-15-p0@gacha-calander-data
-DTSTAMP:20261017T082335Z
-DTSTART;VALUE=DATE:20260915
-DTEND;VALUE=DATE:20260930
-SUMMARY:[블루 아카이브] 드레스 학생 픽업 모집 - 무츠키\, 
- 하루카\, 아루(복각)\, 카요코(복각)\, 사오리(복각)
-DESCRIPTION:게임: 블루 아카이브\n종류: 픽업\n시작: 2026-09-15
-  (시각 미정)\n종료: 2026-09-29 10:59\n캐릭터: 무츠키\, 하루
- 카\, 아루(복각)\, 카요코(복각)\, 사오리(복각)\n상태: 공
- 식 공지 확인\n출처: https://forum.nexon.com/bluearchive/board_view?
- board=1076&thread=3536012\n(한국 시간 기준)
-CATEGORIES:블루 아카이브,픽업
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://forum.nexon.com/bluearchive/board_view?board=1076&thread=353601
- 2
-END:VEVENT
-BEGIN:VEVENT
 UID:hsr-4.6-update@gacha-calander-data
 DTSTAMP:20261018T151049Z
 DTSTART;VALUE=DATE:20260928
